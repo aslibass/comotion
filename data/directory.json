@@ -1,0 +1,4434 @@
+{
+  "generated_at": "2026-11-01T04:42:00+00:00",
+  "resource_count": 169,
+  "languages": [
+    "Arabic",
+    "Vietnamese",
+    "Assyrian",
+    "Chinese"
+  ],
+  "domains": [
+    {
+      "key": "understanding",
+      "label": "Understanding my condition",
+      "count": 36,
+      "subdomains": [
+        "Common symptoms",
+        "Myths and misconceptions",
+        "What is this condition?"
+      ]
+    },
+    {
+      "key": "symptoms",
+      "label": "Managing symptoms",
+      "count": 28,
+      "subdomains": [
+        "Emotional wellbeing",
+        "Pain",
+        "Physical well being",
+        "Sleep"
+      ]
+    },
+    {
+      "key": "wellbeing",
+      "label": "Improving my health & wellbeing",
+      "count": 38,
+      "subdomains": [
+        "Health eating",
+        "Lifestyle factors (Alcohol, smoking, sleep)",
+        "Mental wellbeing (stress, mindfulness, resilience)",
+        "Physical activity"
+      ]
+    },
+    {
+      "key": "self-management",
+      "label": "Practical self-management",
+      "count": 21,
+      "subdomains": [
+        "Daily activities",
+        "Goal setting",
+        "Managing medicines",
+        "Monitoring symptoms",
+        "When to seek help"
+      ]
+    },
+    {
+      "key": "services",
+      "label": "Finding services & support",
+      "count": 49,
+      "subdomains": [
+        "Community services",
+        "Government support",
+        "Healthcare professionals",
+        "Specialty services"
+      ]
+    },
+    {
+      "key": "programs",
+      "label": "Programs, apps & community",
+      "count": 64,
+      "subdomains": [
+        "App",
+        "Digital Supports",
+        "Helpline",
+        "Online course",
+        "Peer support",
+        "Physical activity Program"
+      ]
+    },
+    {
+      "key": "appointments",
+      "label": "Preparing for appointments",
+      "count": 8,
+      "subdomains": [
+        "Before my appointment",
+        "Shared decision making",
+        "Understanding healthcare"
+      ]
+    },
+    {
+      "key": "language",
+      "label": "Information in my language",
+      "count": 26,
+      "subdomains": [
+        "Assyrian",
+        "Culturally adapted materials",
+        "Translated materials"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "beyondblue-org-au__aaccb128",
+      "title": "\"So many of us are struggling at Christmas, but don't feel able to say it...\"",
+      "url": "https://www.beyondblue.org.au",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Emotional wellbeing"
+        ]
+      },
+      "description": "How can we help you? Connection matters: Write a postcard Australia Post and Beyond Blue are once again working together to send out 4 million Connection Postcards to rural and regional households across Australia. Now in its sixth year, encourages people to take a simple, meaningful action: reach o",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-11-01",
+      "has_content": true
+    },
+    {
+      "id": "apps-apple-com__7343f5c7",
+      "title": "1800MEDICARE (was my health) App - AppÂ Store",
+      "url": "https://apps.apple.com/au/app/1800medicare-was-my-health/id1596846961",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "Medicare app to store prescritions and health information",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-06-21",
+      "has_content": true
+    },
+    {
+      "id": "health-gov-au__f528302e",
+      "title": "24-hour movement guidelines for all Australians",
+      "url": "https://www.health.gov.au/topics/physical-activity/24-hour-movement-guidelines-for-all-australians?language=en",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "About the guidelines Staying active regularly is essential for good physical and mental health and wellbeing. This is true no matter how young or old you are. But the amount of activity varies, depending on your age. To help Australians understand how much activity they need, we have developed: - 24",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-04-28",
+      "has_content": true
+    },
+    {
+      "id": "arthritis-org-au__70b64068",
+      "title": "403 Forbidden",
+      "url": "https://www.arthritis.org.au/how-we-can-help/support-groups",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "403 Forbidden nginx",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "painaustralia-org-au__b16d401a",
+      "title": "404",
+      "url": "https://www.painaustralia.org.au/pain-services-directory/pain-director",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Specialty services"
+        ]
+      },
+      "description": "All domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": false
+    },
+    {
+      "id": "swslhd-health-nsw-gov-au__b67c0e27",
+      "title": "About us",
+      "url": "https://www.swslhd.health.nsw.gov.au/services/Interpreter/about.html",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Interpreter service",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/arabic.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/assyrian.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/bosnian.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/Cantonese.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/croatian.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/dari.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/greek.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/hokkien.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/italian.pdf",
+        "https://www.swslhd.health.nsw.gov.au/services/Interpreter/PDF/khmer.pdf"
+      ],
+      "page_date": "2015-06-01",
+      "has_content": true
+    },
+    {
+      "id": "drugs-com__8f004095",
+      "title": "Access Denied",
+      "url": "https://www.drugs.com/",
+      "domains": [
+        "self-management"
+      ],
+      "tags": {
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "The Drugs.com Drug Information Database is powered by several independent leading medical-information suppliers, including; American Society of Health-System Pharmacists, Cerner Multum and Micromedex. Individual drug (or drug-class) content compiled by these sources is peer reviewed and delivered by Drugs.com.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "asvictoria-org__5dfa469c",
+      "title": "Ankylosing Spondylitis Victoria",
+      "url": "https://www.asvictoria.org/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "services": [
+          "Community services"
+        ],
+        "symptoms": [
+          "Physical well being"
+        ],
+        "self-management": [
+          "Daily activities"
+        ]
+      },
+      "description": "Peer support",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.asvictoria.org/_files/ugd/1a10c2_82cf1304ed0b4aa88f0d95da4464235a.pdf",
+        "https://www.asvictoria.org/_files/ugd/1a10c2_919e190550da4636a65620891f4c4bb2.pdf",
+        "https://www.asvictoria.org/_files/ugd/1a10c2_8dfb07321f974fac8fe25c9fb20d4b8e.pdf",
+        "https://www.asvictoria.org/_files/ugd/1a10c2_2fd804e735814f6e9aaae90b1b8166ed.pdf"
+      ],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "chronicpainaustralia-org-au__5d524519",
+      "title": "APMA Pain Link Helpline",
+      "url": "https://chronicpainaustralia.org.au/painlink",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Hotline",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "aont-org-au__f81ed5e6",
+      "title": "Arthritis & Osteoporosis Northern Territory (AONT)",
+      "url": "https://www.aont.org.au",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "programs"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ],
+        "symptoms": [
+          "Pain"
+        ],
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.aont.org.au/wp-content/uploads/Sport-injuries-and-joint-health.pdf",
+        "https://www.aont.org.au/wp-content/uploads/Stronger-Today-exercise-classes-June-2024.pdf"
+      ],
+      "page_date": "2026-09-17",
+      "has_content": true
+    },
+    {
+      "id": "aont-org-au__b87d9b5a",
+      "title": "Arthritis & Osteoporosis Northern Territory (AONT)",
+      "url": "https://www.aont.org.au/",
+      "domains": [
+        "understanding",
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.aont.org.au/wp-content/uploads/Sport-injuries-and-joint-health.pdf",
+        "https://www.aont.org.au/wp-content/uploads/Stronger-Today-exercise-classes-June-2024.pdf"
+      ],
+      "page_date": "2026-09-17",
+      "has_content": true
+    },
+    {
+      "id": "arthritis-org-nz__4e460e04",
+      "title": "Arthritis New Zealand",
+      "url": "https://www.arthritis.org.nz/",
+      "domains": [
+        "self-management"
+      ],
+      "tags": {
+        "self-management": [
+          "Daily activities"
+        ]
+      },
+      "description": "All domains. NZ site.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-02-25",
+      "has_content": true
+    },
+    {
+      "id": "arthritispainsupportemergeact-org-au__4b88b4b5",
+      "title": "Arthritis, Pain Support & Emerge ACT",
+      "url": "https://www.arthritispainsupportemergeact.org.au/",
+      "domains": [
+        "understanding",
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Physical activity Program",
+          "Peer support"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Support For All Chronic Pain Care Our multidisciplinary team is here to help with arthritis, chronic pain, debilitating fatigue or any other condition! Services For all musculoskeletal programs For support for people living with ME/CFS and/or Long Covid. For all types of chronic pain support Our mis",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-01-16",
+      "has_content": true
+    },
+    {
+      "id": "mhcs-health-nsw-gov-au__9c59de75",
+      "title": "Assyrian - Celebrate Culture Through Movement: Every Move Counts",
+      "url": "https://www.mhcs.health.nsw.gov.au/publications/celebrate-culture-through-movement-every-move-counts/assyrian",
+      "domains": [
+        "wellbeing",
+        "language"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "language": [
+          "Assyrian"
+        ]
+      },
+      "description": "This resource aims to help keep people healthy and well by encouraging people to move their bodies. Every move counts in increasing participation in the recommended levels of physical activity.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [
+        "Assyrian"
+      ],
+      "translated": false,
+      "doc_links": [
+        "https://www.mhcs.health.nsw.gov.au/publications/celebrate-culture-through-movement-every-move-counts/assyrian/@@download/file"
+      ],
+      "page_date": "2023-12-19",
+      "has_content": false
+    },
+    {
+      "id": "mhcs-health-nsw-gov-au__4c1c065a",
+      "title": "Assyrian - Improving our mental health and wellbeing through physical activity",
+      "url": "https://www.mhcs.health.nsw.gov.au/publications/improving-our-mental-health/assyrian",
+      "domains": [
+        "wellbeing",
+        "language"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Mental wellbeing (stress, mindfulness, resilience)"
+        ],
+        "language": [
+          "Assyrian"
+        ]
+      },
+      "description": "Improving mental health thorugh physical activity in Assyrian",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [
+        "Assyrian"
+      ],
+      "translated": false,
+      "doc_links": [
+        "https://www.mhcs.health.nsw.gov.au/publications/improving-our-mental-health/assyrian/@@download/file"
+      ],
+      "page_date": "2026-08-20",
+      "has_content": true
+    },
+    {
+      "id": "digitalhealth-gov-au__9d6389d0",
+      "title": "Australian Digital Health Agency",
+      "url": "https://www.digitalhealth.gov.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "My health record, electronic prescriptions, medicare app, telehealth, vaccine record",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-10-07",
+      "has_content": true
+    },
+    {
+      "id": "myflareup-org__1ee7432b",
+      "title": "Autoimmune Conditions - Educate yourself and Prepare for your Consultation - MyFlareUp",
+      "url": "https://myflareup.org/resource/autoimmune-conditions-prepare-for-your-consultation",
+      "domains": [
+        "appointments"
+      ],
+      "tags": {
+        "appointments": [
+          "Before my appointment"
+        ]
+      },
+      "description": "Rheumatologist Dr Daniel Lewis says that when you finally have an appointment with a medical specialist, preparing for your appointment is necessary. This can involve gathering detailed medical records, documenting specific symptoms, and preparing a list of your medications. Because some conditions,",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-06-15",
+      "has_content": true
+    },
+    {
+      "id": "myas-org-au__bfdc1b23",
+      "title": "Axial Spondyloarthritis (AS) support program",
+      "url": "https://myas.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Axial Spondyloarthritis Support Program",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2021-01-01",
+      "has_content": true
+    },
+    {
+      "id": "betterhealth-vic-gov-au__65d9adf7",
+      "title": "Better Health Channel",
+      "url": "https://www.betterhealth.vic.gov.au/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs",
+        "appointments",
+        "language"
+      ],
+      "tags": {
+        "understanding": [
+          "Common symptoms"
+        ],
+        "symptoms": [
+          "Sleep"
+        ],
+        "wellbeing": [
+          "Health eating"
+        ],
+        "self-management": [
+          "When to seek help"
+        ],
+        "services": [
+          "Community services"
+        ],
+        "programs": [
+          "Helpline"
+        ],
+        "appointments": [
+          "Shared decision making"
+        ],
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Multiple subdomains, Pain and Pain Management, Arthritis",
+      "audiences": [
+        "Patient",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2026-10-28",
+      "has_content": true
+    },
+    {
+      "id": "preventivehealth-sa-gov-au__ec84d10a",
+      "title": "Better Health Coaching Service",
+      "url": "https://www.preventivehealth.sa.gov.au/healthy-living/being-active-healthy/better-health-coaching-service",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Health eating"
+        ]
+      },
+      "description": "SA free program for weight loss",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2023-06-29",
+      "has_content": true
+    },
+    {
+      "id": "bjcconnect-com-au__4a87300c",
+      "title": "BJC Connect Home | Rheumatology Toolkit | Tools for Rheumatic Disease",
+      "url": "https://www.bjcconnect.com.au/",
+      "domains": [
+        "symptoms",
+        "wellbeing",
+        "programs"
+      ],
+      "tags": {
+        "symptoms": [
+          "Physical well being"
+        ],
+        "wellbeing": [
+          "Health eating"
+        ],
+        "programs": [
+          "Online course"
+        ]
+      },
+      "description": "Physical activity",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-09-26",
+      "has_content": true
+    },
+    {
+      "id": "blackdoginstitute-org-au__c4fef2b5",
+      "title": "Black Dog Institute | Better Mental Health",
+      "url": "https://www.blackdoginstitute.org.au",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Emotional wellbeing"
+        ]
+      },
+      "description": "Harnessing science to create a brighter future for young people. Working collaboratively to reduce the rate of suicide in Australia. A free, evidence based smartphone app shown to be effective in helping young people with sleep problems. Personal mental health assessments to discuss with your GP. Ex",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-13",
+      "has_content": true
+    },
+    {
+      "id": "healthify-nz__8b603143",
+      "title": "Calculators, medicines, health conditions, symptoms | Healthify",
+      "url": "https://healthify.nz/",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All domains: NZ site with in language Pasifika resources",
+      "audiences": [
+        "Patient",
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-10-19",
+      "has_content": true
+    },
+    {
+      "id": "swsphn-com-au__9cb34e3f",
+      "title": "CALD and refugee support links for community members | South Western Sydney PHN",
+      "url": "https://swsphn.com.au/what-we-do/cald-health-support/cald-and-refugee-support-links-for-community-members",
+      "domains": [
+        "services",
+        "language"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ],
+        "language": [
+          "Culturally adapted materials"
+        ]
+      },
+      "description": "CALD and refugee support links for community members, aboriginal and TSI health",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2024-05-07",
+      "has_content": true
+    },
+    {
+      "id": "carersaustralia-com-au__b03bf57d",
+      "title": "Carers Australia",
+      "url": "https://www.carersaustralia.com.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Who we are Carers Australia is the national peak body representing Australia’s unpaid carers, advocating on their behalf to influence policies and services at a national level. Carers Australia recognises and values employees who have an unpaid caring responsibility and the contribution they make to",
+      "audiences": [
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.carersaustralia.com.au/wp-content/uploads/2026/01/CWS25_Report_300126_v2_.pdf",
+        "https://www.carersaustralia.com.au/wp-content/uploads/2026/10/NSQHS-Standards-Carers-Australia-submission-FINAL.pdf",
+        "https://www.carersaustralia.com.au/wp-content/uploads/2026/10/15102026_carerssurvey_FINAL.pdf",
+        "https://www.carersaustralia.com.au/wp-content/uploads/2026/10/11102026_NCWyoungcarers_FINALII.pdf"
+      ],
+      "page_date": "2026-10-21",
+      "has_content": true
+    },
+    {
+      "id": "cha-org-au__5e20b72b",
+      "title": "Catholic health Australia - Catholic Health Australia",
+      "url": "https://cha.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Health advocacy organisations",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-21",
+      "has_content": true
+    },
+    {
+      "id": "muscha-org__6e0d7bfe",
+      "title": "Chair-based exercise - Musculoskeletal Health Australia (MHA)",
+      "url": "https://muscha.org/chair-based-exercise",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "Physical activity",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-11-25",
+      "has_content": true
+    },
+    {
+      "id": "ndis-gov-au__07a960cd",
+      "title": "Changes to the NDIS",
+      "url": "https://www.ndis.gov.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Disability Support",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-10-30",
+      "has_content": false
+    },
+    {
+      "id": "healthsciences-unimelb-edu-au__8fe1c505",
+      "title": "CHESM Osteoarthritis Virtual Assistant",
+      "url": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/chesm-ai-chatbot",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Melbourne OA Chatbot AI tool ?I could not get onto the actual tool",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://healthsciences.unimelb.edu.au/__data/assets/pdf_file/0012/5494377/Osteoarthritis-Virtual-Assistant-Privacy-Notice-27.2.2026.pdf",
+        "https://healthsciences.unimelb.edu.au/__data/assets/pdf_file/0011/5494376/Osteoarthritis-Virtual-Assistant-Terms-of-Use-27.2.2026.pdf",
+        "https://healthsciences.unimelb.edu.au/__data/assets/pdf_file/0012/5264868/Osteoarthritis-Virtual-Assistant-References-27.2.2026.pdf"
+      ],
+      "page_date": "2026-03-27",
+      "has_content": true
+    },
+    {
+      "id": "creakyjoints-org-au__b28ce09f",
+      "title": "Choosing Your Healthcare Team",
+      "url": "https://creakyjoints.org.au/resources/healthcare-team",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Choosing Your Healthcare Team Why do I need a team? One of the realities of having a chronic health condition is that you will most likely need to see a range of healthcare professionals over a long period of time. You could allow your GP or someone else to suggest who you could see and when to see",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "http://www.health.gov.au/internet/main/publishing.nsf/content/0F792912834609B4CA257BF0001B74FA/$File/patients2.pdf"
+      ],
+      "page_date": "2020-10-30",
+      "has_content": true
+    },
+    {
+      "id": "nsw-gov-au__40ef9190",
+      "title": "Chronic disease management in Hunter New England LHD",
+      "url": "https://www.nsw.gov.au/departments-and-agencies/hnelhd/services/chronic-disease-management",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Specialty services"
+        ]
+      },
+      "description": "Pain Management Service",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-06-11",
+      "has_content": true
+    },
+    {
+      "id": "aci-health-nsw-gov-au__fe9ced98",
+      "title": "Chronic Pain",
+      "url": "https://aci.health.nsw.gov.au/chronic-pain",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs",
+        "language"
+      ],
+      "tags": {
+        "self-management": [
+          "Managing medicines"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "symptoms": [
+          "Pain"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "language": [
+          "Translated materials"
+        ],
+        "services": [
+          "Specialty services"
+        ],
+        "programs": [
+          "Online course"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient",
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2016-09-05",
+      "has_content": true
+    },
+    {
+      "id": "thiswayup-org-au__04e34f21",
+      "title": "Chronic Pain",
+      "url": "https://thiswayup.org.au/what-we-treat/chronic-pain",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Online course"
+        ]
+      },
+      "description": "This Way Up - online program via St Vincent's for a range of MH/wellbeing/pain/sleep issues",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://cdn.prod.website-files.com/68195d9cd401f8dddabc7b11/683638fd7d218c42cb2bed02_THIS-WAY-UP_Clinician-Referral-Letter.pdf",
+        "https://www.anzca.edu.au/getContentAsset/d94f994b-0e35-40c8-a3e1-93d8caed0cc4/80feb437-d24d-46b8-a858-4a2a28b9b970/Acute-Pain-Management_-Scientific-Evidence-5th-edition-(2020)-(1).PDF?language=en&amp;view=1#page"
+      ],
+      "page_date": "2000-01-01",
+      "has_content": true
+    },
+    {
+      "id": "chronicpainaustralia-org-au__9e88ff36",
+      "title": "Chronic Pain Australia",
+      "url": "https://chronicpainaustralia.org.au/",
+      "domains": [
+        "symptoms",
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ],
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "All domains, hotline, video resources, podcasts",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "chronicpainaustralia-org-au__14e0fdbf",
+      "title": "Chronic Pain Australia",
+      "url": "https://chronicpainaustralia.org.au/resources",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All domains, hotline, video resources, factsheets",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "chronicpainaustralia-org-au__19b8c0e7",
+      "title": "Chronic Pain Australia Forum",
+      "url": "https://chronicpainaustralia.org.au/community-forum",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Online support network",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "tga-gov-au__e0ea3dac",
+      "title": "Chronic pain management video resource - Brainman",
+      "url": "https://www.tga.gov.au/resources/explore-topic/prescription-opioids-hub/chronic-pain-management-video-resource-brainman",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Everyone agrees that pain is a universal human experience. We now know that pain is 100% of the time produced by the brain. This includes all pain, no matter how it feels − sharp, dull, strong or mild − and no matter how long you've had it. You might've had it for a few weeks or months. This is call",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2022-06-21",
+      "has_content": true
+    },
+    {
+      "id": "psoriasisaustralia-org-au__6317ebd6",
+      "title": "Chronic Plaque Psoriasis Research Trial (24 WEEKS)",
+      "url": "https://psoriasisaustralia.org.au/",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://psoriasisaustralia.org.au/wp-content/uploads/2022/08/Mental-Health-Report_eng.pdf"
+      ],
+      "page_date": "2024-11-16",
+      "has_content": true
+    },
+    {
+      "id": "apps-apple-com__1c025271",
+      "title": "Clara App - AppÂ Store",
+      "url": "https://apps.apple.com/au/app/clara/id6497716291",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "All domains. App: Clara is an innovative AI-powered app developed by The Arthritis Movement (TAM) to help individuals manage their arthritis more effectively. Built through extensive consultation with the community, Clara is designed to address the real-life challenges of living with arthritis",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-08-07",
+      "has_content": true
+    },
+    {
+      "id": "creakyjoints-org-au__f329c5ce",
+      "title": "Classifications of Arthritis",
+      "url": "https://creakyjoints.org.au/education/classifications_of_arthritis",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Classifications of Arthritis At CreakyJoints Australia, we believe the more you know about your type of arthritis, the better you can manage it. There are over 100 types of arthritis, and we have covered some of the most common types below. Learn about the different arthritis diseases, including the",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2020-10-13",
+      "has_content": true
+    },
+    {
+      "id": "sleephealthfoundation-org-au__94dc94e7",
+      "title": "Cognitive Behavioural Therapy for Insomnia (CBT-I)",
+      "url": "https://www.sleephealthfoundation.org.au/sleep-disorders/cognitive-behavioural-therapy-for-insomnia-cbt-i",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Sleep"
+        ]
+      },
+      "description": "Summary Things you should know: - CBT-I (Cognitive Behavioural Therapy for Insomnia) is a proven and recommended treatment for insomnia. - It uses different methods, like learning about sleep, changing habits, and changing thoughts. - CBT-I works well for people with or without other health problems",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://cdn.prod.website-files.com/64b4b7e38dda973fdbb7faf2/65a06e17847dd75ba3a2e2d9_Cognitive%20Behavioural%20Therapy%20for%20Insomnia%20(CBT-I).pdf"
+      ],
+      "page_date": "2025-11-20",
+      "has_content": true
+    },
+    {
+      "id": "paintrainer-org__0928fc4c",
+      "title": "Confirm your location",
+      "url": "https://www.paintrainer.org/login-to-paintrainer",
+      "domains": [
+        "symptoms",
+        "programs"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "programs": [
+          "Online course"
+        ]
+      },
+      "description": "Multiple domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2021-11-09",
+      "has_content": true
+    },
+    {
+      "id": "chf-org-au__db53b74d",
+      "title": "Consumers Health Forum of Australia",
+      "url": "https://www.chf.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Advocacy:CHF is the national peak body working to achieve safe, quality, timely healthcare and improved understanding of our health system for all Australians",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-23",
+      "has_content": true
+    },
+    {
+      "id": "apps-apple-com__8811092c",
+      "title": "Drugs.com Medication Guide App - App Store",
+      "url": "https://apps.apple.com/us/app/drugs-com-medication-guide/id599471042",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "Drugs.com Health and Medication guide, The Drugs.com Drug Information Database is powered by several independent leading medical-information suppliers, including; American Society of Health-System Pharmacists, Cerner Multum and Micromedex. Individual drug (or drug-class) content compiled by these sources is peer reviewed and delivered by Drugs.com.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2023-08-08",
+      "has_content": true
+    },
+    {
+      "id": "eatforhealth-gov-au__e378f0fa",
+      "title": "Eat for health. Australian Government. Aboriginal and TSI",
+      "url": "https://www.eatforhealth.gov.au/sites/default/files/2022-09/FINAL_ATSI_Guide_to_Healthy_Eating_A4_size_double_sided_POSTER_D15_1106141.PDF",
+      "domains": [
+        "wellbeing",
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Culturally adapted materials"
+        ],
+        "wellbeing": [
+          "Health eating"
+        ]
+      },
+      "description": "Aboriginal and TSI resource",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "embracementalhealth-org-au__4ffede06",
+      "title": "Embrace Multicultural Mental Health - Home",
+      "url": "https://embracementalhealth.org.au/",
+      "domains": [
+        "wellbeing",
+        "language"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Mental wellbeing (stress, mindfulness, resilience)"
+        ],
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Multicultural Mental Health Support",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2024-03-07",
+      "has_content": false
+    },
+    {
+      "id": "emerge-org-au__2f4c83e7",
+      "title": "Emerge Australia - National Australian not-for-profit organisation for",
+      "url": "https://emerge.org.au/",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Multiple domains including carers, hotline and information for : Myalgic encephalomyelitis/chronic fatigue syndrome",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-06-19",
+      "has_content": true
+    },
+    {
+      "id": "everyaustraliancounts-com-au__ec6e4575",
+      "title": "Every Australian Counts – Getting the NDIS back on track",
+      "url": "https://everyaustraliancounts.com.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Welcome Every Australian Counts is the grassroots campaign that fought for the introduction of the NDIS – and won. We are a community of hundreds of thousands of people with disability, our families and carers and those who support us, all working together to fight for a fair go for Australians with",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-05-18",
+      "has_content": false
+    },
+    {
+      "id": "mycommunitydirectory-com-au__e68b5aab",
+      "title": "Everything you need local is a click away",
+      "url": "https://www.mycommunitydirectory.com.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "ï»¿ local is a click away Discover Your Local Community Directory We need your location to provide local information Explore Catogories Proudly Supported by: Find Local Services Across Australia My Community Directory lists organisations that provide services that are free or subsidised to the publi",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "exerciseright-com-au__ecb08261",
+      "title": "Exercise Right | Expert Exercise & Health Advice",
+      "url": "https://exerciseright.com.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "Not sure how to exercise right? Find a trusted accredited exercise professional near you to kickstart healthier habits Not sure how to exercise right? Find a trusted accredited exercise professional near you to kickstart healthier habits Learn how to exercise right Connect with a trusted exercise pr",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://exerciseright.com.au/wp-content/uploads/2025/10/ER-Factsheet-Acquired-Brain-Injury.pdf#new_tab",
+        "https://exerciseright.com.au/wp-content/uploads/2025/10/ER-Factsheet-Anxiety.pdf#new_tab",
+        "https://exerciseright.com.au/wp-content/uploads/2025/10/ER-Factsheet-Arthritis.pdf#new_tab"
+      ],
+      "page_date": "2026-06-01",
+      "has_content": true
+    },
+    {
+      "id": "735055-us25-myftpupload-com__4a33dbfb",
+      "title": "Factsheets - Exercise is Medicine Australia",
+      "url": "https://735055.us25.myftpupload.com/resources/factsheets",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "Exercise is Medicine® (EIM) is a global initiative lead by the American College of Sports Medicine (ACSM). EIM Australia is managed by Exercise & Sports Science Australia (ESSA).",
+      "audiences": [
+        "Healthcare professional",
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://exerciseismedicine.org.au/wp-content/uploads/2018/06/Aborigonal-health-CHD_final.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2018/06/EIM-Factsheet_Kidney-Disease-and-Exercise-in-ATSI_October-2016-1.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2018/06/T2DM-Aboriginal-Health_WEB.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2022/03/EIM-FactSheet_ABI_Prof_2022.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2022/03/EIM-FactSheet_ABI_Public_2022.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2018/06/2014-Alzheimers-Disease-FULL.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2018/06/2014-Alzheimers-Disease-BRIEF.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2022/05/EIM-FactSheet_Anxiety_Prof_2022.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2022/05/EIM-FactSheet_Anxiety_Public_2022.pdf",
+        "https://exerciseismedicine.org.au/wp-content/uploads/2018/06/2014-Asthma-FULL.pdf"
+      ],
+      "page_date": "2022-06-15",
+      "has_content": true
+    },
+    {
+      "id": "act-gov-au__2e3ef758",
+      "title": "Find a health service",
+      "url": "https://www.act.gov.au/health/find-a-health-service-or-short-term-support/find-a-health-service",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Find a health service This page has links to health services in the ACT. For serious illness or injury requiring urgent attention, call tripe zero 000 or go to your nearest Emergency Department. Canberra Health Services Canberra Health Services offer inpatient and outpatient services at locations ac",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2022-06-17",
+      "has_content": true
+    },
+    {
+      "id": "health-tas-gov-au__c72f66cf",
+      "title": "Find a health service",
+      "url": "https://www.health.tas.gov.au/service-finder",
+      "domains": [
+        "wellbeing",
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ],
+        "wellbeing": [
+          "Lifestyle factors (Alcohol, smoking, sleep)"
+        ]
+      },
+      "description": "www.tas.gov.au Report a concern Emergency Contacts Report a concern Department of Health Contact us Topics Hospitals and health services Powered by Translate Select LanguageEnglishAfrikaansAlbanianArabicArmenianAzerbaijaniBasqueBelarusianBengaliBosnianBulgarianCatalanCebuanoChinese (Simplified)Chine",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2022-12-09",
+      "has_content": true
+    },
+    {
+      "id": "qld-gov-au__19107d8d",
+      "title": "Find a health service - qld.gov.au",
+      "url": "https://www.qld.gov.au/health/contacts/service-finder",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Find a health service To find a health service, choose one of the categories listed below. This will display related health care facilities (private and public) in a list, and marked on a map. You can then choose a facility to see more information, search by postcode or suburb, or search a different",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2018-04-18",
+      "has_content": true
+    },
+    {
+      "id": "tga-gov-au__d3e1349e",
+      "title": "Find information about a medicine",
+      "url": "https://www.tga.gov.au/resources/consumer-information-and-resources/medicines-safety-and-general-information-consumers/find-information-about-medicine",
+      "domains": [
+        "self-management"
+      ],
+      "tags": {
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "TGA medication information for consumers",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2022-07-20",
+      "has_content": true
+    },
+    {
+      "id": "creakyjoints-org-au__13ba2d59",
+      "title": "Finding A Peer Support Group",
+      "url": "https://creakyjoints.org.au/support/arthritis-support-groups",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "How to find a support group",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2022-04-27",
+      "has_content": true
+    },
+    {
+      "id": "rheumatology-org-au__ac7527d0",
+      "title": "For Patients",
+      "url": "https://rheumatology.org.au/For-Patients",
+      "domains": [
+        "self-management"
+      ],
+      "tags": {
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "All domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "fraxplus-org__1c5395fa",
+      "title": "Frax Calculator",
+      "url": "https://www.fraxplus.org/calculation-tool",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Osteoporosis risk fracture tool",
+      "audiences": [
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "nsw-gov-au__ed308271",
+      "title": "Get Healthy Service",
+      "url": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/gethealthyservice",
+      "domains": [
+        "wellbeing",
+        "services"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Lifestyle factors (Alcohol, smoking, sleep)"
+        ],
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Health Coaching",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-03-16",
+      "has_content": true
+    },
+    {
+      "id": "nsw-gov-au__5555b61b",
+      "title": "Getting started with physical activity",
+      "url": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/getting-active/getting-started-physical-activity",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "Getting started with physical activity Being active supports your physical and mental wellbeing. These tips can help you and the whole family get started with physical activity. Ways to add more activity to your day You don’t need a gym or special equipment to move more and feel better. Small change",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-10-16",
+      "has_content": true
+    },
+    {
+      "id": "servicesaustralia-gov-au__3c6062cc",
+      "title": "Getting support if you’re caring for someone",
+      "url": "https://www.servicesaustralia.gov.au/getting-support-if-youre-caring-for-someone?context=60097",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "on this page Support for carers Caring for someone can be life changing and it’s important to know there’s support available. We have payments available if you provide ongoing care for someone in need. These payments depend on your circumstances and those of the person you care for. Read about getti",
+      "audiences": [
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-05-21",
+      "has_content": true
+    },
+    {
+      "id": "service-nsw-gov-au__edb68aff",
+      "title": "Health and care",
+      "url": "https://www.service.nsw.gov.au/services/health-and-care",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Mental health, safety and crisis support Popular Medical care and advice Immunisation and vaccination - Get vaccinated through the National Immunisation Program - COVID-19 help - Get proof of your COVID-19 vaccination (Services Australia) - Get a free Japanese encephalitis vaccination Concessions an",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2019-03-15",
+      "has_content": true
+    },
+    {
+      "id": "qld-gov-au__d7980ca2",
+      "title": "Health and wellbeing - qld.gov.au",
+      "url": "https://www.qld.gov.au/health",
+      "domains": [
+        "understanding",
+        "programs"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ],
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Staying healthy Information about healthy lifestyle including nutrition, fitness, men's health, women's health, alcohol, smoking and drug use, food safety, sun safety and community health programs. Conditions, treatments and health checks Information about conditions, treatments and health checks to",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2018-03-22",
+      "has_content": true
+    },
+    {
+      "id": "heartfoundation-org-au__8f24e4be",
+      "title": "Health for every heart by 2050",
+      "url": "https://www.heartfoundation.org.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Health eating"
+        ]
+      },
+      "description": "Nutrition, weight management, BMI calculator",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-03-13",
+      "has_content": true
+    },
+    {
+      "id": "safetyandquality-gov-au__90cfa57c",
+      "title": "Health Professionals | Australian Commission on Safety and Quality in Health Care",
+      "url": "https://www.safetyandquality.gov.au/",
+      "domains": [
+        "symptoms",
+        "self-management"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "Multiple domains : Includes medication",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-03-01",
+      "has_content": true
+    },
+    {
+      "id": "healthresourcedirectory-org-au__88789986",
+      "title": "Health Resource Directory",
+      "url": "https://healthresourcedirectory.org.au/en",
+      "domains": [
+        "services",
+        "language"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ],
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Navigaing health resources: providers, knowledge in Vietnamese, Arabic and Chinese",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2023-10-01",
+      "has_content": true
+    },
+    {
+      "id": "healthtranslations-vic-gov-au__a94377df",
+      "title": "Health Translations",
+      "url": "https://www.healthtranslations.vic.gov.au",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Health Translations is a free online library of high-quality translated Australian health and wellbeing information funded by the Victorian Government.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://www.wphu.org.au/wp-content/uploads/2026/03/WPHU-MMR-Campaign-Toolkit-1.pdf",
+        "https://directory.naati.com.au/wp-content/uploads/2026/03/NAATI-Campaign-Stakeholder-Kit-2026.pdf",
+        "https://content.health.vic.gov.au/sites/default/files/2026-04/ht-stakeholder-pack-march-2026-reduzed-file-size.pdf"
+      ],
+      "page_date": "2021-12-07",
+      "has_content": true
+    },
+    {
+      "id": "healthybonesaustralia-org-au__29e7a2af",
+      "title": "Healthy Bones Australia",
+      "url": "https://healthybonesaustralia.org.au/",
+      "domains": [
+        "understanding",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs",
+        "language"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "language": [
+          "Culturally adapted materials",
+          "Translated materials"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "self-management": [
+          "Monitoring symptoms"
+        ],
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Multiple subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "healthywa-wa-gov-au__3b5c6fb5",
+      "title": "HealthyWA, Western Australian Department of Health",
+      "url": "https://www.healthywa.wa.gov.au/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "self-management"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ],
+        "self-management": [
+          "When to seek help"
+        ],
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "All domains, RA, OA, AS, Pain, MSK",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": false
+    },
+    {
+      "id": "muscha-org__c660cf6c",
+      "title": "Help - Musculoskeletal Health Australia (MHA)",
+      "url": "https://muscha.org/help",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "It’s okay to ask At times you may need more support, or some help. You might need help with laundry or other household tasks, or a lift to a doctor’s appointment. Ask. Most people are very happy to help out, but we’re often too shy to ask. There are many help and support services in your local commu",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2018-06-12",
+      "has_content": true
+    },
+    {
+      "id": "livelighter-com-au__3da9367e",
+      "title": "Helping You Lead A Healthier Lifestyle",
+      "url": "https://livelighter.com.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Health eating"
+        ]
+      },
+      "description": "Practical tips and inspiration LiveLighter Blog Explore the LiveLighter blog for practical tips and inspiration from our experts. Get the feel for two wheels this October with WA Bike Month James Stevens-Cutler Let's learn Healthy habits like eating well and being active are beneficial for everyone,",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://livelighter.com.au/toolbox/download-resources"
+      ],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "asaustralia-org__9d8336ec",
+      "title": "Home",
+      "url": "https://asaustralia.org/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "programs"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "programs": [
+          "Helpline"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": true
+    },
+    {
+      "id": "asaustralia-org__1297c160",
+      "title": "Home",
+      "url": "https://asaustralia.org/qld",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Physical activity Program",
+          "Peer support"
+        ]
+      },
+      "description": "Hydrotherapy",
+      "audiences": [
+        "Patient",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": true
+    },
+    {
+      "id": "australian-physio__dbaa9d34",
+      "title": "Home",
+      "url": "https://australian.physio/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Skip to main content Search Find a physio jobs 4physios cpd 4physios.com.au classifieds 4physios shop 4physios FOCUS26 Sign in to your account Incorrect username or password Forgot your password Not a member? Join today. Returning member? Re-join today Forgot your password Not a member or returning",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-10-30",
+      "has_content": true
+    },
+    {
+      "id": "creakyjoints-org-au__6b9a21e1",
+      "title": "Home",
+      "url": "https://creakyjoints.org.au/",
+      "domains": [
+        "wellbeing",
+        "self-management",
+        "services",
+        "appointments"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Mental wellbeing (stress, mindfulness, resilience)"
+        ],
+        "self-management": [
+          "Goal setting"
+        ],
+        "services": [
+          "Government support"
+        ],
+        "appointments": [
+          "Understanding healthcare"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-12-15",
+      "has_content": true
+    },
+    {
+      "id": "movingwitharthritis-org-au__1e71e64e",
+      "title": "Home",
+      "url": "https://movingwitharthritis.org.au/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs"
+      ],
+      "tags": {
+        "symptoms": [
+          "Physical well being"
+        ],
+        "programs": [
+          "Physical activity Program",
+          "Online course",
+          "Helpline",
+          "App"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "self-management": [
+          "Monitoring symptoms"
+        ],
+        "services": [
+          "Specialty services"
+        ]
+      },
+      "description": "Videos, programs, Professional support contacts, myths about exercise, defining movement",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://arthritisaustralia.com.au/wordpress/wp-content/uploads/2022/09/Privacy-Policy-July-2022_220718.pdf"
+      ],
+      "page_date": "2024-08-01",
+      "has_content": true
+    },
+    {
+      "id": "mybackpain-org-au__62b08dca",
+      "title": "Home",
+      "url": "https://mybackpain.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "MyBackPain",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2000-01-01",
+      "has_content": true
+    },
+    {
+      "id": "lifeline-org-au__3a7f8c33",
+      "title": "Home",
+      "url": "https://www.lifeline.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Emotional wellbeing support service",
+      "audiences": [
+        "Patient",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-07-01",
+      "has_content": true
+    },
+    {
+      "id": "arthritistas-org-au__866d3165",
+      "title": "Home - Arthritis & Osteoporosis Tasmania",
+      "url": "https://arthritistas.org.au/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs",
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "self-management": [
+          "Managing medicines"
+        ],
+        "services": [
+          "Healthcare professionals"
+        ],
+        "programs": [
+          "Helpline",
+          "Online course"
+        ],
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Arabic Chinese Croation Greek Italian Korean Macedonian Persian Spanish Vietnamese",
+      "audiences": [
+        "Patient",
+        "Healthcare professional",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2026-04-10",
+      "has_content": false
+    },
+    {
+      "id": "arthritisaustralia-org-au__cf0a9656",
+      "title": "Home - Arthritis Australia",
+      "url": "https://arthritisaustralia.org.au/",
+      "domains": [
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "services",
+        "programs",
+        "appointments",
+        "language"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "self-management": [
+          "Managing medicines"
+        ],
+        "services": [
+          "Healthcare professionals"
+        ],
+        "programs": [
+          "Peer support"
+        ],
+        "appointments": [
+          "Shared decision making"
+        ],
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2026-10-15",
+      "has_content": true
+    },
+    {
+      "id": "exerciseismedicine-org-au__91a09162",
+      "title": "Home - Exercise is Medicine Australia",
+      "url": "https://exerciseismedicine.org.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "Exercise is Medicine® (EIM) is a global initiative lead by the American College of Sports Medicine (ACSM). EIM Australia is managed by Exercise & Sports Science Australia (ESSA).",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2021-08-17",
+      "has_content": true
+    },
+    {
+      "id": "feetfirstpodiatry-com-au__71af2e6a",
+      "title": "Home - Feet First Podiatry",
+      "url": "https://feetfirstpodiatry.com.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Professional health services",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-07-28",
+      "has_content": true
+    },
+    {
+      "id": "ghlf-org-au__39f548f7",
+      "title": "Home - GHLF Australia",
+      "url": "https://ghlf.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Health advocacy organisation: CreakyJoints was co-founded in 1999 by arthritis patient and advocate Seth Ginsberg (diagnosed with spondyloarthropathy at age 13) and social entrepreneur Louis Tharp. In 2007, the Global Healthy Living Foundation was established. GHLF is a 501(c)(3) not-for-profit organisation based in Upper Nyack, New York. GHLF advocates for improved access to healthcare at the community, state and federal levels, amplifying education and awareness efforts within its social media framework.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-10-31",
+      "has_content": true
+    },
+    {
+      "id": "myflareup-org__61dfc490",
+      "title": "Home - MyFlareUp",
+      "url": "https://myflareup.org/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "We are a charity of people with lived-experience of autoimmunity. A community for Rheumatoid Arthritis Practical tools to track Blood tests Educational talks Expert Speakers Sign up for regular invites and to stay informed of the topic and guest speaker for the session. As part of these talks, we ha",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-08-22",
+      "has_content": true
+    },
+    {
+      "id": "naccho-org-au__4df027cb",
+      "title": "Home - NACCHO",
+      "url": "https://www.naccho.org.au/",
+      "domains": [
+        "services",
+        "language"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ],
+        "language": [
+          "Culturally adapted materials"
+        ]
+      },
+      "description": "Financial Support Information and advocacy for abroginal and TSI",
+      "audiences": [
+        "Patient",
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://www.naccho.org.au/wp-content/uploads/2025/12/NACCHO_AnnualReport2024–25.pdf",
+        "https://www.naccho.org.au/wp-content/uploads/2024/10/NACCHO-Insights-Exploring-the-Essential-Data.pdf",
+        "https://www.naccho.org.au/wp-content/uploads/2026/01/NACCHO-Strategic-Directions_FY25-28.pdf",
+        "https://www.naccho.org.au/wp-content/uploads/2024/10/Core-Services-Outcomes-Framework-full-document.pdf",
+        "https://www.naccho.org.au/wp-content/uploads/2024/10/Naitonal-Agreement-on-Closing-the-Gap.pdf",
+        "https://www.naccho.org.au/wp-content/uploads/2024/10/National-Aboriginal-and-Torres-Strait-Islander-Health-Plan-2021-2031.pdf",
+        "https://www.naccho.org.au/wp-content/uploads/2026/03/NACCHO-Whistleblower-Protection-Policy.pdf"
+      ],
+      "page_date": "2024-09-13",
+      "has_content": true
+    },
+    {
+      "id": "painhealth-com-au__68d98b71",
+      "title": "Home - painHEALTH",
+      "url": "https://painhealth.com.au",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Pain mx course",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-06-15",
+      "has_content": true
+    },
+    {
+      "id": "pwd-org-au__6c253f6d",
+      "title": "Home - People with Disability Australia",
+      "url": "https://pwd.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Welcome to PWDA We empower, champion and celebrate people with disability. Get help Got a problem? Our team can provide information, referrals, advocacy and support. Disability rights We’re taking action to protect the legal and human rights of people with disability. Membership Join us in promoting",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2022-02-18",
+      "has_content": true
+    },
+    {
+      "id": "swapit-net-au__7554a7a4",
+      "title": "Home - SWAP IT",
+      "url": "https://www.swapit.net.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Health eating"
+        ]
+      },
+      "description": "“We have noticed a big change in some lunchboxes, which is great. The resources seemed to be appreciated by the parents and carers. We have popped everything in our newsletter, which is emailed out. We have also been posting on our Facebook page.” - School Principal “Thank you for the opportunity to",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "ehlers-danlos-com__6aedff88",
+      "title": "Home - The Ehlers Danlos Society",
+      "url": "https://www.ehlers-danlos.com/",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.ehlers-danlos.com/wp-content/uploads/2022/12/Malfait_et_al-2017-American_Journal_of_Medical_Genetics_Part_C__Seminars_in_Medical_Genetics.pdf",
+        "https://www.ehlers-danlos.com/wp-content/uploads/2021/11/Privacy_and_Cookies_Policy_March_2021.pdf"
+      ],
+      "page_date": "2026-10-09",
+      "has_content": true
+    },
+    {
+      "id": "youngpainhealth-com-au__b9b72ccc",
+      "title": "Home - young painHEALTH",
+      "url": "https://youngpainhealth.com.au/",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "self-management",
+        "programs"
+      ],
+      "tags": {
+        "understanding": [
+          "Myths and misconceptions"
+        ],
+        "self-management": [
+          "When to seek help"
+        ],
+        "symptoms": [
+          "Pain"
+        ],
+        "wellbeing": [
+          "Lifestyle factors (Alcohol, smoking, sleep)"
+        ],
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Back pain, neck pain, CRPS, Hypermobility syndrome, Juvenile arthritis, chronic pain. Stories, conditions, management, many domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2023-05-18",
+      "has_content": true
+    },
+    {
+      "id": "fallspreventionalliance-org-au__fbcbf1dc",
+      "title": "HOME PAGE | Falls Prevention Alliance Australia",
+      "url": "https://www.fallspreventionalliance.org.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "top of page Falls Prevention Alliance Australia Together, we can promote healthy ageing to prevent falls. We are an alliance of community organisations, professionals, and individuals dedicated to reducing falls among Australians aged 65+. By uniting stakeholders, we drive collective action, advocat",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-01-01",
+      "has_content": true
+    },
+    {
+      "id": "da-org-au__5de875e7",
+      "title": "Home | Disability Advocacy NSW",
+      "url": "https://www.da.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Health advocacy organisations",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-02-13",
+      "has_content": true
+    },
+    {
+      "id": "activeandhealthy-nsw-gov-au__57e61f08",
+      "title": "Home » NSW Health",
+      "url": "https://www.activeandhealthy.nsw.gov.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Physical activity Program"
+        ]
+      },
+      "description": "Exercise Program NSW",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "carergateway-gov-au__959b462f",
+      "title": "Homepage",
+      "url": "https://www.carergateway.gov.au/",
+      "domains": [
+        "services",
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ],
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Fact sheets videos radio in multiple languages",
+      "audiences": [
+        "Carer"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2024-06-01",
+      "has_content": true
+    },
+    {
+      "id": "carersnsw-org-au__f59a7dde",
+      "title": "Homepage",
+      "url": "https://www.carersnsw.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Carers NSW is the dedicated Carer Gateway Service Provider across Hunter New England, the Central Coast and North Coast of NSW. Live in another area? You can still get support. Click here or call 1800 422 737. A central resource for future planning information and resources to support carers to plan",
+      "audiences": [
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.carersnsw.org.au/uploads/main/Files/3.Resources/Carer/NDIS-Changes-Fact-Sheet_Sept-2026.pdf",
+        "https://www.carersnsw.org.au/uploads/main/260336-EB-Carers-NSW_Updated-FAQ-Sheet_Vietnamese_FA.pdf"
+      ],
+      "page_date": "2019-08-06",
+      "has_content": true
+    },
+    {
+      "id": "health-vic-gov-au__b9f31fb2",
+      "title": "Hospitals & health services",
+      "url": "https://www.health.vic.gov.au/hospitals-health-services",
+      "domains": [
+        "services",
+        "appointments"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ],
+        "appointments": [
+          "Understanding healthcare"
+        ]
+      },
+      "description": "Victoria has over 300 hospitals and health services, including large public and private hospitals, rural and regional health services, specialist mother and child hospitals and small specialist rehabilitation and psychiatric hospitals. Victorian hospital and health services are committed to deliveri",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2015-10-05",
+      "has_content": true
+    },
+    {
+      "id": "healthtranslations-vic-gov-au__ab8406d0",
+      "title": "How to use medicines correctly",
+      "url": "https://www.healthtranslations.vic.gov.au/resources/how-to-use-medicines-correctly",
+      "domains": [
+        "self-management",
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Assyrian"
+        ],
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "Assyrian medicines",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [
+        "Assyrian"
+      ],
+      "translated": false,
+      "doc_links": [
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/TheCorrectUseOfMedicines_2023_Web.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Amharic_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Arabic_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Assyrian_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Burmese_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Hakha-Chin_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Dari_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Farsi_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Hazaragi_WEB.pdf",
+        "https://www.ceh.org.au/wp-content/uploads/2023/04/Correct_use_of_medicines_Karen_WEB.pdf"
+      ],
+      "page_date": "2016-06-29",
+      "has_content": false
+    },
+    {
+      "id": "gladaustralia-com-au__d7be62d7",
+      "title": "Information for Participants - GLA:D AU",
+      "url": "https://gladaustralia.com.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "All subdomains and multiple domains. Video and events. Education and supervised exercise programs for people with hip and knee osteoarthritis",
+      "audiences": [
+        "Patient",
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://gladaustralia.com.au/wp-content/uploads/2025/12/INTRODUCTION_TO_GLAD_AUSTRALIA_Updated_December_2025.pdf"
+      ],
+      "page_date": "2026-09-30",
+      "has_content": true
+    },
+    {
+      "id": "cec-health-nsw-gov-au__db50d7c8",
+      "title": "Information for patients, carers and families",
+      "url": "https://cec.health.nsw.gov.au/safety-essentials/comprehensive-care/patient-information",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "General topic mostly outside the scope of MSK byt falls prevention useful for osteoporosis and ageing",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://cdn.activeandhealthy.nsw.gov.au/assets/Healthy-ageing-resources/Falls-prevention.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0003/258546/Falls-Prevention-For-maternity-services.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0003/299532/Be-careful.-Babies-can-fall-poster.pdf",
+        "https://cdn.activeandhealthy.nsw.gov.au/assets/Healthy-ageing-resources/Eye-health.pdf",
+        "https://cdn.activeandhealthy.nsw.gov.au/assets/Healthy-ageing-resources/Bladder-and-bowel-health.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0008/349127/Falls-Prevention-Moving-Around-Safely-in-Hospital.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0007/259288/Pressure-Injury-Prevention-Information-for-Patients-and-Families-English.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0009/259281/arabic-pipp.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0003/259284/greek-pipp.pdf",
+        "https://cec.health.nsw.gov.au/__data/assets/pdf_file/0004/259285/hindi-pipp.pdf"
+      ],
+      "page_date": "2026-07-10",
+      "has_content": true
+    },
+    {
+      "id": "jeanhailes-org-au__993e89c8",
+      "title": "Jean Hailes | Driving better health for women in Australia",
+      "url": "https://www.jeanhailes.org.au/",
+      "domains": [
+        "understanding",
+        "wellbeing",
+        "services",
+        "appointments",
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ],
+        "appointments": [
+          "Before my appointment"
+        ],
+        "services": [
+          "Healthcare professionals"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "All domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://www.jeanhailes.org.au/wp-content/uploads/2026/01/Perimenopause-and-menopause-symptom-checklist_TGD.pdf"
+      ],
+      "page_date": "2026-10-29",
+      "has_content": true
+    },
+    {
+      "id": "rheumatology-org__6b3780cd",
+      "title": "Joint Replacement Surgery",
+      "url": "https://rheumatology.org/patients/joint-replacement-surgery",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All domains: USA site preparing for joint replacement",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://assets.contentstack.io/v3/assets/bltee37abb6b278ab2c/blt5cd30355f32ebadc/patient-fact-sheet-instructions.pdf"
+      ],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "jafa-org-au__4e1f2abf",
+      "title": "Juvenile Arthritis Foundation Australia - JAFA",
+      "url": "https://www.jafa.org.au",
+      "domains": [
+        "understanding",
+        "services",
+        "language"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ],
+        "language": [
+          "Culturally adapted materials",
+          "Translated materials"
+        ],
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient",
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://www.jafa.org.au/wp-content/uploads/2026/10/Media-release_JAFA-Australian-Data-Why-Months-Matter-on-WAD_Embargo12Oct.pdf",
+        "https://www.jafa.org.au/wp-content/uploads/2026/10/Australian-Juvenile-Arthritis-Registry-Progress-report-2026-Final-Online.pdf",
+        "https://www.jafa.org.au/wp-content/uploads/2026/03/JAFA-Privacy-Policy-2026.pdf",
+        "https://www.jafa.org.au/wp-content/uploads/2026/03/Statement-of-Commitment-to-Child-Safety.pdf"
+      ],
+      "page_date": "2026-10-26",
+      "has_content": true
+    },
+    {
+      "id": "knowyourbones-org-au__98f899be",
+      "title": "Know Your Bones - Self Assess Your Bone Health Now!",
+      "url": "https://www.knowyourbones.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Bone Health Assessment Tool for Consumers",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-10-07",
+      "has_content": true
+    },
+    {
+      "id": "lupusvoiceaustralia-org-au__0f1fce99",
+      "title": "Lupus Voice Australia",
+      "url": "https://www.lupusvoiceaustralia.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Our website is coming soon. Lupus Voice Australia is a national advocacy, awareness and support initiative bringing together lived experience, clinical insight and community connection for people living with lupus across Australia. Follow Lupus Voice Australia on Facebook Updates, advocacy news and",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": true
+    },
+    {
+      "id": "headspace-com__d4d7a6fa",
+      "title": "Mental Wellness App: Meditation & Sleep - Headspace",
+      "url": "https://www.headspace.com/app",
+      "domains": [
+        "symptoms",
+        "programs"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "programs": [
+          "Online course",
+          "App"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-02-24",
+      "has_content": true
+    },
+    {
+      "id": "health-nsw-gov-au__9fb905e9",
+      "title": "Multicultural health - NSW Health Care Interpreting Services",
+      "url": "https://www.health.nsw.gov.au/multicultural/Pages/health-care-interpreting-and-translating-services.aspx",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Interpreting service",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://www.health.nsw.gov.au/multicultural/Documents/hcis-summary-poster.pdf"
+      ],
+      "page_date": "2024-08-12",
+      "has_content": true
+    },
+    {
+      "id": "mhcs-health-nsw-gov-au__f72677c8",
+      "title": "Multicultural Health Communication Service",
+      "url": "https://www.mhcs.health.nsw.gov.au/",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Translated health information, publications, videos and other resources for culturally and linguistically diverse communities.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "muscha-org__6b50ee81",
+      "title": "Musculoskeletal Health Australia (MHA)",
+      "url": "https://muscha.org/",
+      "domains": [
+        "self-management",
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline",
+          "Peer support"
+        ],
+        "self-management": [
+          "Daily activities"
+        ]
+      },
+      "description": "All domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.safetyandquality.gov.au/sites/default/files/2024-07/Partnering-with-Consumers-A-guide-for-consumers.pdf"
+      ],
+      "page_date": "2024-06-04",
+      "has_content": true
+    },
+    {
+      "id": "healthsciences-unimelb-edu-au__d4355f27",
+      "title": "My Knee Exercise",
+      "url": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/my-knee-exercise",
+      "domains": [
+        "symptoms",
+        "wellbeing",
+        "programs"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ],
+        "programs": [
+          "Online course"
+        ],
+        "symptoms": [
+          "Physical well being"
+        ]
+      },
+      "description": "My Knee Exercise, 6 month program for knee OA. Centre for Health, Exercise & Sports Medicine (CHESM) at the University of Melbourne are excited to announce the release of My Knee Exercise",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2020-11-26",
+      "has_content": true
+    },
+    {
+      "id": "myjoint-taichi-org__a5c1d640",
+      "title": "MyJoint Tai Chi",
+      "url": "https://myjoint-taichi.org/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": ". My Joint Tai Chi is a free 12-week Tai Chi exercise program to help people with knee or hip pain and knee or hip osteoarthritis manage their symptoms. . The program is evidence-based and designed by researchers at the University of Melbourne, physiotherapists, Tai Chi experts and people with lived",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-03-20",
+      "has_content": true
+    },
+    {
+      "id": "nass-co-uk__00152af8",
+      "title": "National AS Society (UK)",
+      "url": "https://www.nass.co.uk",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Multiple domains, UK AS site",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "about-healthdirect-gov-au__2122c97b",
+      "title": "National Health Services Directory",
+      "url": "https://about.healthdirect.gov.au/what-we-do/portfolio/nhsd",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "About the NHSD Learn how the NHSD supports digital health by gathering health service information and making it easily accessible. The National Health Services Directory (NHSD) is a comprehensive, national directory of health services and practitioners. It is funded by the governments of Australia a",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "ntphn-org-au__ffe65f72",
+      "title": "Northern Territory PHN",
+      "url": "https://ntphn.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Primary Health Network for the Northern Territory Rural Workforce Unlike other Primary Health Networks, we have a rural workforce agency. The Rural Workforce Agency NT attracts, recruits, and supports health professionals working across regional and remote communities in the NT. Support programs inc",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://ntphn.org.au/wp-content/uploads/2024/11/Privacy-Policy.pdf"
+      ],
+      "page_date": "2024-04-16",
+      "has_content": true
+    },
+    {
+      "id": "nutritionfacts-org__edcd56ad",
+      "title": "NutritionFacts.org | The Latest in Nutrition Related Research",
+      "url": "https://nutritionfacts.org/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Health eating"
+        ]
+      },
+      "description": "Who profits off healthful eating and lifestyle changes? You. When was the last time you saw an ad for apples or a billboard for broccoli? The system is set up to promote pills, not produce. NutritionFacts.org is a science-based nonprofit charity committed to bringing the medical literature to you, b",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2012-11-08",
+      "has_content": true
+    },
+    {
+      "id": "myoa-org-au__f4a5d9d3",
+      "title": "Osteoarthritis Arthritis (OA) support program - homepage",
+      "url": "https://myoa.org.au/",
+      "domains": [
+        "understanding",
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Osteoarthritis Support Program",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-09-01",
+      "has_content": true
+    },
+    {
+      "id": "aci-health-nsw-gov-au__58a05d2c",
+      "title": "Osteoarthritis Chronic Care Program",
+      "url": "https://aci.health.nsw.gov.au/networks/musculoskeletal/resources/osteoarthritis-chronic-care",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0003/165306/ACI-MSK-Osteoarthritis-chronic-care-program-MOC.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0013/570010/ACI-LBVC-Osteoarthritis-chronic-care-program-clinical-priorities.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0014/570011/ACI-LBVC-Osteoarthritis-chronic-care-program-organisational-model.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0004/983479/ACI-Key-facts-about-osteoarthritis.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0005/983480/ACI-Plan-for-living-well-with-osteoarthritis.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0007/983482/ACI-Role-of-joint-replacement-surgery.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0006/983481/ACI-Planning-for-joint-replacement-surgery.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0006/390057/ACI-LBVC-Osteoarthritis-chronic-care-program-site-manual.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0006/570867/ACI-LBVC-Osteoarthritis-chronic-care-program-assessment-tool.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0004/487633/ACI-LBVC-Osteoarthritis-chronic-care-program-monitoring-evaluation-plan.pdf"
+      ],
+      "page_date": "2025-12-01",
+      "has_content": true
+    },
+    {
+      "id": "aci-health-nsw-gov-au__921b7f61",
+      "title": "Our Mob",
+      "url": "https://aci.health.nsw.gov.au/chronic-pain/our-mob",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Culturally adapted materials"
+        ]
+      },
+      "description": "Aboriginal and TSI resource",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0003/414192/ACI-Our-mob-Aunty-Annettes-story.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0004/414193/ACI-Our-mob-Brendas-story.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0005/414194/ACI-Our-mob-Micks-story.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0006/414195/ACI-Our-mob-Nickis-story.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0007/414196/ACI-Our-mob-Uncle-Micks-story.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0011/407756/ACI-What-chronic-pain-our-mob.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0003/407757/ACI-Our-mob-start-moving-keep-moving.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0004/407758/ACI-Sleep-our-mob.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0005/407759/ACI-Our-mob-get-help.pdf",
+        "https://aci.health.nsw.gov.au/__data/assets/pdf_file/0006/407760/ACI-Healthy-eating-normal-our-mob.pdf"
+      ],
+      "page_date": "2017-06-07",
+      "has_content": true
+    },
+    {
+      "id": "nice-org-uk__90e2e599",
+      "title": "Overview | Joint replacement (primary): hip, knee and shoulder | Guidance | NICE",
+      "url": "https://www.nice.org.uk/guidance/NG157",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All domains: UK site preparing for joint replacement",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2020-06-04",
+      "has_content": true
+    },
+    {
+      "id": "painaustralia-org-au__41f02bb0",
+      "title": "Pain Australia",
+      "url": "https://www.painaustralia.org.au/static/uploads/files/painaust-factsheet10-final-wfbdhlqkosbm.pdf",
+      "domains": [
+        "symptoms",
+        "programs"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "programs": [
+          "Online course"
+        ]
+      },
+      "description": "Self Management in Pain",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "paintoolkit-org__c5ab05a8",
+      "title": "Pain Self Management by Pete Moore - Pain Toolkit",
+      "url": "https://www.paintoolkit.org/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Online course"
+        ]
+      },
+      "description": "Multipl domains. Pain course. Toolkit.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-07-30",
+      "has_content": true
+    },
+    {
+      "id": "healthdirect-gov-au__545929d2",
+      "title": "Pain-relief medicines",
+      "url": "https://www.healthdirect.gov.au/pain-relief-medicines",
+      "domains": [
+        "self-management"
+      ],
+      "tags": {
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "Consumer Medication Information",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.pbs.gov.au/publication/schedule/2025/04/2025-04-01-general-schedule-volume-1.pdf",
+        "https://www.anzca.edu.au/getContentAsset/4e02b985-9852-426f-aa16-b7f06ac2725a/80feb437-d24d-46b8-a858-4a2a28b9b970/Celecoxib-guidelines-May-2024.pdf?language=en",
+        "https://media.healthdirect.org.au/publications/Clinical-Governance-and-Quality-Framework.pdf?vFY24"
+      ],
+      "page_date": "2025-08-07",
+      "has_content": true
+    },
+    {
+      "id": "creakyjoints-org-au__6cdc854c",
+      "title": "Patient PrepRheum Podcast - Creakyjoints Australia",
+      "url": "https://creakyjoints.org.au/patientpreprheum",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Podcasts for patients: PATIENT PREPRHEUM",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2025/10/PPR-S4-Ep-1-transcript-Prof-Morand.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2025/11/PPR-S4-Ep-2-transcript-Julie-Norris.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2025/07/Patient-PrepRheum-Season-3-Ep-1-transcript-Understanding-AxSpA-Diagnosis-and-Treatment-1.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2025/07/Patient-PrepRheum-Season-3-Ep-2-transcript-The-Role-Of-Inflammation-in-AxSpA-and-its-Comorbidities.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2025/08/Patient-PrepRheum-Season-3-Ep-3-transcript-Managing-Daily-Life-and-Self-Care-with-axSpA.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2024/07/Patient-PrepRheum-Season-2-Episode-1-transcript.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2024/07/Patient-PrepRheum-Season-2-Episode-2-transcript.pdf",
+        "https://creakyjoints.org.au/wp-content/uploads/sites/2/2024/07/Patient-PrepRheum-Season-2-Episode-3-transcript.pdf"
+      ],
+      "page_date": "2026-01-19",
+      "has_content": true
+    },
+    {
+      "id": "racgp-org-au__414cb02e",
+      "title": "Patient Resources",
+      "url": "https://www.racgp.org.au/clinical-resources/clinical-guidelines/handi/patient-resources",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains and multiple domains: patient resources on back pain, OA, prevention and rehab and pain management",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.racgp.org.au/FSDEDEV/media/documents/Recruit-GP-cheat-sheet.pdf"
+      ],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "anzca-edu-au__5c7363aa",
+      "title": "Patient resources - ANZCA",
+      "url": "https://www.anzca.edu.au/patient-information/about-pain-medicine/patient-resources",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Pain mx course",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.anzca.edu.au/getContentAsset/47352450-83bd-4f49-9092-7653c7b1a2b3/80feb437-d24d-46b8-a858-4a2a28b9b970/Privacy_Policy.pdf?language=en&amp;view=1"
+      ],
+      "page_date": "2025-10-20",
+      "has_content": true
+    },
+    {
+      "id": "au-physiapp-com__056e3f93",
+      "title": "PhysiApp®",
+      "url": "https://au.physiapp.com/login",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "App prescribed to patients by Healthcare professionals and the patient must have a program code",
+      "audiences": [
+        "Healthcare professional",
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "who-int__76734725",
+      "title": "Physical activity",
+      "url": "https://www.who.int/initiatives/behealthy/physical-activity",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Physical activity"
+        ]
+      },
+      "description": "Physical activity Being physically active helps all people, no matter their age, lead healthier lives. Some physical activity is better than doing none. By being more active throughout the day in relatively simple ways, people can quite easily achieve the recommended activity levels. Below are the l",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "360-org-au__0ab07e49",
+      "title": "Physical and Mental Health Support in WA | 360 Health and Community",
+      "url": "https://www.360.org.au/",
+      "domains": [
+        "symptoms",
+        "services",
+        "programs"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ],
+        "programs": [
+          "Online course"
+        ],
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Health and community services for western australia",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2015-04-15",
+      "has_content": true
+    },
+    {
+      "id": "jointaction-info__79d08b80",
+      "title": "Podcast | Joint Action",
+      "url": "https://www.jointaction.info/podcast",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Podcast: Joint Action (OA)",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2000-01-01",
+      "has_content": false
+    },
+    {
+      "id": "apps-apple-com__24049b76",
+      "title": "Point of Care App App - AppÂ Store",
+      "url": "https://apps.apple.com/au/app/point-of-care-app/id1108787701",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "Carers. App Caremerge point of care is clinical and non clinical users in aged and assisted living settings documented health and wellness information in real time",
+      "audiences": [
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-12-01",
+      "has_content": true
+    },
+    {
+      "id": "mypsoriaticarthritis-org-au__e78157a2",
+      "title": "Psoriatic Arthritis (PsA) support program",
+      "url": "https://mypsoriaticarthritis.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Psoriatic Arthritis Support Program",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2021-01-01",
+      "has_content": true
+    },
+    {
+      "id": "rarevoices-org-au__209bc46c",
+      "title": "Rare Disease Disability Toolkit - Rare Voices Australia",
+      "url": "https://rarevoices.org.au/rare-disease-disability-project/rare-disease-disability-toolkit",
+      "domains": [
+        "services",
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports",
+          "Peer support"
+        ],
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Toolkit",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-16",
+      "has_content": true
+    },
+    {
+      "id": "apps-apple-com__42f590f9",
+      "title": "Reminders App - App Store",
+      "url": "https://apps.apple.com/us/app/reminders/id1108187841",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "Remider App for anyone",
+      "audiences": [
+        "Patient",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-11-09",
+      "has_content": true
+    },
+    {
+      "id": "rheumabuddy-com__88bd0d60",
+      "title": "RheumaBuddy - RheumaBuddy",
+      "url": "https://rheumabuddy.com/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "App"
+        ]
+      },
+      "description": "Launched in 2014 and used by 30,000+ patients in more than 35 countries Create an overview of your rheumatoid arthritis. Day by day. Discover patterns and gain a greater understanding of your rheumatoid arthritis. Share your data with your rheumatologist and join an online community of other people",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-06-10",
+      "has_content": true
+    },
+    {
+      "id": "myra-org-au__af0d64cf",
+      "title": "Rheumatoid Arthritis (RA) support program - homepage",
+      "url": "https://myra.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Rheumatoid Arthritis Support Program",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2020-01-01",
+      "has_content": true
+    },
+    {
+      "id": "myra-org-nz__a775170c",
+      "title": "Rheumatoid Arthritis (RA) support program - homepage",
+      "url": "https://www.myra.org.nz/",
+      "domains": [
+        "self-management"
+      ],
+      "tags": {
+        "self-management": [
+          "Daily activities"
+        ]
+      },
+      "description": "All domains. NZ site. MyRA is designed to help people with Rheumatoid Arthritis (RA) become active participants in their journey with RA",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2023-01-01",
+      "has_content": true
+    },
+    {
+      "id": "racgp-org-au__83d97e69",
+      "title": "Royal australian college of general practioners",
+      "url": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains and multiple domains. OA",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "activeandhealthy-nsw-gov-au__0ad4e296",
+      "title": "Search Results",
+      "url": "https://www.activeandhealthy.nsw.gov.au/home/SearchForm?Search=stepping+on&action_results=Go",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Physical activity Program"
+        ]
+      },
+      "description": "Stepping On-falls prevention class NSW",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "servicedirectory-cesphn-org-au__25a5d028",
+      "title": "Select your suburb",
+      "url": "https://servicedirectory.cesphn.org.au/service_category/interpreting-services",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Interpreting service",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2019-10-22",
+      "has_content": true
+    },
+    {
+      "id": "healthdirect-gov-au__f41435da",
+      "title": "Service not found",
+      "url": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Medicines Information Line: 1300888763",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": true
+    },
+    {
+      "id": "health-wa-gov-au__31fc0bdd",
+      "title": "Services search",
+      "url": "https://www.health.wa.gov.au/Services-search",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Healthcare professionals"
+        ]
+      },
+      "description": "Services search Find your nearest health service using the National Health Services Directory (NHSD). Note: If you are using an older version of Internet Explorer (IE) this directory may not display properly. If you experience issues, try downloading Chrome (external site) to use this service. If yo",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": true
+    },
+    {
+      "id": "sahealth-sa-gov-au__254c069e",
+      "title": "Services | SA Health",
+      "url": "https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/services",
+      "domains": [
+        "understanding",
+        "symptoms",
+        "wellbeing",
+        "services",
+        "appointments"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ],
+        "understanding": [
+          "What is this condition?"
+        ],
+        "symptoms": [
+          "Physical well being"
+        ],
+        "wellbeing": [
+          "Lifestyle factors (Alcohol, smoking, sleep)"
+        ],
+        "appointments": [
+          "Understanding healthcare"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2018-10-19",
+      "has_content": true
+    },
+    {
+      "id": "benevolent-org-au__87297eee",
+      "title": "Sorry!",
+      "url": "https://www.benevolent.org.au/services-and-programs/support-for-carers",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Sorry! You do not have permission to view this page (403 Error) Head back to our home page or try one of the following links;",
+      "audiences": [
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2019-01-01",
+      "has_content": false
+    },
+    {
+      "id": "spondylitis-org__8e80378b",
+      "title": "Spondylitis Association of America - Raising Awareness of Spondyloarthritis",
+      "url": "https://www.spondylitis.org",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "USA AS site",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://spondylitis.org/wp-content/uploads/2020/02/AS_Guide_2019_WEB-compressed.pdf",
+        "https://spondylitis.org/wp-content/uploads/2020/01/Action_Plan.pdf",
+        "https://spondylitis.org/wp-content/uploads/2020/11/KK-COVID-19-Insurance-Guidebook.pdf"
+      ],
+      "page_date": "2026-10-15",
+      "has_content": true
+    },
+    {
+      "id": "arthritis-org-au__87274e6d",
+      "title": "Support & Resources For Arthritis | The Arthritis Movement",
+      "url": "https://www.arthritis.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "At The Arthritis Movement, we’re dedicated to driving progress and improving lives through innovative care, dynamic support, and relentless advocacy for those impacted by arthritis. Striding Forward We lead with innovative health services and cutting-edge solutions that empower individuals to keep m",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.arthritis.org.au/how-we-can-help/download-clara/"
+      ],
+      "page_date": "2026-10-28",
+      "has_content": true
+    },
+    {
+      "id": "sclerodermaaustralia-org-au__cdd2a71c",
+      "title": "Supporting the Scleroderma Community | Scleroderma Australia | Home",
+      "url": "https://www.sclerodermaaustralia.org.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Scleroderma or systemic sclerosis, is a chronic connective tissue condition. It is generally classified as one of the autoimmune rheumatic conditions. One of the common symptoms is the thickening or hardening of the skin. It comes from the Greek: sclero = hard, derma = skin. The term systemic sclero",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-16",
+      "has_content": true
+    },
+    {
+      "id": "facebook-com__13212d48",
+      "title": "Swell Gals ~ Arthritis Support Group | Facebook",
+      "url": "https://www.facebook.com/groups/354304834767249",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "TAM - Swell Gals Facebook group.",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2015-04-21",
+      "has_content": true
+    },
+    {
+      "id": "tamethebeast-org__3369a2a9",
+      "title": "Tame the Beast",
+      "url": "https://www.tamethebeast.org/",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Video",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-01-01",
+      "has_content": true
+    },
+    {
+      "id": "backpain-muscha-org__80ba3c61",
+      "title": "The Back Pain Helpline",
+      "url": "https://backpain.muscha.org/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Back pain helpline",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-10-22",
+      "has_content": true
+    },
+    {
+      "id": "fightingarthritis-org-au__5e57233f",
+      "title": "The Hospital Research Foundation Group - Arthritis - THRF Group – Arthritis",
+      "url": "https://fightingarthritis.org.au/",
+      "domains": [
+        "understanding",
+        "language"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ],
+        "language": [
+          "Culturally adapted materials"
+        ]
+      },
+      "description": "All domains, including hotline, contacts, courses",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://fightingarthritis.org.au/app/uploads/sites/10/2026/06/05-2026_THRFG-Client-Referral-Form_F-SA.pdf"
+      ],
+      "page_date": "2026-10-26",
+      "has_content": true
+    },
+    {
+      "id": "lifeprogram-org-au__51180c5b",
+      "title": "The Life! Program by Diabetes Victoria",
+      "url": "https://lifeprogram.org.au/",
+      "domains": [
+        "wellbeing",
+        "language"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Health eating"
+        ],
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "All subdomains. Vic program. Delivered by qualified health professionals, including dietitians and exercise physiologists, Life! gives you ongoing and personalised support to help you reach your long-term health goals. The Life! program is FREE and accessible across Victoria. You can participate in person, online, or through telephone health coaching. Throughout the program, you’ll learn about: Nutrition and eating healthy meals Increasing your physical activity Enhancing your mood and sleep Managing and reducing stress Overcoming setbacks Setting and achieving personal health goals",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2026-09-23",
+      "has_content": true
+    },
+    {
+      "id": "patientlibrary-net__b7d597d7",
+      "title": "The Patient Experience Library",
+      "url": "https://www.patientlibrary.net/cgi-bin/library.cgi?page=Welcome",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Patient journals",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.patientlibrary.net/cookies-policy.pdf"
+      ],
+      "page_date": "2026-01-01",
+      "has_content": false
+    },
+    {
+      "id": "racgp-org-au__d5f75c80",
+      "title": "The thriving heart of health",
+      "url": "https://www.racgp.org.au",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Multiple domains",
+      "audiences": [
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://www.racgp.org.au/FSDEDEV/media/documents/Recruit-GP-cheat-sheet.pdf"
+      ],
+      "page_date": "2026-10-28",
+      "has_content": true
+    },
+    {
+      "id": "findapharmacy-com-au__44b02acc",
+      "title": "Think Pharmacy First",
+      "url": "https://findapharmacy.com.au/thinkpharmacyfirst/home",
+      "domains": [
+        "symptoms"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ]
+      },
+      "description": "Pharmacists can now help actively manage, treat and prescribe medicine for a range of conditions. You can book an appointment to see a prescribing pharmacist for treatment, or walk in. Why you should Think Pharmacy First You can access health care faster and more conveniently through community pharm",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-02-23",
+      "has_content": true
+    },
+    {
+      "id": "myflareup-org__13b1644e",
+      "title": "Tools - MyFlareUp",
+      "url": "https://myflareup.org/resources/tools",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Digital Supports"
+        ]
+      },
+      "description": "Toolkit",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-22",
+      "has_content": true
+    },
+    {
+      "id": "orthoinfo-org__9ec01768",
+      "title": "Total Joint Replacement - OrthoInfo - AAOS",
+      "url": "https://www.orthoinfo.org/treatment/total-joint-replacement",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All domains: USA site preparing for joint replacement",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "tisnational-gov-au__218c1166",
+      "title": "Translating and Interpreting Service (TIS National)",
+      "url": "https://www.tisnational.gov.au/",
+      "domains": [
+        "language"
+      ],
+      "tags": {
+        "language": [
+          "Translated materials"
+        ]
+      },
+      "description": "Interpreting service",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [
+        "https://www.homeaffairs.gov.au/commitments/files/reconciliation-action-plan-2023-26.PDF#page=4"
+      ],
+      "page_date": "2023-01-01",
+      "has_content": true
+    },
+    {
+      "id": "healthdirect-gov-au__ca1873ae",
+      "title": "Trusted Health Advice",
+      "url": "https://www.healthdirect.gov.au/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Multiple domains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [
+        "https://media.healthdirect.org.au/publications/Clinical-Governance-and-Quality-Framework.pdf?vFY24"
+      ],
+      "page_date": "2026-01-01",
+      "has_content": true
+    },
+    {
+      "id": "arthritisaustralia-org-au__80327e38",
+      "title": "Understanding arthritis - Arthritis Australia",
+      "url": "https://arthritisaustralia.org.au/understanding-arthritis",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "All subdomains. Osteoarthritis (OA) Seropositive rheumatoid arthritis (SPRA) (or simply ‘rheumatoid arthritis’ or RA) Seronegative rheumatoid arthritis (SNRA) Spondyloarthritis Axial spondyloarthritis (axSpA) (includes radiographic and non-radiographic forms) Ankylosing Spondylitis (also called radiographic spondyloarthritis or r-axSpA) Non-radiographic axial spondyloarthritis (nr-axSpA) Psoriatic arthritis (PsA) Reactive arthritis (ReA) Juvenile idiopathic arthritis (JIA) Systemic lupus erythematosus (SLE or simply ‘lupus’) Scleroderma (SD) Sjogren’s disease (SjD) (Also called Sjogren’s syndrome) Gout Fibromyalgia (FM) (Also called fibromyalgia syndrome) Polymyalgia rheumatica (PMR) Giant cell arteritis (GCA)",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-07-22",
+      "has_content": true
+    },
+    {
+      "id": "cja-org__b80b9fe1",
+      "title": "We Bring Human Rights Abusers To Justice.",
+      "url": "https://cja.org/",
+      "domains": [
+        "self-management",
+        "services",
+        "programs"
+      ],
+      "tags": {
+        "self-management": [
+          "Managing medicines"
+        ],
+        "services": [
+          "Community services"
+        ],
+        "programs": [
+          "Helpline"
+        ]
+      },
+      "description": "Medication",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-17",
+      "has_content": true
+    },
+    {
+      "id": "webmd-com__752e4024",
+      "title": "WebMD - Better information. Better health.",
+      "url": "https://www.webmd.com/",
+      "domains": [
+        "understanding"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ]
+      },
+      "description": "Multple subdomains: General Information",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2008-12-11",
+      "has_content": true
+    },
+    {
+      "id": "medicarementalhealth-gov-au__656f8bb3",
+      "title": "Welcome to Medicare Mental Health",
+      "url": "https://www.medicarementalhealth.gov.au/",
+      "domains": [
+        "wellbeing"
+      ],
+      "tags": {
+        "wellbeing": [
+          "Mental wellbeing (stress, mindfulness, resilience)"
+        ]
+      },
+      "description": "App, hotline, activities, education",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2025-02-01",
+      "has_content": true
+    },
+    {
+      "id": "mentalhealthaustralia-org-au__fb79767a",
+      "title": "Welcome to Mental Health Australia",
+      "url": "https://www.mentalhealthaustralia.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "Health advocacy organisations",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-08-28",
+      "has_content": true
+    },
+    {
+      "id": "disabilitygateway-gov-au__980db6fa",
+      "title": "Welcome to the Disability Gateway",
+      "url": "https://www.disabilitygateway.gov.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Government support"
+        ]
+      },
+      "description": "Housing, household support, transport, rights and legal information, everyday lviing, health and wellbeing, income and financial, employment, leisure, aids and equipemnt",
+      "audiences": [
+        "Patient",
+        "Carer"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2026-09-09",
+      "has_content": true
+    },
+    {
+      "id": "wellmob-org-au__e144ae39",
+      "title": "WellMob",
+      "url": "https://wellmob.org.au/",
+      "domains": [
+        "symptoms",
+        "language"
+      ],
+      "tags": {
+        "symptoms": [
+          "Pain"
+        ],
+        "language": [
+          "Culturally adapted materials"
+        ]
+      },
+      "description": "Aboriginal and TSI resource",
+      "audiences": [
+        "Patient",
+        "Healthcare professional"
+      ],
+      "languages": [],
+      "translated": true,
+      "doc_links": [],
+      "page_date": "2020-05-26",
+      "has_content": true
+    },
+    {
+      "id": "asaustralia-org__8e2a4a6e",
+      "title": "Western Australia",
+      "url": "https://asaustralia.org/wa",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Physical activity Program"
+        ]
+      },
+      "description": "Hydrotherapy and social support",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": true
+    },
+    {
+      "id": "empowered-org-au__f1a7ef1e",
+      "title": "Where are you in your arthritis journey?",
+      "url": "https://empowered.org.au/",
+      "domains": [
+        "appointments"
+      ],
+      "tags": {
+        "appointments": [
+          "Before my appointment"
+        ]
+      },
+      "description": "Empowered",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2015-01-01",
+      "has_content": true
+    },
+    {
+      "id": "wwda-org-au__7b8d57e9",
+      "title": "Women With Disabilities Australia",
+      "url": "https://wwda.org.au/",
+      "domains": [
+        "services"
+      ],
+      "tags": {
+        "services": [
+          "Community services"
+        ]
+      },
+      "description": "",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "arthritiswa-org-au__333b6c1f",
+      "title": "www.arthritiswa.org.au",
+      "url": "https://www.arthritiswa.org.au/",
+      "domains": [
+        "understanding",
+        "self-management",
+        "services",
+        "programs"
+      ],
+      "tags": {
+        "understanding": [
+          "What is this condition?"
+        ],
+        "programs": [
+          "Online course",
+          "Peer support",
+          "Helpline"
+        ],
+        "services": [
+          "Government support"
+        ],
+        "self-management": [
+          "Managing medicines"
+        ]
+      },
+      "description": "All subdomains",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "",
+      "has_content": false
+    },
+    {
+      "id": "ywasg-com__9b31ddc1",
+      "title": "Young Women's Arthritis Support Group",
+      "url": "https://ywasg.com/",
+      "domains": [
+        "programs"
+      ],
+      "tags": {
+        "programs": [
+          "Peer support"
+        ]
+      },
+      "description": "Young Women’s Arthritis Support Group. (For all women of working age with any form of arthritis or fibromyalgia. Rosemary Ainley is a co-leader.)",
+      "audiences": [
+        "Patient"
+      ],
+      "languages": [],
+      "translated": false,
+      "doc_links": [],
+      "page_date": "2024-08-01",
+      "has_content": true
+    }
+  ]
+}

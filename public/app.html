@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Co-Motion — help between appointments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ─────────────────────────────────────────────────────────────────────────────
+     Design notes, because every one of these is a decision that survived review.
+
+     TYPE. One family: Atkinson Hyperlegible, designed by the Braille Institute for
+     low-vision readers. Not a pun about civic-ness — a face chosen because the person
+     reading it is 60, in pain, and squinting at a dimmed phone. Size and weight do the
+     display work; there is no second face and no monospace. 20px base, not 18.
+
+     COLOUR. Two saturated colours in the entire product:
+        act-now  #B3251E     self-manage  #2F5D50
+     A five-hue severity ramp was the first instinct and it was wrong. Deuteranopia
+     runs ~8% in men and this audience skews male and 50+; ochre, orange and red
+     converge. Worse, iOS Night Shift — almost certainly ON at 2am — drags everything
+     toward red. So colour is never the carrier of urgency. The VERB is (largest text
+     on screen), then the LEVEL ("5 of 5 — the highest"), then inversion. Colour only
+     confirms what the words already said.
+
+     MOTION. None on the emergency state. It paints in its final position on first
+     render. Animating "go to hospital" stages the cleverness of the rule engine at the
+     worst moment of someone's night; it performs for the room, not the patient.
+     ───────────────────────────────────────────────────────────────────────────── */
+  :root {
+    --paper:#F4F1EA; --ink:#1C1B19; --soft:#5C574E; --faint:#8A8377; --rule:#C9C3B6;
+    --card:#FFFDF8;
+    --act:#B3251E; --act-bg:#FBEAE8;
+    --self:#2F5D50; --self-bg:#E8F0EC;
+    --r:10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#14150F; --ink:#F0EDE4; --soft:#A8A296; --faint:#7C7669; --rule:#33352B;
+      --card:#1C1E17;
+      /* Raised luminance — the light-mode red is nearly black on a dark ground. */
+      --act:#F2635A; --act-bg:#3A1A18;
+      --self:#6FBF9F; --self-bg:#172C25;
+    }
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font:400 20px/1.6 "Atkinson Hyperlegible", -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  .wrap { max-width:720px; margin:0 auto; padding:0 20px 100px; }
+  b, strong { font-weight:700; }
+
+  /* ── The red-flag line. Above the fold, never below it. Putting the emergency
+        content at the bottom of the page is a safety failure, not a layout choice. */
+  .siren {
+    background:var(--act-bg); color:var(--act); border-left:6px solid var(--act);
+    border-radius:var(--r); padding:16px 18px; margin:20px 0 0; font-size:18px;
+  }
+  .siren b { display:block; margin-bottom:4px; font-size:19px; }
+  .siren a { color:inherit; font-weight:700; }
+
+  header { padding:36px 0 8px; }
+  h1 { font-size:32px; margin:0; letter-spacing:-.01em; font-weight:700; }
+  h1 .d { color:var(--self); }
+  .sub { color:var(--soft); font-size:19px; margin:10px 0 0; max-width:54ch; }
+  .sub b { color:var(--ink); }
+
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--faint);
+       font-weight:700; margin:40px 0 12px; }
+
+  .card { background:var(--card); border:1px solid var(--rule); border-radius:var(--r);
+          padding:20px; }
+
+  /* ── Ask box comes first. No "what are you living with?" form standing between a
+        frightened person and help. */
+  textarea {
+    width:100%; border:2px solid var(--rule); border-radius:var(--r); background:var(--card);
+    color:var(--ink); font:inherit; padding:16px; min-height:110px; resize:vertical;
+  }
+  textarea:focus { outline:3px solid var(--self); outline-offset:1px; border-color:var(--self); }
+  .btn {
+    background:var(--self); color:#fff; border:0; border-radius:var(--r);
+    padding:0 26px; min-height:58px; font:inherit; font-weight:700; cursor:pointer;
+  }
+  @media (prefers-color-scheme: dark) { .btn { color:#0C1A15; } }
+  .btn:disabled { opacity:.5; cursor:default; }
+  .btn:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+
+  /* Condition is a quiet correction, not a gate. */
+  .conds { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:14px;
+           font-size:17px; color:var(--faint); }
+  .chip { background:transparent; border:1.5px solid var(--rule); color:var(--soft);
+          border-radius:999px; padding:8px 15px; font:inherit; font-size:17px; cursor:pointer;
+          min-height:44px; }
+  .chip[aria-pressed="true"] { border-color:var(--self); background:var(--self-bg); color:var(--self);
+                               font-weight:700; }
+  .chip:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+
+  .egs { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  .eg { background:transparent; border:1px solid var(--rule); color:var(--soft);
+        border-radius:999px; padding:8px 14px; font:inherit; font-size:16px; cursor:pointer;
+        min-height:44px; text-align:left; }
+  .eg:hover, .eg:focus-visible { border-color:var(--self); color:var(--self); }
+
+  /* ── The three questions. Unskippable, deterministic, no model in the loop. */
+  .tri { border:2px solid var(--act); border-radius:var(--r); padding:22px; background:var(--card); }
+  .tri > b { font-size:22px; display:block; }
+  .tri > p { color:var(--soft); font-size:17px; margin:6px 0 20px; }
+  .tq { padding:18px 0; border-top:1px solid var(--rule); }
+  .tq p { margin:0 0 12px; font-size:20px; font-weight:700; }
+  .opts { display:flex; gap:8px; flex-wrap:wrap; }
+  .opt { flex:1; min-width:96px; min-height:56px; border:2px solid var(--rule); background:transparent;
+         color:var(--ink); border-radius:var(--r); font:inherit; font-weight:700; cursor:pointer; }
+  .opt[aria-pressed="true"] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .opt:focus-visible { outline:3px solid var(--self); outline-offset:2px; }
+
+  /* ── The disposition. The verb is the biggest thing on the screen. */
+  .rung { border-radius:var(--r); padding:22px; margin:24px 0 20px; border:2px solid var(--rule); }
+  .lvl { font-size:15px; text-transform:uppercase; letter-spacing:.09em; font-weight:700;
+         color:var(--faint); margin:0 0 6px; }
+  .verb { font-size:32px; line-height:1.2; font-weight:700; margin:0; letter-spacing:-.01em; }
+  .rung .detail { font-size:19px; margin:10px 0 0; color:var(--soft); }
+
+  .rung.SELF_MANAGE, .rung.PHARMACIST, .rung.GP_NEXT {
+    background:var(--self-bg); border-color:var(--self);
+  }
+  .rung.SELF_MANAGE .lvl, .rung.PHARMACIST .lvl, .rung.GP_NEXT .lvl { color:var(--self); }
+  .rung.GP_NOW { background:var(--act-bg); border-color:var(--act); }
+  .rung.GP_NOW .lvl { color:var(--act); }
+
+  /* Level 5 is the ONLY inverted, solid-filled state in the entire product. It cannot
+     be mistaken for anything else even with no colour perception at all. */
+  .rung.ED {
+    background:var(--act); border-color:var(--act); color:#fff;
+  }
+  .rung.ED .lvl { color:#fff; opacity:.85; }
+  .rung.ED .verb { font-size:36px; }
+  .rung.ED .detail { color:#fff; opacity:.95; }
+  @media (prefers-color-scheme: dark) { .rung.ED { color:#1A0E0D; } .rung.ED .lvl,.rung.ED .detail { color:#1A0E0D; } }
+
+  /* The one-tap human. Activation energy from "drive to hospital at 2am for what is
+     probably gout" down to "press this, stay in bed". */
+  .call {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin-top:18px; min-height:64px; border-radius:var(--r); text-decoration:none;
+    background:var(--ink); color:var(--paper); font-weight:700; font-size:21px; padding:0 16px;
+    text-align:center;
+  }
+  .rung.ED .call { background:#fff; color:var(--act); }
+  @media (prefers-color-scheme: dark) { .rung.ED .call { background:#1A0E0D; color:#fff; } }
+  .call:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  .call .num { font-size:24px; }
+
+  .why { margin-top:18px; padding-top:16px; border-top:1px solid currentColor; opacity:.9; }
+  .why b { display:block; font-size:18px; margin-bottom:4px; }
+  .why p { margin:0; font-size:17px; }
+
+  .raised { margin-top:16px; padding:12px 14px; border-radius:8px; background:rgba(0,0,0,.05);
+            font-size:17px; }
+  @media (prefers-color-scheme: dark) { .raised { background:rgba(255,255,255,.07); } }
+
+  .answer { font-size:21px; line-height:1.55; margin:0 0 22px; }
+
+  /* ── Evidence */
+  .ev { border:1px solid var(--rule); border-radius:var(--r); padding:18px; margin-bottom:12px;
+        background:var(--card); }
+  .ev h3 { margin:0 0 8px; font-size:19px; font-weight:700; }
+  .ev p { margin:0; color:var(--soft); font-size:18px; }
+  .tagm { display:inline-block; font-size:14px; font-weight:700; text-transform:uppercase;
+          letter-spacing:.05em; color:var(--act); margin-bottom:6px; }
+  .quote { margin:12px 0 0; padding-left:14px; border-left:3px solid var(--rule);
+           font-size:17px; color:var(--faint); font-style:italic; }
+  .src { margin-top:12px; font-size:17px; }
+  .src a { color:var(--self); font-weight:700; }
+  .sup { margin-top:10px; font-size:16px; color:var(--faint); }
+
+  /* ── The care plan block. The most actionable fact in the product, and it is not
+        going to be one card among forty. */
+  .plan { border:2px solid var(--self); border-radius:var(--r); padding:22px; background:var(--self-bg); }
+  .plan h3 { margin:0 0 8px; font-size:23px; color:var(--self); }
+  .plan p { margin:0 0 12px; font-size:19px; }
+  .script { background:var(--card); border-radius:8px; padding:16px 18px; margin:14px 0 10px;
+            border-left:4px solid var(--self); }
+  .script .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+                 color:var(--faint); display:block; margin-bottom:6px; }
+  .script q { font-size:20px; font-style:italic; }
+  .plan .note { font-size:17px; color:var(--soft); margin:0; }
+
+  /* ── The logbook. Six months of dead time becomes the document you walk in holding. */
+  .q { display:flex; gap:14px; align-items:flex-start; padding:15px 0; border-bottom:1px solid var(--rule); }
+  .q:last-child { border-bottom:0; }
+  .q .when { font-size:15px; color:var(--faint); font-weight:700; white-space:nowrap; padding-top:4px; }
+  .q p { margin:0; flex:1; font-size:19px; }
+  .del { background:none; border:0; color:var(--faint); cursor:pointer; font-size:26px; line-height:1;
+         min-width:44px; min-height:44px; }
+  .del:hover { color:var(--act); }
+  .empty { color:var(--faint); font-size:18px; margin:0; }
+
+  .svc { padding:16px 0; border-bottom:1px solid var(--rule); }
+  .svc:last-child { border-bottom:0; }
+  .svc b { font-size:19px; }
+  .svc p { margin:4px 0 0; color:var(--soft); font-size:17px; }
+  .svc a.ph { display:inline-flex; align-items:center; min-height:52px; margin-top:8px;
+              font-size:22px; font-weight:700; color:var(--self); text-decoration:none; }
+  .svc a.ph:hover { text-decoration:underline; }
+  .svc .open { font-size:17px; }
+  .svc .open a { color:var(--self); }
+
+  details { border-bottom:1px solid var(--rule); padding:6px 0; }
+  details:last-child { border-bottom:0; }
+  summary { cursor:pointer; font-size:19px; padding:12px 0; min-height:44px; }
+  summary:focus-visible { outline:3px solid var(--self); }
+  summary b { font-weight:700; }
+  summary span { color:var(--faint); font-size:17px; }
+
+  .flag { padding:14px 0; border-bottom:1px solid var(--rule); }
+  .flag:last-child { border-bottom:0; }
+  .flag b { color:var(--act); font-size:18px; }
+  .flag p { margin:4px 0 0; font-size:17px; color:var(--soft); }
+
+  footer { margin-top:60px; padding-top:24px; border-top:1px solid var(--rule);
+           color:var(--faint); font-size:16px; line-height:1.6; }
+  .srcs { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0; }
+  .srcs a { font-size:15px; border:1px solid var(--rule); border-radius:999px; padding:6px 12px;
+            text-decoration:none; color:var(--soft); min-height:36px; display:inline-flex; align-items:center; }
+  .srcs a:hover { border-color:var(--self); color:var(--self); }
+
+  .spin { color:var(--faint); font-size:18px; }
+  .err { color:var(--act); font-size:18px; font-weight:700; }
+  .hide { display:none !important; }
+
+  /* ── Browse spine: the eight directory domains. A calm-state feature, below the ask
+        box, never stealing the fold from the answer. */
+  .doms { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; }
+  .dom { text-align:left; background:var(--card); border:1px solid var(--rule); border-radius:var(--r);
+         padding:16px 18px; font:inherit; cursor:pointer; min-height:72px; }
+  .dom:hover, .dom:focus-visible { border-color:var(--self); outline:none; }
+  .dom b { font-size:19px; display:block; }
+  .dom span { color:var(--faint); font-size:16px; }
+
+  /* Language switch — a filter across everything, not a shelf. */
+  .langsel { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 16px; font-size:17px; }
+  .langsel .lang { border:1.5px solid var(--rule); background:transparent; color:var(--soft);
+                   border-radius:999px; padding:8px 15px; font:inherit; font-size:16px; cursor:pointer; min-height:44px; }
+  .langsel .lang[aria-pressed="true"] { border-color:var(--self); background:var(--self-bg); color:var(--self); font-weight:700; }
+
+  /* A directory resource (navigate tier) — a place to go, never a sourced claim. */
+  .dir { border:1px solid var(--rule); border-radius:var(--r); padding:16px 18px; margin-bottom:10px; background:var(--card); }
+  .dir h3 { margin:0 0 6px; font-size:19px; }
+  .dir p { margin:0; color:var(--soft); font-size:17px; }
+  .dir .go { display:inline-block; margin-top:10px; color:var(--self); font-weight:700; text-decoration:none; min-height:40px; }
+  .dir .go:hover { text-decoration:underline; }
+  .badge { display:inline-block; font-size:13px; font-weight:700; border-radius:999px; padding:3px 10px;
+           margin:0 6px 6px 0; border:1px solid var(--rule); color:var(--soft); }
+  .badge.lang { border-color:var(--self); color:var(--self); }
+  .files { margin-top:10px; font-size:16px; }
+  .files a { color:var(--self); display:inline-block; margin:2px 10px 2px 0; }
+  .backlink { background:none; border:0; color:var(--self); font:inherit; font-weight:700; cursor:pointer;
+              padding:8px 0; min-height:44px; font-size:17px; }
+
+  /* The navigate-tier "where to look" block in an answer — visually quieter than the
+     cited sources, and suppressed entirely on rungs 4–5. */
+  .pointers { margin:8px 0 22px; }
+  .pointers .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+                   color:var(--faint); margin:0 0 10px; }
+
+  input[type=password] { padding:14px; border:2px solid var(--rule); border-radius:var(--r);
+    background:var(--card); color:var(--ink); font:inherit; flex:1; min-width:160px; min-height:58px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* Deliberately scoped: never applies to .rung.ED, which paints in place. */
+    .rung.SELF_MANAGE, .rung.PHARMACIST, .rung.GP_NEXT, .rung.GP_NOW {
+      animation: rise .18s ease-out;
+    }
+    @keyframes rise { from { opacity:0; transform:translateY(6px); } }
+  }
+  @media print {
+    .noprint { display:none !important; }
+    body { background:#fff; color:#000; font-size:12pt; }
+    .card { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Co<span class="d">–</span>Motion</h1>
+  <p class="sub">
+    <b>Your appointment is months away. This can't move it — but it can tell you what to do tonight.</b>
+    Ask about a flare, a medicine, a bad night. You'll get an answer from Australian health
+    services, and a plan.
+  </p>
+</header>
+
+<div class="siren">
+  <b>Some things can't wait for this page.</b>
+  Chest pain, trouble breathing, or a limb you can't move — go to an emergency department now.
+  Not sure? Call healthdirect free, any hour, on <a href="tel:1800022222">1800 022 222</a>.
+</div>
+
+<div id="gate" class="card noprint hide" style="margin-top:20px">
+  <b>Access code</b>
+  <p style="margin:6px 0 12px; color:var(--soft); font-size:18px">
+    Asking a question needs a code. Everything else on this page works without one.
+  </p>
+  <div class="row">
+    <input id="code" type="password" placeholder="Code" />
+    <button class="btn" id="unlock">Unlock</button>
+  </div>
+  <p id="codeErr" class="err hide" style="margin:10px 0 0"></p>
+</div>
+
+<!-- The ask box is the first thing. No form gate. -->
+<section id="askBox" class="noprint" style="margin-top:28px">
+  <div class="card">
+    <label for="q" class="hide">Your question</label>
+    <textarea id="q" placeholder="“My toe is on fire and I've run out of tablets — what do I do tonight?”"></textarea>
+    <div class="row">
+      <button class="btn" id="ask">Ask</button>
+      <span class="spin hide" id="spin">Looking through the library…</span>
+    </div>
+    <div class="conds">
+      <span>This is about:</span>
+      <span id="conds" style="display:contents"></span>
+    </div>
+    <div class="egs" id="egs"></div>
+    <p id="askErr" class="err hide" style="margin:12px 0 0"></p>
+    <p style="margin:14px 0 0; font-size:17px">
+      <a href="#triBox" id="concern" style="color:var(--act); font-weight:700">
+        Something feels wrong right now →</a>
+    </p>
+  </div>
+</section>
+
+<!-- Browse: the eight domains. Calm-state, below the ask box. Clicking a domain lists
+     its resources (navigate tier) — plain links, no model, no disposition. -->
+<section id="browseBox" class="noprint" style="margin-top:36px">
+  <h2>Or look around</h2>
+  <div class="langsel" id="langsel" aria-label="Show resources in a language"></div>
+  <div class="doms" id="doms"></div>
+</section>
+
+<section id="dirBox" class="noprint hide" style="margin-top:20px">
+  <button class="backlink" id="dirBack">← All topics</button>
+  <h2 id="dirTitle" style="margin-top:4px"></h2>
+  <div id="dirOut"></div>
+</section>
+
+<!-- The three questions. Deterministic. No model. "Not sure" counts as yes. -->
+<section id="triBox" class="hide" style="margin-top:28px">
+  <div class="tri">
+    <b>Three quick questions first</b>
+    <p>
+      A few things look exactly like a flare but aren't. This takes ten seconds and it's the
+      part we don't leave to a computer's judgement. If you're not sure, say so — that's a real answer.
+    </p>
+    <div id="tqs"></div>
+    <div class="row">
+      <button class="btn" id="triGo" disabled>Continue</button>
+      <span class="spin hide" id="triSpin">Checking…</span>
+    </div>
+  </div>
+</section>
+
+<div id="out"></div>
+
+<section id="rest" class="hide">
+
+  <h2 class="noprint">The thing to ask your GP for</h2>
+  <div class="plan noprint" id="planBox"></div>
+
+  <h2>Your log</h2>
+  <div class="card">
+    <p class="empty" id="qsEmpty">
+      Nothing here yet. Every question we can't answer gets written down for you, with the date —
+      so six months of bad nights turns into something you can hand to the doctor, instead of
+      trying to remember it in a ten-minute appointment.
+    </p>
+    <div id="qs"></div>
+    <div class="row noprint hide" id="qsActions">
+      <button class="btn" onclick="window.print()">Print this</button>
+      <span style="color:var(--faint); font-size:17px">Take it to your appointment.</span>
+    </div>
+  </div>
+
+  <h2 class="noprint">Things you can do today, without an appointment</h2>
+  <div class="card noprint" id="today"></div>
+
+  <h2 class="noprint">Browse everything</h2>
+  <div class="card noprint" id="lib"></div>
+
+</section>
+
+<h2 class="noprint">Go to an emergency department if any of this is happening</h2>
+<div class="card noprint" id="flags"></div>
+
+<footer>
+  <p id="prov"></p>
+  <div class="srcs" id="srcs"></div>
+  <p id="caveat"></p>
+</footer>
+
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const show = (el, on = true) => el.classList.toggle("hide", !on);
+let CFG = null, COND = "other", CODE = "", PENDING = "", TRI = {}, LANG = "", DOMAIN = null;
+const KEY = "comotion.log";
+
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* The log. Dated, kept, printable. The wait stops being dead time. */
+const log = () => JSON.parse(localStorage.getItem(KEY) || "[]");
+const saveLog = (l) => localStorage.setItem(KEY, JSON.stringify(l));
+
+function addToLog(text) {
+  const l = log();
+  if (l.some((e) => e.text === text)) return;
+  l.push({ text, at: new Date().toISOString() });
+  saveLog(l);
+  renderLog();
+}
+
+function renderLog() {
+  const l = log();
+  show($("qsEmpty"), !l.length);
+  show($("qsActions"), !!l.length);
+  $("qs").innerHTML = l.map((e, i) => {
+    const d = new Date(e.at).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
+    return `<div class="q"><span class="when">${d}</span><p>${esc(e.text)}</p>
+      <button class="del noprint" data-i="${i}" aria-label="Remove">&times;</button></div>`;
+  }).join("");
+  $("qs").querySelectorAll(".del").forEach((b) =>
+    (b.onclick = () => { const l2 = log(); l2.splice(+b.dataset.i, 1); saveLog(l2); renderLog(); }));
+}
+
+const EGS = {
+  gout: ["Can I still have a beer?", "Should I stop my allopurinol while it's flaring?", "Do cherries actually help?"],
+  osteoarthritis: ["Is walking on it making it worse?", "Do I need a scan?", "Are glucosamine tablets worth it?"],
+  back_pain: ["Should I rest it?", "Can I get physio subsidised?"],
+  ra: ["Can I exercise with it?"],
+  other: ["I keep flaring every time I have a good day", "What can I do while I wait?"],
+};
+
+async function boot() {
+  CFG = await (await fetch("/api/config")).json();
+
+  $("conds").innerHTML = Object.entries(CFG.conditions)
+    .map(([k, c]) => `<button class="chip" data-k="${k}" aria-pressed="${k === COND}">${esc(c.label)}</button>`)
+    .join("");
+  $("conds").querySelectorAll(".chip").forEach((b) => (b.onclick = () => pick(b.dataset.k)));
+
+  $("tqs").innerHTML = CFG.triage.map((t) => `
+    <div class="tq">
+      <p>${esc(t.ask)}</p>
+      <div class="opts" data-q="${t.id}">
+        ${["yes", "unsure", "no"].map((v) => `<button class="opt" data-v="${v}" aria-pressed="false">
+          ${v === "yes" ? "Yes" : v === "unsure" ? "Not sure" : "No"}</button>`).join("")}
+      </div>
+    </div>`).join("");
+  $("tqs").querySelectorAll(".opts").forEach((g) =>
+    g.querySelectorAll(".opt").forEach((b) => (b.onclick = () => {
+      TRI[g.dataset.q] = b.dataset.v;
+      g.querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+      $("triGo").disabled = CFG.triage.some((t) => !TRI[t.id]);
+    })));
+
+  $("flags").innerHTML = CFG.redFlags
+    .map((f) => `<div class="flag"><b>${esc(f.catches)}</b><p>${esc(f.why)}</p></div>`).join("");
+
+  $("prov").textContent = CFG.provenance.headline;
+  $("caveat").textContent = CFG.provenance.caveat + " " + CFG.provenance.notExtractedNote;
+  $("srcs").innerHTML = Object.values(CFG.sources)
+    .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("");
+
+  renderBrowse();
+  $("dirBack").onclick = () => { show($("dirBox"), false); show($("browseBox"), true);
+    DOMAIN = null; window.scrollTo({ top: 0, behavior: "smooth" }); };
+  // "Something feels wrong right now" — straight to the deterministic questions, no typing.
+  $("concern").onclick = (e) => {
+    e.preventDefault();
+    PENDING = "I'm worried something might be wrong right now.";
+    TRI = {}; $("triGo").disabled = true;
+    $("tqs").querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", "false"));
+    show($("askBox"), false); show($("browseBox"), false); show($("dirBox"), false);
+    show($("triBox"), true); $("out").innerHTML = "";
+    $("triBox").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  show($("gate"), CFG.codeRequired);
+  await pick(COND);
+  renderLog();
+}
+
+// The browse spine: eight domain tiles + a language switch that filters across all of them.
+function renderBrowse() {
+  $("langsel").innerHTML =
+    `<button class="lang" data-l="" aria-pressed="${LANG === ""}">All</button>` +
+    CFG.languages.map((l) => `<button class="lang" data-l="${esc(l)}" aria-pressed="${LANG === l}">${esc(l)}</button>`).join("");
+  $("langsel").querySelectorAll(".lang").forEach((b) => (b.onclick = () => {
+    LANG = b.dataset.l;
+    $("langsel").querySelectorAll(".lang").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+    if (DOMAIN) openDomain(DOMAIN);
+  }));
+
+  $("doms").innerHTML = CFG.domains.map((d) =>
+    `<button class="dom" data-k="${esc(d.key)}"><b>${esc(d.label)}</b><span>${d.count} resources</span></button>`).join("");
+  $("doms").querySelectorAll(".dom").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
+}
+
+// A free interpreter is the single highest-leverage in-language help, and it is fixed
+// content — never model-generated. Shown on the language domain and whenever a language
+// filter is active.
+const INTERPRETER = `<div class="plan" style="margin-bottom:16px">
+  <h3>Ask for a free interpreter</h3>
+  <p>When you call a GP, a pharmacist or healthdirect, you can ask for an interpreter at no cost.</p>
+  <div class="script"><span class="lab">Say this on the phone</span>
+    <q>I need an interpreter. I speak [your language].</q></div>
+  <p class="note">Or call TIS National yourself, free, on <a href="tel:131450" style="color:var(--self);font-weight:700">131 450</a> and ask them to connect you.</p>
+</div>`;
+
+async function openDomain(key) {
+  DOMAIN = key;
+  const url = `/api/directory/${key}` + (LANG ? `?language=${encodeURIComponent(LANG)}` : "");
+  const d = await (await fetch(url)).json();
+  show($("browseBox"), false);
+  show($("dirBox"), true);
+  $("dirTitle").textContent = d.domain.label + (LANG ? ` — in ${LANG}` : "");
+
+  let head = "";
+  if (LANG && !d.taggedInLanguage) {
+    // Honest: we do not have resources specifically in this language. Say so plainly
+    // rather than dressing up unrelated ones as translated.
+    head += `<div class="card" style="margin-bottom:16px">
+      <b>We don't have resources tagged specifically in ${esc(LANG)} yet.</b>
+      <p style="color:var(--soft);margin:8px 0 0;font-size:18px">
+        Below are resources that offer translated or culturally-adapted versions, plus free
+        interpreter help. The underlying pages are mostly in English.</p></div>`;
+  } else if (LANG) {
+    head += `<p style="color:var(--soft);font-size:18px;margin:0 0 14px">
+      ${d.taggedInLanguage} of these are available in ${esc(LANG)} — shown first.</p>`;
+  }
+  if (LANG || key === "language") head += INTERPRETER;
+
+  $("dirOut").innerHTML = head + (d.resources.map(dirCard).join("") ||
+    `<p class="empty">Nothing here yet.</p>`);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function dirCard(r) {
+  const badges = [
+    ...r.languages.map((l) => `<span class="badge lang">In ${esc(l)}</span>`),
+    r.translated && !r.languages.length ? `<span class="badge">Translated versions</span>` : "",
+  ].join("");
+  const files = r.doc_links?.length
+    ? `<div class="files">Downloads: ${r.doc_links.slice(0, 6)
+        .map((f, i) => `<a href="${esc(f)}" target="_blank" rel="noopener">file ${i + 1}</a>`).join("")}</div>`
+    : "";
+  return `<div class="dir">
+    ${badges}
+    <h3>${esc(r.title)}</h3>
+    <p>${esc(r.description || "")}</p>
+    <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener">Open this resource →</a>
+    ${files}
+  </div>`;
+}
+
+async function pick(k) {
+  COND = k;
+  $("conds").querySelectorAll(".chip").forEach((b) =>
+    b.setAttribute("aria-pressed", String(b.dataset.k === k)));
+
+  $("egs").innerHTML = (EGS[k] || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
+  $("egs").querySelectorAll(".eg").forEach((b) =>
+    (b.onclick = () => { $("q").value = b.textContent.trim(); $("q").focus(); }));
+
+  const lib = await (await fetch(`/api/library/${k}`)).json();
+  show($("rest"), true);
+
+  const plan = lib.evidence.find((e) => e.headline);
+  if (plan) {
+    $("planBox").innerHTML = `
+      <h3>${esc(plan.title)}</h3>
+      <p>${esc(plan.plain)}</p>
+      <div class="script">
+        <span class="lab">Say this</span>
+        <q>${esc(plan.script)}</q>
+      </div>
+      <p class="note">${esc(plan.scriptNote)}</p>
+      <p class="src"><a href="${plan.sourceUrl}" target="_blank" rel="noopener">
+        ${esc(CFG.sources[plan.source]?.name)} →</a></p>`;
+  }
+
+  $("today").innerHTML = lib.supports.map((s) => `
+    <div class="svc">
+      <b>${esc(s.name)}</b>
+      <p>${esc(s.what)}</p>
+      ${s.phone ? `<a class="ph" href="tel:${s.phone.replace(/\s/g, "")}">${esc(s.phone)}</a><br/>` : ""}
+      <span class="open"><a href="${s.url}" target="_blank" rel="noopener">Open →</a></span>
+    </div>`).join("");
+
+  const byDomain = {};
+  lib.evidence.forEach((e) => (byDomain[e.domain] ??= []).push(e));
+  $("lib").innerHTML = Object.entries(CFG.cardDomains)
+    .filter(([d]) => byDomain[d]?.length)
+    .map(([d, m]) => `<details>
+      <summary><b>${esc(m.label)}</b> <span>— ${esc(m.blurb)} (${byDomain[d].length})</span></summary>
+      <div style="margin:10px 0 16px">${byDomain[d].map(evCard).join("")}</div>
+    </details>`).join("");
+}
+
+function evCard(e) {
+  return `<div class="ev">
+    ${e.myth ? '<span class="tagm">Common misconception</span>' : ""}
+    <h3>${esc(e.title)}</h3>
+    <p>${esc(e.plain)}</p>
+    ${e.quote ? `<p class="quote">“${esc(e.quote)}”</p>` : ""}
+    <p class="src"><a href="${e.sourceUrl}" target="_blank" rel="noopener">${esc(CFG.sources[e.source]?.name || e.source)} →</a></p>
+    ${e.supersedes ? `<p class="sup">${esc(e.supersedes.note)}</p>` : ""}
+  </div>`;
+}
+
+/* Ask → the three questions → the answer. The questions are never skipped. */
+$("ask").onclick = () => {
+  const q = $("q").value.trim();
+  if (!q) { $("q").focus(); return; }
+  PENDING = q;
+  TRI = {};
+  $("triGo").disabled = true;
+  $("tqs").querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", "false"));
+  show($("askErr"), false);
+  show($("askBox"), false);
+  show($("browseBox"), false);
+  show($("dirBox"), false);
+  show($("triBox"), true);
+  $("out").innerHTML = "";
+  $("triBox").scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+$("triGo").onclick = async () => {
+  $("triGo").disabled = true;
+  show($("triSpin"), true);
+  try {
+    const res = await fetch("/api/ask", {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-access-code": CODE },
+      body: JSON.stringify({ question: PENDING, condition: COND, triage: TRI }),
+    });
+    const d = await res.json();
+
+    show($("triBox"), false);
+    show($("askBox"), true);
+    show($("browseBox"), true);
+
+    if (!res.ok) {
+      if (d.needsCode) { show($("gate"), true); $("code").focus(); }
+      $("askErr").textContent = d.error || "Something went wrong.";
+      show($("askErr"), true);
+      // Even with the model down, a fired red flag must still reach the person.
+      if (d.screen?.floor && d.screen.floor !== "SELF_MANAGE") {
+        render({ disposition: d.screen.floor, rung: CFG.rungs[d.screen.floor],
+                 flags: d.screen.flags, evidence: [], grounded: false, redFlagOnly: true });
+      }
+      return;
+    }
+    render(d);
+    if (d.gpQuestion) addToLog(d.gpQuestion);
+    $("q").value = "";
+  } catch {
+    show($("triBox"), false);
+    show($("askBox"), true);
+    show($("browseBox"), true);
+    $("askErr").textContent = "Couldn't reach the server. Check your connection and try again.";
+    show($("askErr"), true);
+  } finally {
+    show($("triSpin"), false);
+    $("triGo").disabled = false;
+  }
+};
+
+function render(d) {
+  const r = d.rung;
+  let h = `<div class="rung ${d.disposition}">
+    <p class="lvl">Level ${esc(r.level)}</p>
+    <p class="verb">${esc(r.label)}</p>
+    <p class="detail">${esc(r.detail)}</p>`;
+
+  // The one-tap human, before anything else. This is the change most likely to stop
+  // someone with an infected joint closing the tab and going back to bed.
+  if (r.call) {
+    h += `<a class="call" href="tel:${r.call.number.replace(/\s/g, "")}">
+      <span>${esc(r.call.label)}</span> <span class="num">${esc(r.call.number)}</span></a>`;
+  }
+
+  // Said in words, not staged as an animation.
+  (d.flags || []).forEach((f) => {
+    h += `<div class="why"><b>${esc(f.catches)}</b><p>${esc(f.why)}</p></div>`;
+  });
+
+  if (d.raisedByRule && d.modelSaid) {
+    h += `<div class="raised">Raised from “${esc(d.modelSaid)}” because of what you told us above.
+      This can't be lowered.</div>`;
+  }
+  h += `</div>`;
+
+  if (d.grounded) {
+    h += `<p class="answer">${esc(d.framing)}</p>` + d.evidence.map(evCard).join("");
+  } else if (!d.redFlagOnly) {
+    h += `<div class="card" style="margin-bottom:20px">
+      <b>We don't have a sourced answer for that one.</b>
+      <p style="color:var(--soft); margin:8px 0 0; font-size:18px">
+        ${esc(d.unansweredReason || "Nothing in our sources covers this.")}
+        We'd rather say that than guess${(d.pointers || []).length ? " — but here's where to look" : ""}.
+        It's gone in your log with today's date, so you can put it to the doctor.</p></div>`;
+  }
+
+  // NAVIGATE-TIER: where to go next. Suppressed on rungs 4–5 — nobody who needs a doctor
+  // today or tonight should be scrolling a list of links instead of making the call.
+  const urgent = d.disposition === "GP_NOW" || d.disposition === "ED";
+  if (!urgent && (d.pointers || []).length) {
+    h += `<div class="pointers"><p class="lab">Where to go next</p>` +
+      d.pointers.map((p) => `<div class="dir">
+        ${p.languages.map((l) => `<span class="badge lang">In ${esc(l)}</span>`).join("")}
+        <h3>${esc(p.title)}</h3>
+        <p>${esc(p.description || "")}</p>
+        <a class="go" href="${esc(p.url)}" target="_blank" rel="noopener">Open this resource →</a>
+      </div>`).join("") + `</div>`;
+  }
+  $("out").innerHTML = h;
+  $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+$("q").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) $("ask").click();
+});
+$("unlock").onclick = async () => {
+  CODE = $("code").value.trim();
+  const res = await fetch("/api/unlock", { method: "POST", headers: { "x-access-code": CODE } });
+  if (res.ok) { show($("gate"), false); show($("codeErr"), false); }
+  else { $("codeErr").textContent = "That code didn't work."; show($("codeErr"), true); }
+};
+
+boot();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "id": "interview_20260714_CoMotion",
+  "timestamp": "2026-07-14T00:00:00Z",
+  "prototype": "CoMotion",
+  "phase1_problem_users": {
+    "problem": "A patient with a chronic musculoskeletal condition is seen in clinic and given an appointment six months away. In between they get flares they cannot get seen for, and many miss the appointment anyway and wait again. The evidence-based guidance that would help them exists across a dozen Australian organisations and is effectively unfindable from inside a flare at 2am.",
+    "users": "Patients living with chronic MSK pain in NSW — gout, osteoarthritis, back pain, rheumatoid arthritis. Often 50+, often on a phone, in pain, frightened."
+  },
+  "phase2_core_feature": {
+    "feature": "Ask a question in your own words and get it ANSWERED and EXPLAINED — not linked — from a closed library of endorsed Australian sources. Every answer lands on a five-rung escalation rail (home / pharmacist / GP next visit / GP today / seen tonight). Anything unanswerable is written into a dated log the patient walks in holding."
+  },
+  "phase3_tech_stack": {
+    "answer": "Backend: Node + Express. Frontend: vanilla, no build step. LLM: claude-opus-4-8 via @anthropic-ai/sdk, constrained to card selection. Storage: none server-side; the log is localStorage."
+  },
+  "phase4_timeline": {
+    "answer": "Workshop prototype. Deployed to Railway behind an ACCESS_CODE."
+  },
+  "phase5_success_metric": {
+    "metric": "A patient mid-flare can ask a question in plain words, get an explained answer traceable to an endorsed source, and be told what to do tonight — with the dangerous minority reliably routed to care and everyone else kept safely out of hospital."
+  },
+  "phase6_data_source": {
+    "source": "A closed allowlist of Australian consumer sources, each card retrieved from the page it cites: Arthritis Australia, Musculoskeletal Health Australia, ACI Pain Management Network (NSW), painHEALTH, Pain Toolkit, Painaustralia, Chronic Pain Australia, NSW Get Healthy Service, Active and Healthy (NSW), healthdirect, TGA, Rare Voices, Dept of Health (MBS)."
+  },
+  "phase7_constraints": {
+    "constraints": "Universal, not personalised — everyone with a condition sees the same cards, so a GP can sign the library off once. The model may never introduce a claim: it selects from cards and explains them, and invented card IDs are dropped server-side. The deterministic red-flag rail must run with no API key, and the ED path must never call the model at all. Decision support only — the GP owns the care plan."
+  },
+  "key_decisions": [
+    "The product is the six-month GAP, not the appointment. The GP owns the care plan; Co-Motion carries the patient through the months in between.",
+    "The rail is the spine: the model can escalate a disposition but can never soften one. Enforced as max(ruleFloor, modelDisposition) in code, not requested in a prompt.",
+    "The ED case short-circuits the model entirely — no latency, no rewording, no dependency on an API key. The most dangerous path has the fewest moving parts.",
+    "Three deterministic triage questions are asked every time, because pattern-matching free text MISSED 'my toe is agony and I feel hot and shivery' — a textbook septic joint. 'Not sure' counts as yes.",
+    "The first evidence library was written from the model's own recall of NICE/ACR and was thrown away. Fluent, mostly right, uncheckable — the exact failure the product exists to prevent. Rebuilt from a closed allowlist of pages actually retrieved.",
+    "Curation caught a live error: Painaustralia's 2016 factsheet still says 'GP Management Plan', a name Medicare retired on 1 July 2025. The card now uses 'GP Chronic Condition Management Plan' and cites the Dept of Health.",
+    "Answers must EXPLAIN, not point. A link is useless to someone in pain at 2am.",
+    "Colour never carries urgency (deuteranopia, Night Shift at 2am). The verb, the level number, and inversion do. Two saturated colours in the whole product, not a five-hue traffic light."
+  ],
+  "design_review": {
+    "note": "The frontend plan was critiqued by three independent reviewers (visual distinctiveness, accessibility-under-distress, content/IA) before being built. All three changed the design.",
+    "changes_made": [
+      "Killed the five-colour severity ramp — hues collapse under deuteranopia and Night Shift on the exact demographic.",
+      "Killed the escalation animation — it staged the rule engine's cleverness at the worst moment of someone's night.",
+      "Killed the fixed left rail — it was a checkout stepper in a costume, and it stole the fold from the answer.",
+      "Killed IBM Plex Mono for citations — a post-hoc rationalisation that hurt the low-vision readers we chose the body face for.",
+      "Added the three deterministic triage questions, and the one-tap healthdirect nurse line on rungs 4 and 5.",
+      "Replaced the 'What are you living with?' form gate with the ask box as the first thing on the page.",
+      "Promoted the GP Chronic Condition Management Plan from one card among 48 to a first-screen block with the words to say.",
+      "Dropped 'Innovation' from the patient-facing lockup — it was written for a funding body, not a patient."
+    ]
+  }
+}

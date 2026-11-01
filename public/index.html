@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Co-Motion — help between appointments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#F4F1EA; --ink:#1C1B19; --soft:#5C574E; --faint:#8A8377; --rule:#C9C3B6;
+    --card:#FFFDF8; --act:#B3251E; --act-bg:#FBEAE8; --self:#2F5D50; --self-bg:#E8F0EC;
+    --r:10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#14150F; --ink:#F0EDE4; --soft:#A8A296; --faint:#7C7669; --rule:#33352B;
+      --card:#1C1E17; --act:#F2635A; --act-bg:#3A1A18; --self:#6FBF9F; --self-bg:#172C25;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font:400 20px/1.6 "Atkinson Hyperlegible", -apple-system, "Segoe UI", system-ui, sans-serif; }
+  .wrap { max-width:740px; margin:0 auto; padding:0 20px 90px; }
+  a { color:var(--self); }
+
+  header { padding:64px 0 0; }
+  h1 { font-size:clamp(38px, 8vw, 54px); margin:0; letter-spacing:-.02em; line-height:1.05; }
+  h1 .d { color:var(--self); }
+  .kicker { font-size:16px; text-transform:uppercase; letter-spacing:.12em; color:var(--faint);
+            font-weight:700; margin:0 0 14px; }
+
+  /* The hero is the problem, stated as the patient experiences it. Not a value prop. */
+  .thesis { font-size:clamp(23px, 3.6vw, 28px); line-height:1.4; margin:28px 0 0; max-width:26ch;
+            font-weight:700; }
+  .thesis .em { color:var(--act); }
+  .lede { font-size:21px; color:var(--soft); margin:22px 0 0; max-width:58ch; }
+
+  .cta { display:inline-flex; align-items:center; min-height:64px; padding:0 32px; margin-top:32px;
+         background:var(--self); color:#fff; border-radius:var(--r); text-decoration:none;
+         font-weight:700; font-size:21px; }
+  @media (prefers-color-scheme: dark) { .cta { color:#0C1A15; } }
+  .cta:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  .cta-note { display:block; font-size:17px; color:var(--faint); margin-top:12px; }
+
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.09em; color:var(--faint);
+       font-weight:700; margin:64px 0 16px; }
+  h3 { font-size:23px; margin:0 0 8px; }
+  p { margin:0 0 16px; }
+
+  .rail { border-left:3px solid var(--rule); padding-left:22px; margin:0; }
+  .rail li { list-style:none; padding:12px 0; border-bottom:1px solid var(--rule); }
+  .rail li:last-child { border-bottom:0; }
+  .rail b { display:block; font-size:20px; }
+  .rail span { color:var(--soft); font-size:18px; }
+  .rail li.top b { color:var(--act); }
+
+  .two { display:grid; gap:18px; grid-template-columns:1fr; }
+  @media (min-width:680px) { .two { grid-template-columns:1fr 1fr; } }
+  .g { background:var(--card); border:1px solid var(--rule); border-radius:var(--r); padding:22px; }
+  .g p { font-size:18px; color:var(--soft); margin:0; }
+  .g .tag { font-size:14px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+            color:var(--self); display:block; margin-bottom:8px; }
+
+  .srcs { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 0; }
+  .srcs a { font-size:16px; border:1px solid var(--rule); border-radius:999px; padding:8px 14px;
+            text-decoration:none; color:var(--soft); }
+  .srcs a:hover { border-color:var(--self); color:var(--self); }
+
+  .warn { background:var(--act-bg); color:var(--act); border-left:5px solid var(--act);
+          border-radius:var(--r); padding:18px 20px; font-size:18px; margin-top:56px; }
+  .warn b { display:block; margin-bottom:4px; }
+  .warn a { color:inherit; font-weight:700; }
+
+  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--rule);
+           color:var(--faint); font-size:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">Musculoskeletal pain · NSW</p>
+  <h1>Co<span class="d">–</span>Motion</h1>
+
+  <p class="thesis">
+    You were seen once. Your next appointment is in <span class="em">six months</span>.
+    The flares don't wait that long.
+  </p>
+
+  <p class="lede">
+    Everything you need already exists — across Arthritis Australia, the NSW Pain Network,
+    painHEALTH, the Pain Toolkit, Painaustralia and half a dozen others. None of it is
+    findable at 2am with a joint on fire. Co-Motion is the front door: ask a question in
+    your own words, get an answer from those sources, and get told what to do tonight.
+  </p>
+
+  <a class="cta" href="/app">Open Co-Motion →</a>
+  <span class="cta-note">Free. Nothing to sign up for. Nothing about you is stored on our side.</span>
+</header>
+
+<h2>Every answer ends somewhere</h2>
+<p style="color:var(--soft); max-width:58ch">
+  The point isn't to tell you things. It's to tell you what to <em>do</em> — and, most of the
+  time, that it can safely be handled where you are. Every answer lands on one of five rungs.
+</p>
+<ul class="rail">
+  <li><b>You can do this at home</b><span>Most questions land here. That's the goal.</span></li>
+  <li><b>Your pharmacist can help today</b><span>No appointment. Talking to them costs nothing.</span></li>
+  <li><b>This one's for your GP, and it can wait</b><span>Written down for you, with the date, so you walk in with it.</span></li>
+  <li><b>Call your GP today</b><span>Or healthdirect — a nurse answers, any hour.</span></li>
+  <li class="top"><b>Get seen tonight</b><span>Rare. But this is the one it must never get wrong.</span></li>
+</ul>
+
+<h2>Two things we enforce in code, not in a prompt</h2>
+<div class="two">
+  <div class="g">
+    <span class="tag">It can escalate. It can't soften.</span>
+    <h3>The dangerous cases never reach the model</h3>
+    <p>
+      A hot, swollen joint with a fever is an infected joint until proven otherwise — and it
+      looks exactly like the gout flare you've had thirty times before. A rule engine screens
+      for that before the AI runs, and if it fires, the AI is never called at all. No latency,
+      no rewording, no judgement. It works with the AI switched off entirely.
+    </p>
+  </div>
+  <div class="g">
+    <span class="tag">It answers, or it says it can't</span>
+    <h3>It cannot invent health advice</h3>
+    <p>
+      Every claim comes from a card written from a published Australian source, and the AI may
+      only pick from those cards and explain them. Anything it makes up is dropped by the
+      server. When the sources don't cover your question, it says so and writes the question
+      down for your doctor — rather than guessing at someone who has no one to ask for
+      six months.
+    </p>
+  </div>
+</div>
+
+<h2>Where every word comes from</h2>
+<div class="srcs">
+  <a href="https://arthritisaustralia.org.au/understanding-arthritis/" target="_blank" rel="noopener">Arthritis Australia</a>
+  <a href="https://muscha.org/" target="_blank" rel="noopener">Musculoskeletal Health Australia</a>
+  <a href="https://aci.health.nsw.gov.au/chronic-pain" target="_blank" rel="noopener">ACI Pain Management Network (NSW)</a>
+  <a href="https://painhealth.com.au" target="_blank" rel="noopener">painHEALTH</a>
+  <a href="https://www.paintoolkit.org/" target="_blank" rel="noopener">Pain Toolkit</a>
+  <a href="https://www.painaustralia.org.au" target="_blank" rel="noopener">Painaustralia</a>
+  <a href="https://chronicpainaustralia.org.au/resources/" target="_blank" rel="noopener">Chronic Pain Australia</a>
+  <a href="https://www.nsw.gov.au/health-and-wellbeing/healthy-living/gethealthyservice" target="_blank" rel="noopener">NSW Get Healthy Service</a>
+  <a href="https://www.activeandhealthy.nsw.gov.au/" target="_blank" rel="noopener">Active and Healthy (NSW)</a>
+  <a href="https://www.healthdirect.gov.au/" target="_blank" rel="noopener">healthdirect</a>
+  <a href="https://www.health.gov.au/our-work/upcoming-changes-to-mbs-chronic-disease-management-arrangements" target="_blank" rel="noopener">Dept of Health — MBS</a>
+</div>
+
+<div class="warn">
+  <b>This is a prototype, and it is not your doctor.</b>
+  The library is curated from the sources above but has not yet been signed off by a GP or a
+  rheumatologist. If something is badly wrong right now — chest pain, trouble breathing, a
+  limb you can't move — go to an emergency department, or call healthdirect free on
+  <a href="tel:1800022222">1800 022 222</a>.
+</div>
+
+<footer>
+  Built as a design-thinking workshop prototype. Not a medical device. Decision support only —
+  your GP owns your care plan, and this exists to support it between visits.
+</footer>
+
+</div>
+</body>
+</html>

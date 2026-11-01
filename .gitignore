@@ -1,0 +1,18 @@
+# Secrets & deps
+.env
+node_modules/
+
+# Fetched corpus — raw third-party content, large and regenerable with tools/.
+# The DERIVED, committable outputs below are kept.
+data/raw/
+data/text/
+data/files/
+data/catalogue.json
+
+# Keep: data/directory.json (the app needs it), data/handoff.md, data/handoff.csv,
+# data/manual_downloads.md, data/fetch_report.md
+
+# OS / editor noise
+.DS_Store
+*.log
+.playwright-mcp/
