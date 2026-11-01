@@ -2,6 +2,14 @@
 
 _As of 2026-11-01_
 
+> **Status:** Phase 1 is **built and deployed** — live at
+> [co-motion-production.up.railway.app](https://co-motion-production.up.railway.app), source at
+> [github.com/aslibass/comotion](https://github.com/aslibass/comotion) (pushes to `main`
+> auto-redeploy). The browse-first homepage, 169-resource directory, honest multilingual view,
+> two-tier ask, and the giant cell arteritis screen are all live. Phase 2 (model-generated
+> in-language summaries, human-reviewed translated safety strings, promotion of curated cards) and
+> the content work to grow real Arabic/Vietnamese coverage are the next steps.
+
 ## The problem
 
 Someone with chronic musculoskeletal pain is seen in clinic and given an appointment six months

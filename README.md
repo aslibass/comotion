@@ -2,23 +2,33 @@
 
 **Helping people with chronic musculoskeletal pain get through the months between appointments.**
 
+🔗 **Live:** [co-motion-production.up.railway.app](https://co-motion-production.up.railway.app) · the tool is at **/app** (asking a question needs the access code; browsing, the rail and the emergency path are open)
+
 A patient is seen in clinic and given an appointment six months out. In between, they flare.
 They can't get in to see anyone. Many miss the appointment anyway and wait again.
 
-The help they need already exists — spread across Arthritis Australia, the NSW ACI Pain
-Network, painHEALTH, the Pain Toolkit, Painaustralia, healthdirect and half a dozen others.
-It is effectively unfindable from inside a flare at 2am.
+The help they need already exists — spread across Arthritis Australia, the NSW ACI Pain Network,
+painHEALTH, the Pain Toolkit, healthdirect and a hundred-odd other organisations. It is
+effectively unfindable from inside a flare at 2am.
 
-Co-Motion is the front door to that material. Ask a question in your own words, get an answer
-drawn from those sources and *explained*, and get told what to do tonight.
+Co-Motion is the front door to that material. **Browse** it by topic or **ask** a question in
+your own words; get an answer drawn from endorsed Australian sources and *explained*; and get told
+what to do tonight — on a five-rung scale that keeps most people safely at home and reliably sends
+the dangerous minority to care.
+
+> For the full rationale and the expert-panel review behind the current design, see
+> [`docs/approach.md`](docs/approach.md).
 
 ---
 
-## The design
+## How it's built
 
-### The rail
+Co-Motion is the design team's **multilingual navigator** sitting on top of a **code-enforced
+safety rail**. The navigator is the friendly part; the rail is the part that must never fail.
 
-Every answer lands on exactly one of five rungs:
+### The rail (the part that cannot fail)
+
+Every answer lands on one of five rungs:
 
 | | |
 |---|---|
@@ -28,131 +38,144 @@ Every answer lands on exactly one of five rungs:
 | **4** | Call your GP today |
 | **5** | Get seen tonight |
 
-Most questions should land on rungs 1–2. That is the objective, not a compromise: this person
-*cannot* get an appointment, so routing them to a GP they can't see is a dead end dressed up as
-caution, and it's how people end up in an emergency department.
+Two guarantees live in **code** (`server/redflags.js`, `server/index.js`), not in a prompt —
+because a prompt is a request and code is a guarantee:
 
-### Two guarantees, enforced in code
+1. **The model can escalate a disposition but can never soften one.** The final rung is
+   `max(ruleFloor, modelDisposition)`. Deterministic screens run *before* the model and set a floor.
+2. **The model cannot invent health advice.** It selects from a curated library and explains it;
+   any ID it invents is dropped. If nothing survives, the question is logged for the patient's
+   doctor rather than answered.
 
-A prompt is a request. Code is a guarantee. Both of these live in `server/index.js`, not in a
-system prompt:
+If the floor is **ED**, the model is **never called at all** — the most dangerous path is instant,
+cannot be reworded, and works with no API key. Three (now four) deterministic **triage questions**
+run every time, on every entry point — including the new **giant cell arteritis** screen. "Not
+sure" counts as yes.
 
-**1. The model can escalate. It can never soften.**
-Two deterministic screens run *before* the model and set a floor — patterns over what the person
-typed (`screen()`), and three questions we explicitly ask them (`triageScreen()`). The final
-disposition is `max(floor, model)`.
+### The two-tier library
 
-If the floor is **ED, the model is never called at all.** The response is returned instantly.
-That path cannot be delayed by a slow model on 4G, cannot be reworded or buried under lifestyle
-advice, and cannot fail because an API key expired. **The most dangerous path in this product has
-no language model anywhere in it, and works with zero configuration.**
+- **Explain tier** — `server/evidence.js`: curated cards, each traceable to a retrieved source with
+  a verbatim quote. The model **may synthesise an explanation** grounded in these.
+- **Navigate tier** — `data/directory.json`: ~170 resources across the 8 domains. The model **may
+  route** someone to these and say what they are, but **may not make a clinical claim** from one. If
+  only navigate-tier resources match, the answer downgrades to "here's where to look."
 
-**2. The model cannot invent health advice.**
-It is handed the evidence cards and may only *select from them and explain them*. Every card ID
-it returns is checked against the library; anything it invented is dropped. If nothing survives,
-the answer is not shown as guidance — it's written into the patient's log as a question for their
-doctor. The failure mode is "we don't know", never a confident fabrication.
+Enforced in code: the explanation (`framing`) cites explain-tier IDs only; navigate-tier resources
+come back in a separate `pointers` array.
 
-### Why we ask three questions instead of just reading the text
+### Multilingual — honestly
 
-The regex screen originally **missed** `"my toe is agony and I feel hot and shivery"` — a textbook
-septic joint — because "shivery" wasn't on the word list. That is not a bug you fix by adding a
-word. You cannot screen for danger by guessing which nouns a frightened person will reach for.
-
-So the app asks, every time, before the model sees anything:
-
-1. Is a joint hot, red or swollen — and you also feel feverish, shivery, or generally unwell?
-2. Any new numbness around your groin, or trouble controlling your bladder or bowel?
-3. Any new rash, blisters or ulcers in your mouth since starting a new medicine?
-
-**"Not sure" counts as yes.** Someone in pain at 2am who isn't sure whether they have a fever
-needs a nurse, not a language model. A false alarm costs a phone call; a miss costs a joint.
-
-### The closed source allowlist
-
-`server/evidence.js` is the whole product. 48 cards, each one traceable to a page we actually
-retrieved, most carrying a verbatim quote and all carrying a link.
-
-An earlier draft of that file was written from the model's own recall of NICE and ACR guidelines.
-It read fluently and was mostly right — which is exactly what makes it dangerous, because nobody
-can check it and "mostly right" is not a standard you hand to a patient. It was thrown away.
-
-The library is a text file on purpose. A clinician can read it, argue with it, and correct it,
-and correcting it is an edit — not a retrain.
-
-**It caught a real error.** Painaustralia's factsheet (2016) tells patients to ask their GP for a
-"GP Management Plan". Medicare retired that name on 1 July 2025 and replaced it with the **GP
-Chronic Condition Management Plan**. A patient repeating the old term at a reception desk gets a
-blank look. The card now uses the current name and cites the Department of Health directly. This
-is what a curated library buys you that a model paraphrasing its training data does not.
-
-### Design decisions worth defending
-
-- **One typeface** — Atkinson Hyperlegible, designed by the Braille Institute for low-vision
-  readers. The user is often 60, in pain, squinting at a dimmed phone. 20px base.
-- **Two saturated colours, not five.** A five-hue severity ramp was the first instinct and it was
-  wrong: deuteranopia runs ~8% in men, this audience skews male and 50+, and iOS Night Shift (on,
-  at 2am) drags everything toward red. **Colour never carries urgency.** The verb does — largest
-  text on screen — then the level ("5 of 5 — the highest"), then inversion. Colour only confirms.
-- **No motion on the emergency state.** It paints in its final position. Animating "go to hospital"
-  stages the cleverness of the rule engine at the worst moment of someone's night.
-- **A human, one tap away.** Rung 5 is not an abstract instruction to go to an emergency
-  department at 2am for what is probably gout. It is healthdirect — free, 24 hours, a nurse —
-  as a `tel:` link, next to the sentence that breaks the patient's prior: *a gout flare and an
-  infected joint look identical, and an infection can destroy the joint in a day or two.*
-
-### The log
-
-Questions the library can't answer don't evaporate. They're written down with the date and kept
-in the browser. Six months of bad nights becomes a document the patient walks in holding, instead
-of something they try to remember in a ten-minute appointment.
+Browse and signpost in Arabic, Vietnamese, Assyrian and Chinese, with a free-interpreter card (TIS
+National, 131 450) on every topic. The language switch is **truthful**: the resource sheet barely
+tags resources by specific language (today only 3, all Assyrian), so the app says so plainly rather
+than implying a translated service that doesn't exist. Safety-critical strings are **never**
+model-translated (that's Phase 2, human-reviewed).
 
 ---
 
-## Run it
+## Run it locally
 
 ```bash
 npm install
 cp .env.example .env      # add your ANTHROPIC_API_KEY
-npm start                 # → http://localhost:5070
+npm start                 # → http://localhost:5070  (landing page /, tool /app)
+npm test                  # the rail tests (server/redflags.test.js)
 ```
 
-The landing page is at `/`, the tool at `/app`.
-
-**It runs without an API key.** You lose question-answering; you keep the library, the support
-services, the log, and the entire red-flag rail including the emergency path. That is deliberate.
+**It runs with no API key.** You lose question-answering; you keep the whole directory, the browse
+spine, the rail and the entire emergency path. That is deliberate.
 
 ### Environment
 
 | Variable | Required | Purpose |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | for `/api/ask` only | Question answering (claude-opus-4-8) |
+| `ANTHROPIC_API_KEY` | for `/api/ask` only | Question answering (`claude-opus-4-8`) |
 | `ACCESS_CODE` | when deployed publicly | Gates `/api/ask`, the only endpoint that spends money. Unset = no gate (local dev). |
-| `PORT` | no | Defaults to 5070. (Not 5060 — Chromium blocks it as the SIP port.) |
-
-When deployed publicly, **set `ACCESS_CODE`**. Without it, anyone who finds the URL spends your
-API budget. Everything except question-answering stays open to an unlocked visitor, so a fumbled
-code can never dead-end a patient — or a demo.
+| `PORT` | no | Defaults to 5070. |
 
 ---
 
-## Layout
+## The resource pipeline (`tools/`)
+
+The directory is built from the resource repository spreadsheet by a set of **re-runnable** Python
+scripts. Raw scraped pages and downloaded PDFs are **not** committed (they're large and
+third-party) — only the derived `data/directory.json` ships. Regenerate any time:
+
+```bash
+# 1. Fetch each resource page, extract clean text + metadata (idempotent, cached).
+#    Falls back to a headless browser for bot-blocked / JS-rendered pages.
+python tools/fetch_resources.py          # → data/catalogue.json, data/fetch_report.md
+
+# 2. Build the app's directory (the navigate tier) from the catalogue.
+python tools/build_directory.py          # → data/directory.json
+
+# 3. (optional) Download the linked PDFs / translated files.
+python tools/fetch_files.py              # → data/files/, manifest.json
+
+# 4. (optional) Produce the team hand-off + manual-download lists.
+python tools/make_handoff.py             # → data/handoff.md/.csv, data/manual_downloads.md
+```
+
+Requires `openpyxl`, `requests`, `trafilatura` (and `playwright` + `chromium` for the render
+fallback). The spreadsheet path defaults to `~/Downloads/CoMotion_Resource_Repository_...xlsx`;
+pass `--xlsx PATH` to override.
+
+**Still needs manual work:** `data/manual_downloads.md` lists the resources that couldn't be fetched
+automatically (bot-blocked sites, a few dead links, and the translated PDFs) — the content task for
+growing real Arabic/Vietnamese coverage.
+
+---
+
+## Project structure
 
 ```
 server/
-  evidence.js   The library. 48 cards, closed source allowlist. No model. The whole product.
-  redflags.js   The rail. Five rungs, the three triage questions, the pattern screen. No model.
-  assistant.js  Claude as a librarian: selects cards and explains them. Cannot add a claim.
-  index.js      Enforces the two guarantees. Short-circuits ED before the model.
+  evidence.js    The explain tier — curated cards. No model. A clinician can read and correct it.
+  directory.js   The navigate tier — loads data/directory.json. No model.
+  redflags.js    The rail — five rungs, four triage questions, the pattern screen. No model.
+  assistant.js   Claude as a librarian: selects + explains cards, routes to directory. Cannot add a claim.
+  index.js       Enforces the two guarantees. Short-circuits ED before the model.
+  redflags.test.js  Rail tests (npm test).
 public/
-  index.html    Landing page.
-  app.html      The tool.
+  index.html     Landing page.
+  app.html       The tool — browse-first homepage, triage, four-section answer, language switch.
+tools/           The re-runnable resource pipeline (see above).
+data/
+  directory.json The navigate tier (committed). Raw scrapes & PDFs are gitignored.
+docs/
+  approach.md    The full design rationale + expert-panel review.
 ```
+
+---
+
+## Deployment
+
+Hosted on **Railway**, deployed from this repo's `main` branch — **every push auto-redeploys.**
+It's gated behind `ACCESS_CODE` and `ANTHROPIC_API_KEY`, set as Railway service variables
+(never committed). `railway.toml` configures the build (`npm start`).
+
+---
+
+## How to contribute (for the team)
+
+- **Adding a resource to browse?** Add it to the repository spreadsheet and re-run the pipeline
+  (`fetch_resources.py` → `build_directory.py`). It becomes a navigate-tier directory entry.
+- **Adding something the bot should *explain*?** That's an explain-tier card in `server/evidence.js`
+  — it needs a verbatim quote and a real source, and should be clinician-reviewed. Promote by
+  curation, never by dumping a link.
+- **Touching the rail?** `server/redflags.js` is safety-critical. Add a test in
+  `server/redflags.test.js` and run `npm test`. The rung wording and triage questions need a named
+  clinical owner before real-patient use.
+
+### Governance
+
+Three tiers: **demo** (today's cards, behind a "prototype, not clinically reviewed" banner) →
+**directory** (the browse-only links, where the claim lives on the source) → **reviewed** (cards a
+GP or rheumatologist has signed off, the only ones eligible to reach real patients).
 
 ## What this is not
 
-Not a medical device. Not a diagnosis. Not a replacement for the GP, who owns the care plan —
-this exists to support that plan between visits.
-
-The library is curated from published sources but **has not yet been signed off by a GP or a
-rheumatologist.** The architecture assumes that review happens. It does not substitute for it.
+Not a diagnosis. Not a medical device. Not a replacement for the GP, who owns the care plan — this
+exists to support that plan between visits. The library is curated from published sources but **has
+not yet been signed off by a GP or rheumatologist.** The architecture assumes that review happens.
+It does not substitute for it.
