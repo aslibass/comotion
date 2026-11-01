@@ -7,6 +7,13 @@
     "Assyrian",
     "Chinese"
   ],
+  "languageCounts": {
+    "Arabic": 0,
+    "Vietnamese": 0,
+    "Assyrian": 3,
+    "Chinese": 0,
+    "translated": 23
+  },
   "domains": [
     {
       "key": "understanding",
@@ -16,7 +23,14 @@
         "Common symptoms",
         "Myths and misconceptions",
         "What is this condition?"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 0,
+        "Chinese": 0,
+        "translated": 7
+      }
     },
     {
       "key": "symptoms",
@@ -27,7 +41,14 @@
         "Pain",
         "Physical well being",
         "Sleep"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 0,
+        "Chinese": 0,
+        "translated": 5
+      }
     },
     {
       "key": "wellbeing",
@@ -38,7 +59,14 @@
         "Lifestyle factors (Alcohol, smoking, sleep)",
         "Mental wellbeing (stress, mindfulness, resilience)",
         "Physical activity"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 2,
+        "Chinese": 0,
+        "translated": 9
+      }
     },
     {
       "key": "self-management",
@@ -50,7 +78,14 @@
         "Managing medicines",
         "Monitoring symptoms",
         "When to seek help"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 1,
+        "Chinese": 0,
+        "translated": 5
+      }
     },
     {
       "key": "services",
@@ -61,7 +96,14 @@
         "Government support",
         "Healthcare professionals",
         "Specialty services"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 0,
+        "Chinese": 0,
+        "translated": 11
+      }
     },
     {
       "key": "programs",
@@ -74,7 +116,14 @@
         "Online course",
         "Peer support",
         "Physical activity Program"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 0,
+        "Chinese": 0,
+        "translated": 5
+      }
     },
     {
       "key": "appointments",
@@ -84,7 +133,14 @@
         "Before my appointment",
         "Shared decision making",
         "Understanding healthcare"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 0,
+        "Chinese": 0,
+        "translated": 3
+      }
     },
     {
       "key": "language",
@@ -94,7 +150,14 @@
         "Assyrian",
         "Culturally adapted materials",
         "Translated materials"
-      ]
+      ],
+      "languageCounts": {
+        "Arabic": 0,
+        "Vietnamese": 0,
+        "Assyrian": 3,
+        "Chinese": 0,
+        "translated": 23
+      }
     }
   ],
   "resources": [

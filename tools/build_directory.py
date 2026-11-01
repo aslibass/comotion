@@ -116,6 +116,15 @@ def main():
             "has_content": x.get("text_chars", 0) >= 400,
         })
 
+    langLabels = [l.capitalize() for l in LANGUAGES]
+
+    def lang_counts(members):
+        # How many of these resources are tagged in each language, plus a "translated"
+        # tally (generic translated/culturally-adapted versions).
+        c = {l: sum(1 for e in members if l in e["languages"]) for l in langLabels}
+        c["translated"] = sum(1 for e in members if e["translated"])
+        return c
+
     # Group into the eight domains, with the subdomains actually tagged within each.
     domains = []
     for key, label in DOMAINS:
@@ -126,12 +135,13 @@ def main():
                 if s not in subs:
                     subs.append(s)
         domains.append({"key": key, "label": label, "count": len(members),
-                        "subdomains": sorted(subs)})
+                        "subdomains": sorted(subs), "languageCounts": lang_counts(members)})
 
     out = {
         "generated_at": cat["generated_at"],
         "resource_count": len(entries),
-        "languages": [l.capitalize() for l in LANGUAGES],
+        "languages": langLabels,
+        "languageCounts": lang_counts(entries),
         "domains": domains,
         "resources": sorted(entries, key=lambda e: e["title"].lower()),
     }

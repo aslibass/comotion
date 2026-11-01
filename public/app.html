@@ -343,6 +343,7 @@
 <section id="browseBox" class="noprint" style="margin-top:36px">
   <h2>Or look around</h2>
   <div class="langsel" id="langsel" aria-label="Show resources in a language"></div>
+  <p id="langnote" class="hide" style="margin:-6px 0 16px; font-size:17px; color:var(--soft)"></p>
   <div class="doms" id="doms"></div>
 </section>
 
@@ -508,12 +509,38 @@ function renderBrowse() {
   $("langsel").querySelectorAll(".lang").forEach((b) => (b.onclick = () => {
     LANG = b.dataset.l;
     $("langsel").querySelectorAll(".lang").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+    updateLangNote();
+    renderTiles();              // tiles respond immediately, so the switch never looks dead
     if (DOMAIN) openDomain(DOMAIN);
   }));
+  renderTiles();
+  updateLangNote();
+}
 
-  $("doms").innerHTML = CFG.domains.map((d) =>
-    `<button class="dom" data-k="${esc(d.key)}"><b>${esc(d.label)}</b><span>${d.count} resources</span></button>`).join("");
+// The tile subtitle reflects the chosen language: how many are actually in it, or how
+// many have translated versions when none are language-tagged (the honest fallback).
+function renderTiles() {
+  $("doms").innerHTML = CFG.domains.map((d) => {
+    let sub = `${d.count} resources`;
+    if (LANG) {
+      const n = d.languageCounts?.[LANG] || 0;
+      const t = d.languageCounts?.translated || 0;
+      sub = n ? `${n} in ${esc(LANG)}` : (t ? `${t} with translated versions` : `${d.count} resources`);
+    }
+    return `<button class="dom" data-k="${esc(d.key)}"><b>${esc(d.label)}</b><span>${sub}</span></button>`;
+  }).join("");
   $("doms").querySelectorAll(".dom").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
+}
+
+function updateLangNote() {
+  const el = $("langnote");
+  if (!LANG) { show(el, false); return; }
+  const total = CFG.languageCounts?.[LANG] || 0;
+  const translated = CFG.languageCounts?.translated || 0;
+  el.innerHTML = total
+    ? `<b>${total}</b> resources are available in ${esc(LANG)} — they'll show first when you open a topic.`
+    : `We don't have resources tagged specifically in ${esc(LANG)} yet. ${translated ? `<b>${translated}</b> have translated or culturally-adapted versions, and ` : ""}free interpreter help (TIS National, 131 450) is offered on every topic.`;
+  show(el, true);
 }
 
 // A free interpreter is the single highest-leverage in-language help, and it is fixed

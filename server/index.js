@@ -57,6 +57,7 @@ app.get("/api/config", (req, res) => {
     // The browse spine: the eight directory domains + the languages we can filter by.
     domains: DIRECTORY.domains,
     languages: DIRECTORY.languages,
+    languageCounts: DIRECTORY.languageCounts,
     resourceCount: DIRECTORY.resource_count,
   });
 });
