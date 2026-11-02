@@ -1,0 +1,70 @@
+{
+  "meta": { "name": "Vietnamese", "endonym": "Tiếng Việt", "code": "vi", "dir": "ltr", "verified": false, "resourceLanguage": "Vietnamese" },
+
+  "_note": "DRAFT — machine translation of interface chrome only. Every safety-critical string (the five rung verbs and details, the triage questions and the 'not sure counts as yes' rule, the siren, the emergency section heading, and the 'this can't be lowered' wording) is intentionally omitted so it falls back to the verified English. Do NOT add those keys here without a credentialed translator and clinical sign-off — the merge is the governance rule.",
+
+  "ui": {
+    "subtitle.strong": "Cuộc hẹn của bạn còn nhiều tháng nữa. Trang này không dời được lịch hẹn — nhưng có thể cho bạn biết tối nay nên làm gì.",
+    "subtitle.rest": "Hãy hỏi về một đợt bùng phát, một loại thuốc, hay một đêm khó chịu. Bạn sẽ nhận được câu trả lời từ các dịch vụ y tế của Úc, kèm theo một kế hoạch.",
+
+    "gate.title": "Mã truy cập",
+    "gate.body": "Để đặt câu hỏi cần có mã. Mọi thứ khác trên trang này đều dùng được mà không cần mã.",
+    "gate.placeholder": "Mã",
+    "gate.unlock": "Mở khóa",
+    "gate.error": "Mã đó không đúng.",
+
+    "ask.placeholder": "“Ngón chân tôi đau rát và tôi đã hết thuốc — tối nay tôi nên làm gì?”",
+    "ask.button": "Hỏi",
+    "ask.spinner": "Đang tìm trong thư viện…",
+    "ask.about": "Về vấn đề:",
+    "ask.concern": "Có điều gì đó không ổn ngay bây giờ →",
+    "ask.error": "Đã xảy ra lỗi.",
+    "ask.neterror": "Không kết nối được với máy chủ. Hãy kiểm tra kết nối và thử lại.",
+
+    "browse.heading": "Hoặc xem xung quanh",
+    "browse.resources": "{n} tài nguyên",
+    "browse.inLang": "{n} bằng {lang}",
+    "browse.translated": "{n} có bản dịch",
+
+    "langnote.available": "Có {n} tài nguyên bằng {lang} — chúng sẽ hiện ra đầu tiên khi bạn mở một chủ đề.",
+    "langnote.none": "Chúng tôi chưa có tài nguyên được gắn nhãn riêng bằng {lang}. {n} tài nguyên có bản dịch hoặc bản thích ứng theo văn hóa, và luôn có trợ giúp phiên dịch miễn phí (TIS National, 131 450) ở mọi chủ đề.",
+
+    "dir.back": "← Tất cả chủ đề",
+    "dir.open": "Mở tài nguyên này →",
+    "dir.downloads": "Tải xuống:",
+    "dir.file": "tệp {n}",
+    "dir.empty": "Chưa có gì ở đây.",
+    "dir.inLangSuffix": " — bằng {lang}",
+    "dir.someInLang": "{n} trong số này có bằng {lang} — được hiện trước.",
+
+    "badge.inLang": "Bằng {lang}",
+    "badge.translated": "Có bản dịch",
+
+    "triage.heading": "Bốn câu hỏi nhanh trước đã",
+    "triage.continue": "Tiếp tục",
+    "triage.checking": "Đang kiểm tra…",
+    "opt.yes": "Có",
+    "opt.unsure": "Không chắc",
+    "opt.no": "Không",
+
+    "sec.plan": "Điều cần đề nghị với bác sĩ của bạn",
+    "sec.log": "Nhật ký của bạn",
+    "log.empty": "Chưa có gì ở đây. Mỗi câu hỏi mà chúng tôi không trả lời được đều được ghi lại cho bạn, kèm theo ngày tháng — để sáu tháng của những đêm khó chịu trở thành thứ bạn có thể đưa cho bác sĩ, thay vì cố nhớ lại trong buổi hẹn mười phút.",
+    "log.print": "In trang này",
+    "log.takeIt": "Hãy mang theo đến buổi hẹn của bạn.",
+    "sec.today": "Những việc bạn có thể làm hôm nay, không cần đặt hẹn",
+    "sec.browseAll": "Xem tất cả",
+
+    "plan.say": "Hãy nói câu này",
+    "card.misconception": "Hiểu lầm thường gặp",
+
+    "unverified": "Bản dịch {lang} này là bản nháp do máy tạo và vẫn đang được một người phiên dịch kiểm tra. Nếu có chỗ nào chưa rõ, bản tiếng Anh là bản chuẩn — và bạn có thể gọi đường dây phiên dịch miễn phí số 131 450."
+  },
+
+  "interpreter": {
+    "title": "Hãy yêu cầu một phiên dịch viên miễn phí",
+    "body": "Khi bạn gọi cho bác sĩ, dược sĩ hoặc healthdirect, bạn có thể yêu cầu một phiên dịch viên mà không mất phí.",
+    "sayLabel": "Hãy nói câu này qua điện thoại",
+    "note": "Hoặc bạn tự gọi cho TIS National miễn phí và yêu cầu họ kết nối cho bạn —"
+  }
+}

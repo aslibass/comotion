@@ -6,7 +6,7 @@
 <title>Co-Motion — help between appointments</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Sans+Syriac:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* ─────────────────────────────────────────────────────────────────────────────
      Design notes, because every one of these is a decision that survived review.
@@ -57,7 +57,7 @@
   /* ── The red-flag line. Above the fold, never below it. Putting the emergency
         content at the bottom of the page is a safety failure, not a layout choice. */
   .siren {
-    background:var(--act-bg); color:var(--act); border-left:6px solid var(--act);
+    background:var(--act-bg); color:var(--act); border-inline-start:6px solid var(--act);
     border-radius:var(--r); padding:16px 18px; margin:20px 0 0; font-size:18px;
   }
   .siren b { display:block; margin-bottom:4px; font-size:19px; }
@@ -173,7 +173,7 @@
   .ev p { margin:0; color:var(--soft); font-size:18px; }
   .tagm { display:inline-block; font-size:14px; font-weight:700; text-transform:uppercase;
           letter-spacing:.05em; color:var(--act); margin-bottom:6px; }
-  .quote { margin:12px 0 0; padding-left:14px; border-left:3px solid var(--rule);
+  .quote { margin:12px 0 0; padding-inline-start:14px; border-inline-start:3px solid var(--rule);
            font-size:17px; color:var(--faint); font-style:italic; }
   .src { margin-top:12px; font-size:17px; }
   .src a { color:var(--self); font-weight:700; }
@@ -185,7 +185,7 @@
   .plan h3 { margin:0 0 8px; font-size:23px; color:var(--self); }
   .plan p { margin:0 0 12px; font-size:19px; }
   .script { background:var(--card); border-radius:8px; padding:16px 18px; margin:14px 0 10px;
-            border-left:4px solid var(--self); }
+            border-inline-start:4px solid var(--self); }
   .script .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
                  color:var(--faint); display:block; margin-bottom:6px; }
   .script q { font-size:20px; font-style:italic; }
@@ -243,6 +243,13 @@
   .dom b { font-size:19px; display:block; }
   .dom span { color:var(--faint); font-size:16px; }
 
+  /* UI language switch — top of page, quiet until used. The page's own language. */
+  .uilang { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:16px 0 -8px; }
+  .uilang .uil { border:1.5px solid var(--rule); background:transparent; color:var(--soft);
+                 border-radius:999px; padding:7px 14px; font:inherit; font-size:16px; cursor:pointer; min-height:40px; }
+  .uilang .uil[aria-pressed="true"] { border-color:var(--self); background:var(--self-bg); color:var(--self); font-weight:700; }
+  .uilang .uil:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+
   /* Language switch — a filter across everything, not a shelf. */
   .langsel { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 16px; font-size:17px; }
   .langsel .lang { border:1.5px solid var(--rule); background:transparent; color:var(--soft);
@@ -269,6 +276,18 @@
   .pointers .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
                    color:var(--faint); margin:0 0 10px; }
 
+  /* ── Multilingual. Atkinson Hyperlegible has no Arabic or Syriac glyphs, so those
+        scripts fall back to Noto and read a touch larger. Layout mirrors via logical
+        properties + dir="rtl" on <html>. */
+  html[lang="ar"] body { font-family:"Noto Naskh Arabic","Atkinson Hyperlegible",system-ui,sans-serif; font-size:22px; }
+  html[lang="aii"] body { font-family:"Noto Sans Syriac","Atkinson Hyperlegible",system-ui,sans-serif; font-size:22px; }
+  [dir="rtl"] textarea, [dir="rtl"] .eg { text-align:right; }
+  /* Latin islands (numbers, drug names, URLs) must not flip inside RTL text. */
+  [dir="rtl"] .call .num, bdi, .tel { direction:ltr; unicode-bidi:isolate; }
+
+  .unverified { background:var(--self-bg); color:var(--self); border:1px solid var(--self);
+                border-radius:var(--r); padding:14px 18px; margin:16px 0 0; font-size:17px; }
+
   input[type=password] { padding:14px; border:2px solid var(--rule); border-radius:var(--r);
     background:var(--card); color:var(--ink); font:inherit; flex:1; min-width:160px; min-height:58px; }
 
@@ -289,29 +308,37 @@
 <body>
 <div class="wrap">
 
+<!-- UI LANGUAGE. The language of the page itself — distinct from the browse filter below,
+     which finds resources available in a language. Choosing one here re-ranks the browse
+     list too, so the two never contradict each other. Safety-critical wording that a
+     credentialed translator has not yet verified falls back to English, by design. -->
+<div class="uilang noprint" id="uilang" aria-label="Language"></div>
+
 <header>
   <h1>Co<span class="d">–</span>Motion</h1>
   <p class="sub">
-    <b>Your appointment is months away. This can't move it — but it can tell you what to do tonight.</b>
-    Ask about a flare, a medicine, a bad night. You'll get an answer from Australian health
-    services, and a plan.
+    <b data-i18n="subtitle.strong">Your appointment is months away. This can't move it — but it can tell you what to do tonight.</b>
+    <span data-i18n="subtitle.rest">Ask about a flare, a medicine, a bad night. You'll get an answer from Australian health
+    services, and a plan.</span>
   </p>
 </header>
 
 <div class="siren">
-  <b>Some things can't wait for this page.</b>
-  Chest pain, trouble breathing, or a limb you can't move — go to an emergency department now.
-  Not sure? Call healthdirect free, any hour, on <a href="tel:1800022222">1800 022 222</a>.
+  <b data-i18n="siren.title">Some things can't wait for this page.</b>
+  <span data-i18n="siren.body">Chest pain, trouble breathing, or a limb you can't move — go to an emergency department now.
+  Not sure? Call healthdirect free, any hour, on</span> <a class="tel" href="tel:1800022222">1800 022 222</a>.
 </div>
 
+<div id="langbanner" class="unverified noprint hide"></div>
+
 <div id="gate" class="card noprint hide" style="margin-top:20px">
-  <b>Access code</b>
-  <p style="margin:6px 0 12px; color:var(--soft); font-size:18px">
+  <b data-i18n="gate.title">Access code</b>
+  <p data-i18n="gate.body" style="margin:6px 0 12px; color:var(--soft); font-size:18px">
     Asking a question needs a code. Everything else on this page works without one.
   </p>
   <div class="row">
-    <input id="code" type="password" placeholder="Code" />
-    <button class="btn" id="unlock">Unlock</button>
+    <input id="code" type="password" data-i18n-ph="gate.placeholder" placeholder="Code" />
+    <button class="btn" id="unlock" data-i18n="gate.unlock">Unlock</button>
   </div>
   <p id="codeErr" class="err hide" style="margin:10px 0 0"></p>
 </div>
@@ -320,19 +347,19 @@
 <section id="askBox" class="noprint" style="margin-top:28px">
   <div class="card">
     <label for="q" class="hide">Your question</label>
-    <textarea id="q" placeholder="“My toe is on fire and I've run out of tablets — what do I do tonight?”"></textarea>
+    <textarea id="q" data-i18n-ph="ask.placeholder" placeholder="“My toe is on fire and I've run out of tablets — what do I do tonight?”"></textarea>
     <div class="row">
-      <button class="btn" id="ask">Ask</button>
-      <span class="spin hide" id="spin">Looking through the library…</span>
+      <button class="btn" id="ask" data-i18n="ask.button">Ask</button>
+      <span class="spin hide" id="spin" data-i18n="ask.spinner">Looking through the library…</span>
     </div>
     <div class="conds">
-      <span>This is about:</span>
+      <span data-i18n="ask.about">This is about:</span>
       <span id="conds" style="display:contents"></span>
     </div>
     <div class="egs" id="egs"></div>
     <p id="askErr" class="err hide" style="margin:12px 0 0"></p>
     <p style="margin:14px 0 0; font-size:17px">
-      <a href="#triBox" id="concern" style="color:var(--act); font-weight:700">
+      <a href="#triBox" id="concern" data-i18n="ask.concern" style="color:var(--act); font-weight:700">
         Something feels wrong right now →</a>
     </p>
   </div>
@@ -341,14 +368,14 @@
 <!-- Browse: the eight domains. Calm-state, below the ask box. Clicking a domain lists
      its resources (navigate tier) — plain links, no model, no disposition. -->
 <section id="browseBox" class="noprint" style="margin-top:36px">
-  <h2>Or look around</h2>
+  <h2 data-i18n="browse.heading">Or look around</h2>
   <div class="langsel" id="langsel" aria-label="Show resources in a language"></div>
   <p id="langnote" class="hide" style="margin:-6px 0 16px; font-size:17px; color:var(--soft)"></p>
   <div class="doms" id="doms"></div>
 </section>
 
 <section id="dirBox" class="noprint hide" style="margin-top:20px">
-  <button class="backlink" id="dirBack">← All topics</button>
+  <button class="backlink" id="dirBack" data-i18n="dir.back">← All topics</button>
   <h2 id="dirTitle" style="margin-top:4px"></h2>
   <div id="dirOut"></div>
 </section>
@@ -356,15 +383,15 @@
 <!-- The three questions. Deterministic. No model. "Not sure" counts as yes. -->
 <section id="triBox" class="hide" style="margin-top:28px">
   <div class="tri">
-    <b>Three quick questions first</b>
-    <p>
+    <b data-i18n="triage.heading">Four quick questions first</b>
+    <p data-i18n="triage.intro">
       A few things look exactly like a flare but aren't. This takes ten seconds and it's the
       part we don't leave to a computer's judgement. If you're not sure, say so — that's a real answer.
     </p>
     <div id="tqs"></div>
     <div class="row">
-      <button class="btn" id="triGo" disabled>Continue</button>
-      <span class="spin hide" id="triSpin">Checking…</span>
+      <button class="btn" id="triGo" data-i18n="triage.continue" disabled>Continue</button>
+      <span class="spin hide" id="triSpin" data-i18n="triage.checking">Checking…</span>
     </div>
   </div>
 </section>
@@ -373,32 +400,32 @@
 
 <section id="rest" class="hide">
 
-  <h2 class="noprint">The thing to ask your GP for</h2>
+  <h2 class="noprint" data-i18n="sec.plan">The thing to ask your GP for</h2>
   <div class="plan noprint" id="planBox"></div>
 
-  <h2>Your log</h2>
+  <h2 data-i18n="sec.log">Your log</h2>
   <div class="card">
-    <p class="empty" id="qsEmpty">
+    <p class="empty" id="qsEmpty" data-i18n="log.empty">
       Nothing here yet. Every question we can't answer gets written down for you, with the date —
       so six months of bad nights turns into something you can hand to the doctor, instead of
       trying to remember it in a ten-minute appointment.
     </p>
     <div id="qs"></div>
     <div class="row noprint hide" id="qsActions">
-      <button class="btn" onclick="window.print()">Print this</button>
-      <span style="color:var(--faint); font-size:17px">Take it to your appointment.</span>
+      <button class="btn" onclick="window.print()" data-i18n="log.print">Print this</button>
+      <span data-i18n="log.takeIt" style="color:var(--faint); font-size:17px">Take it to your appointment.</span>
     </div>
   </div>
 
-  <h2 class="noprint">Things you can do today, without an appointment</h2>
+  <h2 class="noprint" data-i18n="sec.today">Things you can do today, without an appointment</h2>
   <div class="card noprint" id="today"></div>
 
-  <h2 class="noprint">Browse everything</h2>
+  <h2 class="noprint" data-i18n="sec.browseAll">Browse everything</h2>
   <div class="card noprint" id="lib"></div>
 
 </section>
 
-<h2 class="noprint">Go to an emergency department if any of this is happening</h2>
+<h2 class="noprint" data-i18n="sec.emergency">Go to an emergency department if any of this is happening</h2>
 <div class="card noprint" id="flags"></div>
 
 <footer>
@@ -414,9 +441,78 @@ const $ = (id) => document.getElementById(id);
 const show = (el, on = true) => el.classList.toggle("hide", !on);
 let CFG = null, COND = "other", CODE = "", PENDING = "", TRI = {}, LANG = "", DOMAIN = null;
 const KEY = "comotion.log";
+const LANGKEY = "comotion.uilang";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   LOCALISATION. English is the source of truth. Any other locale is deep-merged ON TOP
+   of English, so a missing key — including every safety-critical string a translator has
+   not yet verified — falls straight back to the English wording. That is the governance
+   rule made mechanical: the model never gets to author a rung verb or a triage question
+   in another language; either a human has translated it, or the reader sees English.
+   ─────────────────────────────────────────────────────────────────────────────── */
+let L = { meta: { code: "en", dir: "ltr", verified: true }, ui: {} };
+let UILANG = "en";
+const _localeCache = {};
+
+async function fetchLocale(code) {
+  if (_localeCache[code]) return _localeCache[code];
+  const r = await fetch(`/locales/${code}.json`);
+  if (!r.ok) throw new Error(`locale ${code} missing`);
+  const j = await r.json();
+  _localeCache[code] = j;
+  return j;
+}
+
+function deepMerge(base, over) {
+  const out = Array.isArray(base) ? base.slice() : { ...base };
+  for (const k of Object.keys(over || {})) {
+    out[k] = over[k] && typeof over[k] === "object" && !Array.isArray(over[k])
+      ? deepMerge(base?.[k] || {}, over[k]) : over[k];
+  }
+  return out;
+}
+
+async function loadLocale(code) {
+  const en = await fetchLocale("en");
+  L = code === "en" ? en : deepMerge(en, await fetchLocale(code));
+  UILANG = L.meta?.code || code;
+}
+
+// A UI string with {n}/{lang}/… interpolation. Always resolves — English underlies it.
+const tRaw = (key) => (L.ui && L.ui[key] != null ? L.ui[key] : null);
+const t = (key, vars = {}) => String(tRaw(key) ?? key).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
+
+// A localised rung: verb + detail from the locale when verified-translated, else English;
+// the phone number is never localised (it is a number).
+function rung(key) {
+  const s = (CFG.rungs && CFG.rungs[key]) || {};
+  const o = (L.rungs && L.rungs[key]) || {};
+  return {
+    level: s.level,
+    label: o.label ?? s.label,
+    detail: o.detail ?? s.detail,
+    call: s.call ? { number: s.call.number, label: o.callLabel ?? s.call.label } : null,
+  };
+}
+const triAsk = (tq) => L.triage?.[tq.id]?.ask ?? tq.ask;
+const flagText = (f) => ({ catches: L.redflags?.[f.id]?.catches ?? f.catches,
+                           why: L.redflags?.[f.id]?.why ?? f.why });
+
+function applyStatic() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const v = tRaw(el.getAttribute("data-i18n"));
+    if (v != null) el.textContent = v;
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const v = tRaw(el.getAttribute("data-i18n-ph"));
+    if (v != null) el.setAttribute("placeholder", v);
+  });
+  document.documentElement.lang = L.meta?.code || "en";
+  document.documentElement.dir = L.meta?.dir || "ltr";
+}
 
 /* The log. Dated, kept, printable. The wait stops being dead time. */
 const log = () => JSON.parse(localStorage.getItem(KEY) || "[]");
@@ -454,34 +550,28 @@ const EGS = {
 async function boot() {
   CFG = await (await fetch("/api/config")).json();
 
+  // Pick the UI language: a remembered choice, else English. Load it before first paint.
+  const codes = (CFG.locales || []).map((l) => l.code);
+  let want = "en";
+  try { const saved = localStorage.getItem(LANGKEY); if (saved && codes.includes(saved)) want = saved; } catch {}
+  await loadLocale(want);
+
+  renderUiLang();
+
   $("conds").innerHTML = Object.entries(CFG.conditions)
     .map(([k, c]) => `<button class="chip" data-k="${k}" aria-pressed="${k === COND}">${esc(c.label)}</button>`)
     .join("");
   $("conds").querySelectorAll(".chip").forEach((b) => (b.onclick = () => pick(b.dataset.k)));
 
-  $("tqs").innerHTML = CFG.triage.map((t) => `
-    <div class="tq">
-      <p>${esc(t.ask)}</p>
-      <div class="opts" data-q="${t.id}">
-        ${["yes", "unsure", "no"].map((v) => `<button class="opt" data-v="${v}" aria-pressed="false">
-          ${v === "yes" ? "Yes" : v === "unsure" ? "Not sure" : "No"}</button>`).join("")}
-      </div>
-    </div>`).join("");
-  $("tqs").querySelectorAll(".opts").forEach((g) =>
-    g.querySelectorAll(".opt").forEach((b) => (b.onclick = () => {
-      TRI[g.dataset.q] = b.dataset.v;
-      g.querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
-      $("triGo").disabled = CFG.triage.some((t) => !TRI[t.id]);
-    })));
-
-  $("flags").innerHTML = CFG.redFlags
-    .map((f) => `<div class="flag"><b>${esc(f.catches)}</b><p>${esc(f.why)}</p></div>`).join("");
+  renderTriage();
+  renderFlags();
 
   $("prov").textContent = CFG.provenance.headline;
   $("caveat").textContent = CFG.provenance.caveat + " " + CFG.provenance.notExtractedNote;
   $("srcs").innerHTML = Object.values(CFG.sources)
     .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("");
 
+  applyStatic();
   renderBrowse();
   $("dirBack").onclick = () => { show($("dirBox"), false); show($("browseBox"), true);
     DOMAIN = null; window.scrollTo({ top: 0, behavior: "smooth" }); };
@@ -499,6 +589,72 @@ async function boot() {
   show($("gate"), CFG.codeRequired);
   await pick(COND);
   renderLog();
+}
+
+// The deterministic questions. Their wording is safety-critical: it comes from the locale
+// only when a translator has verified it, otherwise English.
+function renderTriage() {
+  $("tqs").innerHTML = CFG.triage.map((tq) => `
+    <div class="tq">
+      <p>${esc(triAsk(tq))}</p>
+      <div class="opts" data-q="${tq.id}">
+        ${[["yes", "opt.yes"], ["unsure", "opt.unsure"], ["no", "opt.no"]].map(([v, k]) =>
+          `<button class="opt" data-v="${v}" aria-pressed="${TRI[tq.id] === v}">${esc(t(k))}</button>`).join("")}
+      </div>
+    </div>`).join("");
+  $("tqs").querySelectorAll(".opts").forEach((g) =>
+    g.querySelectorAll(".opt").forEach((b) => (b.onclick = () => {
+      TRI[g.dataset.q] = b.dataset.v;
+      g.querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+      $("triGo").disabled = CFG.triage.some((tq) => !TRI[tq.id]);
+    })));
+}
+
+function renderFlags() {
+  $("flags").innerHTML = CFG.redFlags.map((f) => {
+    const x = flagText(f);
+    return `<div class="flag"><b>${esc(x.catches)}</b><p>${esc(x.why)}</p></div>`;
+  }).join("");
+}
+
+// The UI language switch. Lists exactly the locales that exist on disk, by their own name.
+function renderUiLang() {
+  const locs = CFG.locales || [];
+  if (locs.length < 2) { $("uilang").innerHTML = ""; return; }   // nothing to switch between
+  $("uilang").innerHTML = locs.map((l) =>
+    `<button class="uil" data-c="${esc(l.code)}" lang="${esc(l.code)}" aria-pressed="${l.code === UILANG}">${esc(l.endonym)}</button>`
+  ).join("");
+  $("uilang").querySelectorAll(".uil").forEach((b) => (b.onclick = () => setUILang(b.dataset.c)));
+}
+
+async function setUILang(code) {
+  await loadLocale(code);
+  try { localStorage.setItem(LANGKEY, code); } catch {}
+
+  applyStatic();
+  $("uilang").querySelectorAll(".uil").forEach((o) => o.setAttribute("aria-pressed", String(o.dataset.c === UILANG)));
+
+  // Re-render everything whose text is config- or locale-driven.
+  renderTriage();
+  renderFlags();
+
+  // Honest machine-translation notice when a translator has not signed this locale off.
+  const banner = $("langbanner");
+  if (L.meta && L.meta.verified === false) {
+    banner.textContent = t("unverified", { lang: L.meta.endonym || code });
+    show(banner, true);
+  } else {
+    show(banner, false);
+  }
+
+  // A language is also a browse filter: choosing Tiếng Việt should surface Vietnamese
+  // resources first, so the page never says one thing and lists another.
+  LANG = L.meta?.resourceLanguage || "";
+  renderBrowse();
+  if (DOMAIN) openDomain(DOMAIN);
+
+  // Re-skin the care plan / today / library for the current condition in the new language.
+  pick(COND);
 }
 
 // The browse spine: eight domain tiles + a language switch that filters across all of them.
@@ -521,13 +677,14 @@ function renderBrowse() {
 // many have translated versions when none are language-tagged (the honest fallback).
 function renderTiles() {
   $("doms").innerHTML = CFG.domains.map((d) => {
-    let sub = `${d.count} resources`;
+    let sub = t("browse.resources", { n: d.count });
     if (LANG) {
       const n = d.languageCounts?.[LANG] || 0;
-      const t = d.languageCounts?.translated || 0;
-      sub = n ? `${n} in ${esc(LANG)}` : (t ? `${t} with translated versions` : `${d.count} resources`);
+      const tr = d.languageCounts?.translated || 0;
+      sub = n ? t("browse.inLang", { n, lang: LANG })
+              : (tr ? t("browse.translated", { n: tr }) : t("browse.resources", { n: d.count }));
     }
-    return `<button class="dom" data-k="${esc(d.key)}"><b>${esc(d.label)}</b><span>${sub}</span></button>`;
+    return `<button class="dom" data-k="${esc(d.key)}"><b>${esc(d.label)}</b><span>${esc(sub)}</span></button>`;
   }).join("");
   $("doms").querySelectorAll(".dom").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
 }
@@ -538,21 +695,25 @@ function updateLangNote() {
   const total = CFG.languageCounts?.[LANG] || 0;
   const translated = CFG.languageCounts?.translated || 0;
   el.innerHTML = total
-    ? `<b>${total}</b> resources are available in ${esc(LANG)} — they'll show first when you open a topic.`
-    : `We don't have resources tagged specifically in ${esc(LANG)} yet. ${translated ? `<b>${translated}</b> have translated or culturally-adapted versions, and ` : ""}free interpreter help (TIS National, 131 450) is offered on every topic.`;
+    ? t("langnote.available", { n: `<b>${total}</b>`, lang: esc(LANG) })
+    : t("langnote.none", { n: `<b>${translated}</b>`, lang: esc(LANG) });
   show(el, true);
 }
 
 // A free interpreter is the single highest-leverage in-language help, and it is fixed
 // content — never model-generated. Shown on the language domain and whenever a language
 // filter is active.
-const INTERPRETER = `<div class="plan" style="margin-bottom:16px">
-  <h3>Ask for a free interpreter</h3>
-  <p>When you call a GP, a pharmacist or healthdirect, you can ask for an interpreter at no cost.</p>
-  <div class="script"><span class="lab">Say this on the phone</span>
-    <q>I need an interpreter. I speak [your language].</q></div>
-  <p class="note">Or call TIS National yourself, free, on <a href="tel:131450" style="color:var(--self);font-weight:700">131 450</a> and ask them to connect you.</p>
-</div>`;
+const interpreterHtml = () => {
+  const i = L.interpreter || {};
+  return `<div class="plan" style="margin-bottom:16px">
+    <h3>${esc(i.title ?? "Ask for a free interpreter")}</h3>
+    <p>${esc(i.body ?? "When you call a GP, a pharmacist or healthdirect, you can ask for an interpreter at no cost.")}</p>
+    <div class="script"><span class="lab">${esc(i.sayLabel ?? "Say this on the phone")}</span>
+      <q>${esc(i.script ?? "I need an interpreter. I speak [your language].")}</q></div>
+    <p class="note">${esc(i.note ?? "Or call TIS National yourself, free, and ask them to connect you.")}
+      <a class="tel" href="tel:131450" style="color:var(--self);font-weight:700">131 450</a></p>
+  </div>`;
+};
 
 async function openDomain(key) {
   DOMAIN = key;
@@ -560,42 +721,39 @@ async function openDomain(key) {
   const d = await (await fetch(url)).json();
   show($("browseBox"), false);
   show($("dirBox"), true);
-  $("dirTitle").textContent = d.domain.label + (LANG ? ` — in ${LANG}` : "");
+  $("dirTitle").textContent = d.domain.label + (LANG ? t("dir.inLangSuffix", { lang: LANG }) : "");
 
   let head = "";
   if (LANG && !d.taggedInLanguage) {
     // Honest: we do not have resources specifically in this language. Say so plainly
     // rather than dressing up unrelated ones as translated.
     head += `<div class="card" style="margin-bottom:16px">
-      <b>We don't have resources tagged specifically in ${esc(LANG)} yet.</b>
-      <p style="color:var(--soft);margin:8px 0 0;font-size:18px">
-        Below are resources that offer translated or culturally-adapted versions, plus free
-        interpreter help. The underlying pages are mostly in English.</p></div>`;
+      <b>${t("langnote.none", { n: "", lang: esc(LANG) }).replace(/\s+/g, " ").trim()}</b></div>`;
   } else if (LANG) {
     head += `<p style="color:var(--soft);font-size:18px;margin:0 0 14px">
-      ${d.taggedInLanguage} of these are available in ${esc(LANG)} — shown first.</p>`;
+      ${esc(t("dir.someInLang", { n: d.taggedInLanguage, lang: LANG }))}</p>`;
   }
-  if (LANG || key === "language") head += INTERPRETER;
+  if (LANG || key === "language") head += interpreterHtml();
 
   $("dirOut").innerHTML = head + (d.resources.map(dirCard).join("") ||
-    `<p class="empty">Nothing here yet.</p>`);
+    `<p class="empty">${esc(t("dir.empty"))}</p>`);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function dirCard(r) {
   const badges = [
-    ...r.languages.map((l) => `<span class="badge lang">In ${esc(l)}</span>`),
-    r.translated && !r.languages.length ? `<span class="badge">Translated versions</span>` : "",
+    ...r.languages.map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: l }))}</span>`),
+    r.translated && !r.languages.length ? `<span class="badge">${esc(t("badge.translated"))}</span>` : "",
   ].join("");
   const files = r.doc_links?.length
-    ? `<div class="files">Downloads: ${r.doc_links.slice(0, 6)
-        .map((f, i) => `<a href="${esc(f)}" target="_blank" rel="noopener">file ${i + 1}</a>`).join("")}</div>`
+    ? `<div class="files">${esc(t("dir.downloads"))} ${r.doc_links.slice(0, 6)
+        .map((f, i) => `<a href="${esc(f)}" target="_blank" rel="noopener">${esc(t("dir.file", { n: i + 1 }))}</a>`).join("")}</div>`
     : "";
   return `<div class="dir">
     ${badges}
     <h3>${esc(r.title)}</h3>
     <p>${esc(r.description || "")}</p>
-    <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener">Open this resource →</a>
+    <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
     ${files}
   </div>`;
 }
@@ -618,7 +776,7 @@ async function pick(k) {
       <h3>${esc(plan.title)}</h3>
       <p>${esc(plan.plain)}</p>
       <div class="script">
-        <span class="lab">Say this</span>
+        <span class="lab">${esc(t("plan.say"))}</span>
         <q>${esc(plan.script)}</q>
       </div>
       <p class="note">${esc(plan.scriptNote)}</p>
@@ -646,7 +804,7 @@ async function pick(k) {
 
 function evCard(e) {
   return `<div class="ev">
-    ${e.myth ? '<span class="tagm">Common misconception</span>' : ""}
+    ${e.myth ? `<span class="tagm">${esc(t("card.misconception"))}</span>` : ""}
     <h3>${esc(e.title)}</h3>
     <p>${esc(e.plain)}</p>
     ${e.quote ? `<p class="quote">“${esc(e.quote)}”</p>` : ""}
@@ -714,9 +872,11 @@ $("triGo").onclick = async () => {
 };
 
 function render(d) {
-  const r = d.rung;
+  // Recompute the rung client-side so its verb/detail honour the chosen language (the
+  // phone number never changes). The disposition itself is the server's — code owns it.
+  const r = rung(d.disposition);
   let h = `<div class="rung ${d.disposition}">
-    <p class="lvl">Level ${esc(r.level)}</p>
+    <p class="lvl">${esc(t("answer.level", { level: r.level }))}</p>
     <p class="verb">${esc(r.label)}</p>
     <p class="detail">${esc(r.detail)}</p>`;
 
@@ -729,36 +889,35 @@ function render(d) {
 
   // Said in words, not staged as an animation.
   (d.flags || []).forEach((f) => {
-    h += `<div class="why"><b>${esc(f.catches)}</b><p>${esc(f.why)}</p></div>`;
+    const x = flagText(f);
+    h += `<div class="why"><b>${esc(x.catches)}</b><p>${esc(x.why)}</p></div>`;
   });
 
   if (d.raisedByRule && d.modelSaid) {
-    h += `<div class="raised">Raised from “${esc(d.modelSaid)}” because of what you told us above.
-      This can't be lowered.</div>`;
+    h += `<div class="raised">${esc(t("answer.raised", { modelSaid: d.modelSaid }))}</div>`;
   }
   h += `</div>`;
 
   if (d.grounded) {
     h += `<p class="answer">${esc(d.framing)}</p>` + d.evidence.map(evCard).join("");
   } else if (!d.redFlagOnly) {
+    const where = (d.pointers || []).length ? t("answer.noAnswer.where") : "";
     h += `<div class="card" style="margin-bottom:20px">
-      <b>We don't have a sourced answer for that one.</b>
+      <b>${esc(t("answer.noAnswer.title"))}</b>
       <p style="color:var(--soft); margin:8px 0 0; font-size:18px">
-        ${esc(d.unansweredReason || "Nothing in our sources covers this.")}
-        We'd rather say that than guess${(d.pointers || []).length ? " — but here's where to look" : ""}.
-        It's gone in your log with today's date, so you can put it to the doctor.</p></div>`;
+        ${esc(t("answer.noAnswer.body", { reason: d.unansweredReason || t("answer.noAnswer.default"), where }))}</p></div>`;
   }
 
   // NAVIGATE-TIER: where to go next. Suppressed on rungs 4–5 — nobody who needs a doctor
   // today or tonight should be scrolling a list of links instead of making the call.
   const urgent = d.disposition === "GP_NOW" || d.disposition === "ED";
   if (!urgent && (d.pointers || []).length) {
-    h += `<div class="pointers"><p class="lab">Where to go next</p>` +
+    h += `<div class="pointers"><p class="lab">${esc(t("answer.whereToLook"))}</p>` +
       d.pointers.map((p) => `<div class="dir">
-        ${p.languages.map((l) => `<span class="badge lang">In ${esc(l)}</span>`).join("")}
+        ${p.languages.map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: l }))}</span>`).join("")}
         <h3>${esc(p.title)}</h3>
         <p>${esc(p.description || "")}</p>
-        <a class="go" href="${esc(p.url)}" target="_blank" rel="noopener">Open this resource →</a>
+        <a class="go" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
       </div>`).join("") + `</div>`;
   }
   $("out").innerHTML = h;

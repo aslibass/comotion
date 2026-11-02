@@ -1,0 +1,129 @@
+{
+  "meta": { "name": "English", "endonym": "English", "code": "en", "dir": "ltr", "verified": true, "resourceLanguage": null },
+  "ui": {
+    "subtitle.strong": "Your appointment is months away. This can't move it — but it can tell you what to do tonight.",
+    "subtitle.rest": "Ask about a flare, a medicine, a bad night. You'll get an answer from Australian health services, and a plan.",
+    "siren.title": "Some things can't wait for this page.",
+    "siren.body": "Chest pain, trouble breathing, or a limb you can't move — go to an emergency department now. Not sure? Call healthdirect free, any hour, on",
+    "gate.title": "Access code",
+    "gate.body": "Asking a question needs a code. Everything else on this page works without one.",
+    "gate.placeholder": "Code",
+    "gate.unlock": "Unlock",
+    "gate.error": "That code didn't work.",
+    "ask.placeholder": "“My toe is on fire and I've run out of tablets — what do I do tonight?”",
+    "ask.button": "Ask",
+    "ask.spinner": "Looking through the library…",
+    "ask.about": "This is about:",
+    "ask.concern": "Something feels wrong right now →",
+    "ask.error": "Something went wrong.",
+    "ask.neterror": "Couldn't reach the server. Check your connection and try again.",
+    "browse.heading": "Or look around",
+    "browse.resources": "{n} resources",
+    "browse.inLang": "{n} in {lang}",
+    "browse.translated": "{n} with translated versions",
+    "langnote.available": "{n} resources are available in {lang} — they'll show first when you open a topic.",
+    "langnote.none": "We don't have resources tagged specifically in {lang} yet. {n} have translated or culturally-adapted versions, and free interpreter help (TIS National, 131 450) is offered on every topic.",
+    "dir.back": "← All topics",
+    "dir.open": "Open this resource →",
+    "dir.downloads": "Downloads:",
+    "dir.file": "file {n}",
+    "dir.empty": "Nothing here yet.",
+    "dir.inLangSuffix": " — in {lang}",
+    "dir.someInLang": "{n} of these are available in {lang} — shown first.",
+    "badge.inLang": "In {lang}",
+    "badge.translated": "Translated versions",
+    "triage.heading": "Four quick questions first",
+    "triage.intro": "A few things look exactly like a flare but aren't. This takes ten seconds and it's the part we don't leave to a computer's judgement. If you're not sure, say so — that's a real answer.",
+    "triage.continue": "Continue",
+    "triage.checking": "Checking…",
+    "opt.yes": "Yes",
+    "opt.unsure": "Not sure",
+    "opt.no": "No",
+    "concern.question": "I'm worried something might be wrong right now.",
+    "answer.level": "Level {level}",
+    "answer.raised": "Raised from “{modelSaid}” because of what you told us above. This can't be lowered.",
+    "answer.noAnswer.title": "We don't have a sourced answer for that one.",
+    "answer.noAnswer.body": "{reason} We'd rather say that than guess{where}. It's gone in your log with today's date, so you can put it to the doctor.",
+    "answer.noAnswer.default": "Nothing in our sources covers this.",
+    "answer.noAnswer.where": " — but here's where to look",
+    "answer.whereToLook": "Where to go next",
+    "sec.plan": "The thing to ask your GP for",
+    "sec.log": "Your log",
+    "log.empty": "Nothing here yet. Every question we can't answer gets written down for you, with the date — so six months of bad nights turns into something you can hand to the doctor, instead of trying to remember it in a ten-minute appointment.",
+    "log.print": "Print this",
+    "log.takeIt": "Take it to your appointment.",
+    "sec.today": "Things you can do today, without an appointment",
+    "sec.browseAll": "Browse everything",
+    "sec.emergency": "Go to an emergency department if any of this is happening",
+    "plan.say": "Say this",
+    "card.misconception": "Common misconception",
+    "unverified": "This {lang} translation is a machine draft still being checked by a human translator. If anything is unclear, the English is the source of truth — and you can call the free interpreter line on 131 450."
+  },
+  "rungs": {
+    "SELF_MANAGE": {
+      "label": "You can do this at home",
+      "detail": "If it's worse tomorrow, or it hasn't settled in a few days, ring your GP."
+    },
+    "PHARMACIST": {
+      "label": "Your pharmacist can help with this today",
+      "detail": "No appointment. Talking to them costs nothing, and many are open late."
+    },
+    "GP_NEXT": {
+      "label": "This one's for your GP, and it can wait",
+      "detail": "We've written it down for you — it's in your list below. Take it to your next visit."
+    },
+    "GP_NOW": {
+      "label": "Call your GP today",
+      "detail": "Call your practice and tell them it's a flare. If they can't fit you in, call healthdirect on 1800 022 222 — a nurse answers, any hour.",
+      "callLabel": "Call healthdirect — a nurse, any hour"
+    },
+    "ED": {
+      "label": "Get seen tonight",
+      "detail": "Don't wait for a GP appointment. If you can't get to an emergency department, or you're not sure, call healthdirect now and a nurse will tell you what to do. If you are very unwell, call 000.",
+      "callLabel": "Call healthdirect now — free, 24 hours"
+    }
+  },
+  "triage": {
+    "t-septic": { "ask": "Is a joint hot, red or swollen — and you also feel feverish, shivery, or generally unwell?" },
+    "t-cauda": { "ask": "Any new numbness around your groin or between your legs, or trouble controlling your bladder or bowel?" },
+    "t-rash": { "ask": "Any new rash, blisters, or ulcers in your mouth since starting a new medicine?" },
+    "t-gca": { "ask": "Are you over 50 with a new headache at your temple or scalp, aching in your jaw when you chew, or any change to your vision?" }
+  },
+  "redflags": {
+    "septic-joint": {
+      "catches": "A hot, swollen joint together with fever or feeling generally unwell",
+      "why": "An infected joint (septic arthritis) looks almost exactly like a gout or arthritis flare — hot, red, swollen, agonising. The difference is that an infected joint destroys itself within days and can make you dangerously unwell. It cannot be told apart from a flare without testing the fluid in the joint."
+    },
+    "cauda-equina": {
+      "catches": "Back pain with numbness in the saddle area, or loss of bladder or bowel control, or new weakness in both legs",
+      "why": "These are signs the nerves at the base of the spine are being compressed. It is one of the few genuine emergencies in back pain, and the damage becomes permanent within hours. Everything else about back pain can wait. This cannot."
+    },
+    "allopurinol-rash": {
+      "catches": "A new rash, blisters or mouth ulcers after starting allopurinol",
+      "why": "Allopurinol can rarely trigger a severe allergic skin reaction. Caught early it is survivable; ignored for a few days it can be fatal. Any new rash after starting allopurinol is treated as that reaction until proven otherwise — stop the drug and be seen the same day."
+    },
+    "gi-bleed": {
+      "catches": "Black or tarry stools, or vomiting blood, while taking anti-inflammatories",
+      "why": "Anti-inflammatories can cause bleeding in the stomach. Black tarry stools or vomit that looks like coffee grounds mean it is already bleeding. This is an emergency regardless of how well you otherwise feel."
+    },
+    "chest-breathing": {
+      "catches": "Chest pain or difficulty breathing",
+      "why": "Neither belongs to your musculoskeletal condition and both can be immediately life-threatening. This is not something to work out at home."
+    },
+    "trauma": {
+      "catches": "Unable to put weight on it after a fall or injury, or the joint looks deformed",
+      "why": "That pattern suggests a fracture or dislocation rather than a flare, and it needs an X-ray."
+    },
+    "giant-cell-arteritis": {
+      "catches": "A new headache at the temple, jaw ache when chewing, scalp tenderness, or any change to vision — especially over 50",
+      "why": "In people over 50 these can be giant cell arteritis — inflammation of the arteries at the temple. Untreated it can cause sudden and permanent loss of vision within days, so it is treated as an emergency. A change to your vision in particular cannot wait."
+    }
+  },
+  "interpreter": {
+    "title": "Ask for a free interpreter",
+    "body": "When you call a GP, a pharmacist or healthdirect, you can ask for an interpreter at no cost.",
+    "sayLabel": "Say this on the phone",
+    "script": "I need an interpreter. I speak [your language].",
+    "note": "Or call TIS National yourself, free, and ask them to connect you —"
+  }
+}

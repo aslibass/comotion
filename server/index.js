@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { readdirSync, readFileSync } from "node:fs";
 
 import {
   CONDITIONS,
@@ -18,6 +19,36 @@ import { answer, isConfigured } from "./assistant.js";
 import { DIRECTORY, dirById, resourcesForDomain, directoryForModel } from "./directory.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// AVAILABLE UI LOCALES. Read once at boot from public/locales/*.json. We expose only the
+// `meta` of each — code, endonym, direction, and whether a credentialed translator has
+// verified it — so the client's language switch offers exactly the locales that exist and
+// can label the unverified ones honestly. English is the source of truth; everything else
+// falls back to it key by key on the client, so a partial locale is safe to ship.
+function loadLocaleMeta() {
+  const dir = join(__dirname, "../public/locales");
+  try {
+    return readdirSync(dir)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => {
+        try {
+          const meta = JSON.parse(readFileSync(join(dir, f), "utf8")).meta || {};
+          return { code: meta.code || f.replace(/\.json$/, ""), name: meta.name || meta.code,
+                   endonym: meta.endonym || meta.name || meta.code, dir: meta.dir || "ltr",
+                   verified: meta.verified === true, resourceLanguage: meta.resourceLanguage || null };
+        } catch (err) {
+          console.warn(`locale ${f} did not parse — skipping:`, err.message);
+          return null;
+        }
+      })
+      .filter(Boolean)
+      // English first, then the rest alphabetically by endonym.
+      .sort((a, b) => (a.code === "en" ? -1 : b.code === "en" ? 1 : a.endonym.localeCompare(b.endonym)));
+  } catch {
+    return [{ code: "en", name: "English", endonym: "English", dir: "ltr", verified: true, resourceLanguage: null }];
+  }
+}
+const LOCALES = loadLocaleMeta();
 
 const app = express();
 app.use(express.json({ limit: "1mb" }));
@@ -47,6 +78,8 @@ app.get("/api/config", (req, res) => {
   res.json({
     assistantAvailable: isConfigured(),
     codeRequired: Boolean(ACCESS_CODE),
+    // The UI locales that exist on disk. The client loads /locales/<code>.json on demand.
+    locales: LOCALES,
     conditions: CONDITIONS,
     cardDomains: DOMAINS,
     sources: SOURCES,
