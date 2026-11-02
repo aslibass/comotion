@@ -13,7 +13,15 @@ test("unescapeUnicode leaves ordinary text, real dashes and other backslashes al
   assert.equal(unescapeUnicode("C:\\temp and \\n and \\u12"), "C:\\temp and \\n and \\u12");
 });
 
-test("the model is told never to diagnose from symptoms", () => {
+test("the model is told never to diagnose from symptoms, with the exact phrases it used", () => {
   assert.match(SYSTEM, /NEVER DIAGNOSE/);
   assert.match(SYSTEM, /never tell the person that THEIR symptoms match/);
+  assert.match(SYSTEM, /does fit the pattern/);
+  assert.match(SYSTEM, /exactly what you're noticing/);
+});
+
+test("the model is told to add nothing beyond the cards, including small examples", () => {
+  assert.match(SYSTEM, /SHORT AND STRICT BEYOND THE CARDS/);
+  assert.match(SYSTEM, /minor fall/);
+  assert.match(SYSTEM, /thin card means a SHORT answer/);
 });
