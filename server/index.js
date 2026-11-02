@@ -17,6 +17,7 @@ import {
 import { screen, triageScreen, higher, RUNGS, TRIAGE, ALWAYS_VISIBLE } from "./redflags.js";
 import { answer, isConfigured } from "./assistant.js";
 import { translateFraming, TRANSLATE_TO } from "./translate.js";
+import { unescapeUnicode } from "./text.js";
 import { DIRECTORY, CONDITIONS_LIST, dirById, resourcesForDomain, directoryForModel } from "./directory.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -240,6 +241,12 @@ app.post("/api/ask", async (req, res) => {
       directory: directoryForModel(),
       screen: { floor, flags },
     });
+
+    // The model sometimes double-escapes a character (a literal "—" instead of "—"), which
+    // the page would print as-is. Turn any such sequence back into the character it names.
+    for (const k of ["framing", "unansweredReason", "gpQuestion"]) {
+      if (typeof raw[k] === "string") raw[k] = unescapeUnicode(raw[k]);
+    }
 
     // Guarantee 2: drop every EXPLAIN-TIER card the model invented. (No condition filter
     // now that a question can span the whole library — only that the ID is real.)
