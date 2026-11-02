@@ -992,7 +992,8 @@ function render(d) {
 // the repository has no explicit media type. Priority: a video is to watch; a service or
 // program is to contact or join; appointment-prep is to discuss; everything else is to read.
 function actionOf(r) {
-  const hay = `${r.url || ""} ${r.title || ""} ${(r.tags || []).join(" ")}`;
+  // `tags` is { domainKey: [subdomains] }, not a list — flatten it.
+  const hay = `${r.url || ""} ${r.title || ""} ${Object.values(r.tags || {}).flat().join(" ")}`;
   if (/youtu|vimeo|\/watch|\bvideo\b|\bwebinar\b/i.test(hay)) return "watch";
   const d = r.domains || [];
   if (d.includes("services") || d.includes("programs")) return "contact";
