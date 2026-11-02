@@ -8,7 +8,14 @@ walkthrough are in the session scratchpad (`patient-walkthrough/`)._
 
 Worked through in one pass by parallel agents, then independently reviewed (spec/patient walkthrough,
 data accuracy, safety). **Verified locally** (88 unit tests, 39 browser tests at 390x844 with the model
-mocked, smoke test) — live verification is recorded at the bottom of this section once deployed.
+mocked, smoke test), then **verified live on 2026-11-03** (co-motion-production.up.railway.app, 390x844):
+first screen shows the emergency banner, the concern link, the 30px welcome and the first topic card;
+page height 2,299px (was 10,717); topic tap lands on the list; red-flag answers need no access code
+(417 ms to "Get seen tonight"); "What is osteoarthritis?", "My knee pain is getting worse" and the
+information-in-Vietnamese card all work; Vietnamese translation renders "trigger" correctly; "near me"
+answers say they are Australia-wide. Live testing also found and fixed a literal `—` in a no-answer
+message, and (after a prompt change, re-tested live) the model diagnosing from symptoms and adding small
+facts beyond its sources. Prompt rules reduce but cannot guarantee this — keep spot-checking answers.
 
 | Item | Status |
 |---|---|
