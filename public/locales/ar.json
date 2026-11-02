@@ -22,6 +22,8 @@
     "ask.error": "حدث خطأ ما.",
     "ask.neterror": "تعذّر الوصول إلى الخادم. تحقق من اتصالك وحاول مرة أخرى.",
 
+    "home.welcome": "ماذا تبحث عنه اليوم؟",
+    "home.ask": "أو اطرح سؤالًا",
     "browse.heading": "أو تصفّح",
     "browse.all": "الكل",
     "browse.resources": "{n} مورد",

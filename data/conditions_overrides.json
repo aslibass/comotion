@@ -1,0 +1,28 @@
+{
+  "_note": "Human/agent checks against the LIVE site, for pages the fetcher could not read or where the listing alone was ambiguous. Each entry replaces the automatic tags for that URL. Quotes are as returned by the live fetch on the date shown; re-check before clinical sign-off.",
+  "checked_on": "2026-11-02",
+  "by_url": {
+    "https://chronicpainaustralia.org.au/": [
+      {"condition": "Persistent Pain", "quote": "Chronic Pain Australia is the national peak consumer body representing the 5.4 million Australians living with chronic pain."}
+    ],
+    "https://chronicpainaustralia.org.au/community-forum": [
+      {"condition": "Persistent Pain", "quote": "Community forum run by Chronic Pain Australia, the national peak consumer body for people living with chronic pain (organisation checked on its home page)."}
+    ],
+    "https://chronicpainaustralia.org.au/painlink": [
+      {"condition": "Persistent Pain", "quote": "PainLink helpline run by Chronic Pain Australia, the national peak consumer body for people living with chronic pain (organisation checked on its home page)."}
+    ],
+    "https://chronicpainaustralia.org.au/resources": [
+      {"condition": "Persistent Pain", "quote": "Resources from Chronic Pain Australia, the national peak consumer body for people living with chronic pain (organisation checked on its home page)."}
+    ],
+    "https://www.painaustralia.org.au/static/uploads/files/painaust-factsheet10-final-wfbdhlqkosbm.pdf": [
+      {"condition": "Persistent Pain", "quote": "\"Medicines alone are not the most effective way to treat chronic pain.\" (Pain Australia factsheet, read from the downloaded PDF)"}
+    ],
+    "https://healthybonesaustralia.org.au/": [
+      {"condition": "Osteoporosis", "quote": "Healthy Bones Australia is a registered charity focused on bone health, with information on osteoporosis prevention, risk factors and treatment. \"The online self-assessment reviews risk factors for poor bone health.\""}
+    ],
+    "https://www.racgp.org.au/clinical-resources/clinical-guidelines/handi/patient-resources": [
+      {"condition": "Back Pain", "quote": "\"Advice to stay active for people with acute low back pain\"; \"Exercise for chronic low back pain\""},
+      {"condition": "Osteoarthritis", "quote": "\"Exercise for knee osteoarthritis\"; \"Aquatic exercise for knee and hip osteoarthritis\""}
+    ]
+  }
+}

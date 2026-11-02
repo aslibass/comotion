@@ -10,6 +10,33 @@ _As of 2026-11-01_
 > in-language summaries, human-reviewed translated safety strings, promotion of curated cards) and
 > the content work to grow real Arabic/Vietnamese coverage are the next steps.
 
+> **Update 2026-11-02 — matched to the design team's Layers 1–4 wording:**
+> - **Layer 1:** the homepage is browse-first and uses the spec's text exactly — "What are you
+>   looking for today?", "Browse Topics", the topic tiles, "Or Ask a Question", and the four
+>   example prompts. "Something feels wrong right now" sits directly under the emergency banner so
+>   it stays above the fold.
+> - **Layer 2:** "Understanding my condition" now opens to **Osteoarthritis, Osteoporosis,
+>   Persistent Pain and Back Pain**. The source spreadsheet has no condition sub-domains, so we
+>   added a classification (`tools/classify_conditions.py` → `data/conditions.json`): a condition
+>   is tagged only when the live page's title/address names it, or the body text mentions it at
+>   least three times, and every tag carries a quote. Where the spreadsheet says a page covers a
+>   condition but the fetched page never mentions it, the tag is recorded as *not confirmed* and
+>   left out of browsing. Doubtful pages were re-checked on the live sites
+>   (`data/conditions_overrides.json`). Result: 29 of 169 resources carry a confirmed condition
+>   (Osteoarthritis 7, Osteoporosis 6, Persistent Pain 14, Back Pain 4) — thin, because the
+>   repository is thin on these conditions, not because the rules are loose. The same two columns
+>   were written into the source spreadsheet.
+> - **Layer 4:** the third section is titled "Trusted resources highlighting what you can do
+>   next", with actions Read · Watch · Contact/join · Discuss with a healthcare professional.
+> - **Handoff for translators and the reviewing clinician:** `docs/translation-handoff.md`.
+>   Arabic and Vietnamese remain unreviewed machine drafts for interface text only; every
+>   safety string falls back to verified English.
+>
+> **Still open:** what the answer's fourth section should be (the spec lists three headings under
+> "four sections"); whether browse topics should nest as in the spec's Layer 1 list; whether the
+> "This is about:" condition chips stay; and the category names in the Layer 2 typed-query example
+> (Condition Information, Pain Management, Service Navigation), which differ from our eight domains.
+
 ## The problem
 
 Someone with chronic musculoskeletal pain is seen in clinic and given an appointment six months

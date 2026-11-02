@@ -1,0 +1,1717 @@
+{
+ "generated_at": "2026-11-02T10:24:22+00:00",
+ "method": "primary = in title/URL/listing description; mentioned = body only, >= 3 occurrences",
+ "conditions": [
+  "Osteoarthritis",
+  "Osteoporosis",
+  "Persistent Pain",
+  "Back Pain"
+ ],
+ "by_id": {
+  "735055-us25-myftpupload-com__4a33dbfb": {
+   "url": "https://735055.us25.myftpupload.com/resources/factsheets",
+   "url_as_listed": "https://735055.us25.myftpupload.com/resources/factsheets/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://735055.us25.myftpupload.com/resources/factsheets"
+  },
+  "about-healthdirect-gov-au__2122c97b": {
+   "url": "https://about.healthdirect.gov.au/what-we-do/portfolio/nhsd",
+   "url_as_listed": "https://about.healthdirect.gov.au/what-we-do/portfolio/nhsd",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://about.healthdirect.gov.au/what-we-do/portfolio/nhsd"
+  },
+  "aci-health-nsw-gov-au__fe9ced98": {
+   "url": "https://aci.health.nsw.gov.au/chronic-pain",
+   "url_as_listed": "https://aci.health.nsw.gov.au/chronic-pain",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Chronic Pain",
+     "body_mentions": 10
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://aci.health.nsw.gov.au/chronic-pain"
+  },
+  "aci-health-nsw-gov-au__921b7f61": {
+   "url": "https://aci.health.nsw.gov.au/chronic-pain/our-mob",
+   "url_as_listed": "https://aci.health.nsw.gov.au/chronic-pain/our-mob",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…with the reds, yellows and oranges representing pain and the flair ups that can occur for someone living with chronic pain. The green and white around the edge of the artwork is symbolic for the healthy life that people strive for.…",
+     "body_mentions": 11
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://aci.health.nsw.gov.au/chronic-pain/our-mob"
+  },
+  "aci-health-nsw-gov-au__58a05d2c": {
+   "url": "https://aci.health.nsw.gov.au/networks/musculoskeletal/resources/osteoarthritis-chronic-care",
+   "url_as_listed": "https://aci.health.nsw.gov.au/networks/musculoskeletal/resources/osteoarthritis-chronic-care",
+   "conditions": [
+    "Osteoarthritis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Osteoarthritis Chronic Care Program",
+     "body_mentions": 13
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://aci.health.nsw.gov.au/networks/musculoskeletal/resources/osteoarthritis-chronic-care"
+  },
+  "apps-apple-com__7343f5c7": {
+   "url": "https://apps.apple.com/au/app/1800medicare-was-my-health/id1596846961",
+   "url_as_listed": "https://apps.apple.com/au/app/1800medicare-was-my-health/id1596846961",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://apps.apple.com/au/app/1800medicare-was-my-health/id1596846961"
+  },
+  "apps-apple-com__1c025271": {
+   "url": "https://apps.apple.com/au/app/clara/id6497716291",
+   "url_as_listed": "https://apps.apple.com/au/app/clara/id6497716291",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://apps.apple.com/au/app/clara/id6497716291"
+  },
+  "apps-apple-com__24049b76": {
+   "url": "https://apps.apple.com/au/app/point-of-care-app/id1108787701",
+   "url_as_listed": "https://apps.apple.com/au/app/point-of-care-app/id1108787701",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://apps.apple.com/au/app/point-of-care-app/id1108787701"
+  },
+  "apps-apple-com__8811092c": {
+   "url": "https://apps.apple.com/us/app/drugs-com-medication-guide/id599471042",
+   "url_as_listed": "https://apps.apple.com/us/app/drugs-com-medication-guide/id599471042",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://apps.apple.com/us/app/drugs-com-medication-guide/id599471042"
+  },
+  "apps-apple-com__42f590f9": {
+   "url": "https://apps.apple.com/us/app/reminders/id1108187841",
+   "url_as_listed": "https://apps.apple.com/us/app/reminders/id1108187841",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://apps.apple.com/us/app/reminders/id1108187841"
+  },
+  "arthritisaustralia-org-au__cf0a9656": {
+   "url": "https://arthritisaustralia.org.au/",
+   "url_as_listed": "https://arthritisaustralia.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://arthritisaustralia.org.au/"
+  },
+  "arthritisaustralia-org-au__80327e38": {
+   "url": "https://arthritisaustralia.org.au/understanding-arthritis",
+   "url_as_listed": "https://arthritisaustralia.org.au/understanding-arthritis/",
+   "conditions": [],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "listing-only",
+     "found_in": "listing description",
+     "quote": "All subdomains. Osteoarthritis (OA) Seropositive rheumatoid arthritis (SPRA) (or simply ‘rheumatoid arthritis’…",
+     "body_mentions": 0
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://arthritisaustralia.org.au/understanding-arthritis"
+  },
+  "arthritistas-org-au__866d3165": {
+   "url": "https://arthritistas.org.au/",
+   "url_as_listed": "https://arthritistas.org.au/",
+   "conditions": [
+    "Osteoporosis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Home - Arthritis & Osteoporosis Tasmania",
+     "body_mentions": 1
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://arthritistas.org.au/"
+  },
+  "asaustralia-org__9d8336ec": {
+   "url": "https://asaustralia.org/",
+   "url_as_listed": "https://asaustralia.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://asaustralia.org/"
+  },
+  "asaustralia-org__1297c160": {
+   "url": "https://asaustralia.org/qld",
+   "url_as_listed": "https://asaustralia.org/qld",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://asaustralia.org/qld"
+  },
+  "asaustralia-org__8e2a4a6e": {
+   "url": "https://asaustralia.org/wa",
+   "url_as_listed": "https://asaustralia.org/wa/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://asaustralia.org/wa"
+  },
+  "au-physiapp-com__056e3f93": {
+   "url": "https://au.physiapp.com/login",
+   "url_as_listed": "https://au.physiapp.com/login",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://au.physiapp.com/login"
+  },
+  "australian-physio__dbaa9d34": {
+   "url": "https://australian.physio/",
+   "url_as_listed": "https://australian.physio/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://australian.physio/"
+  },
+  "backpain-muscha-org__80ba3c61": {
+   "url": "https://backpain.muscha.org/",
+   "url_as_listed": "https://backpain.muscha.org/",
+   "conditions": [
+    "Back Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Back Pain",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "The Back Pain Helpline",
+     "body_mentions": 34
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://backpain.muscha.org/"
+  },
+  "cec-health-nsw-gov-au__db50d7c8": {
+   "url": "https://cec.health.nsw.gov.au/safety-essentials/comprehensive-care/patient-information",
+   "url_as_listed": "https://cec.health.nsw.gov.au/safety-essentials/comprehensive-care/patient-information",
+   "conditions": [],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "listing-only",
+     "found_in": "listing description",
+     "quote": "General topic mostly outside the scope of MSK byt falls prevention useful for osteoporosis and ageing",
+     "body_mentions": 0
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://cec.health.nsw.gov.au/safety-essentials/comprehensive-care/patient-information"
+  },
+  "cha-org-au__5e20b72b": {
+   "url": "https://cha.org.au/",
+   "url_as_listed": "https://cha.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://cha.org.au/"
+  },
+  "chronicpainaustralia-org-au__9e88ff36": {
+   "url": "https://chronicpainaustralia.org.au/",
+   "url_as_listed": "https://chronicpainaustralia.org.au/",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "Chronic Pain Australia is the national peak consumer body representing the 5.4 million Australians living with chronic pain.",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://chronicpainaustralia.org.au/"
+  },
+  "chronicpainaustralia-org-au__19b8c0e7": {
+   "url": "https://chronicpainaustralia.org.au/community-forum",
+   "url_as_listed": "https://chronicpainaustralia.org.au/community-forum/",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "Community forum run by Chronic Pain Australia, the national peak consumer body for people living with chronic pain (organisation checked on its home page).",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://chronicpainaustralia.org.au/community-forum"
+  },
+  "chronicpainaustralia-org-au__5d524519": {
+   "url": "https://chronicpainaustralia.org.au/painlink",
+   "url_as_listed": "https://chronicpainaustralia.org.au/painlink/",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "PainLink helpline run by Chronic Pain Australia, the national peak consumer body for people living with chronic pain (organisation checked on its home page).",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://chronicpainaustralia.org.au/painlink"
+  },
+  "chronicpainaustralia-org-au__14e0fdbf": {
+   "url": "https://chronicpainaustralia.org.au/resources",
+   "url_as_listed": "https://chronicpainaustralia.org.au/resources/",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "Resources from Chronic Pain Australia, the national peak consumer body for people living with chronic pain (organisation checked on its home page).",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://chronicpainaustralia.org.au/resources"
+  },
+  "cja-org__b80b9fe1": {
+   "url": "https://cja.org/",
+   "url_as_listed": "https://cja.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://cja.org/"
+  },
+  "creakyjoints-org-au__6b9a21e1": {
+   "url": "https://creakyjoints.org.au/",
+   "url_as_listed": "https://creakyjoints.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://creakyjoints.org.au/"
+  },
+  "creakyjoints-org-au__f329c5ce": {
+   "url": "https://creakyjoints.org.au/education/classifications_of_arthritis",
+   "url_as_listed": "https://creakyjoints.org.au/education/classifications_of_arthritis/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://creakyjoints.org.au/education/classifications_of_arthritis"
+  },
+  "creakyjoints-org-au__6cdc854c": {
+   "url": "https://creakyjoints.org.au/patientpreprheum",
+   "url_as_listed": "https://creakyjoints.org.au/patientpreprheum/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://creakyjoints.org.au/patientpreprheum"
+  },
+  "creakyjoints-org-au__b28ce09f": {
+   "url": "https://creakyjoints.org.au/resources/healthcare-team",
+   "url_as_listed": "https://creakyjoints.org.au/resources/healthcare-team/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://creakyjoints.org.au/resources/healthcare-team"
+  },
+  "creakyjoints-org-au__13ba2d59": {
+   "url": "https://creakyjoints.org.au/support/arthritis-support-groups",
+   "url_as_listed": "https://creakyjoints.org.au/support/arthritis-support-groups/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://creakyjoints.org.au/support/arthritis-support-groups"
+  },
+  "embracementalhealth-org-au__4ffede06": {
+   "url": "https://embracementalhealth.org.au/",
+   "url_as_listed": "https://embracementalhealth.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://embracementalhealth.org.au/"
+  },
+  "emerge-org-au__2f4c83e7": {
+   "url": "https://emerge.org.au/",
+   "url_as_listed": "https://emerge.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://emerge.org.au/"
+  },
+  "empowered-org-au__f1a7ef1e": {
+   "url": "https://empowered.org.au/",
+   "url_as_listed": "https://empowered.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://empowered.org.au/"
+  },
+  "everyaustraliancounts-com-au__ec6e4575": {
+   "url": "https://everyaustraliancounts.com.au/",
+   "url_as_listed": "https://everyaustraliancounts.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://everyaustraliancounts.com.au/"
+  },
+  "exerciseismedicine-org-au__91a09162": {
+   "url": "https://exerciseismedicine.org.au/",
+   "url_as_listed": "https://exerciseismedicine.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://exerciseismedicine.org.au/"
+  },
+  "exerciseright-com-au__ecb08261": {
+   "url": "https://exerciseright.com.au/",
+   "url_as_listed": "https://exerciseright.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://exerciseright.com.au/"
+  },
+  "feetfirstpodiatry-com-au__71af2e6a": {
+   "url": "https://feetfirstpodiatry.com.au/",
+   "url_as_listed": "https://feetfirstpodiatry.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://feetfirstpodiatry.com.au/"
+  },
+  "fightingarthritis-org-au__5e57233f": {
+   "url": "https://fightingarthritis.org.au/",
+   "url_as_listed": "https://fightingarthritis.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://fightingarthritis.org.au/"
+  },
+  "findapharmacy-com-au__44b02acc": {
+   "url": "https://findapharmacy.com.au/thinkpharmacyfirst/home",
+   "url_as_listed": "https://findapharmacy.com.au/thinkpharmacyfirst/home",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://findapharmacy.com.au/thinkpharmacyfirst/home"
+  },
+  "ghlf-org-au__39f548f7": {
+   "url": "https://ghlf.org.au/",
+   "url_as_listed": "https://ghlf.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://ghlf.org.au/"
+  },
+  "gladaustralia-com-au__d7be62d7": {
+   "url": "https://gladaustralia.com.au/",
+   "url_as_listed": "https://gladaustralia.com.au/",
+   "conditions": [
+    "Osteoarthritis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "primary",
+     "found_in": "listing description",
+     "quote": "…events. Education and supervised exercise programs for people with hip and knee osteoarthritis",
+     "body_mentions": 3
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://gladaustralia.com.au/"
+  },
+  "healthify-nz__8b603143": {
+   "url": "https://healthify.nz/",
+   "url_as_listed": "https://healthify.nz/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://healthify.nz/"
+  },
+  "healthresourcedirectory-org-au__88789986": {
+   "url": "https://healthresourcedirectory.org.au/en",
+   "url_as_listed": "https://healthresourcedirectory.org.au/en/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://healthresourcedirectory.org.au/en"
+  },
+  "healthsciences-unimelb-edu-au__8fe1c505": {
+   "url": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/chesm-ai-chatbot",
+   "url_as_listed": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/chesm-ai-chatbot",
+   "conditions": [
+    "Osteoarthritis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "CHESM Osteoarthritis Virtual Assistant",
+     "body_mentions": 9
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/chesm-ai-chatbot"
+  },
+  "healthsciences-unimelb-edu-au__d4355f27": {
+   "url": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/my-knee-exercise",
+   "url_as_listed": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/my-knee-exercise",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/my-knee-exercise"
+  },
+  "healthybonesaustralia-org-au__29e7a2af": {
+   "url": "https://healthybonesaustralia.org.au/",
+   "url_as_listed": "https://healthybonesaustralia.org.au/",
+   "conditions": [
+    "Osteoporosis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "Healthy Bones Australia is a registered charity focused on bone health, with information on osteoporosis prevention, risk factors and treatment. \"The online self-assessment reviews risk factors for poor bone health.\"",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://healthybonesaustralia.org.au/"
+  },
+  "lifeprogram-org-au__51180c5b": {
+   "url": "https://lifeprogram.org.au/",
+   "url_as_listed": "https://lifeprogram.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://lifeprogram.org.au/"
+  },
+  "livelighter-com-au__3da9367e": {
+   "url": "https://livelighter.com.au/",
+   "url_as_listed": "https://livelighter.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://livelighter.com.au/"
+  },
+  "movingwitharthritis-org-au__1e71e64e": {
+   "url": "https://movingwitharthritis.org.au/",
+   "url_as_listed": "https://movingwitharthritis.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://movingwitharthritis.org.au/"
+  },
+  "muscha-org__6b50ee81": {
+   "url": "https://muscha.org/",
+   "url_as_listed": "https://muscha.org/",
+   "conditions": [
+    "Osteoarthritis",
+    "Back Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "Osteoarthritis occurs when the cartilage inside a joint breaks down causing pain and stiffness. Rheumatoid arthritis is an a…",
+     "body_mentions": 3
+    },
+    {
+     "condition": "Back Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…pain and stiffness. Rheumatoid arthritis is an autoimmune condition that causes joint pain and inflammation. Back pain is a common issue for many Australians, and is rarely the result of a serious condition or damage to your spi…",
+     "body_mentions": 3
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://muscha.org/"
+  },
+  "muscha-org__6e0d7bfe": {
+   "url": "https://muscha.org/chair-based-exercise",
+   "url_as_listed": "https://muscha.org/chair-based-exercise",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://muscha.org/chair-based-exercise"
+  },
+  "muscha-org__c660cf6c": {
+   "url": "https://muscha.org/help",
+   "url_as_listed": "https://muscha.org/help/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://muscha.org/help"
+  },
+  "myas-org-au__bfdc1b23": {
+   "url": "https://myas.org.au/",
+   "url_as_listed": "https://myas.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myas.org.au/"
+  },
+  "mybackpain-org-au__62b08dca": {
+   "url": "https://mybackpain.org.au/",
+   "url_as_listed": "https://mybackpain.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://mybackpain.org.au/"
+  },
+  "myflareup-org__61dfc490": {
+   "url": "https://myflareup.org/",
+   "url_as_listed": "https://myflareup.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myflareup.org/"
+  },
+  "myflareup-org__1ee7432b": {
+   "url": "https://myflareup.org/resource/autoimmune-conditions-prepare-for-your-consultation",
+   "url_as_listed": "https://myflareup.org/resource/autoimmune-conditions-prepare-for-your-consultation/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myflareup.org/resource/autoimmune-conditions-prepare-for-your-consultation"
+  },
+  "myflareup-org__13b1644e": {
+   "url": "https://myflareup.org/resources/tools",
+   "url_as_listed": "https://myflareup.org/resources/tools/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myflareup.org/resources/tools"
+  },
+  "myjoint-taichi-org__a5c1d640": {
+   "url": "https://myjoint-taichi.org/",
+   "url_as_listed": "https://myjoint-taichi.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myjoint-taichi.org/"
+  },
+  "myknee-trekeducation-org__57fc53e4": {
+   "url": "https://myknee.trekeducation.org/",
+   "url_as_listed": "https://myknee.trekeducation.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myknee.trekeducation.org/"
+  },
+  "myoa-org-au__f4a5d9d3": {
+   "url": "https://myoa.org.au/",
+   "url_as_listed": "https://myoa.org.au/",
+   "conditions": [
+    "Osteoarthritis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Osteoarthritis Arthritis (OA) support program - homepage",
+     "body_mentions": 5
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://myoa.org.au/"
+  },
+  "mypsoriaticarthritis-org-au__e78157a2": {
+   "url": "https://mypsoriaticarthritis.org.au/",
+   "url_as_listed": "htttps://mypsoriaticarthritis.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://mypsoriaticarthritis.org.au/"
+  },
+  "myra-org-au__af0d64cf": {
+   "url": "https://myra.org.au/",
+   "url_as_listed": "https://myra.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://myra.org.au/"
+  },
+  "ntphn-org-au__ffe65f72": {
+   "url": "https://ntphn.org.au/",
+   "url_as_listed": "https://ntphn.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://ntphn.org.au/"
+  },
+  "nutritionfacts-org__edcd56ad": {
+   "url": "https://nutritionfacts.org/",
+   "url_as_listed": "https://nutritionfacts.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://nutritionfacts.org/"
+  },
+  "painhealth-com-au__68d98b71": {
+   "url": "https://painhealth.com.au",
+   "url_as_listed": "https://painhealth.com.au",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://painhealth.com.au"
+  },
+  "psoriasisaustralia-org-au__6317ebd6": {
+   "url": "https://psoriasisaustralia.org.au/",
+   "url_as_listed": "https://psoriasisaustralia.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://psoriasisaustralia.org.au/"
+  },
+  "pwd-org-au__6c253f6d": {
+   "url": "https://pwd.org.au/",
+   "url_as_listed": "https://pwd.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://pwd.org.au/"
+  },
+  "rarevoices-org-au__209bc46c": {
+   "url": "https://rarevoices.org.au/rare-disease-disability-project/rare-disease-disability-toolkit",
+   "url_as_listed": "https://rarevoices.org.au/rare-disease-disability-project/rare-disease-disability-toolkit/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://rarevoices.org.au/rare-disease-disability-project/rare-disease-disability-toolkit"
+  },
+  "rheumabuddy-com__88bd0d60": {
+   "url": "https://rheumabuddy.com/",
+   "url_as_listed": "https://rheumabuddy.com/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://rheumabuddy.com/"
+  },
+  "rheumatology-org-au__ac7527d0": {
+   "url": "https://rheumatology.org.au/For-Patients",
+   "url_as_listed": "https://rheumatology.org.au/For-Patients",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://rheumatology.org.au/For-Patients"
+  },
+  "rheumatology-org__6b3780cd": {
+   "url": "https://rheumatology.org/patients/joint-replacement-surgery",
+   "url_as_listed": "https://rheumatology.org/patients/joint-replacement-surgery",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://rheumatology.org/patients/joint-replacement-surgery"
+  },
+  "servicedirectory-cesphn-org-au__25a5d028": {
+   "url": "https://servicedirectory.cesphn.org.au/service_category/interpreting-services",
+   "url_as_listed": "https://servicedirectory.cesphn.org.au/service_category/interpreting-services/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://servicedirectory.cesphn.org.au/service_category/interpreting-services"
+  },
+  "swsphn-com-au__9cb34e3f": {
+   "url": "https://swsphn.com.au/what-we-do/cald-health-support/cald-and-refugee-support-links-for-community-members",
+   "url_as_listed": "https://swsphn.com.au/what-we-do/cald-health-support/cald-and-refugee-support-links-for-community-members/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://swsphn.com.au/what-we-do/cald-health-support/cald-and-refugee-support-links-for-community-members"
+  },
+  "thiswayup-org-au__04e34f21": {
+   "url": "https://thiswayup.org.au/what-we-treat/chronic-pain",
+   "url_as_listed": "https://thiswayup.org.au/what-we-treat/chronic-pain",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Chronic Pain",
+     "body_mentions": 5
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://thiswayup.org.au/what-we-treat/chronic-pain"
+  },
+  "wellmob-org-au__e144ae39": {
+   "url": "https://wellmob.org.au/",
+   "url_as_listed": "https://wellmob.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://wellmob.org.au/"
+  },
+  "wwda-org-au__7b8d57e9": {
+   "url": "https://wwda.org.au/",
+   "url_as_listed": "https://wwda.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": false,
+   "checked_against": null
+  },
+  "360-org-au__0ab07e49": {
+   "url": "https://www.360.org.au/",
+   "url_as_listed": "https://www.360.org.au/",
+   "conditions": [],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "listing-only",
+     "found_in": "listing description",
+     "quote": "Health and community services for western australia Persistent Pain Program Chronic pain information, Integrated chronic disease care program in th…",
+     "body_mentions": 0
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.360.org.au/"
+  },
+  "act-gov-au__2e3ef758": {
+   "url": "https://www.act.gov.au/health/find-a-health-service-or-short-term-support/find-a-health-service",
+   "url_as_listed": "https://www.act.gov.au/health/find-a-health-service-or-short-term-support/find-a-health-service",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.act.gov.au/health/find-a-health-service-or-short-term-support/find-a-health-service"
+  },
+  "activeandhealthy-nsw-gov-au__57e61f08": {
+   "url": "https://www.activeandhealthy.nsw.gov.au/",
+   "url_as_listed": "https://www.activeandhealthy.nsw.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.activeandhealthy.nsw.gov.au/"
+  },
+  "activeandhealthy-nsw-gov-au__0ad4e296": {
+   "url": "https://www.activeandhealthy.nsw.gov.au/home/SearchForm?Search=stepping+on&action_results=Go",
+   "url_as_listed": "https://www.activeandhealthy.nsw.gov.au/home/SearchForm?Search=stepping+on&action_results=Go",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.activeandhealthy.nsw.gov.au/home/SearchForm?Search=stepping+on&action_results=Go"
+  },
+  "anzca-edu-au__5c7363aa": {
+   "url": "https://www.anzca.edu.au/patient-information/about-pain-medicine/patient-resources",
+   "url_as_listed": "https://www.anzca.edu.au/patient-information/about-pain-medicine/patient-resources",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…rience associated with, or resembling that associated with, actual or potential tissue damage.” Persistent or chronic pain is pain that lasts beyond expected healing, usually longer than three months. It can be influenced by physica…",
+     "body_mentions": 5
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.anzca.edu.au/patient-information/about-pain-medicine/patient-resources"
+  },
+  "aont-org-au__f81ed5e6": {
+   "url": "https://www.aont.org.au",
+   "url_as_listed": "www.aont.org.au",
+   "conditions": [
+    "Osteoporosis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Arthritis & Osteoporosis Northern Territory (AONT)",
+     "body_mentions": 4
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.aont.org.au"
+  },
+  "aont-org-au__b87d9b5a": {
+   "url": "https://www.aont.org.au/",
+   "url_as_listed": "https://www.aont.org.au/",
+   "conditions": [
+    "Osteoporosis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Arthritis & Osteoporosis Northern Territory (AONT)",
+     "body_mentions": 4
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.aont.org.au/"
+  },
+  "arthritis-org-au__87274e6d": {
+   "url": "https://www.arthritis.org.au/",
+   "url_as_listed": "https://www.arthritis.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.arthritis.org.au/"
+  },
+  "arthritis-org-au__70b64068": {
+   "url": "https://www.arthritis.org.au/how-we-can-help/support-groups",
+   "url_as_listed": "https://www.arthritis.org.au/how-we-can-help/support-groups/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.arthritis.org.au/how-we-can-help/support-groups"
+  },
+  "arthritis-org-nz__4e460e04": {
+   "url": "https://www.arthritis.org.nz/",
+   "url_as_listed": "https://www.arthritis.org.nz/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.arthritis.org.nz/"
+  },
+  "arthritispainsupportemergeact-org-au__4b88b4b5": {
+   "url": "https://www.arthritispainsupportemergeact.org.au/",
+   "url_as_listed": "https://www.arthritispainsupportemergeact.org.au/",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "Support For All Chronic Pain Care Our multidisciplinary team is here to help with arthritis, chronic pain, debilitating fatigue or any oth…",
+     "body_mentions": 4
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.arthritispainsupportemergeact.org.au/"
+  },
+  "arthritiswa-org-au__333b6c1f": {
+   "url": "https://www.arthritiswa.org.au/",
+   "url_as_listed": "https://www.arthritiswa.org.au/",
+   "conditions": [],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "listing-only",
+     "found_in": "listing author",
+     "quote": "Arthritis and Osteoporosis WA",
+     "body_mentions": 0
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.arthritiswa.org.au/"
+  },
+  "asvictoria-org__5dfa469c": {
+   "url": "https://www.asvictoria.org/",
+   "url_as_listed": "https://www.asvictoria.org/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.asvictoria.org/"
+  },
+  "benevolent-org-au__87297eee": {
+   "url": "https://www.benevolent.org.au/services-and-programs/support-for-carers",
+   "url_as_listed": "https://www.benevolent.org.au/services-and-programs/support-for-carers",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.benevolent.org.au/services-and-programs/support-for-carers"
+  },
+  "betterhealth-vic-gov-au__65d9adf7": {
+   "url": "https://www.betterhealth.vic.gov.au/",
+   "url_as_listed": "https://www.betterhealth.vic.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.betterhealth.vic.gov.au/"
+  },
+  "beyondblue-org-au__aaccb128": {
+   "url": "https://www.beyondblue.org.au",
+   "url_as_listed": "www.beyondblue.org.au",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.beyondblue.org.au"
+  },
+  "bjcconnect-com-au__4a87300c": {
+   "url": "https://www.bjcconnect.com.au/",
+   "url_as_listed": "https://www.bjcconnect.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.bjcconnect.com.au/"
+  },
+  "blackdoginstitute-org-au__c4fef2b5": {
+   "url": "https://www.blackdoginstitute.org.au",
+   "url_as_listed": "www.blackdoginstitute.org.au",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.blackdoginstitute.org.au"
+  },
+  "carergateway-gov-au__959b462f": {
+   "url": "https://www.carergateway.gov.au/",
+   "url_as_listed": "https://www.carergateway.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.carergateway.gov.au/"
+  },
+  "carersaustralia-com-au__b03bf57d": {
+   "url": "https://www.carersaustralia.com.au/",
+   "url_as_listed": "https://www.carersaustralia.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.carersaustralia.com.au/"
+  },
+  "carersnsw-org-au__f59a7dde": {
+   "url": "https://www.carersnsw.org.au/",
+   "url_as_listed": "https://www.carersnsw.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.carersnsw.org.au/"
+  },
+  "chf-org-au__db53b74d": {
+   "url": "https://www.chf.org.au/",
+   "url_as_listed": "https://www.chf.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.chf.org.au/"
+  },
+  "da-org-au__5de875e7": {
+   "url": "https://www.da.org.au/",
+   "url_as_listed": "https://www.da.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.da.org.au/"
+  },
+  "digitalhealth-gov-au__9d6389d0": {
+   "url": "https://www.digitalhealth.gov.au/",
+   "url_as_listed": "https://www.digitalhealth.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.digitalhealth.gov.au/"
+  },
+  "disabilitygateway-gov-au__980db6fa": {
+   "url": "https://www.disabilitygateway.gov.au/",
+   "url_as_listed": "https://www.disabilitygateway.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.disabilitygateway.gov.au/"
+  },
+  "drugs-com__8f004095": {
+   "url": "https://www.drugs.com/",
+   "url_as_listed": "https://www.drugs.com/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.drugs.com/"
+  },
+  "eatforhealth-gov-au__e378f0fa": {
+   "url": "https://www.eatforhealth.gov.au/sites/default/files/2022-09/FINAL_ATSI_Guide_to_Healthy_Eating_A4_size_double_sided_POSTER_D15_1106141.PDF",
+   "url_as_listed": "https://www.eatforhealth.gov.au/sites/default/files/2022-09/FINAL_ATSI_Guide_to_Healthy_Eating_A4_size_double_sided_POSTER_D15_1106141.PDF",
+   "conditions": [],
+   "tags": [],
+   "verified": false,
+   "checked_against": null
+  },
+  "ehlers-danlos-com__6aedff88": {
+   "url": "https://www.ehlers-danlos.com/",
+   "url_as_listed": "https://www.ehlers-danlos.com/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.ehlers-danlos.com/"
+  },
+  "facebook-com__13212d48": {
+   "url": "https://www.facebook.com/groups/354304834767249",
+   "url_as_listed": "https://www.facebook.com/groups/354304834767249/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.facebook.com/groups/354304834767249"
+  },
+  "fallspreventionalliance-org-au__fbcbf1dc": {
+   "url": "https://www.fallspreventionalliance.org.au/",
+   "url_as_listed": "https://www.fallspreventionalliance.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.fallspreventionalliance.org.au/"
+  },
+  "fraxplus-org__1c5395fa": {
+   "url": "https://www.fraxplus.org/calculation-tool",
+   "url_as_listed": "https://www.fraxplus.org/calculation-tool",
+   "conditions": [
+    "Osteoporosis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "primary",
+     "found_in": "listing description",
+     "quote": "Osteoporosis risk fracture tool",
+     "body_mentions": 1
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.fraxplus.org/calculation-tool"
+  },
+  "headspace-com__d4d7a6fa": {
+   "url": "https://www.headspace.com/app",
+   "url_as_listed": "https://www.headspace.com/app",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.headspace.com/app"
+  },
+  "health-gov-au__f528302e": {
+   "url": "https://www.health.gov.au/topics/physical-activity/24-hour-movement-guidelines-for-all-australians?language=en",
+   "url_as_listed": "https://www.health.gov.au/topics/physical-activity/24-hour-movement-guidelines-for-all-australians?language=en",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.health.gov.au/topics/physical-activity/24-hour-movement-guidelines-for-all-australians?language=en"
+  },
+  "health-nsw-gov-au__9fb905e9": {
+   "url": "https://www.health.nsw.gov.au/multicultural/Pages/health-care-interpreting-and-translating-services.aspx",
+   "url_as_listed": "https://www.health.nsw.gov.au/multicultural/Pages/health-care-interpreting-and-translating-services.aspx",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.health.nsw.gov.au/multicultural/Pages/health-care-interpreting-and-translating-services.aspx"
+  },
+  "health-tas-gov-au__c72f66cf": {
+   "url": "https://www.health.tas.gov.au/service-finder",
+   "url_as_listed": "https://www.health.tas.gov.au/service-finder",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.health.tas.gov.au/service-finder"
+  },
+  "health-vic-gov-au__b9f31fb2": {
+   "url": "https://www.health.vic.gov.au/hospitals-health-services",
+   "url_as_listed": "https://www.health.vic.gov.au/hospitals-health-services",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.health.vic.gov.au/hospitals-health-services"
+  },
+  "health-wa-gov-au__31fc0bdd": {
+   "url": "https://www.health.wa.gov.au/Services-search",
+   "url_as_listed": "https://www.health.wa.gov.au/Services-search",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.health.wa.gov.au/Services-search"
+  },
+  "healthdirect-gov-au__ca1873ae": {
+   "url": "https://www.healthdirect.gov.au/",
+   "url_as_listed": "https://www.healthdirect.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.healthdirect.gov.au/"
+  },
+  "healthdirect-gov-au__f41435da": {
+   "url": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950",
+   "url_as_listed": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950"
+  },
+  "healthdirect-gov-au__545929d2": {
+   "url": "https://www.healthdirect.gov.au/pain-relief-medicines",
+   "url_as_listed": "https://www.healthdirect.gov.au/pain-relief-medicines",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…e over the counter at a pharmacy, while others need a prescription from your doctor. - The best way to manage chronic pain is with a mix of non-medicine strategies (such as exercise and meditation) and pain-relief medicines. - Talk…",
+     "body_mentions": 11
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.healthdirect.gov.au/pain-relief-medicines"
+  },
+  "healthtranslations-vic-gov-au__a94377df": {
+   "url": "https://www.healthtranslations.vic.gov.au",
+   "url_as_listed": "https://www.healthtranslations.vic.gov.au",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.healthtranslations.vic.gov.au"
+  },
+  "healthtranslations-vic-gov-au__ab8406d0": {
+   "url": "https://www.healthtranslations.vic.gov.au/resources/how-to-use-medicines-correctly",
+   "url_as_listed": "https://www.healthtranslations.vic.gov.au/resources/how-to-use-medicines-correctly",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.healthtranslations.vic.gov.au/resources/how-to-use-medicines-correctly"
+  },
+  "healthywa-wa-gov-au__3b5c6fb5": {
+   "url": "https://www.healthywa.wa.gov.au/",
+   "url_as_listed": "https://www.healthywa.wa.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.healthywa.wa.gov.au/"
+  },
+  "heartfoundation-org-au__8f24e4be": {
+   "url": "https://www.heartfoundation.org.au/",
+   "url_as_listed": "https://www.heartfoundation.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.heartfoundation.org.au/"
+  },
+  "jafa-org-au__4e1f2abf": {
+   "url": "https://www.jafa.org.au",
+   "url_as_listed": "https://www.jafa.org.au",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.jafa.org.au"
+  },
+  "jeanhailes-org-au__993e89c8": {
+   "url": "https://www.jeanhailes.org.au/",
+   "url_as_listed": "https://www.jeanhailes.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.jeanhailes.org.au/"
+  },
+  "jointaction-info__79d08b80": {
+   "url": "https://www.jointaction.info/podcast",
+   "url_as_listed": "https://www.jointaction.info/podcast",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.jointaction.info/podcast"
+  },
+  "knowyourbones-org-au__98f899be": {
+   "url": "https://www.knowyourbones.org.au/",
+   "url_as_listed": "https://www.knowyourbones.org.au/",
+   "conditions": [
+    "Osteoporosis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoporosis",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…lians. National not-for-profit and the peak body focusing on prevention of fractures, raising awareness about osteoporosis and advocating for early diagnosis. What is Know Your Bones? Know Your Bones is a joint initiative…",
+     "body_mentions": 12
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.knowyourbones.org.au/"
+  },
+  "lifeline-org-au__3a7f8c33": {
+   "url": "https://www.lifeline.org.au/",
+   "url_as_listed": "https://www.lifeline.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.lifeline.org.au/"
+  },
+  "lupusvoiceaustralia-org-au__0f1fce99": {
+   "url": "https://www.lupusvoiceaustralia.org.au/",
+   "url_as_listed": "https://www.lupusvoiceaustralia.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.lupusvoiceaustralia.org.au/"
+  },
+  "medicarementalhealth-gov-au__656f8bb3": {
+   "url": "https://www.medicarementalhealth.gov.au/",
+   "url_as_listed": "https://www.medicarementalhealth.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.medicarementalhealth.gov.au/"
+  },
+  "mentalhealthaustralia-org-au__fb79767a": {
+   "url": "https://www.mentalhealthaustralia.org.au/",
+   "url_as_listed": "https://www.mentalhealthaustralia.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.mentalhealthaustralia.org.au/"
+  },
+  "mhcs-health-nsw-gov-au__f72677c8": {
+   "url": "https://www.mhcs.health.nsw.gov.au/",
+   "url_as_listed": "https://www.mhcs.health.nsw.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.mhcs.health.nsw.gov.au/"
+  },
+  "mhcs-health-nsw-gov-au__9c59de75": {
+   "url": "https://www.mhcs.health.nsw.gov.au/publications/celebrate-culture-through-movement-every-move-counts/assyrian",
+   "url_as_listed": "https://www.mhcs.health.nsw.gov.au/publications/celebrate-culture-through-movement-every-move-counts/assyrian",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.mhcs.health.nsw.gov.au/publications/celebrate-culture-through-movement-every-move-counts/assyrian"
+  },
+  "mhcs-health-nsw-gov-au__4c1c065a": {
+   "url": "https://www.mhcs.health.nsw.gov.au/publications/improving-our-mental-health/assyrian",
+   "url_as_listed": "https://www.mhcs.health.nsw.gov.au/publications/improving-our-mental-health/assyrian",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.mhcs.health.nsw.gov.au/publications/improving-our-mental-health/assyrian"
+  },
+  "mycommunitydirectory-com-au__e68b5aab": {
+   "url": "https://www.mycommunitydirectory.com.au/",
+   "url_as_listed": "https://www.mycommunitydirectory.com.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.mycommunitydirectory.com.au/"
+  },
+  "myra-org-nz__a775170c": {
+   "url": "https://www.myra.org.nz/",
+   "url_as_listed": "https://www.myra.org.nz/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.myra.org.nz/"
+  },
+  "naccho-org-au__4df027cb": {
+   "url": "https://www.naccho.org.au/",
+   "url_as_listed": "https://www.naccho.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.naccho.org.au/"
+  },
+  "nass-co-uk__00152af8": {
+   "url": "https://www.nass.co.uk",
+   "url_as_listed": "www.nass.co.uk",
+   "conditions": [],
+   "tags": [],
+   "verified": false,
+   "checked_against": null
+  },
+  "ndis-gov-au__07a960cd": {
+   "url": "https://www.ndis.gov.au/",
+   "url_as_listed": "https://www.ndis.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.ndis.gov.au/"
+  },
+  "nice-org-uk__90e2e599": {
+   "url": "https://www.nice.org.uk/guidance/NG157",
+   "url_as_listed": "https://www.nice.org.uk/guidance/NG157",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.nice.org.uk/guidance/NG157"
+  },
+  "nsw-gov-au__40ef9190": {
+   "url": "https://www.nsw.gov.au/departments-and-agencies/hnelhd/services/chronic-disease-management",
+   "url_as_listed": "https://www.nsw.gov.au/departments-and-agencies/hnelhd/services/chronic-disease-management#toc-hunter-integrated-pain-service",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.nsw.gov.au/departments-and-agencies/hnelhd/services/chronic-disease-management"
+  },
+  "nsw-gov-au__ed308271": {
+   "url": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/gethealthyservice",
+   "url_as_listed": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/gethealthyservice",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/gethealthyservice"
+  },
+  "nsw-gov-au__5555b61b": {
+   "url": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/getting-active/getting-started-physical-activity",
+   "url_as_listed": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/getting-active/getting-started-physical-activity",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.nsw.gov.au/health-and-wellbeing/healthy-living/getting-active/getting-started-physical-activity"
+  },
+  "orthoinfo-org__9ec01768": {
+   "url": "https://www.orthoinfo.org/treatment/total-joint-replacement",
+   "url_as_listed": "https://www.orthoinfo.org/treatment/total-joint-replacement/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.orthoinfo.org/treatment/total-joint-replacement"
+  },
+  "painaustralia-org-au__b16d401a": {
+   "url": "https://www.painaustralia.org.au/pain-services-directory/pain-director",
+   "url_as_listed": "https://www.painaustralia.org.au/pain-services-directory/pain-director",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.painaustralia.org.au/pain-services-directory/pain-director"
+  },
+  "painaustralia-org-au__41f02bb0": {
+   "url": "https://www.painaustralia.org.au/static/uploads/files/painaust-factsheet10-final-wfbdhlqkosbm.pdf",
+   "url_as_listed": "https://www.painaustralia.org.au/static/uploads/files/painaust-factsheet10-final-wfbdhlqkosbm.pdf",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "\"Medicines alone are not the most effective way to treat chronic pain.\" (Pain Australia factsheet, read from the downloaded PDF)",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.painaustralia.org.au/static/uploads/files/painaust-factsheet10-final-wfbdhlqkosbm.pdf"
+  },
+  "paintoolkit-org__c5ab05a8": {
+   "url": "https://www.paintoolkit.org/",
+   "url_as_listed": "https://www.paintoolkit.org/",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…nces & Café The Pain Toolkit Academy Online Courses are for healthcare professionals and people who live with persistent pain. We’re delighted with the feedback we’ve received from both clinicians and patients who have engaged with our…",
+     "body_mentions": 4
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.paintoolkit.org/"
+  },
+  "paintrainer-org__0928fc4c": {
+   "url": "https://www.paintrainer.org/login-to-paintrainer",
+   "url_as_listed": "https://www.paintrainer.org/login-to-paintrainer/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.paintrainer.org/login-to-paintrainer"
+  },
+  "patientlibrary-net__b7d597d7": {
+   "url": "https://www.patientlibrary.net/cgi-bin/library.cgi?page=Welcome",
+   "url_as_listed": "https://www.patientlibrary.net/cgi-bin/library.cgi?page=Welcome",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.patientlibrary.net/cgi-bin/library.cgi?page=Welcome"
+  },
+  "preventivehealth-sa-gov-au__ec84d10a": {
+   "url": "https://www.preventivehealth.sa.gov.au/healthy-living/being-active-healthy/better-health-coaching-service",
+   "url_as_listed": "https://www.preventivehealth.sa.gov.au/healthy-living/being-active-healthy/better-health-coaching-service",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.preventivehealth.sa.gov.au/healthy-living/being-active-healthy/better-health-coaching-service"
+  },
+  "qld-gov-au__d7980ca2": {
+   "url": "https://www.qld.gov.au/health",
+   "url_as_listed": "https://www.qld.gov.au/health",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.qld.gov.au/health"
+  },
+  "qld-gov-au__19107d8d": {
+   "url": "https://www.qld.gov.au/health/contacts/service-finder",
+   "url_as_listed": "https://www.qld.gov.au/health/contacts/service-finder",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.qld.gov.au/health/contacts/service-finder"
+  },
+  "racgp-org-au__d5f75c80": {
+   "url": "https://www.racgp.org.au",
+   "url_as_listed": "https://www.racgp.org.au",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.racgp.org.au"
+  },
+  "racgp-org-au__414cb02e": {
+   "url": "https://www.racgp.org.au/clinical-resources/clinical-guidelines/handi/patient-resources",
+   "url_as_listed": "https://www.racgp.org.au/clinical-resources/clinical-guidelines/handi/patient-resources",
+   "conditions": [
+    "Back Pain",
+    "Osteoarthritis"
+   ],
+   "tags": [
+    {
+     "condition": "Back Pain",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "\"Advice to stay active for people with acute low back pain\"; \"Exercise for chronic low back pain\"",
+     "body_mentions": null
+    },
+    {
+     "condition": "Osteoarthritis",
+     "strength": "primary",
+     "found_in": "live site check 2026-11-02",
+     "quote": "\"Exercise for knee osteoarthritis\"; \"Aquatic exercise for knee and hip osteoarthritis\"",
+     "body_mentions": null
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.racgp.org.au/clinical-resources/clinical-guidelines/handi/patient-resources"
+  },
+  "racgp-org-au__83d97e69": {
+   "url": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx",
+   "url_as_listed": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx",
+   "conditions": [
+    "Osteoarthritis"
+   ],
+   "tags": [
+    {
+     "condition": "Osteoarthritis",
+     "strength": "primary",
+     "found_in": "web address",
+     "quote": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx",
+     "body_mentions": 0
+    }
+   ],
+   "verified": false,
+   "checked_against": null
+  },
+  "safetyandquality-gov-au__90cfa57c": {
+   "url": "https://www.safetyandquality.gov.au/",
+   "url_as_listed": "https://www.safetyandquality.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.safetyandquality.gov.au/"
+  },
+  "sahealth-sa-gov-au__254c069e": {
+   "url": "https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/services",
+   "url_as_listed": "https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/services",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/services"
+  },
+  "sclerodermaaustralia-org-au__cdd2a71c": {
+   "url": "https://www.sclerodermaaustralia.org.au/",
+   "url_as_listed": "https://www.sclerodermaaustralia.org.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.sclerodermaaustralia.org.au/"
+  },
+  "service-nsw-gov-au__edb68aff": {
+   "url": "https://www.service.nsw.gov.au/services/health-and-care",
+   "url_as_listed": "https://www.service.nsw.gov.au/services/health-and-care",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.service.nsw.gov.au/services/health-and-care"
+  },
+  "servicesaustralia-gov-au__3c6062cc": {
+   "url": "https://www.servicesaustralia.gov.au/getting-support-if-youre-caring-for-someone?context=60097",
+   "url_as_listed": "https://www.servicesaustralia.gov.au/getting-support-if-youre-caring-for-someone?context=60097",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.servicesaustralia.gov.au/getting-support-if-youre-caring-for-someone?context=60097"
+  },
+  "sleephealthfoundation-org-au__94dc94e7": {
+   "url": "https://www.sleephealthfoundation.org.au/sleep-disorders/cognitive-behavioural-therapy-for-insomnia-cbt-i",
+   "url_as_listed": "https://www.sleephealthfoundation.org.au/sleep-disorders/cognitive-behavioural-therapy-for-insomnia-cbt-i",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.sleephealthfoundation.org.au/sleep-disorders/cognitive-behavioural-therapy-for-insomnia-cbt-i"
+  },
+  "spondylitis-org__8e80378b": {
+   "url": "https://www.spondylitis.org",
+   "url_as_listed": "www.spondylitis.org",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.spondylitis.org"
+  },
+  "swapit-net-au__7554a7a4": {
+   "url": "https://www.swapit.net.au/",
+   "url_as_listed": "https://www.swapit.net.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.swapit.net.au/"
+  },
+  "swslhd-health-nsw-gov-au__b67c0e27": {
+   "url": "https://www.swslhd.health.nsw.gov.au/services/Interpreter/about.html",
+   "url_as_listed": "https://www.swslhd.health.nsw.gov.au/services/Interpreter/about.html",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.swslhd.health.nsw.gov.au/services/Interpreter/about.html"
+  },
+  "tamethebeast-org__3369a2a9": {
+   "url": "https://www.tamethebeast.org/",
+   "url_as_listed": "https://www.tamethebeast.org/#tame-the-beast",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "mentioned",
+     "found_in": "page text",
+     "quote": "…ize Once upon a time, all the lands were fraught with persistent pain. So widespread was this affliction that one in four people experienced it. The pain lasted more than 3 months…",
+     "body_mentions": 3
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.tamethebeast.org/"
+  },
+  "tga-gov-au__d3e1349e": {
+   "url": "https://www.tga.gov.au/resources/consumer-information-and-resources/medicines-safety-and-general-information-consumers/find-information-about-medicine",
+   "url_as_listed": "https://www.tga.gov.au/resources/consumer-information-and-resources/medicines-safety-and-general-information-consumers/find-information-about-medicine",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.tga.gov.au/resources/consumer-information-and-resources/medicines-safety-and-general-information-consumers/find-information-about-medicine"
+  },
+  "tga-gov-au__e0ea3dac": {
+   "url": "https://www.tga.gov.au/resources/explore-topic/prescription-opioids-hub/chronic-pain-management-video-resource-brainman",
+   "url_as_listed": "https://www.tga.gov.au/resources/explore-topic/prescription-opioids-hub/chronic-pain-management-video-resource-brainman",
+   "conditions": [
+    "Persistent Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "primary",
+     "found_in": "page title",
+     "quote": "Chronic pain management video resource - Brainman",
+     "body_mentions": 4
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://www.tga.gov.au/resources/explore-topic/prescription-opioids-hub/chronic-pain-management-video-resource-brainman"
+  },
+  "tisnational-gov-au__218c1166": {
+   "url": "https://www.tisnational.gov.au/",
+   "url_as_listed": "https://www.tisnational.gov.au/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.tisnational.gov.au/"
+  },
+  "webmd-com__752e4024": {
+   "url": "https://www.webmd.com/",
+   "url_as_listed": "https://www.webmd.com/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.webmd.com/"
+  },
+  "who-int__76734725": {
+   "url": "https://www.who.int/initiatives/behealthy/physical-activity",
+   "url_as_listed": "https://www.who.int/initiatives/behealthy/physical-activity",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://www.who.int/initiatives/behealthy/physical-activity"
+  },
+  "youngpainhealth-com-au__b9b72ccc": {
+   "url": "https://youngpainhealth.com.au/",
+   "url_as_listed": "https://youngpainhealth.com.au/",
+   "conditions": [
+    "Back Pain"
+   ],
+   "tags": [
+    {
+     "condition": "Persistent Pain",
+     "strength": "listing-only",
+     "found_in": "listing description",
+     "quote": "Back pain, neck pain, CRPS, Hypermobility syndrome, Juvenile arthritis, chronic pain. Stories, conditions, management, many domains All domains Online screening too…",
+     "body_mentions": 0
+    },
+    {
+     "condition": "Back Pain",
+     "strength": "primary",
+     "found_in": "listing description",
+     "quote": "Back pain, neck pain, CRPS, Hypermobility syndrome, Juvenile arthritis, chronic pain. Sto…",
+     "body_mentions": 1
+    }
+   ],
+   "verified": true,
+   "checked_against": "https://youngpainhealth.com.au/"
+  },
+  "ywasg-com__9b31ddc1": {
+   "url": "https://ywasg.com/",
+   "url_as_listed": "https://ywasg.com/",
+   "conditions": [],
+   "tags": [],
+   "verified": true,
+   "checked_against": "https://ywasg.com/"
+  }
+ }
+}

@@ -52,7 +52,7 @@
     },
     {
       "key": "wellbeing",
-      "label": "Improving my health & wellbeing",
+      "label": "Improving my health and wellbeing",
       "count": 38,
       "subdomains": [
         "Health eating",
@@ -89,7 +89,7 @@
     },
     {
       "key": "services",
-      "label": "Finding services & support",
+      "label": "Finding services and support",
       "count": 49,
       "subdomains": [
         "Community services",
@@ -107,7 +107,7 @@
     },
     {
       "key": "programs",
-      "label": "Programs, apps & community",
+      "label": "Programs and community resources",
       "count": 64,
       "subdomains": [
         "App",
@@ -127,7 +127,7 @@
     },
     {
       "key": "appointments",
-      "label": "Preparing for appointments",
+      "label": "Preparing for healthcare appointments",
       "count": 8,
       "subdomains": [
         "Before my appointment",
@@ -160,6 +160,28 @@
       }
     }
   ],
+  "conditions": [
+    {
+      "key": "osteoarthritis",
+      "label": "Osteoarthritis",
+      "count": 7
+    },
+    {
+      "key": "osteoporosis",
+      "label": "Osteoporosis",
+      "count": 6
+    },
+    {
+      "key": "persistent-pain",
+      "label": "Persistent Pain",
+      "count": 14
+    },
+    {
+      "key": "back-pain",
+      "label": "Back Pain",
+      "count": 4
+    }
+  ],
   "resources": [
     {
       "id": "beyondblue-org-au__aaccb128",
@@ -168,6 +190,7 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Emotional wellbeing"
@@ -190,6 +213,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -212,6 +236,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -234,6 +259,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -256,6 +282,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Specialty services"
@@ -278,6 +305,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -311,6 +339,7 @@
       "domains": [
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "self-management": [
           "Managing medicines"
@@ -338,6 +367,7 @@
         "services",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -380,6 +410,9 @@
       "domains": [
         "programs"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "programs": [
           "Helpline"
@@ -403,6 +436,9 @@
         "understanding",
         "symptoms",
         "programs"
+      ],
+      "conditions": [
+        "Osteoporosis"
       ],
       "tags": {
         "understanding": [
@@ -437,6 +473,9 @@
         "understanding",
         "wellbeing"
       ],
+      "conditions": [
+        "Osteoporosis"
+      ],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -465,6 +504,7 @@
       "domains": [
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "self-management": [
           "Daily activities"
@@ -487,6 +527,9 @@
       "domains": [
         "understanding",
         "programs"
+      ],
+      "conditions": [
+        "Persistent Pain"
       ],
       "tags": {
         "programs": [
@@ -515,6 +558,7 @@
         "wellbeing",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -545,6 +589,7 @@
         "wellbeing",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Mental wellbeing (stress, mindfulness, resilience)"
@@ -574,6 +619,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Digital Supports"
@@ -596,6 +642,7 @@
       "domains": [
         "appointments"
       ],
+      "conditions": [],
       "tags": {
         "appointments": [
           "Before my appointment"
@@ -618,6 +665,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -647,6 +695,7 @@
         "appointments",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "Common symptoms"
@@ -691,6 +740,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Health eating"
@@ -715,6 +765,7 @@
         "wellbeing",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Physical well being"
@@ -743,6 +794,7 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Emotional wellbeing"
@@ -765,6 +817,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -789,6 +842,7 @@
         "services",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -814,6 +868,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -841,6 +896,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -863,6 +919,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -885,6 +942,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -906,6 +964,9 @@
       "url": "https://healthsciences.unimelb.edu.au/departments/physiotherapy/chesm/patient-resources/chesm-ai-chatbot",
       "domains": [
         "programs"
+      ],
+      "conditions": [
+        "Osteoarthritis"
       ],
       "tags": {
         "programs": [
@@ -933,6 +994,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -957,6 +1019,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Specialty services"
@@ -984,6 +1047,9 @@
         "services",
         "programs",
         "language"
+      ],
+      "conditions": [
+        "Persistent Pain"
       ],
       "tags": {
         "self-management": [
@@ -1026,6 +1092,9 @@
       "domains": [
         "programs"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "programs": [
           "Online course"
@@ -1052,6 +1121,9 @@
         "symptoms",
         "programs"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "programs": [
           "Peer support"
@@ -1077,6 +1149,9 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -1098,6 +1173,9 @@
       "url": "https://chronicpainaustralia.org.au/community-forum",
       "domains": [
         "programs"
+      ],
+      "conditions": [
+        "Persistent Pain"
       ],
       "tags": {
         "programs": [
@@ -1121,6 +1199,9 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "symptoms": [
           "Pain"
@@ -1143,6 +1224,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -1167,6 +1249,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -1189,6 +1272,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -1211,6 +1295,7 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Sleep"
@@ -1236,6 +1321,7 @@
         "symptoms",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -1261,6 +1347,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -1283,6 +1370,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -1306,6 +1394,7 @@
         "wellbeing",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Culturally adapted materials"
@@ -1332,6 +1421,7 @@
         "wellbeing",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Mental wellbeing (stress, mindfulness, resilience)"
@@ -1357,6 +1447,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -1379,6 +1470,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -1401,6 +1493,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -1423,6 +1516,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -1449,6 +1543,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -1483,6 +1578,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -1506,6 +1602,7 @@
         "wellbeing",
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -1531,6 +1628,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -1553,6 +1651,7 @@
       "domains": [
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "self-management": [
           "Managing medicines"
@@ -1575,6 +1674,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -1597,6 +1697,7 @@
       "domains": [
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "self-management": [
           "Managing medicines"
@@ -1618,6 +1719,9 @@
       "url": "https://www.fraxplus.org/calculation-tool",
       "domains": [
         "programs"
+      ],
+      "conditions": [
+        "Osteoporosis"
       ],
       "tags": {
         "programs": [
@@ -1642,6 +1746,7 @@
         "wellbeing",
         "services"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Lifestyle factors (Alcohol, smoking, sleep)"
@@ -1667,6 +1772,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -1689,6 +1795,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -1711,6 +1818,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -1734,6 +1842,7 @@
         "understanding",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -1759,6 +1868,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Health eating"
@@ -1782,6 +1892,7 @@
         "symptoms",
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -1808,6 +1919,7 @@
         "services",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -1833,6 +1945,7 @@
       "domains": [
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -1863,6 +1976,9 @@
         "services",
         "programs",
         "language"
+      ],
+      "conditions": [
+        "Osteoporosis"
       ],
       "tags": {
         "programs": [
@@ -1904,6 +2020,7 @@
         "symptoms",
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -1932,6 +2049,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Helpline"
@@ -1954,6 +2072,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Health eating"
@@ -1981,6 +2100,7 @@
         "wellbeing",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -2012,6 +2132,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Physical activity Program",
@@ -2036,6 +2157,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -2061,6 +2183,7 @@
         "services",
         "appointments"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Mental wellbeing (stress, mindfulness, resilience)"
@@ -2097,6 +2220,7 @@
         "services",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Physical well being"
@@ -2139,6 +2263,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -2161,6 +2286,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Helpline"
@@ -2189,6 +2315,9 @@
         "services",
         "programs",
         "language"
+      ],
+      "conditions": [
+        "Osteoporosis"
       ],
       "tags": {
         "language": [
@@ -2239,6 +2368,7 @@
         "appointments",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -2279,6 +2409,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -2301,6 +2432,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -2323,6 +2455,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -2345,6 +2478,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -2368,6 +2502,7 @@
         "services",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -2402,6 +2537,7 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -2424,6 +2560,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -2446,6 +2583,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Health eating"
@@ -2468,6 +2606,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -2496,6 +2635,9 @@
         "wellbeing",
         "self-management",
         "programs"
+      ],
+      "conditions": [
+        "Back Pain"
       ],
       "tags": {
         "understanding": [
@@ -2531,6 +2673,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -2553,6 +2696,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -2575,6 +2719,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Physical activity Program"
@@ -2598,6 +2743,7 @@
         "services",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -2623,6 +2769,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -2649,6 +2796,7 @@
         "services",
         "appointments"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -2675,6 +2823,7 @@
         "self-management",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Assyrian"
@@ -2713,6 +2862,9 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [
+        "Osteoarthritis"
+      ],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -2738,6 +2890,7 @@
       "domains": [
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -2775,6 +2928,7 @@
         "appointments",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -2811,6 +2965,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -2837,6 +2992,7 @@
         "services",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -2872,6 +3028,9 @@
       "domains": [
         "programs"
       ],
+      "conditions": [
+        "Osteoporosis"
+      ],
       "tags": {
         "programs": [
           "Digital Supports"
@@ -2894,6 +3053,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -2917,6 +3077,7 @@
         "symptoms",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -2943,6 +3104,7 @@
       "domains": [
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -2967,6 +3129,7 @@
       "domains": [
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -2989,6 +3152,10 @@
       "domains": [
         "self-management",
         "programs"
+      ],
+      "conditions": [
+        "Osteoarthritis",
+        "Back Pain"
       ],
       "tags": {
         "programs": [
@@ -3020,6 +3187,7 @@
         "wellbeing",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -3048,6 +3216,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -3070,6 +3239,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -3092,6 +3262,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -3114,6 +3285,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -3138,6 +3310,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Health eating"
@@ -3160,6 +3333,9 @@
       "domains": [
         "understanding",
         "programs"
+      ],
+      "conditions": [
+        "Osteoarthritis"
       ],
       "tags": {
         "programs": [
@@ -3185,6 +3361,9 @@
       "url": "https://aci.health.nsw.gov.au/networks/musculoskeletal/resources/osteoarthritis-chronic-care",
       "domains": [
         "understanding"
+      ],
+      "conditions": [
+        "Osteoarthritis"
       ],
       "tags": {
         "understanding": [
@@ -3219,6 +3398,9 @@
       "domains": [
         "language"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "language": [
           "Culturally adapted materials"
@@ -3252,6 +3434,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -3274,6 +3457,9 @@
       "domains": [
         "symptoms",
         "programs"
+      ],
+      "conditions": [
+        "Persistent Pain"
       ],
       "tags": {
         "symptoms": [
@@ -3300,6 +3486,9 @@
       "domains": [
         "programs"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "programs": [
           "Online course"
@@ -3321,6 +3510,9 @@
       "url": "https://www.healthdirect.gov.au/pain-relief-medicines",
       "domains": [
         "self-management"
+      ],
+      "conditions": [
+        "Persistent Pain"
       ],
       "tags": {
         "self-management": [
@@ -3348,6 +3540,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Digital Supports"
@@ -3379,6 +3572,10 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [
+        "Back Pain",
+        "Osteoarthritis"
+      ],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -3402,6 +3599,9 @@
       "url": "https://www.anzca.edu.au/patient-information/about-pain-medicine/patient-resources",
       "domains": [
         "symptoms"
+      ],
+      "conditions": [
+        "Persistent Pain"
       ],
       "tags": {
         "symptoms": [
@@ -3427,6 +3627,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -3450,6 +3651,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Physical activity"
@@ -3474,6 +3676,7 @@
         "services",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -3502,6 +3705,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Digital Supports"
@@ -3524,6 +3728,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -3546,6 +3751,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -3569,6 +3775,7 @@
         "services",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Digital Supports",
@@ -3595,6 +3802,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -3618,6 +3826,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "App"
@@ -3640,6 +3849,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -3662,6 +3872,7 @@
       "domains": [
         "self-management"
       ],
+      "conditions": [],
       "tags": {
         "self-management": [
           "Daily activities"
@@ -3683,6 +3894,9 @@
       "url": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx",
       "domains": [
         "understanding"
+      ],
+      "conditions": [
+        "Osteoarthritis"
       ],
       "tags": {
         "understanding": [
@@ -3706,6 +3920,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Physical activity Program"
@@ -3728,6 +3943,7 @@
       "domains": [
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -3750,6 +3966,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Helpline"
@@ -3772,6 +3989,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Healthcare professionals"
@@ -3798,6 +4016,7 @@
         "services",
         "appointments"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -3832,6 +4051,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -3854,6 +4074,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -3880,6 +4101,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Helpline"
@@ -3904,6 +4126,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -3926,6 +4149,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"
@@ -3948,6 +4172,9 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [
+        "Persistent Pain"
+      ],
       "tags": {
         "symptoms": [
           "Pain"
@@ -3969,6 +4196,9 @@
       "url": "https://backpain.muscha.org/",
       "domains": [
         "programs"
+      ],
+      "conditions": [
+        "Back Pain"
       ],
       "tags": {
         "programs": [
@@ -3993,6 +4223,7 @@
         "understanding",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -4021,6 +4252,7 @@
         "wellbeing",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Health eating"
@@ -4046,6 +4278,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Digital Supports"
@@ -4070,6 +4303,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -4094,6 +4328,7 @@
       "domains": [
         "symptoms"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -4116,6 +4351,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Digital Supports"
@@ -4138,6 +4374,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -4160,6 +4397,7 @@
       "domains": [
         "language"
       ],
+      "conditions": [],
       "tags": {
         "language": [
           "Translated materials"
@@ -4184,6 +4422,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Helpline"
@@ -4208,6 +4447,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -4232,6 +4472,7 @@
         "services",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "self-management": [
           "Managing medicines"
@@ -4260,6 +4501,7 @@
       "domains": [
         "understanding"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -4282,6 +4524,7 @@
       "domains": [
         "wellbeing"
       ],
+      "conditions": [],
       "tags": {
         "wellbeing": [
           "Mental wellbeing (stress, mindfulness, resilience)"
@@ -4304,6 +4547,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -4326,6 +4570,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Government support"
@@ -4350,6 +4595,7 @@
         "symptoms",
         "language"
       ],
+      "conditions": [],
       "tags": {
         "symptoms": [
           "Pain"
@@ -4376,6 +4622,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Physical activity Program"
@@ -4398,6 +4645,7 @@
       "domains": [
         "appointments"
       ],
+      "conditions": [],
       "tags": {
         "appointments": [
           "Before my appointment"
@@ -4420,6 +4668,7 @@
       "domains": [
         "services"
       ],
+      "conditions": [],
       "tags": {
         "services": [
           "Community services"
@@ -4445,6 +4694,7 @@
         "services",
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "understanding": [
           "What is this condition?"
@@ -4478,6 +4728,7 @@
       "domains": [
         "programs"
       ],
+      "conditions": [],
       "tags": {
         "programs": [
           "Peer support"

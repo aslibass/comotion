@@ -352,8 +352,26 @@
   <p id="codeErr" class="err hide" style="margin:10px 0 0"></p>
 </div>
 
-<!-- The ask box is the first thing. No form gate. -->
-<section id="askBox" class="noprint" style="margin-top:28px">
+<!-- Browse: the eight domains. Calm-state, first thing on the page. Clicking a domain lists
+     its resources (navigate tier) — plain links, no model, no disposition. -->
+<!-- Kept directly under the emergency banner (not inside the ask card) so it never drops
+     below the fold now that browse comes first. Shown/hidden together with the ask box. -->
+<p id="concernBox" class="noprint" style="margin:18px 0 0; font-size:17px">
+  <a href="#triBox" id="concern" data-i18n="ask.concern" style="color:var(--act); font-weight:700">
+    Something feels wrong right now →</a>
+</p>
+
+<section id="browseBox" class="noprint" style="margin-top:28px">
+  <h2 data-i18n="home.welcome">What are you looking for today?</h2>
+  <h2 data-i18n="home.browse" style="margin-top:4px">Browse Topics</h2>
+  <div class="langsel" id="langsel" aria-label="Show resources in a language"></div>
+  <p id="langnote" class="hide" style="margin:-6px 0 16px; font-size:17px; color:var(--soft)"></p>
+  <div class="doms" id="doms"></div>
+</section>
+
+<!-- Ask box sits below browse. No form gate. -->
+<section id="askBox" class="noprint" style="margin-top:36px">
+  <h2 data-i18n="home.ask">Or Ask a Question</h2>
   <div class="card">
     <label for="q" class="hide" data-i18n="ask.label">Your question</label>
     <textarea id="q" data-i18n-ph="ask.placeholder" placeholder="“My toe is on fire and I've run out of tablets — what do I do tonight?”"></textarea>
@@ -367,20 +385,7 @@
     </div>
     <div class="egs" id="egs"></div>
     <p id="askErr" class="err hide" style="margin:12px 0 0"></p>
-    <p style="margin:14px 0 0; font-size:17px">
-      <a href="#triBox" id="concern" data-i18n="ask.concern" style="color:var(--act); font-weight:700">
-        Something feels wrong right now →</a>
-    </p>
   </div>
-</section>
-
-<!-- Browse: the eight domains. Calm-state, below the ask box. Clicking a domain lists
-     its resources (navigate tier) — plain links, no model, no disposition. -->
-<section id="browseBox" class="noprint" style="margin-top:36px">
-  <h2 data-i18n="browse.heading">Or look around</h2>
-  <div class="langsel" id="langsel" aria-label="Show resources in a language"></div>
-  <p id="langnote" class="hide" style="margin:-6px 0 16px; font-size:17px; color:var(--soft)"></p>
-  <div class="doms" id="doms"></div>
 </section>
 
 <section id="dirBox" class="noprint hide" style="margin-top:20px">
@@ -586,7 +591,7 @@ async function boot() {
     PENDING = "I'm worried something might be wrong right now.";
     TRI = {}; $("triGo").disabled = true;
     $("tqs").querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", "false"));
-    show($("askBox"), false); show($("browseBox"), false); show($("dirBox"), false);
+    show($("askBox"), false); show($("concernBox"), false); show($("browseBox"), false); show($("dirBox"), false);
     show($("triBox"), true); $("out").innerHTML = "";
     $("triBox").scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -721,15 +726,25 @@ const interpreterHtml = () => {
   </div>`;
 };
 
-async function openDomain(key) {
+async function openDomain(key, condition = "") {
   DOMAIN = key;
-  const url = `/api/directory/${key}` + (LANG ? `?language=${encodeURIComponent(LANG)}` : "");
+  const qs = [LANG ? `language=${encodeURIComponent(LANG)}` : "", condition ? `condition=${encodeURIComponent(condition)}` : ""]
+    .filter(Boolean).join("&");
+  const url = `/api/directory/${key}` + (qs ? `?${qs}` : "");
   const d = await (await fetch(url)).json();
   show($("browseBox"), false);
   show($("dirBox"), true);
   $("dirTitle").textContent = d.domain.label + (LANG ? t("dir.inLangSuffix", { lang: LANG }) : "");
 
   let head = "";
+  // "Understanding my condition" opens to the conditions (Layer 2). A condition lists
+  // everything we hold on it from every topic; "All" is the plain domain list.
+  if (d.conditions?.length) {
+    head += `<div class="egs" id="condRow" style="margin:0 0 16px">` +
+      [{ key: "", label: t("browse.all") }, ...d.conditions].map((c) =>
+        `<button class="chip" data-cond="${esc(c.key)}" aria-pressed="${String(c.key === d.condition)}">${esc(c.label)}${c.count != null ? ` (${c.count})` : ""}</button>`).join("") +
+      `</div>`;
+  }
   if (LANG && !d.taggedInLanguage) {
     // Honest: we do not have resources specifically in this language. Say so plainly
     // rather than dressing up unrelated ones as translated.
@@ -743,6 +758,7 @@ async function openDomain(key) {
 
   $("dirOut").innerHTML = head + (d.resources.map(dirCard).join("") ||
     `<p class="empty">${esc(t("dir.empty"))}</p>`);
+  $("dirOut").querySelectorAll("#condRow .chip").forEach((b) => (b.onclick = () => openDomain(key, b.dataset.cond)));
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -769,7 +785,8 @@ async function pick(k) {
   $("conds").querySelectorAll(".chip").forEach((b) =>
     b.setAttribute("aria-pressed", String(b.dataset.k === k)));
 
-  $("egs").innerHTML = (L.examples?.[k] || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
+  // The four example prompts from the design spec, always — not per-condition.
+  $("egs").innerHTML = (L.examples?.home || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
   $("egs").querySelectorAll(".eg").forEach((b) =>
     (b.onclick = () => { $("q").value = b.textContent.trim(); $("q").focus(); }));
 
@@ -829,6 +846,7 @@ $("ask").onclick = () => {
   $("tqs").querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", "false"));
   show($("askErr"), false);
   show($("askBox"), false);
+  show($("concernBox"), false);
   show($("browseBox"), false);
   show($("dirBox"), false);
   show($("triBox"), true);
@@ -849,6 +867,7 @@ $("triGo").onclick = async () => {
 
     show($("triBox"), false);
     show($("askBox"), true);
+    show($("concernBox"), true);
     show($("browseBox"), true);
 
     if (!res.ok) {
@@ -868,6 +887,7 @@ $("triGo").onclick = async () => {
   } catch {
     show($("triBox"), false);
     show($("askBox"), true);
+    show($("concernBox"), true);
     show($("browseBox"), true);
     $("askErr").textContent = "Couldn't reach the server. Check your connection and try again.";
     show($("askErr"), true);

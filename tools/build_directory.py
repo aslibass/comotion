@@ -24,11 +24,11 @@ DATA = Path(__file__).resolve().parent.parent / "data"
 DOMAINS = [
     ("understanding", "Understanding my condition"),
     ("symptoms", "Managing symptoms"),
-    ("wellbeing", "Improving my health & wellbeing"),
+    ("wellbeing", "Improving my health and wellbeing"),
     ("self-management", "Practical self-management"),
-    ("services", "Finding services & support"),
-    ("programs", "Programs, apps & community"),
-    ("appointments", "Preparing for appointments"),
+    ("services", "Finding services and support"),
+    ("programs", "Programs and community resources"),
+    ("appointments", "Preparing for healthcare appointments"),
     ("language", "Information in my language"),
 ]
 DOMAIN_MATCH = {
@@ -81,6 +81,10 @@ def languages_for(r: dict) -> list[str]:
 
 def main():
     cat = json.loads((DATA / "catalogue.json").read_text(encoding="utf-8"))
+    # Condition classification (tools/classify_conditions.py). Only CONFIRMED conditions
+    # are used: listing-only tags (the sheet says so but the live page doesn't) are left out.
+    cond_file = DATA / "conditions.json"
+    cond_by_id = json.loads(cond_file.read_text(encoding="utf-8"))["by_id"] if cond_file.exists() else {}
     order = [k for k, _ in DOMAINS]
     entries = []
     for r in cat["resources"]:
@@ -105,6 +109,7 @@ def main():
             "title": title_for(r),
             "url": r["url"],
             "domains": sorted(tags.keys(), key=order.index),
+            "conditions": cond_by_id.get(r["id"], {}).get("conditions", []),
             "tags": tags,  # {domain_key: [subdomains in that domain]}
             "description": description_for(r),
             "audiences": r.get("audiences", []),
@@ -143,6 +148,13 @@ def main():
         "languages": langLabels,
         "languageCounts": lang_counts(entries),
         "domains": domains,
+        # The conditions shown under "Understanding my condition", in the design team's order.
+        # Counts are across ALL domains: everything we hold on that condition.
+        "conditions": [
+            {"key": label.lower().replace(" ", "-"), "label": label,
+             "count": sum(1 for e in entries if label in e["conditions"])}
+            for label in ("Osteoarthritis", "Osteoporosis", "Persistent Pain", "Back Pain")
+        ],
         "resources": sorted(entries, key=lambda e: e["title"].lower()),
     }
     (DATA / "directory.json").write_text(json.dumps(out, ensure_ascii=False, indent=2),

@@ -38,8 +38,15 @@ function languageRank(r, lang) {
   return 2;
 }
 
-export function resourcesForDomain(key, { language } = {}) {
-  let list = DIRECTORY.resources.filter((r) => r.domains.includes(key));
+export const CONDITIONS_LIST = DIRECTORY.conditions || [];
+
+// `condition` (a slug like "back-pain") narrows to everything we hold on that condition,
+// across ALL domains — the drill-down under "Understanding my condition".
+export function resourcesForDomain(key, { language, condition } = {}) {
+  const cond = condition ? CONDITIONS_LIST.find((c) => c.key === condition) : null;
+  let list = cond
+    ? DIRECTORY.resources.filter((r) => (r.conditions || []).includes(cond.label))
+    : DIRECTORY.resources.filter((r) => r.domains.includes(key));
   let tagged = list.length;
   if (language) {
     const lang = language.toLowerCase();

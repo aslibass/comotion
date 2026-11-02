@@ -16,7 +16,7 @@ import {
 } from "./evidence.js";
 import { screen, triageScreen, higher, RUNGS, TRIAGE, ALWAYS_VISIBLE } from "./redflags.js";
 import { answer, isConfigured } from "./assistant.js";
-import { DIRECTORY, dirById, resourcesForDomain, directoryForModel } from "./directory.js";
+import { DIRECTORY, CONDITIONS_LIST, dirById, resourcesForDomain, directoryForModel } from "./directory.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -105,8 +105,15 @@ app.get("/api/directory/:key", (req, res) => {
   const { key } = req.params;
   const domain = DIRECTORY.domains.find((d) => d.key === key);
   if (!domain) return res.status(404).json({ error: "Unknown domain." });
-  const { list, tagged } = resourcesForDomain(key, { language: req.query.language });
-  res.json({ domain, resources: list, taggedInLanguage: tagged, language: req.query.language || "" });
+  // ?condition=back-pain — the drill-down under "Understanding my condition".
+  const condition = CONDITIONS_LIST.some((c) => c.key === req.query.condition) ? req.query.condition : "";
+  const { list, tagged } = resourcesForDomain(key, { language: req.query.language, condition });
+  res.json({
+    domain, resources: list, taggedInLanguage: tagged, language: req.query.language || "",
+    // Only the "Understanding my condition" domain browses by condition.
+    conditions: key === "understanding" ? CONDITIONS_LIST : [],
+    condition,
+  });
 });
 
 app.post("/api/unlock", requireCode, (req, res) => res.json({ ok: true }));

@@ -106,13 +106,20 @@ third-party) — only the derived `data/directory.json` ships. Regenerate any ti
 #    Falls back to a headless browser for bot-blocked / JS-rendered pages.
 python tools/fetch_resources.py          # → data/catalogue.json, data/fetch_report.md
 
-# 2. Build the app's directory (the navigate tier) from the catalogue.
+# 2. Tag each resource with the condition(s) it is actually about (Osteoarthritis,
+#    Osteoporosis, Persistent Pain, Back Pain), grounded in the fetched page text.
+#    Hand-checked results from the live sites live in data/conditions_overrides.json.
+#    Add --xlsx PATH to also write "Condition(s)" + "Condition evidence" columns into the
+#    source spreadsheet (a backup is made first).
+python tools/classify_conditions.py      # → data/conditions.json
+
+# 3. Build the app's directory (the navigate tier) from the catalogue + conditions.
 python tools/build_directory.py          # → data/directory.json
 
-# 3. (optional) Download the linked PDFs / translated files.
+# 4. (optional) Download the linked PDFs / translated files.
 python tools/fetch_files.py              # → data/files/, manifest.json
 
-# 4. (optional) Produce the team hand-off + manual-download lists.
+# 5. (optional) Produce the team hand-off + manual-download lists.
 python tools/make_handoff.py             # → data/handoff.md/.csv, data/manual_downloads.md
 ```
 
