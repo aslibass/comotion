@@ -276,6 +276,15 @@
   .pointers .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
                    color:var(--faint); margin:0 0 10px; }
 
+  /* Layer 4: the answer is built from labelled sections — what we found, related topics,
+     trusted resources tagged by what you can do with each. These headers sit inside the
+     #out answer block, so they are not .noprint h2s. */
+  .ansH { font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--faint);
+          font-weight:700; margin:30px 0 12px; }
+  .ansH:first-child { margin-top:20px; }
+  /* The action verb on a trusted resource — Read · Watch · Contact · Discuss. */
+  .badge.act { border-color:var(--self); color:var(--self); background:var(--self-bg); font-weight:700; }
+
   /* ── Multilingual. Atkinson Hyperlegible has no Arabic or Syriac glyphs, so those
         scripts fall back to Noto and read a touch larger. Layout mirrors via logical
         properties + dir="rtl" on <html>. */
@@ -346,7 +355,7 @@
 <!-- The ask box is the first thing. No form gate. -->
 <section id="askBox" class="noprint" style="margin-top:28px">
   <div class="card">
-    <label for="q" class="hide">Your question</label>
+    <label for="q" class="hide" data-i18n="ask.label">Your question</label>
     <textarea id="q" data-i18n-ph="ask.placeholder" placeholder="“My toe is on fire and I've run out of tablets — what do I do tonight?”"></textarea>
     <div class="row">
       <button class="btn" id="ask" data-i18n="ask.button">Ask</button>
@@ -539,13 +548,14 @@ function renderLog() {
     (b.onclick = () => { const l2 = log(); l2.splice(+b.dataset.i, 1); saveLog(l2); renderLog(); }));
 }
 
-const EGS = {
-  gout: ["Can I still have a beer?", "Should I stop my allopurinol while it's flaring?", "Do cherries actually help?"],
-  osteoarthritis: ["Is walking on it making it worse?", "Do I need a scan?", "Are glucosamine tablets worth it?"],
-  back_pain: ["Should I rest it?", "Can I get physio subsidised?"],
-  ra: ["Can I exercise with it?"],
-  other: ["I keep flaring every time I have a good day", "What can I do while I wait?"],
-};
+// Condition chips + their example prompts both come from the locale now (English is the
+// base, so a locale that omits them simply falls back).
+function renderConds() {
+  $("conds").innerHTML = Object.keys(CFG.conditions)
+    .map((k) => `<button class="chip" data-k="${k}" aria-pressed="${k === COND}">${esc(L.conditions?.[k] ?? CFG.conditions[k].label)}</button>`)
+    .join("");
+  $("conds").querySelectorAll(".chip").forEach((b) => (b.onclick = () => pick(b.dataset.k)));
+}
 
 async function boot() {
   CFG = await (await fetch("/api/config")).json();
@@ -557,12 +567,7 @@ async function boot() {
   await loadLocale(want);
 
   renderUiLang();
-
-  $("conds").innerHTML = Object.entries(CFG.conditions)
-    .map(([k, c]) => `<button class="chip" data-k="${k}" aria-pressed="${k === COND}">${esc(c.label)}</button>`)
-    .join("");
-  $("conds").querySelectorAll(".chip").forEach((b) => (b.onclick = () => pick(b.dataset.k)));
-
+  renderConds();
   renderTriage();
   renderFlags();
 
@@ -635,6 +640,7 @@ async function setUILang(code) {
   $("uilang").querySelectorAll(".uil").forEach((o) => o.setAttribute("aria-pressed", String(o.dataset.c === UILANG)));
 
   // Re-render everything whose text is config- or locale-driven.
+  renderConds();
   renderTriage();
   renderFlags();
 
@@ -660,7 +666,7 @@ async function setUILang(code) {
 // The browse spine: eight domain tiles + a language switch that filters across all of them.
 function renderBrowse() {
   $("langsel").innerHTML =
-    `<button class="lang" data-l="" aria-pressed="${LANG === ""}">All</button>` +
+    `<button class="lang" data-l="" aria-pressed="${LANG === ""}">${esc(t("browse.all"))}</button>` +
     CFG.languages.map((l) => `<button class="lang" data-l="${esc(l)}" aria-pressed="${LANG === l}">${esc(l)}</button>`).join("");
   $("langsel").querySelectorAll(".lang").forEach((b) => (b.onclick = () => {
     LANG = b.dataset.l;
@@ -763,7 +769,7 @@ async function pick(k) {
   $("conds").querySelectorAll(".chip").forEach((b) =>
     b.setAttribute("aria-pressed", String(b.dataset.k === k)));
 
-  $("egs").innerHTML = (EGS[k] || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
+  $("egs").innerHTML = (L.examples?.[k] || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
   $("egs").querySelectorAll(".eg").forEach((b) =>
     (b.onclick = () => { $("q").value = b.textContent.trim(); $("q").focus(); }));
 
@@ -898,7 +904,11 @@ function render(d) {
   }
   h += `</div>`;
 
+  // ── Layer 4, the resource display. The answer is assembled from labelled sections.
+
+  // SECTION 1 — What we found. The grounded, plain-English explanation and its cited cards.
   if (d.grounded) {
+    h += `<h2 class="ansH">${esc(t("answer.found"))}</h2>`;
     h += `<p class="answer">${esc(d.framing)}</p>` + d.evidence.map(evCard).join("");
   } else if (!d.redFlagOnly) {
     const where = (d.pointers || []).length ? t("answer.noAnswer.where") : "";
@@ -908,20 +918,52 @@ function render(d) {
         ${esc(t("answer.noAnswer.body", { reason: d.unansweredReason || t("answer.noAnswer.default"), where }))}</p></div>`;
   }
 
-  // NAVIGATE-TIER: where to go next. Suppressed on rungs 4–5 — nobody who needs a doctor
-  // today or tonight should be scrolling a list of links instead of making the call.
+  // Rungs 4–5 suppress everything navigational: someone who needs a doctor today or tonight
+  // should be making the call, not scrolling topics and links.
   const urgent = d.disposition === "GP_NOW" || d.disposition === "ED";
-  if (!urgent && (d.pointers || []).length) {
-    h += `<div class="pointers"><p class="lab">${esc(t("answer.whereToLook"))}</p>` +
-      d.pointers.map((p) => `<div class="dir">
-        ${p.languages.map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: l }))}</span>`).join("")}
-        <h3>${esc(p.title)}</h3>
-        <p>${esc(p.description || "")}</p>
-        <a class="go" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
-      </div>`).join("") + `</div>`;
+
+  // SECTION 2 — Related topics. The browse domains the suggested resources sit in, as
+  // tappable chips, so the person can keep exploring without knowing the category names.
+  const rel = [...new Set((d.pointers || []).flatMap((p) => p.domains || []))]
+    .map((k) => CFG.domains.find((x) => x.key === k)).filter(Boolean);
+  if (!urgent && rel.length) {
+    h += `<h2 class="ansH">${esc(t("answer.related"))}</h2><div class="egs" id="relTopics">` +
+      rel.map((dm) => `<button class="eg" data-k="${esc(dm.key)}">${esc(dm.label)}</button>`).join("") + `</div>`;
   }
+
+  // SECTION 3 — Trusted resources, each tagged with what you can actually do with it:
+  // Read · Watch · Contact or join · Discuss with a professional. Navigate tier — a place
+  // to go, never a sourced clinical claim.
+  if (!urgent && (d.pointers || []).length) {
+    h += `<h2 class="ansH">${esc(t("answer.trusted"))}</h2>` +
+      d.pointers.map((p) => {
+        const act = actionOf(p);
+        return `<div class="dir">
+          <span class="badge act act-${act}">${esc(t("action." + act))}</span>
+          ${(p.languages || []).map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: l }))}</span>`).join("")}
+          <h3>${esc(p.title)}</h3>
+          <p>${esc(p.description || "")}</p>
+          <a class="go" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
+        </div>`;
+      }).join("");
+  }
+
   $("out").innerHTML = h;
+  // Related-topic chips open the browse directory for that domain.
+  $("out").querySelectorAll("#relTopics .eg").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
   $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// What can the person DO with a resource? Inferred from its domain and link shape, since
+// the repository has no explicit media type. Priority: a video is to watch; a service or
+// program is to contact or join; appointment-prep is to discuss; everything else is to read.
+function actionOf(r) {
+  const hay = `${r.url || ""} ${r.title || ""} ${(r.tags || []).join(" ")}`;
+  if (/youtu|vimeo|\/watch|\bvideo\b|\bwebinar\b/i.test(hay)) return "watch";
+  const d = r.domains || [];
+  if (d.includes("services") || d.includes("programs")) return "contact";
+  if (d.includes("appointments")) return "discuss";
+  return "read";
 }
 
 $("q").addEventListener("keydown", (e) => {

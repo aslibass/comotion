@@ -15,6 +15,7 @@
 
     "ask.placeholder": "“Ngón chân tôi đau rát và tôi đã hết thuốc — tối nay tôi nên làm gì?”",
     "ask.button": "Hỏi",
+    "ask.label": "Câu hỏi của bạn",
     "ask.spinner": "Đang tìm trong thư viện…",
     "ask.about": "Về vấn đề:",
     "ask.concern": "Có điều gì đó không ổn ngay bây giờ →",
@@ -22,6 +23,7 @@
     "ask.neterror": "Không kết nối được với máy chủ. Hãy kiểm tra kết nối và thử lại.",
 
     "browse.heading": "Hoặc xem xung quanh",
+    "browse.all": "Tất cả",
     "browse.resources": "{n} tài nguyên",
     "browse.inLang": "{n} bằng {lang}",
     "browse.translated": "{n} có bản dịch",
@@ -47,6 +49,14 @@
     "opt.unsure": "Không chắc",
     "opt.no": "Không",
 
+    "answer.found": "Những gì chúng tôi tìm thấy",
+    "answer.related": "Chủ đề liên quan",
+    "answer.trusted": "Nguồn đáng tin cậy — bạn có thể làm gì tiếp theo",
+    "action.read": "Đọc",
+    "action.watch": "Xem",
+    "action.contact": "Liên hệ hoặc tham gia",
+    "action.discuss": "Trao đổi với nhân viên y tế",
+
     "sec.plan": "Điều cần đề nghị với bác sĩ của bạn",
     "sec.log": "Nhật ký của bạn",
     "log.empty": "Chưa có gì ở đây. Mỗi câu hỏi mà chúng tôi không trả lời được đều được ghi lại cho bạn, kèm theo ngày tháng — để sáu tháng của những đêm khó chịu trở thành thứ bạn có thể đưa cho bác sĩ, thay vì cố nhớ lại trong buổi hẹn mười phút.",
@@ -59,6 +69,14 @@
     "card.misconception": "Hiểu lầm thường gặp",
 
     "unverified": "Bản dịch {lang} này là bản nháp do máy tạo và vẫn đang được một người phiên dịch kiểm tra. Nếu có chỗ nào chưa rõ, bản tiếng Anh là bản chuẩn — và bạn có thể gọi đường dây phiên dịch miễn phí số 131 450."
+  },
+
+  "conditions": {
+    "gout": "Bệnh gút",
+    "osteoarthritis": "Thoái hóa khớp",
+    "back_pain": "Đau lưng",
+    "ra": "Viêm khớp dạng thấp",
+    "other": "Đau cơ xương khác"
   },
 
   "interpreter": {

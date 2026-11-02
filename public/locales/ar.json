@@ -1,0 +1,88 @@
+{
+  "meta": { "name": "Arabic", "endonym": "العربية", "code": "ar", "dir": "rtl", "verified": false, "resourceLanguage": "Arabic" },
+
+  "_note": "DRAFT — machine translation of interface chrome only, right-to-left. Every safety-critical string (the five rung verbs and details, the triage questions and the 'not sure counts as yes' rule, the siren, the emergency section heading, and the 'this can't be lowered' wording) is intentionally omitted so it falls back to the verified English. Do NOT add those keys here without a credentialed Arabic translator and clinical sign-off. Arrow glyphs are placed for RTL reading order and should be checked by the translator.",
+
+  "ui": {
+    "subtitle.strong": "موعدك بعد أشهر. هذه الصفحة لا تستطيع تقديمه — لكنها تستطيع أن تخبرك بما تفعله الليلة.",
+    "subtitle.rest": "اسأل عن نوبة ألم، أو دواء، أو ليلة صعبة. ستحصل على إجابة من خدمات الصحة الأسترالية، مع خطة.",
+
+    "gate.title": "رمز الدخول",
+    "gate.body": "طرح سؤال يحتاج إلى رمز. كل شيء آخر في هذه الصفحة يعمل بدون رمز.",
+    "gate.placeholder": "الرمز",
+    "gate.unlock": "فتح",
+    "gate.error": "هذا الرمز غير صحيح.",
+
+    "ask.placeholder": "«إصبع قدمي يحترق ألمًا ونفد مني الدواء — ماذا أفعل الليلة؟»",
+    "ask.button": "اسأل",
+    "ask.label": "سؤالك",
+    "ask.spinner": "جارٍ البحث في المكتبة…",
+    "ask.about": "بخصوص:",
+    "ask.concern": "← هناك شيء غير صحيح الآن",
+    "ask.error": "حدث خطأ ما.",
+    "ask.neterror": "تعذّر الوصول إلى الخادم. تحقق من اتصالك وحاول مرة أخرى.",
+
+    "browse.heading": "أو تصفّح",
+    "browse.all": "الكل",
+    "browse.resources": "{n} مورد",
+    "browse.inLang": "{n} بـ{lang}",
+    "browse.translated": "{n} لها نسخ مترجمة",
+
+    "langnote.available": "يتوفّر {n} مورد بـ{lang} — ستظهر أولًا عند فتح موضوع.",
+    "langnote.none": "ليس لدينا بعد موارد موسومة تحديدًا بـ{lang}. {n} منها لها نسخ مترجمة أو مكيّفة ثقافيًا، وتتوفّر مساعدة ترجمة فورية مجانية (TIS National، 131 450) في كل موضوع.",
+
+    "dir.back": "→ كل المواضيع",
+    "dir.open": "← افتح هذا المورد",
+    "dir.downloads": "التنزيلات:",
+    "dir.file": "ملف {n}",
+    "dir.empty": "لا يوجد شيء هنا بعد.",
+    "dir.inLangSuffix": " — بـ{lang}",
+    "dir.someInLang": "{n} من هذه متاح بـ{lang} — تُعرض أولًا.",
+
+    "badge.inLang": "بـ{lang}",
+    "badge.translated": "نسخ مترجمة",
+
+    "triage.heading": "أربعة أسئلة سريعة أولًا",
+    "triage.continue": "متابعة",
+    "triage.checking": "جارٍ التحقق…",
+    "opt.yes": "نعم",
+    "opt.unsure": "لست متأكدًا",
+    "opt.no": "لا",
+
+    "answer.found": "ما وجدناه",
+    "answer.related": "مواضيع ذات صلة",
+    "answer.trusted": "موارد موثوقة — ما يمكنك فعله تاليًا",
+    "action.read": "اقرأ",
+    "action.watch": "شاهد",
+    "action.contact": "تواصل أو انضمّ",
+    "action.discuss": "ناقش مع مختص صحي",
+
+    "sec.plan": "ما ينبغي أن تطلبه من طبيبك",
+    "sec.log": "سجلّك",
+    "log.empty": "لا يوجد شيء هنا بعد. كل سؤال لا نستطيع الإجابة عنه يُدوَّن لك مع التاريخ — لتتحوّل ستة أشهر من الليالي الصعبة إلى شيء تحمله إلى الطبيب، بدلًا من محاولة تذكّره في موعد مدته عشر دقائق.",
+    "log.print": "اطبع هذه الصفحة",
+    "log.takeIt": "خذها معك إلى موعدك.",
+    "sec.today": "أشياء يمكنك فعلها اليوم، بدون موعد",
+    "sec.browseAll": "تصفّح كل شيء",
+
+    "plan.say": "قل هذا",
+    "card.misconception": "اعتقاد خاطئ شائع",
+
+    "unverified": "هذه الترجمة بـ{lang} مسودة آلية وما زالت قيد المراجعة من مترجم بشري. إذا كان هناك شيء غير واضح، فالنص الإنجليزي هو المرجع — ويمكنك الاتصال بخط الترجمة الفورية المجاني على 131 450."
+  },
+
+  "conditions": {
+    "gout": "النقرس",
+    "osteoarthritis": "خشونة المفاصل",
+    "back_pain": "ألم الظهر",
+    "ra": "التهاب المفاصل الروماتويدي",
+    "other": "ألم عضلي هيكلي آخر"
+  },
+
+  "interpreter": {
+    "title": "اطلب مترجمًا فوريًا مجانيًا",
+    "body": "عند اتصالك بطبيب أو صيدلي أو healthdirect، يمكنك طلب مترجم فوري دون أي تكلفة.",
+    "sayLabel": "قل هذا عبر الهاتف",
+    "note": "أو اتصل أنت بنفسك بـ TIS National مجانًا واطلب منهم توصيلك —"
+  }
+}

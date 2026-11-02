@@ -12,12 +12,14 @@
     "gate.error": "That code didn't work.",
     "ask.placeholder": "“My toe is on fire and I've run out of tablets — what do I do tonight?”",
     "ask.button": "Ask",
+    "ask.label": "Your question",
     "ask.spinner": "Looking through the library…",
     "ask.about": "This is about:",
     "ask.concern": "Something feels wrong right now →",
     "ask.error": "Something went wrong.",
     "ask.neterror": "Couldn't reach the server. Check your connection and try again.",
     "browse.heading": "Or look around",
+    "browse.all": "All",
     "browse.resources": "{n} resources",
     "browse.inLang": "{n} in {lang}",
     "browse.translated": "{n} with translated versions",
@@ -47,6 +49,13 @@
     "answer.noAnswer.default": "Nothing in our sources covers this.",
     "answer.noAnswer.where": " — but here's where to look",
     "answer.whereToLook": "Where to go next",
+    "answer.found": "What we found",
+    "answer.related": "Related topics",
+    "answer.trusted": "Trusted resources — what you can do next",
+    "action.read": "Read",
+    "action.watch": "Watch",
+    "action.contact": "Contact or join",
+    "action.discuss": "Discuss with a health professional",
     "sec.plan": "The thing to ask your GP for",
     "sec.log": "Your log",
     "log.empty": "Nothing here yet. Every question we can't answer gets written down for you, with the date — so six months of bad nights turns into something you can hand to the doctor, instead of trying to remember it in a ten-minute appointment.",
@@ -118,6 +127,20 @@
       "catches": "A new headache at the temple, jaw ache when chewing, scalp tenderness, or any change to vision — especially over 50",
       "why": "In people over 50 these can be giant cell arteritis — inflammation of the arteries at the temple. Untreated it can cause sudden and permanent loss of vision within days, so it is treated as an emergency. A change to your vision in particular cannot wait."
     }
+  },
+  "conditions": {
+    "gout": "Gout",
+    "osteoarthritis": "Osteoarthritis",
+    "back_pain": "Back pain",
+    "ra": "Rheumatoid arthritis",
+    "other": "Other musculoskeletal pain"
+  },
+  "examples": {
+    "gout": ["Can I still have a beer?", "Should I stop my allopurinol while it's flaring?", "Do cherries actually help?"],
+    "osteoarthritis": ["Is walking on it making it worse?", "Do I need a scan?", "Are glucosamine tablets worth it?"],
+    "back_pain": ["Should I rest it?", "Can I get physio subsidised?"],
+    "ra": ["Can I exercise with it?"],
+    "other": ["I keep flaring every time I have a good day", "What can I do while I wait?"]
   },
   "interpreter": {
     "title": "Ask for a free interpreter",
