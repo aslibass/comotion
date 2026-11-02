@@ -478,6 +478,18 @@ def main():
 
     if renderer:
         renderer.close()
+    if args.only or args.limit:
+        # Partial run: merge refreshed fetch/extract results into the existing catalogue
+        # instead of overwriting it with just the subset.
+        existing = args.out / "catalogue.json"
+        if existing.exists():
+            full = json.loads(existing.read_text(encoding="utf-8"))["resources"]
+            fresh = {r["id"]: r for r in records}
+            for old in full:
+                if old["id"] in fresh:
+                    old["fetch"] = fresh[old["id"]].get("fetch", old.get("fetch"))
+                    old["extract"] = fresh[old["id"]].get("extract", old.get("extract"))
+            records = full
     write_outputs(records, args.out, args.xlsx)
 
 

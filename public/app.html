@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Co-Motion — help between appointments</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Sans+Syriac:wght@400;700&display=swap" rel="stylesheet">
@@ -12,25 +13,22 @@
      Design notes, because every one of these is a decision that survived review.
 
      TYPE. One family: Atkinson Hyperlegible, designed by the Braille Institute for
-     low-vision readers. Not a pun about civic-ness — a face chosen because the person
-     reading it is 60, in pain, and squinting at a dimmed phone. Size and weight do the
-     display work; there is no second face and no monospace. 20px base, not 18.
+     low-vision readers. The person reading it is 60, in pain, and squinting at a dimmed
+     phone. Size and weight do the display work. 20px base, not 18.
 
      COLOUR. Two saturated colours in the entire product:
         act-now  #B3251E     self-manage  #2F5D50
-     A five-hue severity ramp was the first instinct and it was wrong. Deuteranopia
-     runs ~8% in men and this audience skews male and 50+; ochre, orange and red
-     converge. Worse, iOS Night Shift — almost certainly ON at 2am — drags everything
-     toward red. So colour is never the carrier of urgency. The VERB is (largest text
-     on screen), then the LEVEL ("5 of 5 — the highest"), then inversion. Colour only
-     confirms what the words already said.
+     Colour is never the carrier of urgency (deuteranopia, Night Shift at 2am). The VERB
+     is (largest text on screen), then the LEVEL, then inversion.
 
-     MOTION. None on the emergency state. It paints in its final position on first
-     render. Animating "go to hospital" stages the cleverness of the rule engine at the
-     worst moment of someone's night; it performs for the room, not the patient.
+     MOTION. None on the emergency state. It paints in its final position on first render.
+
+     FIRST SCREEN (390x844). Title, emergency banner, "Something feels wrong" link, the
+     welcome question and the first topic card — nothing else competes for it.
      ───────────────────────────────────────────────────────────────────────────── */
   :root {
-    --paper:#F4F1EA; --ink:#1C1B19; --soft:#5C574E; --faint:#8A8377; --rule:#C9C3B6;
+    /* --faint was #8A8377 (3.3:1). Every text colour now clears 4.5:1 on paper AND card. */
+    --paper:#F4F1EA; --ink:#1C1B19; --soft:#5C574E; --faint:#665F55; --rule:#C9C3B6;
     --card:#FFFDF8;
     --act:#B3251E; --act-bg:#FBEAE8;
     --self:#2F5D50; --self-bg:#E8F0EC;
@@ -38,9 +36,8 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper:#14150F; --ink:#F0EDE4; --soft:#A8A296; --faint:#7C7669; --rule:#33352B;
+      --paper:#14150F; --ink:#F0EDE4; --soft:#A8A296; --faint:#A39D91; --rule:#33352B;
       --card:#1C1E17;
-      /* Raised luminance — the light-mode red is nearly black on a dark ground. */
       --act:#F2635A; --act-bg:#3A1A18;
       --self:#6FBF9F; --self-bg:#172C25;
     }
@@ -50,33 +47,43 @@
   body {
     margin:0; background:var(--paper); color:var(--ink);
     font:400 20px/1.6 "Atkinson Hyperlegible", -apple-system, "Segoe UI", system-ui, sans-serif;
+    overflow-wrap:break-word;
   }
-  .wrap { max-width:720px; margin:0 auto; padding:0 20px 100px; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 16px 100px; }
   b, strong { font-weight:700; }
 
-  /* ── The red-flag line. Above the fold, never below it. Putting the emergency
-        content at the bottom of the page is a safety failure, not a layout choice. */
+  /* ── The red-flag line. Above the fold, never below it. */
   .siren {
     background:var(--act-bg); color:var(--act); border-inline-start:6px solid var(--act);
-    border-radius:var(--r); padding:16px 18px; margin:20px 0 0; font-size:18px;
+    border-radius:var(--r); padding:12px 14px; margin:14px 0 0; font-size:17px; line-height:1.5;
   }
-  .siren b { display:block; margin-bottom:4px; font-size:19px; }
+  .siren b { display:block; margin-bottom:2px; font-size:18px; }
   .siren a { color:inherit; font-weight:700; }
+  .siren .more { display:flex; width:max-content; max-width:100%; }
 
-  header { padding:36px 0 8px; }
-  h1 { font-size:32px; margin:0; letter-spacing:-.01em; font-weight:700; }
+  /* Every tap target is at least 44px tall and wide. */
+  .tel, #concern, .files a, .dir .go, .src a, .svc .open a, .srcs a {
+    display:inline-flex; align-items:center; min-height:44px; min-width:44px;
+  }
+  .siren .more { align-items:center; min-height:44px; }
+
+  header { padding:10px 0 0; }
+  h1 { font-size:26px; margin:0; letter-spacing:-.01em; font-weight:700; line-height:1.2; }
   h1 .d { color:var(--self); }
-  .sub { color:var(--soft); font-size:19px; margin:10px 0 0; max-width:54ch; }
-  .sub b { color:var(--ink); }
+  .sub { color:var(--soft); font-size:17px; line-height:1.45; margin:4px 0 0; max-width:54ch; }
 
-  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--faint);
+  /* Small-caps label style — section labels only, never the page's main questions. */
+  h2 { font-size:16px; text-transform:uppercase; letter-spacing:.08em; color:var(--faint);
        font-weight:700; margin:40px 0 12px; }
+  /* The page's real headings: large, dark, the spec's own casing. */
+  h2.hero { font-size:30px; line-height:1.2; color:var(--ink); text-transform:none; letter-spacing:-.01em;
+            margin:22px 0 0; }
+  h2.secH { font-size:23px; line-height:1.25; color:var(--ink); text-transform:none; letter-spacing:0;
+            margin:16px 0 12px; }
 
   .card { background:var(--card); border:1px solid var(--rule); border-radius:var(--r);
           padding:20px; }
 
-  /* ── Ask box comes first. No "what are you living with?" form standing between a
-        frightened person and help. */
   textarea {
     width:100%; border:2px solid var(--rule); border-radius:var(--r); background:var(--card);
     color:var(--ink); font:inherit; padding:16px; min-height:110px; resize:vertical;
@@ -89,11 +96,9 @@
   @media (prefers-color-scheme: dark) { .btn { color:#0C1A15; } }
   .btn:disabled { opacity:.5; cursor:default; }
   .btn:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+  .btn.ghost { background:transparent; color:var(--self); border:2px solid var(--self); }
   .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px; }
 
-  /* Condition is a quiet correction, not a gate. */
-  .conds { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:14px;
-           font-size:17px; color:var(--faint); }
   .chip { background:transparent; border:1.5px solid var(--rule); color:var(--soft);
           border-radius:999px; padding:8px 15px; font:inherit; font-size:17px; cursor:pointer;
           min-height:44px; }
@@ -101,13 +106,21 @@
                                font-weight:700; }
   .chip:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
 
-  .egs { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
-  .eg { background:transparent; border:1px solid var(--rule); color:var(--soft);
-        border-radius:999px; padding:8px 14px; font:inherit; font-size:16px; cursor:pointer;
-        min-height:44px; text-align:left; }
+  .egl { margin:16px 0 0; font-size:17px; color:var(--soft); }
+  .egs { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .eg { background:transparent; border:1px solid var(--rule); color:var(--ink);
+        border-radius:999px; padding:8px 14px; font:inherit; font-size:17px; cursor:pointer;
+        min-height:44px; text-align:start; }
   .eg:hover, .eg:focus-visible { border-color:var(--self); color:var(--self); }
 
-  /* ── The three questions. Unskippable, deterministic, no model in the loop. */
+  /* Inline access code — only appears when Ask needs it. */
+  .codeRow { margin-top:14px; padding-top:12px; border-top:1px solid var(--rule); }
+  .codeRow label { display:block; font-size:16px; font-weight:700; color:var(--soft); margin-bottom:4px; }
+  .codeRow p { margin:0 0 8px; font-size:16px; color:var(--soft); }
+  input[type=password] { padding:10px 14px; border:2px solid var(--rule); border-radius:var(--r);
+    background:var(--card); color:var(--ink); font:inherit; font-size:18px; width:100%; max-width:260px; min-height:48px; }
+
+  /* ── The questions. Unskippable, deterministic, no model in the loop. */
   .tri { border:2px solid var(--act); border-radius:var(--r); padding:22px; background:var(--card); }
   .tri > b { font-size:22px; display:block; }
   .tri > p { color:var(--soft); font-size:17px; margin:6px 0 20px; }
@@ -121,34 +134,25 @@
 
   /* ── The disposition. The verb is the biggest thing on the screen. */
   .rung { border-radius:var(--r); padding:22px; margin:24px 0 20px; border:2px solid var(--rule); }
-  .lvl { font-size:15px; text-transform:uppercase; letter-spacing:.09em; font-weight:700;
+  .lvl { font-size:16px; text-transform:uppercase; letter-spacing:.09em; font-weight:700;
          color:var(--faint); margin:0 0 6px; }
   .verb { font-size:32px; line-height:1.2; font-weight:700; margin:0; letter-spacing:-.01em; }
   .rung .detail { font-size:19px; margin:10px 0 0; color:var(--soft); }
-
-  .rung.SELF_MANAGE, .rung.PHARMACIST, .rung.GP_NEXT {
-    background:var(--self-bg); border-color:var(--self);
-  }
+  .rung.SELF_MANAGE, .rung.PHARMACIST, .rung.GP_NEXT { background:var(--self-bg); border-color:var(--self); }
   .rung.SELF_MANAGE .lvl, .rung.PHARMACIST .lvl, .rung.GP_NEXT .lvl { color:var(--self); }
   .rung.GP_NOW { background:var(--act-bg); border-color:var(--act); }
   .rung.GP_NOW .lvl { color:var(--act); }
-
-  /* Level 5 is the ONLY inverted, solid-filled state in the entire product. It cannot
-     be mistaken for anything else even with no colour perception at all. */
-  .rung.ED {
-    background:var(--act); border-color:var(--act); color:#fff;
-  }
-  .rung.ED .lvl { color:#fff; opacity:.85; }
+  /* Level 5 is the ONLY inverted, solid-filled state in the entire product. */
+  .rung.ED { background:var(--act); border-color:var(--act); color:#fff; }
+  .rung.ED .lvl { color:#fff; }
   .rung.ED .verb { font-size:36px; }
-  .rung.ED .detail { color:#fff; opacity:.95; }
+  .rung.ED .detail { color:#fff; }
   @media (prefers-color-scheme: dark) { .rung.ED { color:#1A0E0D; } .rung.ED .lvl,.rung.ED .detail { color:#1A0E0D; } }
 
-  /* The one-tap human. Activation energy from "drive to hospital at 2am for what is
-     probably gout" down to "press this, stay in bed". */
   .call {
-    display:flex; align-items:center; justify-content:center; gap:10px;
+    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
     margin-top:18px; min-height:64px; border-radius:var(--r); text-decoration:none;
-    background:var(--ink); color:var(--paper); font-weight:700; font-size:21px; padding:0 16px;
+    background:var(--ink); color:var(--paper); font-weight:700; font-size:21px; padding:8px 16px;
     text-align:center;
   }
   .rung.ED .call { background:#fff; color:var(--act); }
@@ -156,49 +160,60 @@
   .call:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
   .call .num { font-size:24px; }
 
-  .why { margin-top:18px; padding-top:16px; border-top:1px solid currentColor; opacity:.9; }
+  .why { margin-top:18px; padding-top:16px; border-top:1px solid currentColor; }
   .why b { display:block; font-size:18px; margin-bottom:4px; }
   .why p { margin:0; font-size:17px; }
-
-  .raised { margin-top:16px; padding:12px 14px; border-radius:8px; background:rgba(0,0,0,.05);
-            font-size:17px; }
+  .raised { margin-top:16px; padding:12px 14px; border-radius:8px; background:rgba(0,0,0,.05); font-size:17px; }
   @media (prefers-color-scheme: dark) { .raised { background:rgba(255,255,255,.07); } }
 
   .answer { font-size:21px; line-height:1.55; margin:0 0 22px; }
 
-  /* ── Evidence */
-  .ev { border:1px solid var(--rule); border-radius:var(--r); padding:18px; margin-bottom:12px;
-        background:var(--card); }
+  /* Answer section headings — clearly visible, the spec's own words. */
+  .ansH { font-size:22px; line-height:1.3; color:var(--ink); text-transform:none; letter-spacing:0;
+          font-weight:700; margin:32px 0 12px; }
+  #out > .ansH:first-child { margin-top:20px; }
+
+  .ev { border:1px solid var(--rule); border-radius:var(--r); padding:18px; margin-bottom:12px; background:var(--card); }
   .ev h3 { margin:0 0 8px; font-size:19px; font-weight:700; }
   .ev p { margin:0; color:var(--soft); font-size:18px; }
-  .tagm { display:inline-block; font-size:14px; font-weight:700; text-transform:uppercase;
+  .unrev { margin:10px 0 0; font-size:16px; font-weight:700; color:var(--soft); }
+  .safetynet { margin:12px 0 0; font-size:17px; color:var(--soft); }
+  .tagm { display:inline-block; font-size:16px; font-weight:700; text-transform:uppercase;
           letter-spacing:.05em; color:var(--act); margin-bottom:6px; }
-  /* The machine-translation label and the English original under a translated explanation. */
   .mt { margin:6px 0 14px; font-size:17px; color:var(--soft); }
-  .mt summary { cursor:pointer; font-weight:700; color:var(--act); padding:6px 0; }
+  .mt summary { cursor:pointer; font-weight:700; color:var(--act); padding:8px 0; min-height:44px; }
   .quote { margin:12px 0 0; padding-inline-start:14px; border-inline-start:3px solid var(--rule);
            font-size:17px; color:var(--faint); font-style:italic; }
   .src { margin-top:12px; font-size:17px; }
   .src a { color:var(--self); font-weight:700; }
   .sup { margin-top:10px; font-size:16px; color:var(--faint); }
 
-  /* ── The care plan block. The most actionable fact in the product, and it is not
-        going to be one card among forty. */
-  .plan { border:2px solid var(--self); border-radius:var(--r); padding:22px; background:var(--self-bg); }
-  .plan h3 { margin:0 0 8px; font-size:23px; color:var(--self); }
+  /* Your next steps */
+  .next { list-style:none; margin:0; padding:0; }
+  .next > li { padding:14px 0; border-top:1px solid var(--rule); font-size:19px; }
+  .next > li:first-child { border-top:0; padding-top:0; }
+  .gpq { margin:8px 0; padding:12px 14px; background:var(--card); border-inline-start:4px solid var(--self);
+         border-radius:8px; font-size:19px; }
+  .next .note { margin:6px 0 0; font-size:16px; color:var(--soft); }
+  .linkbtn { background:none; border:0; padding:0; font:inherit; color:var(--self); font-weight:700;
+             cursor:pointer; text-decoration:underline; min-height:44px; text-align:start; }
+
+  /* The care plan block. */
+  .plan { border:2px solid var(--self); border-radius:var(--r); padding:20px; background:var(--self-bg); }
+  .plan h3 { margin:0 0 8px; font-size:22px; color:var(--self); }
   .plan p { margin:0 0 12px; font-size:19px; }
   .script { background:var(--card); border-radius:8px; padding:16px 18px; margin:14px 0 10px;
             border-inline-start:4px solid var(--self); }
-  .script .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+  .script .lab { font-size:16px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
                  color:var(--faint); display:block; margin-bottom:6px; }
   .script q { font-size:20px; font-style:italic; }
   .plan .note { font-size:17px; color:var(--soft); margin:0; }
 
-  /* ── The logbook. Six months of dead time becomes the document you walk in holding. */
+  /* The log. */
   .q { display:flex; gap:14px; align-items:flex-start; padding:15px 0; border-bottom:1px solid var(--rule); }
   .q:last-child { border-bottom:0; }
-  .q .when { font-size:15px; color:var(--faint); font-weight:700; white-space:nowrap; padding-top:4px; }
-  .q p { margin:0; flex:1; font-size:19px; }
+  .q .when { font-size:16px; color:var(--faint); font-weight:700; white-space:nowrap; padding-top:4px; }
+  .q p { margin:0; flex:1; font-size:19px; min-width:0; }
   .del { background:none; border:0; color:var(--faint); cursor:pointer; font-size:26px; line-height:1;
          min-width:44px; min-height:44px; }
   .del:hover { color:var(--act); }
@@ -210,104 +225,93 @@
   .svc p { margin:4px 0 0; color:var(--soft); font-size:17px; }
   .svc a.ph { display:inline-flex; align-items:center; min-height:52px; margin-top:8px;
               font-size:22px; font-weight:700; color:var(--self); text-decoration:none; }
-  .svc a.ph:hover { text-decoration:underline; }
   .svc .open { font-size:17px; }
   .svc .open a { color:var(--self); }
 
-  details { border-bottom:1px solid var(--rule); padding:6px 0; }
+  details { border-bottom:1px solid var(--rule); padding:4px 0; }
   details:last-child { border-bottom:0; }
   summary { cursor:pointer; font-size:19px; padding:12px 0; min-height:44px; }
   summary:focus-visible { outline:3px solid var(--self); }
   summary b { font-weight:700; }
-  summary span { color:var(--faint); font-size:17px; }
+
+  /* "More help" — everything below the ask box, collapsed by default. */
+  #more { margin-top:36px; border:1px solid var(--rule); border-radius:var(--r); background:var(--card);
+          padding:4px 18px; }
+  #more > summary { font-size:22px; font-weight:700; }
+  #more > summary span { display:block; font-size:16px; font-weight:400; color:var(--soft); }
+  #more details > summary { font-weight:700; }
+  #more details > div { padding:4px 0 16px; }
+  #flagsD > summary { color:var(--act); }
 
   .flag { padding:14px 0; border-bottom:1px solid var(--rule); }
   .flag:last-child { border-bottom:0; }
   .flag b { color:var(--act); font-size:18px; }
   .flag p { margin:4px 0 0; font-size:17px; color:var(--soft); }
 
-  footer { margin-top:60px; padding-top:24px; border-top:1px solid var(--rule);
-           color:var(--faint); font-size:16px; line-height:1.6; }
+  footer { margin-top:40px; padding-top:20px; border-top:1px solid var(--rule);
+           color:var(--soft); font-size:17px; line-height:1.6; }
   .srcs { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0; }
-  .srcs a { font-size:15px; border:1px solid var(--rule); border-radius:999px; padding:6px 12px;
-            text-decoration:none; color:var(--soft); min-height:36px; display:inline-flex; align-items:center; }
-  .srcs a:hover { border-color:var(--self); color:var(--self); }
+  .srcs a { font-size:16px; border:1px solid var(--rule); border-radius:999px; padding:6px 12px;
+            text-decoration:none; color:var(--soft); }
 
   .spin { color:var(--faint); font-size:18px; }
   .err { color:var(--act); font-size:18px; font-weight:700; }
   .hide { display:none !important; }
 
-  /* ── Browse spine: the eight directory domains. A calm-state feature, below the ask
-        box, never stealing the fold from the answer. */
-  .doms { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; }
-  .dom { text-align:left; background:var(--card); border:1px solid var(--rule); border-radius:var(--r);
-         padding:16px 18px; font:inherit; cursor:pointer; min-height:72px; }
-  .dom:hover, .dom:focus-visible { border-color:var(--self); outline:none; }
-  .dom b { font-size:19px; display:block; }
-  .dom span { color:var(--faint); font-size:16px; }
+  /* ── Browse Topics: three parents from the spec, each with its children. */
+  .topics { display:grid; gap:12px; }
+  .topic { background:var(--card); border:1px solid var(--rule); border-radius:var(--r); overflow:hidden; }
+  .dom { display:block; width:100%; text-align:start; background:transparent; border:0; color:var(--ink);
+         padding:14px 16px; font:inherit; cursor:pointer; min-height:64px; }
+  .dom b { font-size:21px; display:block; line-height:1.3; }
+  .dom span { color:var(--soft); font-size:16px; }
+  .kids { border-top:1px solid var(--rule); padding:4px 10px 8px; }
+  .kid { display:flex; justify-content:space-between; gap:10px; align-items:baseline; width:100%;
+         text-align:start; background:transparent; border:0; border-inline-start:3px solid var(--self);
+         color:var(--self); font:inherit; font-size:18px; font-weight:700; padding:8px 10px; margin-top:6px;
+         cursor:pointer; min-height:48px; }
+  .kid .n { color:var(--soft); font-weight:400; font-size:16px; white-space:nowrap; }
+  .dom:hover, .dom:focus-visible, .kid:hover, .kid:focus-visible { background:var(--self-bg); outline:none; }
 
-  /* UI language switch — top of page, quiet until used. The page's own language. */
-  .uilang { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:16px 0 -8px; }
+  /* UI language switch — the one language control. */
+  .uilang { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:10px 0 0; }
   .uilang .uil { border:1.5px solid var(--rule); background:transparent; color:var(--soft);
-                 border-radius:999px; padding:7px 14px; font:inherit; font-size:16px; cursor:pointer; min-height:40px; }
+                 border-radius:999px; padding:4px 14px; font:inherit; font-size:16px; cursor:pointer; min-height:44px; min-width:44px; }
   .uilang .uil[aria-pressed="true"] { border-color:var(--self); background:var(--self-bg); color:var(--self); font-weight:700; }
   .uilang .uil:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
 
-  /* Language switch — a filter across everything, not a shelf. */
-  .langsel { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 16px; font-size:17px; }
-  .langsel .lang { border:1.5px solid var(--rule); background:transparent; color:var(--soft);
-                   border-radius:999px; padding:8px 15px; font:inherit; font-size:16px; cursor:pointer; min-height:44px; }
-  .langsel .lang[aria-pressed="true"] { border-color:var(--self); background:var(--self-bg); color:var(--self); font-weight:700; }
-
-  /* A directory resource (navigate tier) — a place to go, never a sourced claim. */
+  /* A resource — a place to go, never a sourced claim. */
   .dir { border:1px solid var(--rule); border-radius:var(--r); padding:16px 18px; margin-bottom:10px; background:var(--card); }
   .dir h3 { margin:0 0 6px; font-size:19px; }
   .dir p { margin:0; color:var(--soft); font-size:17px; }
-  .dir .go { display:inline-block; margin-top:10px; color:var(--self); font-weight:700; text-decoration:none; min-height:40px; }
+  .dir .go { margin-top:6px; color:var(--self); font-weight:700; text-decoration:none; }
   .dir .go:hover { text-decoration:underline; }
-  .badge { display:inline-block; font-size:13px; font-weight:700; border-radius:999px; padding:3px 10px;
+  .badge { display:inline-block; font-size:16px; font-weight:700; border-radius:999px; padding:3px 10px;
            margin:0 6px 6px 0; border:1px solid var(--rule); color:var(--soft); }
   .badge.lang { border-color:var(--self); color:var(--self); }
-  .files { margin-top:10px; font-size:16px; }
-  .files a { color:var(--self); display:inline-block; margin:2px 10px 2px 0; }
+  .badge.act { border-color:var(--self); color:var(--self); background:var(--self-bg); }
+  .files { margin-top:8px; font-size:16px; }
+  .files a { color:var(--self); margin:0 12px 0 0; max-width:100%; overflow-wrap:anywhere; }
   .backlink { background:none; border:0; color:var(--self); font:inherit; font-weight:700; cursor:pointer;
-              padding:8px 0; min-height:44px; font-size:17px; }
+              padding:8px 0; min-height:44px; font-size:18px; }
+  #dirTitle { margin-top:2px; font-size:26px; }
+  .subrow { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 16px; }
+  .sublab { font-size:16px; color:var(--soft); margin:0 0 6px; }
 
-  /* The navigate-tier "where to look" block in an answer — visually quieter than the
-     cited sources, and suppressed entirely on rungs 4–5. */
-  .pointers { margin:8px 0 22px; }
-  .pointers .lab { font-size:15px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
-                   color:var(--faint); margin:0 0 10px; }
-
-  /* Layer 4: the answer is built from labelled sections — what we found, related topics,
-     trusted resources tagged by what you can do with each. These headers sit inside the
-     #out answer block, so they are not .noprint h2s. */
-  .ansH { font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--faint);
-          font-weight:700; margin:30px 0 12px; }
-  .ansH:first-child { margin-top:20px; }
-  /* The action verb on a trusted resource — Read · Watch · Contact · Discuss. */
-  .badge.act { border-color:var(--self); color:var(--self); background:var(--self-bg); font-weight:700; }
-
-  /* ── Multilingual. Atkinson Hyperlegible has no Arabic or Syriac glyphs, so those
-        scripts fall back to Noto and read a touch larger. Layout mirrors via logical
-        properties + dir="rtl" on <html>. */
+  /* Multilingual. Arabic and Syriac fall back to Noto. Logical properties mirror layout. */
   html[lang="ar"] body { font-family:"Noto Naskh Arabic","Atkinson Hyperlegible",system-ui,sans-serif; font-size:22px; }
   html[lang="aii"] body { font-family:"Noto Sans Syriac","Atkinson Hyperlegible",system-ui,sans-serif; font-size:22px; }
   [dir="rtl"] textarea, [dir="rtl"] .eg { text-align:right; }
   /* Latin islands (numbers, drug names, URLs) must not flip inside RTL text. */
   [dir="rtl"] .call .num, bdi, .tel { direction:ltr; unicode-bidi:isolate; }
+  .tel, .call .num { white-space:nowrap; }
 
   .unverified { background:var(--self-bg); color:var(--self); border:1px solid var(--self);
-                border-radius:var(--r); padding:14px 18px; margin:16px 0 0; font-size:17px; }
-
-  input[type=password] { padding:14px; border:2px solid var(--rule); border-radius:var(--r);
-    background:var(--card); color:var(--ink); font:inherit; flex:1; min-width:160px; min-height:58px; }
+                border-radius:var(--r); padding:12px 16px; margin:12px 0 0; font-size:16px; }
 
   @media (prefers-reduced-motion: no-preference) {
     /* Deliberately scoped: never applies to .rung.ED, which paints in place. */
-    .rung.SELF_MANAGE, .rung.PHARMACIST, .rung.GP_NEXT, .rung.GP_NOW {
-      animation: rise .18s ease-out;
-    }
+    .rung.SELF_MANAGE, .rung.PHARMACIST, .rung.GP_NEXT, .rung.GP_NOW { animation: rise .18s ease-out; }
     @keyframes rise { from { opacity:0; transform:translateY(6px); } }
   }
   @media print {
@@ -320,84 +324,62 @@
 <body>
 <div class="wrap">
 
-<!-- UI LANGUAGE. The language of the page itself — distinct from the browse filter below,
-     which finds resources available in a language. Choosing one here re-ranks the browse
-     list too, so the two never contradict each other. Safety-critical wording that a
-     credentialed translator has not yet verified falls back to English, by design. -->
+<!-- The one language control: the page's own language. It also ranks resources in that
+     language first. Safety wording not yet verified by a translator stays in English. -->
 <div class="uilang noprint" id="uilang" aria-label="Language"></div>
 
-<header>
+<header class="noprint">
   <h1>Co<span class="d">–</span>Motion</h1>
-  <p class="sub">
-    <b data-i18n="subtitle.strong">Your appointment is months away. This can't move it — but it can tell you what to do tonight.</b>
-    <span data-i18n="subtitle.rest">Ask about a flare, a medicine, a bad night. You'll get an answer from Australian health
-    services, and a plan.</span>
-  </p>
+  <p class="sub" data-i18n="subtitle.strong">Your appointment is months away. This can't move it — but it can tell you what to do tonight.</p>
 </header>
 
-<div class="siren">
+<div class="siren noprint" dir="auto">
   <b data-i18n="siren.title">Some things can't wait for this page.</b>
   <span data-i18n="siren.body">Chest pain, trouble breathing, or a limb you can't move — go to an emergency department now.
   Not sure? Call healthdirect free, any hour, on</span> <a class="tel" href="tel:1800022222">1800 022 222</a>.
+  <a class="more" href="#flagsD" id="sirenList" data-i18n="siren.seeList">See the full list</a>
 </div>
 
 <div id="langbanner" class="unverified noprint hide"></div>
 
-<div id="gate" class="card noprint hide" style="margin-top:20px">
-  <b data-i18n="gate.title">Access code</b>
-  <p data-i18n="gate.body" style="margin:6px 0 12px; color:var(--soft); font-size:18px">
-    Asking a question needs a code. Everything else on this page works without one.
-  </p>
-  <div class="row">
-    <input id="code" type="password" data-i18n-ph="gate.placeholder" placeholder="Code" />
-    <button class="btn" id="unlock" data-i18n="gate.unlock">Unlock</button>
-  </div>
-  <p id="codeErr" class="err hide" style="margin:10px 0 0"></p>
-</div>
-
-<!-- Browse: the eight domains. Calm-state, first thing on the page. Clicking a domain lists
-     its resources (navigate tier) — plain links, no model, no disposition. -->
-<!-- Kept directly under the emergency banner (not inside the ask card) so it never drops
-     below the fold now that browse comes first. Shown/hidden together with the ask box. -->
-<p id="concernBox" class="noprint" style="margin:18px 0 0; font-size:17px">
+<p id="concernBox" class="noprint" style="margin:12px 0 0; font-size:18px">
   <a href="#triBox" id="concern" data-i18n="ask.concern" style="color:var(--act); font-weight:700">
     Something feels wrong right now →</a>
 </p>
 
-<section id="browseBox" class="noprint" style="margin-top:28px">
-  <h2 data-i18n="home.welcome">What are you looking for today?</h2>
-  <h2 data-i18n="home.browse" style="margin-top:4px">Browse Topics</h2>
-  <div class="langsel" id="langsel" aria-label="Show resources in a language"></div>
-  <p id="langnote" class="hide" style="margin:-6px 0 16px; font-size:17px; color:var(--soft)"></p>
-  <div class="doms" id="doms"></div>
+<section id="browseBox" class="noprint">
+  <h2 class="hero" data-i18n="home.welcome">What are you looking for today?</h2>
+  <h2 class="secH" data-i18n="home.browse">Browse Topics</h2>
+  <div class="topics" id="topics"></div>
 </section>
 
-<!-- Ask box sits below browse. No form gate. -->
-<section id="askBox" class="noprint" style="margin-top:36px">
-  <h2 data-i18n="home.ask">Or Ask a Question</h2>
+<section id="askBox" class="noprint" style="margin-top:8px">
+  <h2 class="secH" style="margin-top:28px" data-i18n="home.ask">Or Ask a Question</h2>
   <div class="card">
     <label for="q" class="hide" data-i18n="ask.label">Your question</label>
-    <textarea id="q" data-i18n-ph="ask.placeholder" placeholder="“My toe is on fire and I've run out of tablets — what do I do tonight?”"></textarea>
+    <textarea id="q" data-i18n-ph="ask.placeholder" placeholder="“My knee pain is getting worse”"></textarea>
     <div class="row">
       <button class="btn" id="ask" data-i18n="ask.button">Ask</button>
-      <span class="spin hide" id="spin" data-i18n="ask.spinner">Looking through the library…</span>
+      <span class="spin hide" id="spin" data-i18n="ask.spinner">Looking for an answer…</span>
     </div>
-    <div class="conds">
-      <span data-i18n="ask.about">This is about:</span>
-      <span id="conds" style="display:contents"></span>
+    <div class="codeRow hide" id="codeRow">
+      <label for="code" data-i18n="gate.title">Access code</label>
+      <input id="code" type="password" autocomplete="off" data-i18n-ph="gate.placeholder" placeholder="Code" />
+      <p id="codeErr" class="err hide" style="margin:8px 0 0"></p>
     </div>
+    <p class="egl" data-i18n="home.examples">For example:</p>
     <div class="egs" id="egs"></div>
-    <p id="askErr" class="err hide" style="margin:12px 0 0"></p>
+    <p id="askErr" class="err hide" style="margin:12px 0 0" role="alert"></p>
   </div>
 </section>
 
-<section id="dirBox" class="noprint hide" style="margin-top:20px">
+<section id="dirBox" class="noprint hide" style="margin-top:12px">
   <button class="backlink" id="dirBack" data-i18n="dir.back">← All topics</button>
-  <h2 id="dirTitle" style="margin-top:4px"></h2>
+  <h2 class="secH" id="dirTitle"></h2>
   <div id="dirOut"></div>
 </section>
 
-<!-- The three questions. Deterministic. No model. "Not sure" counts as yes. -->
+<!-- The questions. Deterministic. No model. "Not sure" counts as yes. -->
 <section id="triBox" class="hide" style="margin-top:28px">
   <div class="tri">
     <b data-i18n="triage.heading">Four quick questions first</b>
@@ -415,40 +397,50 @@
 
 <div id="out"></div>
 
-<section id="rest" class="hide">
+<!-- Everything else, collapsed. Nothing in here is open by default. -->
+<details id="more">
+  <summary class="noprint"><b data-i18n="more.title">More help</b>
+    <span data-i18n="more.sub">Emergency signs, support lines, your log, and where our information comes from</span></summary>
 
-  <h2 class="noprint" data-i18n="sec.plan">The thing to ask your GP for</h2>
-  <div class="plan noprint" id="planBox"></div>
+  <details id="flagsD" class="noprint">
+    <summary data-i18n="sec.emergency">Go to an emergency department if any of this is happening</summary>
+    <div id="flags"></div>
+  </details>
 
-  <h2 data-i18n="sec.log">Your log</h2>
-  <div class="card">
-    <p class="empty" id="qsEmpty" data-i18n="log.empty">
-      Nothing here yet. Every question we can't answer gets written down for you, with the date —
-      so six months of bad nights turns into something you can hand to the doctor, instead of
-      trying to remember it in a ten-minute appointment.
-    </p>
-    <div id="qs"></div>
-    <div class="row noprint hide" id="qsActions">
-      <button class="btn" onclick="window.print()" data-i18n="log.print">Print this</button>
-      <span data-i18n="log.takeIt" style="color:var(--faint); font-size:17px">Take it to your appointment.</span>
+  <details id="todayD" class="noprint">
+    <summary data-i18n="sec.today">Things you can do today, without an appointment</summary>
+    <div id="today"></div>
+  </details>
+
+  <details id="logD">
+    <summary data-i18n="sec.log">Your log</summary>
+    <div>
+      <p class="empty" id="qsEmpty" data-i18n="log.empty">Nothing here yet.</p>
+      <div id="qs"></div>
+      <div class="row noprint hide" id="qsActions">
+        <button class="btn" onclick="window.print()" data-i18n="log.print">Print this</button>
+        <span data-i18n="log.takeIt" style="color:var(--faint); font-size:17px">Take it to your appointment.</span>
+      </div>
     </div>
-  </div>
+  </details>
 
-  <h2 class="noprint" data-i18n="sec.today">Things you can do today, without an appointment</h2>
-  <div class="card noprint" id="today"></div>
+  <details id="planD" class="noprint">
+    <summary data-i18n="sec.plan">The thing to ask your GP for</summary>
+    <div><div class="plan" id="planBox"></div></div>
+  </details>
 
-  <h2 class="noprint" data-i18n="sec.browseAll">Browse everything</h2>
-  <div class="card noprint" id="lib"></div>
+  <details id="srcD" class="noprint">
+    <summary data-i18n="sec.sources">Where our information comes from</summary>
+    <div>
+      <p style="margin:0;font-size:18px" data-i18n="sources.intro"></p>
+      <div class="srcs" id="srcs"></div>
+      <p style="margin:0;font-size:17px;color:var(--soft)" data-i18n="sources.tga"></p>
+    </div>
+  </details>
+</details>
 
-</section>
-
-<h2 class="noprint" data-i18n="sec.emergency">Go to an emergency department if any of this is happening</h2>
-<div class="card noprint" id="flags"></div>
-
-<footer>
-  <p id="prov"></p>
-  <div class="srcs" id="srcs"></div>
-  <p id="caveat"></p>
+<footer class="noprint">
+  <p data-i18n="footer.prototype" style="margin:0"></p>
 </footer>
 
 </div>
@@ -456,20 +448,32 @@
 <script>
 const $ = (id) => document.getElementById(id);
 const show = (el, on = true) => el.classList.toggle("hide", !on);
-let CFG = null, COND = "other", CODE = "", PENDING = "", TRI = {}, LANG = "", DOMAIN = null;
+// CODE lives in memory only — never in the DOM, logs or storage.
+let CFG = null, CODE = "", PENDING = "", TRI = {}, LANG = "", LIB = null;
+let DOMAIN = null, DOMCOND = "", DOMLANG = "", OUTLANG = null;
 const KEY = "comotion.log";
 const LANGKEY = "comotion.uilang";
+const COND = "other";   // the "More help" content: one set, not per condition
+
+// The spec's Browse Topics, nested. Domain keys are the directory's eight.
+const TREE = [
+  ["understanding", ["symptoms"]],
+  ["self-management", ["wellbeing"]],
+  ["services", ["programs", "appointments"]],
+];
+// In the opened "Finding services and support" list, in-language help is the last child.
+const OPEN_EXTRA = { services: ["language"] };
+// Layer 2: the spec's category names for a typed query's related topics.
+const RELATED = ["understanding", "symptoms", "services"];
+const ACTIONS = ["read", "watch", "contact", "discuss"];
+// The coordinator's list, plus hash-named files ("1a10c2_82cf…pdf": `_` defeats a plain \b).
+const JUNK_DL = /privacy|terms|policy|governance|framework|schedule|referral (letter|form)|^[0-9a-f]{5,}(\b|_)|[0-9a-f]{16,}/i;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-/* ───────────────────────────────────────────────────────────────────────────────
-   LOCALISATION. English is the source of truth. Any other locale is deep-merged ON TOP
-   of English, so a missing key — including every safety-critical string a translator has
-   not yet verified — falls straight back to the English wording. That is the governance
-   rule made mechanical: the model never gets to author a rung verb or a triage question
-   in another language; either a human has translated it, or the reader sees English.
-   ─────────────────────────────────────────────────────────────────────────────── */
+/* LOCALISATION. English is the source of truth; other locales are merged ON TOP of it,
+   so a missing key — including every unverified safety string — falls back to English. */
 let L = { meta: { code: "en", dir: "ltr", verified: true }, ui: {} };
 let UILANG = "en";
 const _localeCache = {};
@@ -478,11 +482,8 @@ async function fetchLocale(code) {
   if (_localeCache[code]) return _localeCache[code];
   const r = await fetch(`/locales/${code}.json`);
   if (!r.ok) throw new Error(`locale ${code} missing`);
-  const j = await r.json();
-  _localeCache[code] = j;
-  return j;
+  return (_localeCache[code] = await r.json());
 }
-
 function deepMerge(base, over) {
   const out = Array.isArray(base) ? base.slice() : { ...base };
   for (const k of Object.keys(over || {})) {
@@ -491,19 +492,14 @@ function deepMerge(base, over) {
   }
   return out;
 }
-
 async function loadLocale(code) {
   const en = await fetchLocale("en");
   L = code === "en" ? en : deepMerge(en, await fetchLocale(code));
   UILANG = L.meta?.code || code;
 }
-
-// A UI string with {n}/{lang}/… interpolation. Always resolves — English underlies it.
 const tRaw = (key) => (L.ui && L.ui[key] != null ? L.ui[key] : null);
 const t = (key, vars = {}) => String(tRaw(key) ?? key).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
 
-// A localised rung: verb + detail from the locale when verified-translated, else English;
-// the phone number is never localised (it is a number).
 function rung(key) {
   const s = (CFG.rungs && CFG.rungs[key]) || {};
   const o = (L.rungs && L.rungs[key]) || {};
@@ -517,6 +513,11 @@ function rung(key) {
 const triAsk = (tq) => L.triage?.[tq.id]?.ask ?? tq.ask;
 const flagText = (f) => ({ catches: L.redflags?.[f.id]?.catches ?? f.catches,
                            why: L.redflags?.[f.id]?.why ?? f.why });
+const dom = (k) => CFG.domains.find((x) => x.key === k);
+const domLabel = (k) => L.domains?.[k] ?? dom(k)?.label ?? k;
+// A language's name in running text: the locale's own word for it, else the locale endonym,
+// never the bare English name on a Vietnamese or Arabic page.
+const langName = (n) => L.langNames?.[n] ?? (CFG.locales || []).find((l) => l.name === n)?.endonym ?? n;
 
 function applyStatic() {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -531,10 +532,9 @@ function applyStatic() {
   document.documentElement.dir = L.meta?.dir || "ltr";
 }
 
-/* The log. Dated, kept, printable. The wait stops being dead time. */
-const log = () => JSON.parse(localStorage.getItem(KEY) || "[]");
-const saveLog = (l) => localStorage.setItem(KEY, JSON.stringify(l));
-
+/* The log. Dated, kept, printable. */
+const log = () => { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch { return []; } };
+const saveLog = (l) => { try { localStorage.setItem(KEY, JSON.stringify(l)); } catch {} };
 function addToLog(text) {
   const l = log();
   if (l.some((e) => e.text === text)) return;
@@ -542,74 +542,71 @@ function addToLog(text) {
   saveLog(l);
   renderLog();
 }
-
 function renderLog() {
   const l = log();
   show($("qsEmpty"), !l.length);
   show($("qsActions"), !!l.length);
   $("qs").innerHTML = l.map((e, i) => {
     const d = new Date(e.at).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
-    return `<div class="q"><span class="when">${d}</span><p>${esc(e.text)}</p>
+    return `<div class="q"><span class="when">${d}</span><p dir="auto">${esc(e.text)}</p>
       <button class="del noprint" data-i="${i}" aria-label="Remove">&times;</button></div>`;
   }).join("");
   $("qs").querySelectorAll(".del").forEach((b) =>
     (b.onclick = () => { const l2 = log(); l2.splice(+b.dataset.i, 1); saveLog(l2); renderLog(); }));
 }
 
-// Condition chips + their example prompts both come from the locale now (English is the
-// base, so a locale that omits them simply falls back).
-function renderConds() {
-  $("conds").innerHTML = Object.keys(CFG.conditions)
-    .map((k) => `<button class="chip" data-k="${k}" aria-pressed="${k === COND}">${esc(L.conditions?.[k] ?? CFG.conditions[k].label)}</button>`)
-    .join("");
-  $("conds").querySelectorAll(".chip").forEach((b) => (b.onclick = () => pick(b.dataset.k)));
+function renderExamples() {
+  $("egs").innerHTML = (L.examples?.home || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
+  // Fill the box; never auto-submit.
+  $("egs").querySelectorAll(".eg").forEach((b) =>
+    (b.onclick = () => { $("q").value = b.textContent.trim(); $("q").focus(); }));
 }
 
 async function boot() {
   CFG = await (await fetch("/api/config")).json();
-
-  // Pick the UI language: a remembered choice, else English. Load it before first paint.
   const codes = (CFG.locales || []).map((l) => l.code);
   let want = "en";
   try { const saved = localStorage.getItem(LANGKEY); if (saved && codes.includes(saved)) want = saved; } catch {}
   await loadLocale(want);
 
   renderUiLang();
-  renderConds();
-  renderTriage();
-  renderFlags();
-
-  $("prov").textContent = CFG.provenance.headline;
-  $("caveat").textContent = CFG.provenance.caveat + " " + CFG.provenance.notExtractedNote;
   $("srcs").innerHTML = Object.values(CFG.sources)
-    .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("");
+    .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("");
+  try { LIB = await (await fetch(`/api/library/${COND}`)).json(); } catch { LIB = null; }
+  renderAll();
+  renderLog();
 
-  applyStatic();
-  renderBrowse();
-  $("dirBack").onclick = () => { show($("dirBox"), false); show($("browseBox"), true);
-    DOMAIN = null; window.scrollTo({ top: 0, behavior: "smooth" }); };
-  // "Something feels wrong right now" — straight to the deterministic questions, no typing.
+  $("dirBack").onclick = () => closeDomain(true);
+  $("sirenList").onclick = (e) => { e.preventDefault(); openMore("flagsD"); };
   $("concern").onclick = (e) => {
     e.preventDefault();
     PENDING = "I'm worried something might be wrong right now.";
-    TRI = {}; $("triGo").disabled = true;
-    $("tqs").querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", "false"));
-    show($("askBox"), false); show($("concernBox"), false); show($("browseBox"), false); show($("dirBox"), false);
-    show($("triBox"), true); $("out").innerHTML = "";
-    $("triBox").scrollIntoView({ behavior: "smooth", block: "start" });
+    startTriage();
   };
-
-  show($("gate"), CFG.codeRequired);
-  await pick(COND);
-  renderLog();
 }
 
-// The deterministic questions. Their wording is safety-critical: it comes from the locale
-// only when a translator has verified it, otherwise English.
+// Everything whose text depends on the locale.
+function renderAll() {
+  applyStatic();
+  $("uilang").querySelectorAll(".uil").forEach((o) => o.setAttribute("aria-pressed", String(o.dataset.c === UILANG)));
+  const banner = $("langbanner");
+  if (L.meta && L.meta.verified === false) {
+    banner.textContent = t("unverified", { lang: L.meta.endonym || UILANG });
+    show(banner, true);
+  } else show(banner, false);
+  // A page language is also the resource language: Tiếng Việt lists Vietnamese resources first.
+  LANG = L.meta?.resourceLanguage || "";
+  renderBrowse();
+  renderExamples();
+  renderTriage();
+  renderFlags();
+  renderLibrary();
+}
+
 function renderTriage() {
   $("tqs").innerHTML = CFG.triage.map((tq) => `
     <div class="tq">
-      <p>${esc(triAsk(tq))}</p>
+      <p dir="auto">${esc(triAsk(tq))}</p>
       <div class="opts" data-q="${tq.id}">
         ${[["yes", "opt.yes"], ["unsure", "opt.unsure"], ["no", "opt.no"]].map(([v, k]) =>
           `<button class="opt" data-v="${v}" aria-pressed="${TRI[tq.id] === v}">${esc(t(k))}</button>`).join("")}
@@ -626,14 +623,13 @@ function renderTriage() {
 function renderFlags() {
   $("flags").innerHTML = CFG.redFlags.map((f) => {
     const x = flagText(f);
-    return `<div class="flag"><b>${esc(x.catches)}</b><p>${esc(x.why)}</p></div>`;
+    return `<div class="flag" dir="auto"><b>${esc(x.catches)}</b><p>${esc(x.why)}</p></div>`;
   }).join("");
 }
 
-// The UI language switch. Lists exactly the locales that exist on disk, by their own name.
 function renderUiLang() {
   const locs = CFG.locales || [];
-  if (locs.length < 2) { $("uilang").innerHTML = ""; return; }   // nothing to switch between
+  if (locs.length < 2) { $("uilang").innerHTML = ""; return; }
   $("uilang").innerHTML = locs.map((l) =>
     `<button class="uil" data-c="${esc(l.code)}" lang="${esc(l.code)}" aria-pressed="${l.code === UILANG}">${esc(l.endonym)}</button>`
   ).join("");
@@ -643,356 +639,100 @@ function renderUiLang() {
 async function setUILang(code) {
   await loadLocale(code);
   try { localStorage.setItem(LANGKEY, code); } catch {}
-
-  applyStatic();
-  $("uilang").querySelectorAll(".uil").forEach((o) => o.setAttribute("aria-pressed", String(o.dataset.c === UILANG)));
-
-  // Re-render everything whose text is config- or locale-driven.
-  renderConds();
-  renderTriage();
-  renderFlags();
-
-  // Honest machine-translation notice when a translator has not signed this locale off.
-  const banner = $("langbanner");
-  if (L.meta && L.meta.verified === false) {
-    banner.textContent = t("unverified", { lang: L.meta.endonym || code });
-    show(banner, true);
-  } else {
-    show(banner, false);
-  }
-
-  // A language is also a browse filter: choosing Tiếng Việt should surface Vietnamese
-  // resources first, so the page never says one thing and lists another.
-  LANG = L.meta?.resourceLanguage || "";
-  renderBrowse();
-  if (DOMAIN) openDomain(DOMAIN);
-
-  // Re-skin the care plan / today / library for the current condition in the new language.
-  pick(COND);
+  renderAll();
+  if (DOMAIN) openDomain(DOMAIN, DOMCOND, LANG);
+  if (OUTLANG) renderLangCard(OUTLANG);
 }
 
-// The browse spine: eight domain tiles + a language switch that filters across all of them.
+// Browse Topics: three parent cards from the spec, children inside each.
 function renderBrowse() {
-  $("langsel").innerHTML =
-    `<button class="lang" data-l="" aria-pressed="${LANG === ""}">${esc(t("browse.all"))}</button>` +
-    CFG.languages.map((l) => `<button class="lang" data-l="${esc(l)}" aria-pressed="${LANG === l}">${esc(l)}</button>`).join("");
-  $("langsel").querySelectorAll(".lang").forEach((b) => (b.onclick = () => {
-    LANG = b.dataset.l;
-    $("langsel").querySelectorAll(".lang").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
-    updateLangNote();
-    renderTiles();              // tiles respond immediately, so the switch never looks dead
-    if (DOMAIN) openDomain(DOMAIN);
-  }));
-  renderTiles();
-  updateLangNote();
+  const n = (k) => t("browse.resources", { n: dom(k)?.count ?? 0 });
+  $("topics").innerHTML = TREE.filter(([p]) => dom(p)).map(([p, kids]) => `
+    <div class="topic">
+      <button class="dom" data-k="${esc(p)}"><b>${esc(domLabel(p))}</b><span>${esc(n(p))}</span></button>
+      <div class="kids">${kids.filter(dom).map((k) =>
+        `<button class="kid" data-k="${esc(k)}"><span>${esc(domLabel(k))}</span><span class="n">${esc(n(k))}</span></button>`).join("")}
+      </div>
+    </div>`).join("");
+  $("topics").querySelectorAll("[data-k]").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
 }
 
-// The tile subtitle reflects the chosen language: how many are actually in it, or how
-// many have translated versions when none are language-tagged (the honest fallback).
-function renderTiles() {
-  $("doms").innerHTML = CFG.domains.map((d) => {
-    let sub = t("browse.resources", { n: d.count });
-    if (LANG) {
-      const n = d.languageCounts?.[LANG] || 0;
-      const tr = d.languageCounts?.translated || 0;
-      sub = n ? t("browse.inLang", { n, lang: LANG })
-              : (tr ? t("browse.translated", { n: tr }) : t("browse.resources", { n: d.count }));
-    }
-    return `<button class="dom" data-k="${esc(d.key)}"><b>${esc(d.label)}</b><span>${esc(sub)}</span></button>`;
-  }).join("");
-  $("doms").querySelectorAll(".dom").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
-}
+// The homepage sections hidden while a topic list is open.
+const HOME = ["browseBox", "askBox", "out", "more"];
+const showHome = (on) => HOME.forEach((id) => show($(id), on));
 
-function updateLangNote() {
-  const el = $("langnote");
-  if (!LANG) { show(el, false); return; }
-  const total = CFG.languageCounts?.[LANG] || 0;
-  const translated = CFG.languageCounts?.translated || 0;
-  el.innerHTML = total
-    ? t("langnote.available", { n: `<b>${total}</b>`, lang: esc(LANG) })
-    : t("langnote.none", { n: `<b>${translated}</b>`, lang: esc(LANG) });
-  show(el, true);
-}
-
-// A free interpreter is the single highest-leverage in-language help, and it is fixed
-// content — never model-generated. Shown on the language domain and whenever a language
-// filter is active.
 const interpreterHtml = () => {
   const i = L.interpreter || {};
   return `<div class="plan" style="margin-bottom:16px">
     <h3>${esc(i.title ?? "Ask for a free interpreter")}</h3>
-    <p>${esc(i.body ?? "When you call a GP, a pharmacist or healthdirect, you can ask for an interpreter at no cost.")}</p>
+    <p>${esc(i.body ?? "")}</p>
     <div class="script"><span class="lab">${esc(i.sayLabel ?? "Say this on the phone")}</span>
       <q>${esc(i.script ?? "I need an interpreter. I speak [your language].")}</q></div>
-    <p class="note">${esc(i.note ?? "Or call TIS National yourself, free, and ask them to connect you.")}
+    <p class="note">${esc(i.note ?? "")}
       <a class="tel" href="tel:131450" style="color:var(--self);font-weight:700">131 450</a></p>
   </div>`;
 };
 
-async function openDomain(key, condition = "") {
-  DOMAIN = key;
-  const qs = [LANG ? `language=${encodeURIComponent(LANG)}` : "", condition ? `condition=${encodeURIComponent(condition)}` : ""]
+async function openDomain(key, condition = "", lang = LANG) {
+  DOMAIN = key; DOMCOND = condition; DOMLANG = lang;
+  const qs = [lang ? `language=${encodeURIComponent(lang)}` : "", condition ? `condition=${encodeURIComponent(condition)}` : ""]
     .filter(Boolean).join("&");
-  const url = `/api/directory/${key}` + (qs ? `?${qs}` : "");
-  const d = await (await fetch(url)).json();
-  show($("browseBox"), false);
+  let d;
+  try { d = await (await fetch(`/api/directory/${key}` + (qs ? `?${qs}` : ""))).json(); }
+  catch { d = null; }
+  if (DOMAIN !== key) return;   // the person already moved on
+
+  showHome(false);
+  show($("triBox"), false);
   show($("dirBox"), true);
-  $("dirTitle").textContent = d.domain.label + (LANG ? t("dir.inLangSuffix", { lang: LANG }) : "");
+  if (!d || !d.domain) {
+    $("dirTitle").textContent = domLabel(key);
+    $("dirOut").innerHTML = `<p class="err">${esc(t("ask.neterror"))}</p>`;
+    $("dirBox").scrollIntoView({ block: "start" });
+    return;
+  }
+  $("dirTitle").textContent = domLabel(key) + (lang ? t("dir.inLangSuffix", { lang: langName(lang) }) : "");
 
   let head = "";
-  // "Understanding my condition" opens to the conditions (Layer 2). A condition lists
-  // everything we hold on it from every topic; "All" is the plain domain list.
+  // A parent topic shows its child topics as buttons.
+  const kids = [...(TREE.find(([p]) => p === key)?.[1] || []), ...(OPEN_EXTRA[key] || [])].filter(dom);
+  if (kids.length) {
+    head += `<p class="sublab">${esc(t("dir.subtopics"))}</p><div class="subrow" id="kidRow">` +
+      kids.map((k) => `<button class="eg" data-k="${esc(k)}">${esc(domLabel(k))} →</button>`).join("") + `</div>`;
+  }
+  // "Understanding my condition" opens to the conditions (Layer 2).
   if (d.conditions?.length) {
-    head += `<div class="egs" id="condRow" style="margin:0 0 16px">` +
+    head += `<p class="sublab">${esc(t("dir.conditions"))}</p><div class="subrow" id="condRow">` +
       [{ key: "", label: t("browse.all") }, ...d.conditions].map((c) =>
-        `<button class="chip" data-cond="${esc(c.key)}" aria-pressed="${String(c.key === d.condition)}">${esc(c.label)}${c.count != null ? ` (${c.count})` : ""}</button>`).join("") +
+        `<button class="chip" data-cond="${esc(c.key)}" aria-pressed="${String(c.key === (d.condition || ""))}">${esc(c.label)}${c.count != null ? ` (${c.count})` : ""}</button>`).join("") +
       `</div>`;
   }
-  if (LANG && !d.taggedInLanguage) {
-    // Honest: we do not have resources specifically in this language. Say so plainly
-    // rather than dressing up unrelated ones as translated.
-    head += `<div class="card" style="margin-bottom:16px">
-      <b>${t("langnote.none", { n: "", lang: esc(LANG) }).replace(/\s+/g, " ").trim()}</b></div>`;
-  } else if (LANG) {
-    head += `<p style="color:var(--soft);font-size:18px;margin:0 0 14px">
-      ${esc(t("dir.someInLang", { n: d.taggedInLanguage, lang: LANG }))}</p>`;
+  if (lang && !d.taggedInLanguage) {
+    head += `<div class="card" style="margin-bottom:16px;padding:16px">${esc(t("dir.noneInLang", { lang: langName(lang) }))}</div>`;
+  } else if (lang) {
+    head += `<p style="color:var(--soft);font-size:18px;margin:0 0 14px">${esc(t("dir.someInLang", { n: d.taggedInLanguage, lang: langName(lang) }))}</p>`;
   }
-  if (LANG || key === "language") head += interpreterHtml();
+  if (lang || key === "language") head += interpreterHtml();
 
-  $("dirOut").innerHTML = head + (d.resources.map(dirCard).join("") ||
+  $("dirOut").innerHTML = head + ((d.resources || []).map(resCard).join("") ||
     `<p class="empty">${esc(t("dir.empty"))}</p>`);
-  $("dirOut").querySelectorAll("#condRow .chip").forEach((b) => (b.onclick = () => openDomain(key, b.dataset.cond)));
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  $("dirOut").querySelectorAll("#kidRow .eg").forEach((b) => (b.onclick = () => openDomain(b.dataset.k, "", lang)));
+  $("dirOut").querySelectorAll("#condRow .chip").forEach((b) => (b.onclick = () => openDomain(key, b.dataset.cond, lang)));
+  // Put the topic heading at the top of the screen, not the page top.
+  $("dirBox").scrollIntoView({ block: "start" });
 }
 
-function dirCard(r) {
-  const badges = [
-    ...r.languages.map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: l }))}</span>`),
-    r.translated && !r.languages.length ? `<span class="badge">${esc(t("badge.translated"))}</span>` : "",
-  ].join("");
-  const files = r.doc_links?.length
-    ? `<div class="files">${esc(t("dir.downloads"))} ${r.doc_links.slice(0, 6)
-        .map((f, i) => `<a href="${esc(f)}" target="_blank" rel="noopener">${esc(t("dir.file", { n: i + 1 }))}</a>`).join("")}</div>`
-    : "";
-  return `<div class="dir">
-    ${badges}
-    <h3>${esc(r.title)}</h3>
-    <p>${esc(r.description || "")}</p>
-    <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
-    ${files}
-  </div>`;
-}
-
-async function pick(k) {
-  COND = k;
-  $("conds").querySelectorAll(".chip").forEach((b) =>
-    b.setAttribute("aria-pressed", String(b.dataset.k === k)));
-
-  // The four example prompts from the design spec, always — not per-condition.
-  $("egs").innerHTML = (L.examples?.home || []).map((e) => `<button class="eg">${esc(e)}</button>`).join("");
-  $("egs").querySelectorAll(".eg").forEach((b) =>
-    (b.onclick = () => { $("q").value = b.textContent.trim(); $("q").focus(); }));
-
-  const lib = await (await fetch(`/api/library/${k}`)).json();
-  show($("rest"), true);
-
-  const plan = lib.evidence.find((e) => e.headline);
-  if (plan) {
-    $("planBox").innerHTML = `
-      <h3>${esc(plan.title)}</h3>
-      <p>${esc(plan.plain)}</p>
-      <div class="script">
-        <span class="lab">${esc(t("plan.say"))}</span>
-        <q>${esc(plan.script)}</q>
-      </div>
-      <p class="note">${esc(plan.scriptNote)}</p>
-      <p class="src"><a href="${plan.sourceUrl}" target="_blank" rel="noopener">
-        ${esc(CFG.sources[plan.source]?.name)} →</a></p>`;
-  }
-
-  $("today").innerHTML = lib.supports.map((s) => `
-    <div class="svc">
-      <b>${esc(s.name)}</b>
-      <p>${esc(s.what)}</p>
-      ${s.phone ? `<a class="ph" href="tel:${s.phone.replace(/\s/g, "")}">${esc(s.phone)}</a><br/>` : ""}
-      <span class="open"><a href="${s.url}" target="_blank" rel="noopener">Open →</a></span>
-    </div>`).join("");
-
-  const byDomain = {};
-  lib.evidence.forEach((e) => (byDomain[e.domain] ??= []).push(e));
-  $("lib").innerHTML = Object.entries(CFG.cardDomains)
-    .filter(([d]) => byDomain[d]?.length)
-    .map(([d, m]) => `<details>
-      <summary><b>${esc(m.label)}</b> <span>— ${esc(m.blurb)} (${byDomain[d].length})</span></summary>
-      <div style="margin:10px 0 16px">${byDomain[d].map(evCard).join("")}</div>
-    </details>`).join("");
-}
-
-function evCard(e) {
-  return `<div class="ev">
-    ${e.myth ? `<span class="tagm">${esc(t("card.misconception"))}</span>` : ""}
-    <h3>${esc(e.title)}</h3>
-    <p>${esc(e.plain)}</p>
-    ${e.quote ? `<p class="quote">“${esc(e.quote)}”</p>` : ""}
-    <p class="src"><a href="${e.sourceUrl}" target="_blank" rel="noopener">${esc(CFG.sources[e.source]?.name || e.source)} →</a></p>
-    ${e.supersedes ? `<p class="sup">${esc(e.supersedes.note)}</p>` : ""}
-  </div>`;
-}
-
-/* Ask → the three questions → the answer. The questions are never skipped. */
-$("ask").onclick = () => {
-  const q = $("q").value.trim();
-  if (!q) { $("q").focus(); return; }
-  PENDING = q;
-  TRI = {};
-  $("triGo").disabled = true;
-  $("tqs").querySelectorAll(".opt").forEach((o) => o.setAttribute("aria-pressed", "false"));
-  show($("askErr"), false);
-  show($("askBox"), false);
-  show($("concernBox"), false);
-  show($("browseBox"), false);
+function closeDomain(scroll) {
+  DOMAIN = null; DOMCOND = "";
   show($("dirBox"), false);
-  show($("triBox"), true);
-  $("out").innerHTML = "";
-  $("triBox").scrollIntoView({ behavior: "smooth", block: "start" });
-};
-
-$("triGo").onclick = async () => {
-  $("triGo").disabled = true;
-  show($("triSpin"), true);
-  try {
-    const res = await fetch("/api/ask", {
-      method: "POST",
-      headers: { "content-type": "application/json", "x-access-code": CODE },
-      // `language`: the page's chosen language, so the explanation can be translated (labelled).
-      body: JSON.stringify({ question: PENDING, condition: COND, triage: TRI, language: L.meta?.resourceLanguage || "" }),
-    });
-    const d = await res.json();
-
-    show($("triBox"), false);
-    show($("askBox"), true);
-    show($("concernBox"), true);
-    show($("browseBox"), true);
-
-    if (!res.ok) {
-      if (d.needsCode) { show($("gate"), true); $("code").focus(); }
-      $("askErr").textContent = d.error || "Something went wrong.";
-      show($("askErr"), true);
-      // Even with the model down, a fired red flag must still reach the person.
-      if (d.screen?.floor && d.screen.floor !== "SELF_MANAGE") {
-        render({ disposition: d.screen.floor, rung: CFG.rungs[d.screen.floor],
-                 flags: d.screen.flags, evidence: [], grounded: false, redFlagOnly: true });
-      }
-      return;
-    }
-    render(d);
-    if (d.gpQuestion) addToLog(d.gpQuestion);
-    $("q").value = "";
-  } catch {
-    show($("triBox"), false);
-    show($("askBox"), true);
-    show($("concernBox"), true);
-    show($("browseBox"), true);
-    $("askErr").textContent = "Couldn't reach the server. Check your connection and try again.";
-    show($("askErr"), true);
-  } finally {
-    show($("triSpin"), false);
-    $("triGo").disabled = false;
-  }
-};
-
-function render(d) {
-  // Recompute the rung client-side so its verb/detail honour the chosen language (the
-  // phone number never changes). The disposition itself is the server's — code owns it.
-  const r = rung(d.disposition);
-  let h = `<div class="rung ${d.disposition}">
-    <p class="lvl">${esc(t("answer.level", { level: r.level }))}</p>
-    <p class="verb">${esc(r.label)}</p>
-    <p class="detail">${esc(r.detail)}</p>`;
-
-  // The one-tap human, before anything else. This is the change most likely to stop
-  // someone with an infected joint closing the tab and going back to bed.
-  if (r.call) {
-    h += `<a class="call" href="tel:${r.call.number.replace(/\s/g, "")}">
-      <span>${esc(r.call.label)}</span> <span class="num">${esc(r.call.number)}</span></a>`;
-  }
-
-  // Said in words, not staged as an animation.
-  (d.flags || []).forEach((f) => {
-    const x = flagText(f);
-    h += `<div class="why"><b>${esc(x.catches)}</b><p>${esc(x.why)}</p></div>`;
-  });
-
-  if (d.raisedByRule && d.modelSaid) {
-    h += `<div class="raised">${esc(t("answer.raised", { modelSaid: d.modelSaid }))}</div>`;
-  }
-  h += `</div>`;
-
-  // ── Layer 4, the resource display. The answer is assembled from labelled sections.
-
-  // SECTION 1 — What we found. The grounded, plain-English explanation and its cited cards.
-  if (d.grounded) {
-    h += `<h2 class="ansH">${esc(t("answer.found"))}</h2>`;
-    if (d.framingTranslated?.text) {
-      // The reader's language first, honestly labelled; the English original one tap away
-      // so a pharmacist, GP or interpreter can check it.
-      h += `<p class="answer" lang="${esc(UILANG)}" dir="${esc(L.meta?.dir || "ltr")}">${esc(d.framingTranslated.text)}</p>
-        <p class="mt" lang="${esc(UILANG)}" dir="${esc(L.meta?.dir || "ltr")}">${esc(t("answer.mt"))}</p>
-        <details class="mt"><summary>${esc(t("answer.showEnglish"))}</summary>
-          <p class="answer" lang="en" dir="ltr">${esc(d.framing)}</p></details>`;
-    } else {
-      h += `<p class="answer">${esc(d.framing)}</p>`;
-    }
-    h += d.evidence.map(evCard).join("");
-  } else if (!d.redFlagOnly) {
-    const where = (d.pointers || []).length ? t("answer.noAnswer.where") : "";
-    h += `<div class="card" style="margin-bottom:20px">
-      <b>${esc(t("answer.noAnswer.title"))}</b>
-      <p style="color:var(--soft); margin:8px 0 0; font-size:18px">
-        ${esc(t("answer.noAnswer.body", { reason: d.unansweredReason || t("answer.noAnswer.default"), where }))}</p></div>`;
-  }
-
-  // Rungs 4–5 suppress everything navigational: someone who needs a doctor today or tonight
-  // should be making the call, not scrolling topics and links.
-  const urgent = d.disposition === "GP_NOW" || d.disposition === "ED";
-
-  // SECTION 2 — Related topics. The browse domains the suggested resources sit in, as
-  // tappable chips, so the person can keep exploring without knowing the category names.
-  const rel = [...new Set((d.pointers || []).flatMap((p) => p.domains || []))]
-    .map((k) => CFG.domains.find((x) => x.key === k)).filter(Boolean);
-  if (!urgent && rel.length) {
-    h += `<h2 class="ansH">${esc(t("answer.related"))}</h2><div class="egs" id="relTopics">` +
-      rel.map((dm) => `<button class="eg" data-k="${esc(dm.key)}">${esc(dm.label)}</button>`).join("") + `</div>`;
-  }
-
-  // SECTION 3 — Trusted resources, each tagged with what you can actually do with it:
-  // Read · Watch · Contact or join · Discuss with a professional. Navigate tier — a place
-  // to go, never a sourced clinical claim.
-  if (!urgent && (d.pointers || []).length) {
-    h += `<h2 class="ansH">${esc(t("answer.trusted"))}</h2>` +
-      d.pointers.map((p) => {
-        const act = actionOf(p);
-        return `<div class="dir">
-          <span class="badge act act-${act}">${esc(t("action." + act))}</span>
-          ${(p.languages || []).map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: l }))}</span>`).join("")}
-          <h3>${esc(p.title)}</h3>
-          <p>${esc(p.description || "")}</p>
-          <a class="go" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
-        </div>`;
-      }).join("");
-  }
-
-  $("out").innerHTML = h;
-  // Related-topic chips open the browse directory for that domain.
-  $("out").querySelectorAll("#relTopics .eg").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
-  $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+  showHome(true);
+  if (scroll) window.scrollTo({ top: 0 });
 }
 
-// What can the person DO with a resource? Inferred from its domain and link shape, since
-// the repository has no explicit media type. Priority: a video is to watch; a service or
-// program is to contact or join; appointment-prep is to discuss; everything else is to read.
+// What can the person DO with a resource? The data's own field when it has one; otherwise
+// inferred from its topic and link shape.
 function actionOf(r) {
-  // `tags` is { domainKey: [subdomains] }, not a list — flatten it.
+  if (ACTIONS.includes(r.action)) return r.action;
   const hay = `${r.url || ""} ${r.title || ""} ${Object.values(r.tags || {}).flat().join(" ")}`;
   if (/youtu|vimeo|\/watch|\bvideo\b|\bwebinar\b/i.test(hay)) return "watch";
   const d = r.domains || [];
@@ -1001,15 +741,369 @@ function actionOf(r) {
   return "read";
 }
 
+function fileName(u) {
+  try {
+    const seg = new URL(u).pathname.split("/").filter(Boolean).pop();
+    return seg ? decodeURIComponent(seg) : new URL(u).hostname;
+  } catch { return ""; }
+}
+
+function resCard(r) {
+  const act = actionOf(r);
+  const badges = [
+    `<span class="badge act">${esc(t("action." + act))}</span>`,
+    ...(r.languages || []).map((l) => `<span class="badge lang">${esc(t("badge.inLang", { lang: langName(l) }))}</span>`),
+    r.translated && !(r.languages || []).length ? `<span class="badge">${esc(t("badge.translated"))}</span>` : "",
+  ].join("");
+  // Policies, forms for professionals and hash-named files are not things a patient downloads.
+  const junk = (s) => JUNK_DL.test(String(s || "").trim());
+  const dl = (Array.isArray(r.doc_links_labelled) && r.doc_links_labelled.length
+    ? r.doc_links_labelled.filter((x) => x && x.url && !junk(x.label) && !junk(fileName(x.url)))
+        .map((x) => ({ url: x.url, label: x.label || t("dir.download", { name: fileName(x.url) }) }))
+    : (r.doc_links || []).filter((u) => !junk(fileName(u))).map((u) => ({ url: u, label: t("dir.download", { name: fileName(u) }) }))
+  ).slice(0, 3);
+  const files = dl.length
+    ? `<div class="files">${esc(t("dir.downloads"))} ${dl.map((f) =>
+        `<a href="${esc(f.url)}" target="_blank" rel="noopener"><bdi>${esc(f.label)}</bdi></a>`).join("")}</div>`
+    : "";
+  // A description shorter than 15 characters is a spreadsheet label, not a description.
+  const desc = (r.description || "").trim();
+  return `<div class="dir">
+    ${badges}
+    <h3>${esc(r.title)}</h3>
+    ${desc.length >= 15 ? `<p>${esc(desc)}</p>` : ""}
+    <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(t("dir.open"))}</a>
+    ${files}
+  </div>`;
+}
+
+// "More help": the plan card and support lines, rendered once.
+function renderLibrary() {
+  if (!LIB) return;
+  const plan = (LIB.evidence || []).find((e) => e.headline);
+  $("planBox").innerHTML = plan ? `
+      <h3>${esc(plan.title)}</h3>
+      <p>${esc(plan.plain)}</p>
+      <div class="script"><span class="lab">${esc(t("plan.say"))}</span><q>${esc(plan.script)}</q></div>
+      <p class="note">${esc(plan.scriptNote)}</p>
+      <p class="src"><a href="${esc(plan.sourceUrl)}" target="_blank" rel="noopener">${esc(CFG.sources[plan.source]?.name)} →</a></p>` : "";
+  show($("planD"), !!plan);
+  $("today").innerHTML = (LIB.supports || []).map((s) => `
+    <div class="svc">
+      <b>${esc(s.name)}</b>
+      <p>${esc(s.what)}</p>
+      ${s.phone ? `<a class="ph tel" href="tel:${esc(s.phone.replace(/\s/g, ""))}">${esc(s.phone)}</a><br/>` : ""}
+      <span class="open"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(t("svc.open"))}</a></span>
+    </div>`).join("");
+}
+
+function openMore(id) {
+  if (DOMAIN) closeDomain(false);
+  $("more").open = true;
+  $(id).open = true;
+  $(id).scrollIntoView({ block: "start" });
+}
+
+function evCard(e) {
+  return `<div class="ev">
+    ${e.myth ? `<span class="tagm">${esc(t("card.misconception"))}</span>` : ""}
+    <h3>${esc(e.title)}</h3>
+    <p>${esc(e.plain)}</p>
+    ${e.quote ? `<p class="quote">“${esc(e.quote)}”</p>` : ""}
+    <p class="src"><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">${esc(CFG.sources[e.source]?.name || e.source)} →</a></p>
+    ${e.supersedes ? `<p class="sup">${esc(e.supersedes.note)}</p>` : ""}
+    ${e.reviewed === true ? "" : `<p class="unrev">${esc(t("card.unreviewed"))}</p>`}
+  </div>`;
+}
+
+/* ── "Information in my language" is a language switch, not a search. No model, no triage:
+   it carries no health disposition. Any other question goes through triage as always. */
+// STRICT WHITELIST, not a search. The shortcut skips the triage questions and the keyword
+// red-flag screen, so it may fire ONLY when every word in the question is an ordinary
+// "information in a language" word. One word we don't recognise (chest, pain, toe, fever,
+// bladder, rash …) and the question goes through triage like any other.
+const LANG_WORDS = new Set(("can could may do does is are will would i we you me my please get find have see read " +
+  "access show some any the this your an a information info resources resource materials material help content " +
+  "support in into available language languages speak speaking and or there for on site page website it anything " +
+  "something written translated arabic vietnamese assyrian chinese").split(" "));
+const LANG_NAMES = ["arabic", "vietnamese", "assyrian", "chinese"];
+const LANG_THING = ["information", "info", "resources", "resource", "materials", "material", "content", "help", "support"];
+const LANG_INFO = {
+  arabic: { name: "Arabic", locale: "ar" },
+  vietnamese: { name: "Vietnamese", locale: "vi" },
+  assyrian: { name: "Assyrian", locale: null },
+  chinese: { name: "Chinese", locale: null },
+};
+function langIntent(q) {
+  // Plain Latin text only. Any other script (Arabic, Chinese, Assyrian, emoji …) could be
+  // symptoms we cannot read here, so it must go to triage and the server's screen.
+  if (!/^[A-Za-z\s?.,!'’-]+$/.test(q)) return null;
+  const words = q.toLowerCase().replace(/[^a-z\s]/g, " ").split(/\s+/).filter(Boolean);
+  if (words.length < 3 || words.length > 14) return null;
+  if (!words.every((x) => LANG_WORDS.has(x))) return null;            // any other word → triage
+  if (!words.some((x) => LANG_THING.includes(x))) return null;         // must ask for information
+  const w = words.find((x) => LANG_NAMES.includes(x));
+  if (!w) return null;
+  const info = LANG_INFO[w];
+  const loc = (CFG.locales || []).find((l) => l.code === info.locale);
+  return { ...info, locale: loc ? loc.code : null, endonym: loc?.endonym || info.name };
+}
+
+function renderLangCard(li) {
+  OUTLANG = li;
+  let h = `<div class="card" style="margin-top:24px" id="langCard">
+    <h2 class="ansH" style="margin-top:0">${esc(t("lang.title", { lang: langName(li.name) }))}</h2>`;
+  if (li.locale) {
+    h += UILANG === li.locale
+      ? `<p style="margin:0 0 12px">${esc(t("lang.pageNow", { lang: langName(li.name) }))}</p>`
+      : `<p style="margin:0 0 12px">${esc(t("lang.pageYes", { lang: langName(li.name) }))}</p>
+         <button class="btn ghost" id="langSwitch" lang="${esc(li.locale)}" style="margin-bottom:12px">${esc(t("lang.switch", { lang: li.endonym }))}</button>`;
+  } else {
+    h += `<p style="margin:0 0 12px">${esc(t("lang.pageNo", { lang: langName(li.name) }))}</p>`;
+  }
+  h += `<div><button class="btn" id="langRes">${esc(t("lang.resources", { lang: langName(li.name) }))}</button></div>
+    <p style="margin:14px 0 0;font-size:18px;color:var(--soft)">${esc(t("lang.interp"))} <a class="tel" href="tel:131450" style="color:var(--self);font-weight:700">131 450</a></p>
+    <p style="margin:10px 0 0"><button class="linkbtn" id="langAll">${esc(t("lang.allLink"))}</button></p>
+  </div>`;
+  $("out").innerHTML = h;
+  if ($("langSwitch")) $("langSwitch").onclick = () => setUILang(li.locale);
+  $("langRes").onclick = () => openDomain("language", "", li.name);
+  $("langAll").onclick = () => openDomain("language", "", li.name);
+  $("langCard").scrollIntoView({ block: "start" });
+}
+
+/* ── Ask → (access code if needed) → the questions → the answer. */
+function showCode(msg) {
+  show($("codeRow"), true);
+  if (msg) { $("codeErr").textContent = msg; show($("codeErr"), true); } else show($("codeErr"), false);
+  $("code").focus();
+}
+
+// The code gates the assistant, never safety: the questions always run first, and a raised
+// result comes back without any code. Only an ordinary question can come back 401 — then the
+// typed question and the triage answers are kept, so entering the code resubmits them as-is.
+let RETRY = null;   // { q, tri } waiting for a code
+
+function startTriage() {
+  OUTLANG = null;
+  RETRY = null;
+  show($("codeRow"), false);
+  if (DOMAIN) closeDomain(false);
+  TRI = {};
+  $("triGo").disabled = true;
+  renderTriage();
+  show($("askErr"), false);
+  ["askBox", "concernBox", "browseBox"].forEach((id) => show($(id), false));
+  show($("triBox"), true);
+  $("out").innerHTML = "";
+  $("triBox").scrollIntoView({ block: "start" });
+}
+
+function restoreHome() {
+  show($("triBox"), false);
+  ["askBox", "concernBox", "browseBox", "out", "more"].forEach((id) => show($(id), true));
+}
+
+function askError(msg) {
+  $("askErr").textContent = msg;
+  show($("askErr"), true);
+}
+
+$("ask").onclick = async () => {
+  const q = $("q").value.trim();
+  if (!q) { $("q").focus(); return; }
+  show($("askErr"), false);
+  // Waiting on a code for this same question: resubmit it with the answers already given.
+  if (RETRY && q === RETRY.q) {
+    const v = $("code").value.trim();
+    if (!v) { $("code").focus(); return; }
+    CODE = v;
+    $("code").value = "";
+    show($("spin"), true);
+    $("ask").disabled = true;
+    try { await submitAsk(RETRY.q, RETRY.tri); }
+    finally { show($("spin"), false); $("ask").disabled = false; }
+    return;
+  }
+  const li = langIntent(q);
+  if (li) { renderLangCard(li); return; }
+  const v = $("code").value.trim();
+  if (v) { CODE = v; $("code").value = ""; }
+  PENDING = q;
+  startTriage();
+};
+$("code").addEventListener("keydown", (e) => { if (e.key === "Enter") $("ask").click(); });
 $("q").addEventListener("keydown", (e) => {
   if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) $("ask").click();
 });
-$("unlock").onclick = async () => {
-  CODE = $("code").value.trim();
-  const res = await fetch("/api/unlock", { method: "POST", headers: { "x-access-code": CODE } });
-  if (res.ok) { show($("gate"), false); show($("codeErr"), false); }
-  else { $("codeErr").textContent = "That code didn't work."; show($("codeErr"), true); }
+
+// Render, with a page error kept separate from a network error.
+function safeRender(d) {
+  try { render(d); return true; }
+  catch (err) {
+    console.error("render failed:", err);
+    $("out").innerHTML = "";
+    askError(t("ask.renderError"));
+    $("askBox").scrollIntoView({ block: "start" });
+    return false;
+  }
+}
+
+$("triGo").onclick = async () => {
+  $("triGo").disabled = true;
+  show($("triSpin"), true);
+  try { await submitAsk(PENDING, TRI); }
+  finally { show($("triSpin"), false); $("triGo").disabled = false; }
 };
+
+async function submitAsk(question, tri) {
+  PENDING = question;
+  let res, d;
+  try {
+    res = await fetch("/api/ask", {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-access-code": CODE },
+      // No condition: the model sees everything and works out the category itself.
+      body: JSON.stringify({ question, condition: null, triage: tri, language: L.meta?.resourceLanguage || "" }),
+    });
+    d = await res.json().catch(() => ({}));
+  } catch {
+    restoreHome();
+    askError(t("ask.neterror"));
+    $("askBox").scrollIntoView({ block: "start" });
+    return;
+  }
+
+  restoreHome();
+  if (!res.ok) {
+    if (res.status === 401 && d.needsCode) {
+      // One prompt, in the ask box. A wrong code says so; a first ask just shows the field.
+      const wrong = !!CODE;
+      CODE = "";
+      RETRY = { q: question, tri: { ...tri } };
+      $("q").value = question;
+      $("out").innerHTML = "";
+      showCode(wrong ? t("gate.error") : "");
+      $("askBox").scrollIntoView({ block: "start" });
+      return;
+    }
+    askError(res.status === 503 ? t("ask.unavailable") : t("ask.error"));
+    // Even with the assistant down, a fired red flag must still reach the person.
+    if (d.screen?.floor && d.screen.floor !== "SELF_MANAGE") {
+      safeRender({ disposition: d.screen.floor, flags: d.screen.flags, evidence: [], grounded: false, redFlagOnly: true });
+    } else {
+      $("askBox").scrollIntoView({ block: "start" });
+    }
+    return;
+  }
+  RETRY = null;
+  show($("codeRow"), false);
+  show($("codeErr"), false);
+  if (safeRender(d)) {
+    addToLog(d.gpQuestion || d.question || question);
+    $("q").value = "";
+  }
+}
+
+function render(d) {
+  const r = rung(d.disposition);
+  const flags = d.flags || [];
+  // An information question with no sourced answer and nothing medical in it: no rung
+  // banner, lead with where to look.
+  const infoOnly = !d.grounded && d.disposition === "SELF_MANAGE" && !flags.length && !d.redFlagOnly;
+  const urgent = d.disposition === "GP_NOW" || d.disposition === "ED";
+  const pointers = d.pointers || [];
+  let h = "";
+
+  if (!infoOnly) {
+    h += `<div class="rung ${esc(d.disposition)}" id="rungBox">
+      <p class="lvl" dir="auto">${esc(t("answer.level", { level: r.level }))}</p>
+      <p class="verb" dir="auto">${esc(r.label)}</p>
+      <p class="detail" dir="auto">${esc(r.detail)}</p>`;
+    if (r.call) {
+      h += `<a class="call" href="tel:${esc(r.call.number.replace(/\s/g, ""))}">
+        <span>${esc(r.call.label)}</span> <span class="num">${esc(r.call.number)}</span></a>`;
+    }
+    flags.forEach((f) => {
+      const x = flagText(f);
+      h += `<div class="why" dir="auto"><b>${esc(x.catches)}</b><p>${esc(x.why)}</p></div>`;
+    });
+    if (d.raisedByRule && d.modelSaid) {
+      h += `<div class="raised" dir="auto">${esc(t("answer.raised", { modelSaid: d.modelSaid }))}</div>`;
+    }
+    h += `</div>`;
+  }
+
+  // 1 — What we found.
+  if (d.grounded) {
+    h += `<h2 class="ansH">${esc(t("answer.found"))}</h2>`;
+    if (d.framingTranslated?.text) {
+      h += `<p class="answer" lang="${esc(UILANG)}" dir="${esc(L.meta?.dir || "ltr")}">${esc(d.framingTranslated.text)}</p>
+        <p class="mt" lang="${esc(UILANG)}" dir="${esc(L.meta?.dir || "ltr")}">${esc(t("answer.mt"))}</p>
+        <details class="mt"><summary>${esc(t("answer.showEnglish"))}</summary>
+          <p class="answer" lang="en" dir="ltr">${esc(d.framing)}</p></details>`;
+    } else {
+      h += `<p class="answer">${esc(d.framing)}</p>`;
+    }
+    h += (d.evidence || []).map(evCard).join("");
+  } else if (!d.redFlagOnly) {
+    const where = pointers.length ? t("answer.noAnswer.where") : "";
+    h += `<h2 class="ansH">${esc(t("answer.found"))}</h2>
+      <div class="card" style="margin-bottom:8px">
+      <b>${esc(t("answer.noAnswer.title"))}</b>
+      <p style="color:var(--soft); margin:8px 0 0; font-size:18px">
+        ${esc(t("answer.noAnswer.body", { reason: d.unansweredReason || t("answer.noAnswer.default"), where }))}</p></div>`;
+    // No banner on an information-only result, but the rung's safety net stays.
+    if (infoOnly && r.detail) h += `<p class="safetynet" dir="auto">${esc(r.detail)}</p>`;
+  }
+
+  // 2 — Related topics. The spec's category names for the three mapped topics; at most 3.
+  // Rungs 4–5 suppress everything navigational: make the call, don't scroll.
+  const relKeys = [...new Set([...(d.domains || []), ...pointers.flatMap((p) => p.domains || [])])]
+    .filter((k) => dom(k)).slice(0, 3);
+  if (!urgent && relKeys.length) {
+    h += `<h2 class="ansH">${esc(t("answer.related"))}</h2><div class="egs" id="relTopics">` +
+      relKeys.map((k) => `<button class="eg" data-k="${esc(k)}">${esc(RELATED.includes(k) ? t("related." + k) : domLabel(k))}</button>`).join("") + `</div>`;
+  }
+
+  // 3 — Trusted resources, each with what you can do with it.
+  if (!urgent && pointers.length) {
+    h += `<h2 class="ansH" id="trustedH">${esc(t("answer.trusted"))}</h2>` + pointers.map(resCard).join("");
+  }
+
+  // 4 — Your next steps. Built here, no model. Real actions only, never filler.
+  const steps = [];
+  const gpQ = d.gpQuestion || d.question || PENDING || "";
+  if (!urgent) {
+    steps.push(`<li><b>${esc(t("next.whereLabel"))}</b> ` + (pointers.length
+      ? `<button class="linkbtn" id="nextWhere" data-go="trusted">${esc(t("next.wherePointers"))}</button>`
+      : `<button class="linkbtn" id="nextWhere" data-go="browse">${esc(t("next.whereBrowse"))}</button>`) + `</li>`);
+  }
+  if (gpQ) {
+    // The English note is true only for a model-written question. A raised result without
+    // the model carries the person's own words, in whatever language they typed.
+    const own = !!d.redFlagOnly || !d.framing;
+    const typed = !!d.redFlagOnly;
+    steps.push(`<li><b>${esc(t(typed ? "next.youWrote" : "next.askDoctor"))}</b>
+      <p class="gpq" ${own ? 'dir="auto"' : 'lang="en" dir="ltr"'} id="gpq">${esc(gpQ)}</p>
+      <button class="chip" id="gpCopy">${esc(t("next.copy"))}</button>
+      ${d.framing && !typed ? `<p class="note">${esc(t("next.english"))}</p>` : ""}</li>`);
+    steps.push(`<li>${esc(t("next.saved"))} <button class="linkbtn" id="logLink">${esc(t("next.logLink"))}</button></li>`);
+  }
+  if (steps.length) h += `<h2 class="ansH">${esc(t("answer.next"))}</h2><ul class="next">${steps.join("")}</ul>`;
+
+  $("out").innerHTML = h;
+  $("out").querySelectorAll("#relTopics .eg").forEach((b) => (b.onclick = () => openDomain(b.dataset.k)));
+  if ($("nextWhere")) $("nextWhere").onclick = () =>
+    ($("nextWhere").dataset.go === "trusted" ? $("trustedH") : $("browseBox")).scrollIntoView({ block: "start" });
+  if ($("gpCopy")) $("gpCopy").onclick = async () => {
+    try { await navigator.clipboard.writeText(gpQ); }
+    catch { const s = getSelection(); const rg = document.createRange(); rg.selectNodeContents($("gpq")); s.removeAllRanges(); s.addRange(rg); }
+    $("gpCopy").textContent = t("next.copied");
+  };
+  if ($("logLink")) $("logLink").onclick = () => openMore("logD");
+  $("out").scrollIntoView({ block: "start" });
+}
 
 boot();
 </script>

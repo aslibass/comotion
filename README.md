@@ -95,6 +95,17 @@ spine, the rail and the entire emergency path. That is deliberate.
 
 ---
 
+## Tests
+
+```bash
+npm test                         # server unit tests (88): rail, library cards, translation guards, access-code gate
+npm run test:e2e                 # browser tests at 390x844 with the model mocked (39)
+node tools/smoke.mjs <baseUrl>   # post-deploy check, no model needed; set SMOKE_CODE to also test the ED path
+```
+
+The browser tests exist because a one-line page bug once crashed every answer that included
+resource links while the server answered fine. Always run `npm run test:e2e` before a push.
+
 ## Checking translation after a deploy
 
 Translation needs the model, so it can only be checked with an API key and the access code.

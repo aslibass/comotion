@@ -42,7 +42,18 @@ _As of 2026-11-01_
 >   disposition is fixed, so it cannot change where someone is sent. Typed questions in Arabic or
 >   Vietnamese are understood, but the keyword red-flag screen only reads English — the four
 >   triage questions, asked every time, are the safeguard until a translator signs those off.
->   **Not yet tested against the live model** — see the checks to run after deploy in the README.
+>   Tested against the live model on 2026-11-02 in Vietnamese and Arabic (translation shown first,
+>   labelled, English original one tap away, GP question kept in English). One Vietnamese answer
+>   rendered "trigger" as "cause"; the translation prompt was tightened afterwards but that fix has
+>   not yet been re-tested live, and translated wording still needs a native reviewer.
+>
+> **2026-11-03 patient-walkthrough fixes** (see `docs/fix-list.md`): the access code now gates only
+> the model, never safety (a raised red-flag floor is answered without a code); the "information in
+> a language" shortcut fires only for plain-Latin, whitelist-only wording and otherwise goes through
+> triage; browse is nested exactly as the Layer 1 list; the page is ~2,100px tall with the extras
+> collapsed under "More help"; the directory was cleaned (163 resources; titles, descriptions,
+> actions, download links, ordering); seven definition cards were added to the library, all marked
+> not yet clinically reviewed.
 >
 > **Still open:** what the answer's fourth section should be (the spec lists three headings under
 > "four sections"); whether browse topics should nest as in the spec's Layer 1 list; whether the

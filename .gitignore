@@ -16,3 +16,11 @@ data/catalogue.json
 .DS_Store
 *.log
 .playwright-mcp/
+
+# Playwright output
+test-results/
+playwright-report/
+
+# Python
+__pycache__/
+*.pyc

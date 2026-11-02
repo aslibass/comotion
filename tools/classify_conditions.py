@@ -87,7 +87,13 @@ def main():
     out, counts, unverified = {}, {k: {"primary": 0, "mentioned": 0, "listing-only": 0} for k in CONDITIONS}, 0
     ov_file = DATA / "conditions_overrides.json"
     ov = json.loads(ov_file.read_text(encoding="utf-8")) if ov_file.exists() else {"by_url": {}}
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import clean_directory as cd
+    removed = {i for i, o in cd.load_overrides().items() if o.get("remove")}
+    survivor_by_url: dict[str, str] = {}   # normalised URL -> surviving id (same rule as build_directory)
     for r in cat["resources"]:
+        if r["id"] in removed:
+            continue  # not in the directory (see directory_overrides.json), so not classified
         tp = DATA / "text" / f"{r['id']}.txt"
         body = tp.read_text(encoding="utf-8", errors="replace") if tp.exists() else ""
         c = classify(r, body)
@@ -95,9 +101,22 @@ def main():
             tags = [{"condition": t["condition"], "strength": "primary", "found_in": f"live site check {ov['checked_on']}",
                      "quote": t["quote"], "body_mentions": None} for t in ov["by_url"][r["url"]]]
             c = {"conditions": [t["condition"] for t in tags], "tags": tags, "verified": True, "checked_against": r["url"]}
+        k = cd.norm_url(r["url"])
+        if k in survivor_by_url:
+            # Merged duplicate: fold its tags into the surviving id so ids/counts match the directory.
+            sv = out[survivor_by_url[k]]
+            have = {t["condition"] for t in sv["tags"]}
+            for t in c["tags"]:
+                if t["condition"] not in have:
+                    sv["tags"].append(t)
+                    sv["conditions"].append(t["condition"])
+            sv["merged_ids"] = sv.get("merged_ids", []) + [r["id"]]
+            continue
+        survivor_by_url[k] = r["id"]
         out[r["id"]] = {"url": r["url"], "url_as_listed": r.get("url_as_listed"), **c}
-        unverified += 0 if c["verified"] else 1
-        for t in c["tags"]:
+    for rec in out.values():
+        unverified += 0 if rec["verified"] else 1
+        for t in rec["tags"]:
             counts[t["condition"]][t["strength"]] += 1
 
     (DATA / "conditions.json").write_text(json.dumps({

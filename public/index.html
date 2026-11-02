@@ -4,36 +4,34 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Co-Motion — help between appointments</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper:#F4F1EA; --ink:#1C1B19; --soft:#5C574E; --faint:#8A8377; --rule:#C9C3B6;
+    --paper:#F4F1EA; --ink:#1C1B19; --soft:#5C574E; --faint:#665F55; --rule:#C9C3B6;
     --card:#FFFDF8; --act:#B3251E; --act-bg:#FBEAE8; --self:#2F5D50; --self-bg:#E8F0EC;
     --r:10px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper:#14150F; --ink:#F0EDE4; --soft:#A8A296; --faint:#7C7669; --rule:#33352B;
+      --paper:#14150F; --ink:#F0EDE4; --soft:#A8A296; --faint:#A39D91; --rule:#33352B;
       --card:#1C1E17; --act:#F2635A; --act-bg:#3A1A18; --self:#6FBF9F; --self-bg:#172C25;
     }
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
     font:400 20px/1.6 "Atkinson Hyperlegible", -apple-system, "Segoe UI", system-ui, sans-serif; }
-  .wrap { max-width:740px; margin:0 auto; padding:0 20px 90px; }
+  .wrap { max-width:740px; margin:0 auto; padding:0 16px 90px; }
   a { color:var(--self); }
 
-  header { padding:64px 0 0; }
+  header { padding:48px 0 0; }
   h1 { font-size:clamp(38px, 8vw, 54px); margin:0; letter-spacing:-.02em; line-height:1.05; }
   h1 .d { color:var(--self); }
   .kicker { font-size:16px; text-transform:uppercase; letter-spacing:.12em; color:var(--faint);
             font-weight:700; margin:0 0 14px; }
-
-  /* The hero is the problem, stated as the patient experiences it. Not a value prop. */
-  .thesis { font-size:clamp(23px, 3.6vw, 28px); line-height:1.4; margin:28px 0 0; max-width:26ch;
-            font-weight:700; }
+  .thesis { font-size:clamp(23px, 3.6vw, 28px); line-height:1.4; margin:28px 0 0; max-width:26ch; font-weight:700; }
   .thesis .em { color:var(--act); }
   .lede { font-size:21px; color:var(--soft); margin:22px 0 0; max-width:58ch; }
 
@@ -42,14 +40,13 @@
          font-weight:700; font-size:21px; }
   @media (prefers-color-scheme: dark) { .cta { color:#0C1A15; } }
   .cta:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
-  .cta-note { display:block; font-size:17px; color:var(--faint); margin-top:12px; }
+  .cta-note { display:block; font-size:17px; color:var(--soft); margin-top:12px; }
 
-  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.09em; color:var(--faint);
-       font-weight:700; margin:64px 0 16px; }
-  h3 { font-size:23px; margin:0 0 8px; }
+  h2 { font-size:24px; line-height:1.3; color:var(--ink); font-weight:700; margin:56px 0 14px; }
+  h3 { font-size:22px; margin:0 0 8px; }
   p { margin:0 0 16px; }
 
-  .rail { border-left:3px solid var(--rule); padding-left:22px; margin:0; }
+  .rail { border-inline-start:3px solid var(--rule); padding-inline-start:22px; margin:0; }
   .rail li { list-style:none; padding:12px 0; border-bottom:1px solid var(--rule); }
   .rail li:last-child { border-bottom:0; }
   .rail b { display:block; font-size:20px; }
@@ -60,21 +57,18 @@
   @media (min-width:680px) { .two { grid-template-columns:1fr 1fr; } }
   .g { background:var(--card); border:1px solid var(--rule); border-radius:var(--r); padding:22px; }
   .g p { font-size:18px; color:var(--soft); margin:0; }
-  .g .tag { font-size:14px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
-            color:var(--self); display:block; margin-bottom:8px; }
 
   .srcs { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 0; }
-  .srcs a { font-size:16px; border:1px solid var(--rule); border-radius:999px; padding:8px 14px;
-            text-decoration:none; color:var(--soft); }
+  .srcs a { display:inline-flex; align-items:center; min-height:44px; font-size:16px; border:1px solid var(--rule);
+            border-radius:999px; padding:6px 14px; text-decoration:none; color:var(--soft); }
   .srcs a:hover { border-color:var(--self); color:var(--self); }
 
-  .warn { background:var(--act-bg); color:var(--act); border-left:5px solid var(--act);
+  .warn { background:var(--act-bg); color:var(--act); border-inline-start:5px solid var(--act);
           border-radius:var(--r); padding:18px 20px; font-size:18px; margin-top:56px; }
   .warn b { display:block; margin-bottom:4px; }
-  .warn a { color:inherit; font-weight:700; }
+  .warn a { color:inherit; font-weight:700; display:inline-flex; align-items:center; min-height:44px; white-space:nowrap; }
 
-  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--rule);
-           color:var(--faint); font-size:16px; }
+  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); color:var(--soft); font-size:17px; }
 </style>
 </head>
 <body>
@@ -90,55 +84,51 @@
   </p>
 
   <p class="lede">
-    Everything you need already exists — across Arthritis Australia, the NSW Pain Network,
-    painHEALTH, the Pain Toolkit, Painaustralia and half a dozen others. None of it is
-    findable at 2am with a joint on fire. Co-Motion is the front door: ask a question in
-    your own words, get an answer from those sources, and get told what to do tonight.
+    Good help already exists — from Arthritis Australia, the NSW Pain Network, painHEALTH,
+    the Pain Toolkit, Painaustralia and others. But it's hard to find at 2am with a joint on
+    fire. Co-Motion brings it together: ask a question in your own words, get an answer from
+    those services, and find out what to do tonight.
   </p>
 
   <a class="cta" href="/app">Open Co-Motion →</a>
-  <span class="cta-note">Free. Nothing to sign up for. Nothing about you is stored on our side.</span>
+  <span class="cta-note">Free. Nothing to sign up for. We don't keep anything about you.</span>
 </header>
 
-<h2>Every answer ends somewhere</h2>
+<h2>Every answer tells you what to do next</h2>
 <p style="color:var(--soft); max-width:58ch">
-  The point isn't to tell you things. It's to tell you what to <em>do</em> — and, most of the
-  time, that it can safely be handled where you are. Every answer lands on one of five rungs.
+  You won't just get information. You'll be told what to <em>do</em> — and most of the time,
+  that you can safely look after it where you are. Every answer ends with one of five steps.
 </p>
 <ul class="rail">
-  <li><b>You can do this at home</b><span>Most questions land here. That's the goal.</span></li>
+  <li><b>You can do this at home</b><span>Most questions end here.</span></li>
   <li><b>Your pharmacist can help today</b><span>No appointment. Talking to them costs nothing.</span></li>
-  <li><b>This one's for your GP, and it can wait</b><span>Written down for you, with the date, so you walk in with it.</span></li>
-  <li><b>Call your GP today</b><span>Or healthdirect — a nurse answers, any hour.</span></li>
-  <li class="top"><b>Get seen tonight</b><span>Rare. But this is the one it must never get wrong.</span></li>
+  <li><b>This one's for your GP, and it can wait</b><span>We write it down for you, with the date, so you can take it to your next visit.</span></li>
+  <li><b>Call your GP today</b><span>Or call healthdirect — a nurse answers, any hour.</span></li>
+  <li class="top"><b>Get seen tonight</b><span>This doesn't happen often. When it does, we tell you straight away.</span></li>
 </ul>
 
-<h2>Two things we enforce in code, not in a prompt</h2>
+<h2>Two promises we keep</h2>
 <div class="two">
   <div class="g">
-    <span class="tag">It can escalate. It can't soften.</span>
-    <h3>The dangerous cases never reach the model</h3>
+    <h3>We check for danger first</h3>
     <p>
-      A hot, swollen joint with a fever is an infected joint until proven otherwise — and it
-      looks exactly like the gout flare you've had thirty times before. A rule engine screens
-      for that before the AI runs, and if it fires, the AI is never called at all. No latency,
-      no rewording, no judgement. It works with the AI switched off entirely.
+      A hot, swollen joint with a fever can be an infected joint — and it can look just like a
+      gout flare you've had many times before. Before you get any answer, we ask you a few quick
+      questions about signs like this. If any of them apply, we tell you to get help straight
+      away. That check is fixed and always works, even if the rest of the page doesn't.
     </p>
   </div>
   <div class="g">
-    <span class="tag">It answers, or it says it can't</span>
-    <h3>It cannot invent health advice</h3>
+    <h3>We don't make up health advice</h3>
     <p>
-      Every claim comes from a card written from a published Australian source, and the AI may
-      only pick from those cards and explain them. Anything it makes up is dropped by the
-      server. When the sources don't cover your question, it says so and writes the question
-      down for your doctor — rather than guessing at someone who has no one to ask for
-      six months.
+      What we explain comes only from the Australian health services listed below. If they don't
+      cover your question, we tell you so — and we save the question for you to ask your doctor,
+      instead of guessing.
     </p>
   </div>
 </div>
 
-<h2>Where every word comes from</h2>
+<h2>Where our information comes from</h2>
 <div class="srcs">
   <a href="https://arthritisaustralia.org.au/understanding-arthritis/" target="_blank" rel="noopener">Arthritis Australia</a>
   <a href="https://muscha.org/" target="_blank" rel="noopener">Musculoskeletal Health Australia</a>
@@ -154,16 +144,15 @@
 </div>
 
 <div class="warn">
-  <b>This is a prototype, and it is not your doctor.</b>
-  The library is curated from the sources above but has not yet been signed off by a GP or a
-  rheumatologist. If something is badly wrong right now — chest pain, trouble breathing, a
-  limb you can't move — go to an emergency department, or call healthdirect free on
-  <a href="tel:1800022222">1800 022 222</a>.
+  <b>This is a test version, and it is not your doctor.</b>
+  A GP or rheumatologist has not checked it yet. If something is badly wrong right now — chest
+  pain, trouble breathing, a limb you can't move — go to an emergency department, or call
+  healthdirect free on <a href="tel:1800022222">1800 022 222</a>.
 </div>
 
 <footer>
-  Built as a design-thinking workshop prototype. Not a medical device. Decision support only —
-  your GP owns your care plan, and this exists to support it between visits.
+  Co-Motion is a test version and not a medical device. Your GP is in charge of your care plan —
+  this is here to help you between visits, not to replace it.
 </footer>
 
 </div>

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { numbersPreserved, translateFraming } from "./translate.js";
+import { numbersPreserved, missingLiterals, translateFraming } from "./translate.js";
 
 const EN = "Keep taking your allopurinol 300 mg. If it gets worse call 131 450.";
 const reply = (text) => async () => ({ content: [{ type: "text", text }] });
@@ -43,4 +43,33 @@ test("translateFraming — a failing model call degrades to English, never throw
 
 test("translateFraming — empty text is not sent", async () => {
   assert.equal(await translateFraming("", "Arabic", { create: reply("x") }), null);
+});
+
+test("missingLiterals — ALL-CAPS token dropped is detected", () => {
+  assert.equal(missingLiterals("Ask your GP about the TGA warning.", "Hãy hỏi bác sĩ về cảnh báo TGA."), "GP");
+  assert.equal(missingLiterals("Ask your GP about the TGA warning.", "Hãy hỏi GP về cảnh báo TGA."), null);
+});
+
+test("translateFraming — returns null when an ALL-CAPS token is dropped", async () => {
+  const en = "Gout is common in NSW. Alcohol can set off an attack.";
+  assert.equal(await translateFraming(en, "Vietnamese", { create: reply("Gút phổ biến. Rượu có thể gây ra cơn đau.") }), null);
+});
+
+test("translateFraming — URL and NSW preserved is accepted", async () => {
+  const en = "See https://www.arthritisnsw.org.au for help in NSW.";
+  const t = await translateFraming(en, "Vietnamese", { create: reply("Xem https://www.arthritisnsw.org.au để được giúp ở NSW.") });
+  assert.ok(t);
+  assert.equal(await translateFraming(en, "Vietnamese", { create: reply("Xem trang web để được giúp ở NSW.") }), null);
+});
+
+test("missingLiterals — phone number must survive verbatim (Arabic-Indic digits normalise)", () => {
+  assert.equal(missingLiterals("Call 1800 011 041 today.", "اتصل 1800 011 041 اليوم"), null);
+  assert.equal(missingLiterals("Call 1800 011 041 today.", "اتصل 1800011041 اليوم"), "1800 011 041");
+});
+
+test("translate SYSTEM keeps causal strength rule", async () => {
+  let sys = "";
+  await translateFraming("Alcohol is a trigger.", "Arabic", { create: async (a) => { sys = a.system; return { content: [] }; } });
+  assert.match(sys, /trigger/i);
+  assert.match(sys, /never turn them into "cause"/);
 });

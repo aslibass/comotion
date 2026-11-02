@@ -1,6 +1,6 @@
 # CoMotion resource fetch report
 
-Generated 2026-11-01T04:42:00+00:00  ·  source: `CoMotion_Resource_Repository_Domains_Subdomains_Description_SB.xlsx`
+Generated 2026-11-02T10:52:36+00:00  ·  source: `CoMotion_Resource_Repository_Domains_Subdomains_Description_SB.xlsx`
 
 - Unique resources: **170**
 - Fetched or cached OK: **164**  (of which 29 needed the headless render)

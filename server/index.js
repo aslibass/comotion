@@ -16,7 +16,7 @@ import {
 } from "./evidence.js";
 import { screen, triageScreen, higher, RUNGS, TRIAGE, ALWAYS_VISIBLE } from "./redflags.js";
 import { answer, isConfigured } from "./assistant.js";
-import { translateFraming } from "./translate.js";
+import { translateFraming, TRANSLATE_TO } from "./translate.js";
 import { DIRECTORY, CONDITIONS_LIST, dirById, resourcesForDomain, directoryForModel } from "./directory.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -59,6 +59,9 @@ app.use(express.static(join(__dirname, "../public")));
 // route, express.static only serves it at /app.html — and the landing page's only call
 // to action points at /app.
 app.get("/app", (req, res) => res.sendFile(join(__dirname, "../public/app.html")));
+
+// Browsers ask for /favicon.ico regardless of the <link>; point them at the SVG.
+app.get("/favicon.ico", (req, res) => res.redirect(301, "/favicon.svg"));
 
 // The deployed app is public and /api/ask spends real money on a personal API key.
 // Gate that endpoint and only that one — browsing the library, the red-flag rail and
@@ -145,7 +148,7 @@ app.get("/api/library/:condition", (req, res) => {
 //      survives, the answer is not shown as guidance at all — it is parked on the
 //      questions list instead. The failure mode is "we don't know", never a confident
 //      fabrication.
-app.post("/api/ask", requireCode, async (req, res) => {
+app.post("/api/ask", async (req, res) => {
   const question = req.body?.question?.trim();
   // Condition is now optional: the browse-first homepage asks without the person first
   // declaring a condition. When one is supplied (from a condition-specific context) it
@@ -192,6 +195,33 @@ app.post("/api/ask", requireCode, async (req, res) => {
     });
   }
 
+  // THE ACCESS CODE GATES THE MODEL, NEVER SAFETY. The code protects the API key from
+  // strangers; it must not stand between a frightened person and "get seen tonight". So it is
+  // checked only here — after the deterministic screens have run and after the ED short-circuit.
+  // Without a valid code: if the screens raised the floor at all (ED already answered above;
+  // this covers "call your GP today" etc.) we still answer deterministically — no model, no
+  // code, same shape as the ED answer. Only an ordinary question needs the code.
+  const codeOk = !ACCESS_CODE || req.get("x-access-code") === ACCESS_CODE;
+  if (!codeOk) {
+    if (floor !== "SELF_MANAGE") {
+      return res.json({
+        question,
+        grounded: false,
+        redFlagOnly: true,
+        disposition: floor,
+        rung: RUNGS[floor],
+        flags,
+        evidence: [],
+        gpQuestion: `[Flare on ${new Date().toLocaleDateString("en-AU")}] ${question}`,
+        parked: true,
+      });
+    }
+    return res.status(401).json({
+      error: "Access code required to ask a question. You can still browse the library.",
+      needsCode: true,
+    });
+  }
+
   if (!isConfigured()) {
     return res.status(503).json({
       error: "No ANTHROPIC_API_KEY set — question answering is unavailable. Browse the library instead.",
@@ -230,9 +260,14 @@ app.post("/api/ask", requireCode, async (req, res) => {
     // Translate, if the reader asked for another language. Only the explanation, only on a
     // grounded answer, and only after the disposition is fixed — so translation can never
     // change where someone is sent. Null means "show the English".
-    const framingTranslated = grounded
-      ? await translateFraming(raw.framing, String(req.body?.language || ""))
-      : null;
+    const wantLang = String(req.body?.language || "");
+    const framingTranslated = grounded ? await translateFraming(raw.framing, wantLang) : null;
+    // Log the reason class only — never the user's text.
+    if (grounded && wantLang && wantLang !== "English" && !framingTranslated) {
+      console.warn(
+        `translation requested but not returned: ${TRANSLATE_TO.has(wantLang) ? "failure or numbers/terms did not survive (see translate log)" : "unsupported language"}`,
+      );
+    }
 
     res.json({
       question,
@@ -257,7 +292,7 @@ app.post("/api/ask", requireCode, async (req, res) => {
     });
   } catch (err) {
     console.error("ask failed:", err);
-    res.status(502).json({ error: `Could not answer that: ${err.message}`, screen: { floor, flags } });
+    res.status(502).json({ error: "We couldn't get an answer just now. Please try again.", screen: { floor, flags } });
   }
 });
 

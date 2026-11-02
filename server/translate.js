@@ -28,6 +28,8 @@ Rules:
 - Translate faithfully. Do not add, remove, soften, strengthen or reorder any medical claim, instruction or warning. Do not add advice of your own.
 - Keep every number, dose, phone number and drug name exactly as written. Drug names, phone numbers and web addresses stay in Latin characters.
 - Plain, everyday words a Year 6 reader would understand. Short sentences.
+- Preserve the exact causal strength. "Trigger", "set off" and "bring on" (an attack or flare) must stay a trigger — never turn them into "cause". "Can increase the chance" must never become "causes". "May", "can", "usually", "rarely", "at least" and "no more than" keep exactly their strength. Keep every negation and every quantity.
+- Keep abbreviations and organisation names in capitals (for example GP, NSW, TGA) and web addresses exactly as written, in Latin characters.
 - Output ONLY the translation, with no preface, notes or quotation marks.`;
 
 // Western digits, Arabic-Indic and Extended Arabic-Indic digits all normalise to 0-9.
@@ -44,6 +46,20 @@ export function numbersPreserved(english, translated) {
   const a = digitRuns(english);
   const b = digitRuns(translated);
   return a.length === b.length && a.every((x, i) => x === b[i]);
+}
+
+// Deterministic extra guard: every ALL-CAPS token (2+ letters, e.g. NSW, TGA, GP), every
+// http(s) URL and every phone-number pattern in the English must appear verbatim in the
+// translation. Returns the first missing item, or null if all survive.
+const trimUrl = (u) => u.replace(/[.,;:!?)\]]+$/, "");
+export function missingLiterals(english, translated) {
+  const t = normaliseDigits(translated);
+  const e = normaliseDigits(english);
+  const caps = e.match(/\b[A-Z]{2,}\b/g) || [];
+  const urls = (e.match(/https?:\/\/\S+/gi) || []).map(trimUrl);
+  const phones = e.match(/\+?\d[\d ()-]{5,}\d/g) || [];
+  for (const x of [...caps, ...urls, ...phones]) if (!t.includes(x)) return x;
+  return null;
 }
 
 let client;
@@ -68,6 +84,10 @@ export async function translateFraming(text, language, { create } = {}) {
     if (!out) return null;
     if (!numbersPreserved(text, out)) {
       console.warn(`translation to ${language} dropped: numbers did not survive`);
+      return null;
+    }
+    if (missingLiterals(text, out)) {
+      console.warn(`translation to ${language} dropped: a capitalised term, URL or phone number did not survive`);
       return null;
     }
     return { language, text: out };

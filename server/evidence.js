@@ -110,6 +110,7 @@ export const PROVENANCE = {
 };
 
 export const DOMAINS = {
+  understanding: { label: "Understanding my condition", blurb: "What it is, in plain words" },
   medication: { label: "Medication", blurb: "What you take, and what not to stop" },
   activity: { label: "Movement & exercise", blurb: "During a flare, and between them" },
   nutrition: { label: "Food & drink", blurb: "What actually moves the needle" },
@@ -154,6 +155,115 @@ export const CONDITIONS = {
 // common and wrong — the highest-value cards, because the patient is usually already
 // acting on the myth.
 export const EVIDENCE = [
+  // ================================================== UNDERSTANDING — "what is it?" cards
+  // Added 2026-11-02 so "What is osteoarthritis?" has a sourced answer. Each quote was
+  // copied from the live page on that date and machine-checked to occur in its text.
+  // `reviewed: false` = not yet signed off by a GP or rheumatologist (demo tier only).
+  {
+    id: "understand-oa-what",
+    condition: "osteoarthritis",
+    domain: "understanding",
+    priority: 1,
+    title: "What is osteoarthritis?",
+    plain:
+      "Osteoarthritis (OA) affects the whole joint — the bone, the cartilage, the ligaments and the muscles. People often call it 'wear and tear'. Experts now think it happens when a joint is working extra hard to repair itself.",
+    quote:
+      "Osteoarthritis (OA) is a condition that affects the whole joint including bone, cartilage, ligaments and muscles. Although often described as ‘wear and tear’, OA is now thought to be the result of a joint working extra hard to repair itself.",
+    source: "arthritis_au",
+    sourceUrl: "https://arthritisaustralia.org.au/understanding-arthritis/types-of-arthritis/find-your-arthritis/osteoarthritis/",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+  {
+    id: "understand-oa-symptoms",
+    condition: "osteoarthritis",
+    domain: "understanding",
+    priority: 2,
+    title: "Osteoarthritis: the most common symptoms",
+    plain:
+      "Osteoarthritis usually comes on slowly, over months or even years. The most common signs are pain and stiffness in the joints.",
+    quote:
+      "OA tends to come on slowly, over months or even years. The most common symptoms are pain and stiffness of the joints.",
+    source: "arthritis_au",
+    sourceUrl: "https://arthritisaustralia.org.au/understanding-arthritis/types-of-arthritis/find-your-arthritis/osteoarthritis/",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+  {
+    id: "understand-osteoporosis-what",
+    condition: "other",
+    domain: "understanding",
+    priority: 1,
+    title: "What is osteoporosis?",
+    plain:
+      "Osteoporosis is a long-term condition that makes bones more likely to break. Many people only find out they have it when they break a bone.",
+    quote:
+      "Osteoporosis is a chronic (long-term) condition that makes your bones more likely to break. Many people don't know that they have osteoporosis until they fracture (break) a bone.",
+    source: "healthdirect",
+    sourceUrl: "https://www.healthdirect.gov.au/osteoporosis",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+  {
+    id: "understand-chronic-pain-what",
+    condition: "other",
+    domain: "understanding",
+    priority: 1,
+    title: "What is chronic (persistent) pain?",
+    plain:
+      "Chronic pain is pain that lasts longer than the normal healing time after an illness or injury. That is usually more than 3 to 6 months.",
+    quote:
+      "Chronic pain is pain that lasts beyond the normal healing time after an illness or injury. This is generally more than 3 to 6 months.",
+    source: "healthdirect",
+    sourceUrl: "https://www.healthdirect.gov.au/chronic-pain",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+  {
+    id: "understand-persistent-pain-expect",
+    condition: "other",
+    domain: "understanding",
+    priority: 2,
+    title: "Persistent pain is different for everyone",
+    plain:
+      "Chronic pain is also called persistent pain. Everyone feels it in their own way, and it can be anywhere from mild to severe.",
+    quote:
+      "Chronic pain is sometimes also called 'persistent pain'. It is a complex condition, and everyone experiences it differently. The pain can range from mild to severe.",
+    source: "healthdirect",
+    sourceUrl: "https://www.healthdirect.gov.au/chronic-pain",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+  {
+    id: "understand-back-pain-what",
+    condition: "back_pain",
+    domain: "understanding",
+    priority: 1,
+    title: "What is back pain?",
+    plain: "Back pain is pain anywhere in your spine, or in the muscles, nerves and other tissues around it.",
+    quote:
+      "Back pain is pain that affects any area of your spine or the surrounding muscles, nerves and tissues.",
+    source: "healthdirect",
+    sourceUrl: "https://www.healthdirect.gov.au/back-pain",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+  {
+    id: "understand-back-pain-expect",
+    condition: "back_pain",
+    domain: "understanding",
+    priority: 2,
+    title: "Most back pain is not caused by a serious problem",
+    plain:
+      "Most back pain is not caused by a serious medical problem. The best way to manage most cases of non-specific back pain is to keep active.",
+    quote:
+      "Most cases of back pain are not caused by a serious medical problem. The best way to manage most cases of non-specific back pain is to keep active.",
+    source: "healthdirect",
+    sourceUrl: "https://www.healthdirect.gov.au/back-pain",
+    retrieved: "2026-11-02",
+    reviewed: false,
+  },
+
   // ================================================== GOUT — Arthritis Australia
   {
     id: "gout-dont-stop-allopurinol",

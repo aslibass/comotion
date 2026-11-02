@@ -1,0 +1,799 @@
+{
+ "_note": "Hand-curated title/description fixes for what code cannot derive. Keyed by catalogue id. Each entry has a reason. NEEDS HUMAN REVIEW marks low-confidence items.",
+ "by_id": {
+  "beyondblue-org-au__aaccb128": {
+   "title": "Beyond Blue",
+   "description": "Mental health information and free, qualified support by chat or phone from Beyond Blue.",
+   "reason": "Page title was a seasonal quote.",
+   "action": "contact",
+   "action_reason": "Is itself a phone/chat line or a service you call or book."
+  },
+  "apps-apple-com__7343f5c7": {
+   "title": "1800MEDICARE app",
+   "description": "Government app for storing and sharing your prescriptions, health information and Medicare details on your phone.",
+   "reason": "Copy was marketing."
+  },
+  "apps-apple-com__1c025271": {
+   "title": "Clara app (The Arthritis Movement)",
+   "description": "Free iPhone app from The Arthritis Movement that explains arthritis and helps you build healthy habits, including gentle everyday movement.",
+   "reason": "Meta text was app-store boilerplate."
+  },
+  "apps-apple-com__24049b76": {
+   "remove": true,
+   "reason": "Staff-only aged-care app (Caremerge Point of Care); not for patients."
+  },
+  "apps-apple-com__8811092c": {
+   "title": "Drugs.com Medication Guide app",
+   "description": "App for managing medicines, identifying pills, checking interactions and comparing prices, from Drugs.com (US).",
+   "reason": "Rewritten from app-store text."
+  },
+  "apps-apple-com__42f590f9": {
+   "title": "Apple Reminders app",
+   "description": "Apple's free Reminders app for making to-do lists and setting reminders on your phone.",
+   "reason": "Meta text was app-store boilerplate."
+  },
+  "activeandhealthy-nsw-gov-au__0ad4e296": {
+   "title": "Active and Healthy — Stepping On class search",
+   "description": "Search page for Stepping On, a falls-prevention class for older people in NSW.",
+   "reason": "Page title was 'Search Results'; no readable text."
+  },
+  "aci-health-nsw-gov-au__fe9ced98": {
+   "title": "ACI Pain Network — Chronic pain",
+   "description": "NSW Agency for Clinical Innovation Pain Network information on living with chronic pain, including what it is and managing medicines.",
+   "reason": "Auto text was boilerplate/off-topic; hand-written from the page text or spreadsheet."
+  },
+  "aci-health-nsw-gov-au__921b7f61": {
+   "title": "ACI Pain Network — Our Mob",
+   "description": "Stories and resources about chronic pain for Aboriginal and Torres Strait Islander people, from the ACI Pain Network.",
+   "reason": "Auto text was boilerplate/off-topic; hand-written from the page text or spreadsheet."
+  },
+  "asaustralia-org__9d8336ec": {
+   "title": "Ankylosing Spondylitis Australia",
+   "description": "National organisation supporting people with ankylosing spondylitis, with state support groups, a newsletter and contact details.",
+   "reason": "Meta text duplicated across three state pages.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "asaustralia-org__1297c160": {
+   "title": "Ankylosing Spondylitis Australia — Queensland",
+   "description": "Queensland support group for people with ankylosing spondylitis, with social events and a weekly hydrotherapy class in Brisbane.",
+   "reason": "Meta text duplicated; page title was 'Home'."
+  },
+  "asaustralia-org__8e2a4a6e": {
+   "title": "Ankylosing Spondylitis Australia — Western Australia",
+   "description": "Western Australian group for people with ankylosing spondylitis, offering hydrotherapy and social support.",
+   "reason": "Meta text duplicated."
+  },
+  "anzca-edu-au__5c7363aa": {
+   "title": "ANZCA — Patient information on pain",
+   "description": "Faculty of Pain Medicine information explaining persistent pain, which lasts beyond expected healing, usually more than three months.",
+   "reason": "Title was generic."
+  },
+  "aont-org-au__f81ed5e6": {
+   "title": "Arthritis & Osteoporosis Northern Territory",
+   "description": "Support services and information to improve understanding of arthritis and osteoporosis in the Northern Territory.",
+   "reason": "Third-person rewrite."
+  },
+  "arthritisaustralia-org-au__cf0a9656": {
+   "title": "Arthritis Australia",
+   "description": "National organisation for people living with arthritis, with information on arthritis, pain and physical activity, and advocacy.",
+   "reason": "Text was campaign copy."
+  },
+  "mybackpain-org-au__62b08dca": {
+   "title": "MyBackPain (Arthritis Australia)",
+   "description": "Arthritis Australia and University of Queensland website with information on low back pain, videos, treatment ratings and a care-plan questionnaire.",
+   "reason": "Reviewer-checked: no forum or peer support on this site."
+  },
+  "myra-org-au__af0d64cf": {
+   "title": "MyRA — rheumatoid arthritis support program",
+   "description": "Arthritis Australia support program that helps people with rheumatoid arthritis take an active part in managing their condition.",
+   "reason": "Unique title; third person."
+  },
+  "myra-org-nz__a775170c": {
+   "title": "MyRA New Zealand — rheumatoid arthritis support program",
+   "description": "New Zealand version of the MyRA program, helping people with rheumatoid arthritis take an active part in managing it.",
+   "reason": "Overseas copy; unique title."
+  },
+  "myoa-org-au__f4a5d9d3": {
+   "title": "MyOA — osteoarthritis support program",
+   "description": "Arthritis Australia program to help people with joint pain and osteoarthritis lead more active, less painful lives.",
+   "reason": "Title was awkward."
+  },
+  "myas-org-au__bfdc1b23": {
+   "title": "MyAS — axial spondyloarthritis support program",
+   "description": "Arthritis Australia program to help people with axial spondyloarthritis understand and manage their condition and find support.",
+   "reason": "Unique title."
+  },
+  "mypsoriaticarthritis-org-au__e78157a2": {
+   "title": "MyPsA — psoriatic arthritis support program",
+   "description": "Arthritis Australia program to help people understand and manage psoriatic arthritis and find support.",
+   "reason": "Unique title."
+  },
+  "arthritispainsupportemergeact-org-au__4b88b4b5": {
+   "title": "Arthritis, Pain Support & Emerge ACT",
+   "description": "ACT support organisation for people with musculoskeletal conditions, chronic pain, ME/CFS or long COVID.",
+   "reason": "Text was ME/CFS-only."
+  },
+  "digitalhealth-gov-au__9d6389d0": {
+   "title": "Australian Digital Health Agency",
+   "description": "Australian Government agency behind My Health Record, electronic prescriptions and the Medicare app.",
+   "reason": "Meta was generic; from the sheet."
+  },
+  "australian-physio__dbaa9d34": {
+   "title": "Australian Physiotherapy Association",
+   "description": "Peak body representing about 36,000 physiotherapists in Australia and their patients.",
+   "reason": "Title was 'Home'."
+  },
+  "rheumatology-org-au__ac7527d0": {
+   "title": "Australian Rheumatology Association — For patients",
+   "description": "Patient information on the rheumatology healthcare team, conditions and medicines from the Australian Rheumatology Association.",
+   "reason": "Title was 'For Patients'."
+  },
+  "bjcconnect-com-au__4a87300c": {
+   "title": "BJC Connect",
+   "description": "Online rheumatology toolkit with tools on physical wellbeing and healthy eating.",
+   "reason": "Title had 'Home'."
+  },
+  "blackdoginstitute-org-au__c4fef2b5": {
+   "title": "Black Dog Institute",
+   "description": "Research institute working to improve mental health and reduce suicide in Australia.",
+   "reason": "Rewritten."
+  },
+  "carergateway-gov-au__959b462f": {
+   "title": "Carer Gateway",
+   "description": "Australian Government program providing free services and support for carers.",
+   "reason": "Title was 'Homepage'.",
+   "action": "contact",
+   "action_reason": "Is itself a phone/chat line or a service you call or book."
+  },
+  "carersnsw-org-au__f59a7dde": {
+   "title": "Carers NSW",
+   "description": "NSW carers organisation and Carer Gateway service provider for Hunter New England, the Central Coast and North Coast.",
+   "reason": "Title was 'Homepage'."
+  },
+  "cha-org-au__5e20b72b": {
+   "remove": true,
+   "reason": "Policy/news only; not a patient resource."
+  },
+  "muscha-org__6e0d7bfe": {
+   "title": "Musculoskeletal Health Australia — Chair-based exercise",
+   "description": "Chair-based exercise sessions to help you get started and build strength and confidence.",
+   "reason": "Unique title."
+  },
+  "muscha-org__c660cf6c": {
+   "title": "Musculoskeletal Health Australia — Help",
+   "description": "Help and support options for people with a musculoskeletal condition, including a national helpline.",
+   "reason": "Title was 'Help'."
+  },
+  "ndis-gov-au__07a960cd": {
+   "title": "NDIS (National Disability Insurance Scheme)",
+   "description": "National Disability Insurance Agency site for the NDIS, the Australian Government scheme that funds disability supports.",
+   "reason": "Title was a news item."
+  },
+  "healthsciences-unimelb-edu-au__8fe1c505": {
+   "title": "CHESM Osteoarthritis Virtual Assistant",
+   "description": "Free AI-powered chatbot from the University of Melbourne for people with osteoarthritis.",
+   "reason": "Third-person tidy."
+  },
+  "healthsciences-unimelb-edu-au__d4355f27": {
+   "title": "My Knee Exercise",
+   "description": "Six-month strengthening exercise and education program for people with knee pain, from the University of Melbourne.",
+   "reason": "From the spreadsheet and page text."
+  },
+  "psoriasisaustralia-org-au__6317ebd6": {
+   "title": "Psoriasis Australia",
+   "description": "Support organisation for people with psoriatic disease, with information, a peer support network and patient stories.",
+   "reason": "Sheet author 'Sjogren's Australia' is a data-entry error; the site is Psoriasis Australia."
+  },
+  "sleephealthfoundation-org-au__94dc94e7": {
+   "title": "Sleep Health Foundation — CBT for insomnia",
+   "description": "Fact sheet on cognitive behavioural therapy for insomnia (CBT-I) from the Sleep Health Foundation.",
+   "reason": "Unique title."
+  },
+  "creakyjoints-org-au__f329c5ce": {
+   "title": "CreakyJoints Australia — Classifications of arthritis",
+   "description": "Guide to the different types of arthritis; the more you know about your type, the better you can manage it.",
+   "reason": "Unique title."
+  },
+  "creakyjoints-org-au__b28ce09f": {
+   "title": "CreakyJoints Australia — Choosing your healthcare team",
+   "description": "Explains who might be in your healthcare team: medical professionals, allied health practitioners, family and friends.",
+   "reason": "Unique title."
+  },
+  "creakyjoints-org-au__13ba2d59": {
+   "title": "CreakyJoints Australia — Finding a peer support group",
+   "description": "Guide to finding and joining an arthritis peer support group.",
+   "reason": "Text was a quiz line."
+  },
+  "creakyjoints-org-au__6b9a21e1": {
+   "title": "CreakyJoints Australia",
+   "description": "Provides reliable information, support and advocacy for Australian arthritis patients and their families.",
+   "reason": "Title was 'Home'."
+  },
+  "creakyjoints-org-au__6cdc854c": {
+   "title": "CreakyJoints Australia — Patient PrepRheum podcast",
+   "description": "Podcast series in which patients and doctors explore important aspects of living with autoimmune arthritis.",
+   "reason": "Unique title."
+  },
+  "da-org-au__5de875e7": {
+   "title": "Disability Advocacy NSW",
+   "description": "Disability Advocacy NSW supports people with disability to get a fair go.",
+   "reason": "Title was 'Home | ...'."
+  },
+  "emerge-org-au__2f4c83e7": {
+   "title": "Emerge Australia",
+   "description": "National not-for-profit providing support services and information for people with ME/CFS.",
+   "reason": "Text was fundraising copy."
+  },
+  "embracementalhealth-org-au__4ffede06": {
+   "title": "Embrace Multicultural Mental Health",
+   "description": "Strengthens the cultural responsiveness of mental health services and gives multicultural communities resources, service links and translated mental health information.",
+   "reason": "No description in cache."
+  },
+  "empowered-org-au__f1a7ef1e": {
+   "title": "Empowered (Arthritis Australia)",
+   "description": "Arthritis Australia site bringing together resources to help people live well with arthritis.",
+   "reason": "Title was a question."
+  },
+  "everyaustraliancounts-com-au__ec6e4575": {
+   "title": "Every Australian Counts",
+   "description": "Grassroots campaign by people with disability, families and carers to make sure the NDIS is delivered as promised.",
+   "reason": "Title had mojibake."
+  },
+  "exerciseismedicine-org-au__91a09162": {
+   "title": "Exercise is Medicine Australia",
+   "description": "Helps primary healthcare providers counsel patients about physical activity to support lasting behaviour change.",
+   "reason": "Registered-mark mojibake in source."
+  },
+  "735055-us25-myftpupload-com__4a33dbfb": {
+   "title": "Exercise is Medicine Australia — Factsheets",
+   "description": "Factsheets on the role of exercise in preventing, treating and managing chronic conditions.",
+   "reason": "Registered-mark mojibake in source."
+  },
+  "fightingarthritis-org-au__5e57233f": {
+   "title": "Fighting Arthritis (Hospital Research Foundation Group)",
+   "description": "Hospital Research Foundation Group arthritis site with information, programs and events for people affected by arthritis.",
+   "reason": "Text was a bequest appeal."
+  },
+  "fallspreventionalliance-org-au__fbcbf1dc": {
+   "title": "Falls Prevention Alliance Australia",
+   "description": "Alliance of community organisations and professionals working to reduce falls among Australians aged 65 and over.",
+   "reason": "Title was 'HOME PAGE'."
+  },
+  "tga-gov-au__d3e1349e": {
+   "title": "TGA — Find information about a medicine",
+   "description": "Australian Government tool to find consumer information about a medicine.",
+   "reason": "Text was a maintenance notice."
+  },
+  "tga-gov-au__e0ea3dac": {
+   "title": "TGA — Chronic pain management videos (Brainman)",
+   "description": "Series of videos about chronic pain management featuring Brainman.",
+   "reason": "Unique title."
+  },
+  "act-gov-au__2e3ef758": {
+   "title": "ACT Health — Find a health service",
+   "description": "Links to health services and short-term support in the ACT.",
+   "reason": "Unique title."
+  },
+  "health-tas-gov-au__c72f66cf": {
+   "title": "Tasmania Health — Find a health service",
+   "description": "Service finder for health services and facilities in Tasmania.",
+   "reason": "Unique title."
+  },
+  "qld-gov-au__19107d8d": {
+   "title": "Queensland Government — Find a health service",
+   "description": "Find a hospital, health service, chemist, GP or other health care service in Queensland.",
+   "reason": "Unique title."
+  },
+  "qld-gov-au__d7980ca2": {
+   "title": "Queensland Government — Health and wellbeing",
+   "description": "Information about health services, hospitals, travel health, health alerts and family health in Queensland.",
+   "reason": "Unique title."
+  },
+  "service-nsw-gov-au__edb68aff": {
+   "title": "Service NSW — Health and care",
+   "description": "Service NSW pages on medical care and advice, immunisation, mental health and crisis support, and concessions.",
+   "reason": "Unique title."
+  },
+  "health-vic-gov-au__b9f31fb2": {
+   "title": "Victoria Health — Hospitals and health services",
+   "description": "Directory of Victorian hospitals and health services, including regional and specialist services.",
+   "reason": "Unique title."
+  },
+  "health-wa-gov-au__31fc0bdd": {
+   "title": "WA Health — Services search",
+   "description": "Find your nearest health service using the National Health Services Directory.",
+   "reason": "Unique title."
+  },
+  "ghlf-org-au__39f548f7": {
+   "title": "Global Healthy Living Foundation",
+   "description": "Patient-community charity that has supported people with chronic illness for more than 20 years; co-founder of CreakyJoints.",
+   "reason": "Fundraising copy."
+  },
+  "heartfoundation-org-au__8f24e4be": {
+   "title": "Heart Foundation",
+   "description": "National heart health charity with information on nutrition, weight management and a BMI calculator.",
+   "reason": "Title was a slogan."
+  },
+  "swslhd-health-nsw-gov-au__b67c0e27": {
+   "title": "Health Language Services (SWSLHD)",
+   "description": "Health Language Services is a 24-hour multilingual and sign interpreter service.",
+   "reason": "Title was 'About us'."
+  },
+  "safetyandquality-gov-au__90cfa57c": {
+   "title": "Australian Commission on Safety and Quality in Health Care",
+   "description": "Leading national improvements in the safety and quality of health care so people receive better care.",
+   "reason": "Title was 'Health Professionals'."
+  },
+  "healthybonesaustralia-org-au__29e7a2af": {
+   "title": "Healthy Bones Australia",
+   "description": "Registered charity working to protect bones and prevent osteoporosis, with fact sheets, the Know Your Bones self-assessment, a service finder and a helpline.",
+   "reason": "Recovered by live fetch.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "healthywa-wa-gov-au__3b5c6fb5": {
+   "title": "HealthyWA",
+   "description": "Health information for Western Australians from the WA Department of Health.",
+   "reason": "Title tidy."
+  },
+  "livelighter-com-au__3da9367e": {
+   "title": "LiveLighter",
+   "description": "LiveLighter campaign site with healthy eating information for Australians.",
+   "reason": "Title was a slogan."
+  },
+  "healthtranslations-vic-gov-au__ab8406d0": {
+   "title": "Health Translations — How to use medicines correctly (Assyrian)",
+   "description": "Brochure on using medicines correctly, including generic versus branded, over-the-counter and prescription medicines.",
+   "reason": "Unique title."
+  },
+  "gladaustralia-com-au__d7be62d7": {
+   "title": "GLA:D Australia — Information for participants",
+   "description": "Participant information for GLA:D Australia, a program delivered by physiotherapists.",
+   "reason": "Unique title."
+  },
+  "cec-health-nsw-gov-au__db50d7c8": {
+   "title": "Clinical Excellence Commission — Information for patients",
+   "description": "NSW Clinical Excellence Commission resources for patients, carers and families, including translated materials.",
+   "reason": "Meta said 'for staff'."
+  },
+  "jeanhailes-org-au__993e89c8": {
+   "title": "Jean Hailes for Women's Health",
+   "description": "Women's health organisation with information for every life stage, plus resources for health professionals.",
+   "reason": "Text was professional-facing."
+  },
+  "jafa-org-au__4e1f2abf": {
+   "title": "Juvenile Arthritis Foundation Australia",
+   "description": "Foundation for children and young people with juvenile arthritis and their families, including consumer advocacy training.",
+   "reason": "Text was a program launch."
+  },
+  "knowyourbones-org-au__98f899be": {
+   "title": "Know Your Bones",
+   "description": "Bone health self-assessment tool from the Garvan Institute and Healthy Bones Australia.",
+   "reason": "Text was peak-body copy."
+  },
+  "lupusvoiceaustralia-org-au__0f1fce99": {
+   "title": "Lupus Voice Australia",
+   "description": "National advocacy, awareness and support initiative for people living with lupus.",
+   "reason": "Tidy."
+  },
+  "healthdirect-gov-au__f41435da": {
+   "remove": true,
+   "reason": "Page says it can't find this service and the number is retired."
+  },
+  "healthdirect-gov-au__ca1873ae": {
+   "title": "Healthdirect Australia",
+   "description": "Government health advice site with a symptom checker, medicines information, a service finder and health topics.",
+   "reason": "Title was generic.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "healthdirect-gov-au__545929d2": {
+   "title": "Healthdirect — Pain-relief medicines",
+   "description": "Pain-relief medicines include over-the-counter and prescription medicines, with side effects and when to use them.",
+   "reason": "Unique title."
+  },
+  "movingwitharthritis-org-au__1e71e64e": {
+   "title": "Moving with Arthritis",
+   "description": "Find a physical activity program; information on keeping active when arthritis makes movement harder.",
+   "reason": "Title was 'Home'."
+  },
+  "health-nsw-gov-au__9fb905e9": {
+   "title": "NSW Health Care Interpreting Services",
+   "description": "Professional interpreting services 24 hours a day, 7 days a week, onsite and by phone in over 120 languages, including Auslan.",
+   "reason": "Title tidy."
+  },
+  "mhcs-health-nsw-gov-au__9c59de75": {
+   "title": "MHCS — Celebrate Culture Through Movement (Assyrian)",
+   "description": "Assyrian resource encouraging people to move their bodies and reach recommended levels of physical activity.",
+   "reason": "Unique title."
+  },
+  "mhcs-health-nsw-gov-au__4c1c065a": {
+   "title": "MHCS — Improving our mental health and wellbeing (Assyrian)",
+   "description": "Assyrian resource on how regular physical activity improves sleep, energy, confidence and mood.",
+   "reason": "Unique title."
+  },
+  "muscha-org__6b50ee81": {
+   "title": "Musculoskeletal Health Australia",
+   "description": "Supports people whose lives are affected by muscle, bone and joint conditions, with a helpline and information.",
+   "reason": "Tidy.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "naccho-org-au__4df027cb": {
+   "title": "NACCHO",
+   "description": "National peak body for 148 Aboriginal Community Controlled Health Organisations across Australia.",
+   "reason": "Third person."
+  },
+  "ntphn-org-au__ffe65f72": {
+   "title": "Northern Territory PHN",
+   "description": "Primary Health Network for the Northern Territory, which also runs a rural workforce agency supporting health professionals.",
+   "reason": "Tidy."
+  },
+  "painhealth-com-au__68d98b71": {
+   "title": "painHEALTH",
+   "description": "Clinically supported information, tips, support and personal stories to help manage musculoskeletal pain.",
+   "reason": "Title tidy."
+  },
+  "pwd-org-au__6c253f6d": {
+   "title": "People with Disability Australia",
+   "description": "National disability rights organisation offering information, referrals, advocacy and support.",
+   "reason": "Text was a language blurb."
+  },
+  "servicedirectory-cesphn-org-au__25a5d028": {
+   "title": "Central Eastern Sydney PHN — Interpreting services",
+   "description": "Directory page for booking interpreting services in Central Eastern Sydney, including TIS National.",
+   "reason": "Title was 'phn'."
+  },
+  "au-physiapp-com__056e3f93": {
+   "title": "PhysiApp",
+   "description": "Exercise program app from Physitrack; you need a program code from your healthcare professional to use it.",
+   "reason": "Registered-mark mojibake."
+  },
+  "jointaction-info__79d08b80": {
+   "title": "Joint Action — osteoarthritis podcast",
+   "description": "Osteoarthritis podcast hosted by Professor David Hunter.",
+   "reason": "Unique title."
+  },
+  "racgp-org-au__d5f75c80": {
+   "title": "RACGP",
+   "description": "Peak professional body for Australian GPs, covering education, advocacy and training.",
+   "reason": "Title was a slogan."
+  },
+  "racgp-org-au__414cb02e": {
+   "title": "RACGP — HANDI patient resources",
+   "description": "Evidence-based patient information for GPs to share, promoting effective non-drug treatments and self-management.",
+   "reason": "Title tidy."
+  },
+  "racgp-org-au__83d97e69": {
+   "title": "RACGP — Osteoarthritis management options in general practice",
+   "description": "Article summarising the RACGP guideline on non-surgical management of hip and knee osteoarthritis, written for GPs.",
+   "reason": "Recovered from the PDF text."
+  },
+  "rarevoices-org-au__209bc46c": {
+   "title": "Rare Disease Disability Toolkit",
+   "description": "Toolkit co-designed with people living with rare disease disability, led by Rare Voices Australia.",
+   "reason": "Tidy."
+  },
+  "sahealth-sa-gov-au__254c069e": {
+   "title": "SA Health",
+   "description": "Public hospitals and health services in South Australia, including mental health, outpatient, dental and regional services.",
+   "reason": "Tidy."
+  },
+  "arthritis-org-au__87274e6d": {
+   "title": "The Arthritis Movement",
+   "description": "Care, support and advocacy for people living with arthritis, including a helpline.",
+   "reason": "Title was long.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "arthritis-org-au__70b64068": {
+   "title": "The Arthritis Movement — Support groups",
+   "description": "Online (Swell Gals, men's and parents' groups) and NSW face-to-face support groups run by The Arthritis Movement.",
+   "reason": "Page returns 403 to bots; wording per reviewer."
+  },
+  "sclerodermaaustralia-org-au__cdd2a71c": {
+   "title": "Scleroderma Australia",
+   "description": "Information on what scleroderma is and its types, for a condition that affects about 6000 Australians.",
+   "reason": "Tidy."
+  },
+  "swapit-net-au__7554a7a4": {
+   "title": "SWAP IT",
+   "description": "Healthy lifestyle program with resources for schools, parents and carers; schools report changes in lunchboxes.",
+   "reason": "Text was a testimonial."
+  },
+  "facebook-com__13212d48": {
+   "title": "Swell Gals Arthritis Support Group (Facebook)",
+   "description": "Private Facebook group for people with arthritis, run by The Arthritis Movement; joining needs three membership questions answered.",
+   "reason": "Tidy."
+  },
+  "lifeprogram-org-au__51180c5b": {
+   "title": "The Life! Program (Diabetes Victoria)",
+   "description": "Free healthy lifestyle program from Diabetes Victoria to improve eating habits, increase physical activity and manage stress.",
+   "reason": "Meta text started mid-sentence."
+  },
+  "tamethebeast-org__3369a2a9": {
+   "title": "Tame the Beast",
+   "description": "Animation narrated by Professor Lorimer Moseley about rethinking persistent pain.",
+   "reason": "Tidy."
+  },
+  "backpain-muscha-org__80ba3c61": {
+   "title": "The Back Pain Helpline",
+   "description": "Back pain helpline where you can talk to a qualified health care professional and get practical information.",
+   "reason": "Tidy."
+  },
+  "findapharmacy-com-au__44b02acc": {
+   "title": "Think Pharmacy First",
+   "description": "Pharmacists can help manage, treat and prescribe medicine for a range of conditions, by booking or walk-in.",
+   "reason": "Tidy.",
+   "action": "contact",
+   "action_reason": "Is itself a phone/chat line or a service you call or book."
+  },
+  "thiswayup-org-au__04e34f21": {
+   "title": "This Way Up — Chronic pain program",
+   "description": "Online program from This Way Up, delivered with St Vincent's, for people with chronic pain.",
+   "reason": "Unique title."
+  },
+  "tisnational-gov-au__218c1166": {
+   "title": "Translating and Interpreting Service (TIS National)",
+   "description": "Department of Home Affairs interpreting service for people who do not speak English; eligible visa holders can have documents translated free.",
+   "reason": "Tidy."
+  },
+  "arthritisaustralia-org-au__80327e38": {
+   "title": "Arthritis Australia — Understanding arthritis",
+   "description": "What arthritis is, how it affects the body, and what you can do to manage it.",
+   "reason": "Unique title."
+  },
+  "cja-org__b80b9fe1": {
+   "remove": true,
+   "reason": "Human-rights law group; not a health resource (wrong URL in the sheet)."
+  },
+  "medicarementalhealth-gov-au__656f8bb3": {
+   "title": "Medicare Mental Health",
+   "description": "Helps you find Australian mental health and wellbeing resources for yourself or someone you care about.",
+   "reason": "Title was 'Welcome to'."
+  },
+  "mentalhealthaustralia-org-au__fb79767a": {
+   "title": "Mental Health Australia",
+   "description": "National peak body for the mental health sector, advocating for mental health policy reform.",
+   "reason": "Text was a news item."
+  },
+  "disabilitygateway-gov-au__980db6fa": {
+   "title": "Disability Gateway",
+   "description": "Helps people with disability, their families and carers find information, services and support in Australia.",
+   "reason": "Title was 'Welcome to'."
+  },
+  "wellmob-org-au__e144ae39": {
+   "title": "WellMob",
+   "description": "Online resource hub for Aboriginal and Torres Strait Islander people, with a form to suggest further resources.",
+   "reason": "Text was an acknowledgement."
+  },
+  "arthritiswa-org-au__333b6c1f": {
+   "title": "Arthritis & Osteoporosis WA",
+   "description": "WA organisation supporting people with arthritis and osteoporosis, with self-management courses and exercise classes.",
+   "reason": "Page blocked by bot check; wording per reviewer."
+  },
+  "ywasg-com__9b31ddc1": {
+   "title": "Young Women's Arthritis Support Group",
+   "description": "Support group for working-age women with any arthritis or fibromyalgia, with regular meetings in Victoria and online.",
+   "reason": "Mojibake in sheet."
+  },
+  "arthritis-org-nz__4e460e04": {
+   "title": "Arthritis New Zealand",
+   "description": "Charitable trust offering advice and support for people living with arthritis in New Zealand.",
+   "reason": "Tidy."
+  },
+  "myflareup-org__1ee7432b": {
+   "title": "MyFlareUp — Prepare for your appointment",
+   "description": "Rheumatologist advice on preparing for an appointment with a medical specialist when you have an autoimmune condition.",
+   "reason": "Unique title. Overseas flag: Australian-run sessions, not flagged.",
+   "overseas": false
+  },
+  "myflareup-org__61dfc490": {
+   "title": "MyFlareUp",
+   "description": "Charity run by people with lived experience of autoimmune conditions, with a community and practical tools to track symptoms.",
+   "reason": "Tidy. Overseas flag: Australian-run sessions, not flagged.",
+   "overseas": false
+  },
+  "myflareup-org__13b1644e": {
+   "title": "MyFlareUp — Tools",
+   "description": "Practical tools for people with autoimmune conditions to track symptoms and prepare conversations with their doctor.",
+   "reason": "Unique title. Overseas flag: Australian-run sessions, not flagged.",
+   "overseas": false
+  },
+  "healthify-nz__8b603143": {
+   "title": "Healthify He Puna Waiora (New Zealand)",
+   "description": "New Zealand's independent site for health, medicines and wellbeing topics, self-care resources and tools.",
+   "reason": "Title was a list."
+  },
+  "drugs-com__8f004095": {
+   "title": "Drugs.com",
+   "description": "Drug information database from several medical-information suppliers, with peer-reviewed content delivered by Drugs.com (US).",
+   "reason": "Page blocked; sheet text."
+  },
+  "fraxplus-org__1c5395fa": {
+   "title": "FRAX fracture risk calculator",
+   "description": "Online tool that estimates fracture probability from clinical risk factors, for ages 40 to 90.",
+   "reason": "Text was form notes."
+  },
+  "nice-org-uk__90e2e599": {
+   "title": "NICE guideline NG157 — Joint replacement (UK)",
+   "description": "UK guideline covering care before, during and after planned knee, hip or shoulder replacement.",
+   "reason": "Tidy."
+  },
+  "rheumatology-org__6b3780cd": {
+   "title": "American College of Rheumatology — Joint replacement surgery",
+   "description": "Information for patients considering joint replacement surgery: when it is appropriate, benefits, risks and life afterwards.",
+   "reason": "Unique title."
+  },
+  "orthoinfo-org__9ec01768": {
+   "title": "OrthoInfo — Total joint replacement (AAOS)",
+   "description": "Explains total joint replacement, a surgery that replaces an arthritic or damaged joint with an implant.",
+   "reason": "Unique title."
+  },
+  "headspace-com__d4d7a6fa": {
+   "title": "Headspace app",
+   "description": "Meditation, mindfulness and sleep app with evidence-based exercises and relaxation content.",
+   "reason": "Title was a slogan."
+  },
+  "nutritionfacts-org__edcd56ad": {
+   "title": "NutritionFacts.org",
+   "description": "Science-based nonprofit that summarises the latest evidence-based nutrition research for the public (US).",
+   "reason": "Text was an opinion blurb."
+  },
+  "paintoolkit-org__c5ab05a8": {
+   "title": "Pain Toolkit (Pete Moore)",
+   "description": "Self-management tools for persistent pain by author Pete Moore (UK).",
+   "reason": "Tidy."
+  },
+  "paintrainer-org__0928fc4c": {
+   "title": "painTRAINER",
+   "description": "Free interactive online pain-management program from the University of Melbourne; registration required.",
+   "reason": "Verified by WebFetch 2026-11-02: Australian version run by CHESM, University of Melbourne; free.",
+   "url": "https://www.paintrainer.org/",
+   "overseas": false
+  },
+  "who-int__76734725": {
+   "title": "World Health Organization — Physical activity",
+   "description": "Being physically active helps people of every age lead healthier lives; some activity is better than none.",
+   "reason": "Unique title."
+  },
+  "spondylitis-org__8e80378b": {
+   "title": "Spondylitis Association of America",
+   "description": "US patient organisation for spondylitis, with information on symptoms, diagnosis and treatment and a podcast series.",
+   "reason": "Tidy."
+  },
+  "ehlers-danlos-com__6aedff88": {
+   "title": "The Ehlers-Danlos Society",
+   "description": "Information and support for people with Ehlers-Danlos syndromes and hypermobility spectrum disorders, including support groups.",
+   "reason": "Fundraising copy.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "patientlibrary-net__b7d597d7": {
+   "title": "The Patient Experience Library",
+   "description": "Library of evidence on patient experience and patient and public involvement.",
+   "reason": "Tidy."
+  },
+  "webmd-com__752e4024": {
+   "title": "WebMD (US)",
+   "description": "Health and medical news and information from WebMD (US).",
+   "reason": "Tidy."
+  },
+  "youngpainhealth-com-au__b9b72ccc": {
+   "title": "young painHEALTH",
+   "description": "Trusted pain management advice, conditions and first-hand stories for 16 to 24-year-olds with musculoskeletal pain.",
+   "reason": "Title tidy."
+  },
+  "360-org-au__0ab07e49": {
+   "title": "360 Health + Community (WA)",
+   "description": "Physical and mental health support services across Western Australia.",
+   "reason": "Title tidy.",
+   "action": "contact",
+   "action_reason": "Is itself a phone/chat line or a service you call or book."
+  },
+  "chf-org-au__db53b74d": {
+   "title": "Consumers Health Forum of Australia",
+   "description": "National peak body for health consumers, advocating for safe and affordable healthcare.",
+   "reason": "Tidy."
+  },
+  "mycommunitydirectory-com-au__e68b5aab": {
+   "title": "My Community Directory",
+   "description": "Directory of free or subsidised services across Australia, searchable by location.",
+   "reason": "Title was a slogan."
+  },
+  "benevolent-org-au__87297eee": {
+   "remove": true,
+   "reason": "Sydney-only Carer Gateway provider; Carer Gateway is already listed."
+  },
+  "painaustralia-org-au__b16d401a": {
+   "title": "Pain Australia — National pain services directory",
+   "description": "Painaustralia's national directory of public and private pain services; some services need a GP referral.",
+   "reason": "Sheet URL was truncated and returned 404; corrected URL loads (checked by WebFetch 2026-11-02).",
+   "url": "https://www.painaustralia.org.au/pain-services-directory/pain-directory"
+  },
+  "painaustralia-org-au__41f02bb0": {
+   "title": "Pain Australia — Medicines alone are not the answer for chronic pain",
+   "description": "Pain Australia factsheet explaining why medicines alone are not the answer for chronic pain and which self-management strategies help.",
+   "reason": "Recovered from the PDF text."
+  },
+  "eatforhealth-gov-au__e378f0fa": {
+   "title": "Aboriginal and Torres Strait Islander Guide to Healthy Eating",
+   "description": "Poster guide to healthy eating for Aboriginal and Torres Strait Islander people: the five food groups, drinking water and cutting back on sugar and saturated fat.",
+   "reason": "Recovered from the PDF text."
+  },
+  "wwda-org-au__7b8d57e9": {
+   "title": "Women With Disabilities Australia (WWDA)",
+   "description": "Peak advocacy organisation for women, girls and gender-diverse people with disabilities, offering free membership and policy work.",
+   "reason": "Recovered by live fetch."
+  },
+  "chronicpainaustralia-org-au__9e88ff36": {
+   "title": "Chronic Pain Australia",
+   "description": "National peak consumer body for people living with chronic pain, with the PainLink helpline, support groups, a community forum and resources.",
+   "reason": "Recovered by live fetch.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "chronicpainaustralia-org-au__19b8c0e7": {
+   "title": "Chronic Pain Australia — Community forum",
+   "description": "Online forum where people with chronic pain, or who support someone with it, connect and exchange pain management tips.",
+   "reason": "Recovered by live fetch."
+  },
+  "chronicpainaustralia-org-au__5d524519": {
+   "title": "Chronic Pain Australia — PainLink helpline",
+   "description": "Free call-back helpline for people with chronic pain, weekdays 8am to 1pm AEST, on 1300 340 357.",
+   "reason": "Recovered by live fetch."
+  },
+  "chronicpainaustralia-org-au__14e0fdbf": {
+   "title": "Chronic Pain Australia — Resources",
+   "description": "Chronic pain information, videos and webinars, the Mr Pain podcast, factsheets, survey reports and support services.",
+   "reason": "Recovered by live fetch."
+  },
+  "nass-co-uk__00152af8": {
+   "title": "National Axial Spondyloarthritis Society (UK)",
+   "description": "UK charity improving diagnosis and care of axial spondyloarthritis, with guides, exercise resources, a forum and a helpline.",
+   "reason": "Recovered by live fetch.",
+   "action": "read",
+   "action_reason": "Organisation or information site that merely mentions a helpline/group; not itself the service."
+  },
+  "healthresourcedirectory-org-au__88789986": {
+   "title": "Health Resource Directory",
+   "description": "Directory for people seeking health information, topics and services in South Western Sydney, including translated information.",
+   "reason": "Tidy."
+  },
+  "preventivehealth-sa-gov-au__ec84d10a": {
+   "title": "Better Health Coaching Service (SA)",
+   "description": "Free, confidential telephone coaching funded by Preventive Health SA to help South Australians be active and eat well.",
+   "reason": "Unique title."
+  },
+  "nsw-gov-au__ed308271": {
+   "title": "Get Healthy Service (NSW)",
+   "description": "Free phone and online health coaching in NSW for eating well, being active, reducing alcohol and reaching a healthy weight.",
+   "reason": "Unique title."
+  },
+  "nsw-gov-au__5555b61b": {
+   "title": "NSW Government — Getting started with physical activity",
+   "description": "Tips to help you and your family get started with physical activity.",
+   "reason": "Unique title."
+  },
+  "nsw-gov-au__40ef9190": {
+   "title": "Hunter New England Health — Chronic disease management",
+   "description": "Ongoing care and support for people with long-term health conditions across Hunter New England Local Health District.",
+   "reason": "Unique title."
+  },
+  "myjoint-taichi-org__a5c1d640": {
+   "description": "Free 12-week Tai Chi exercise program for people with knee or hip pain or osteoarthritis.",
+   "reason": "Auto text was a program blurb; wording per reviewer."
+  },
+  "lifeline-org-au__3a7f8c33": {
+   "action": "contact",
+   "action_reason": "Is itself a phone/chat line or a service you call or book.",
+   "reason": "action override"
+  },
+  "feetfirstpodiatry-com-au__71af2e6a": {
+   "action": "contact",
+   "action_reason": "Is itself a phone/chat line or a service you call or book.",
+   "reason": "action override"
+  }
+ }
+}

@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "node --watch server/index.js",
     "start": "node server/index.js",
-    "test": "node --test"
+    "test": "node --test",
+    "test:e2e": "playwright test -c tests",
+    "smoke": "node tools/smoke.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.68.0",
@@ -16,5 +18,8 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
   }
 }

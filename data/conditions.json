@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T10:24:22+00:00",
+ "generated_at": "2026-11-02T11:13:09+00:00",
  "method": "primary = in title/URL/listing description; mentioned = body only, >= 3 occurrences",
  "conditions": [
   "Osteoarthritis",
@@ -93,14 +93,6 @@
    "tags": [],
    "verified": true,
    "checked_against": "https://apps.apple.com/au/app/clara/id6497716291"
-  },
-  "apps-apple-com__24049b76": {
-   "url": "https://apps.apple.com/au/app/point-of-care-app/id1108787701",
-   "url_as_listed": "https://apps.apple.com/au/app/point-of-care-app/id1108787701",
-   "conditions": [],
-   "tags": [],
-   "verified": true,
-   "checked_against": "https://apps.apple.com/au/app/point-of-care-app/id1108787701"
   },
   "apps-apple-com__8811092c": {
    "url": "https://apps.apple.com/us/app/drugs-com-medication-guide/id599471042",
@@ -234,14 +226,6 @@
    "verified": true,
    "checked_against": "https://cec.health.nsw.gov.au/safety-essentials/comprehensive-care/patient-information"
   },
-  "cha-org-au__5e20b72b": {
-   "url": "https://cha.org.au/",
-   "url_as_listed": "https://cha.org.au/",
-   "conditions": [],
-   "tags": [],
-   "verified": true,
-   "checked_against": "https://cha.org.au/"
-  },
   "chronicpainaustralia-org-au__9e88ff36": {
    "url": "https://chronicpainaustralia.org.au/",
    "url_as_listed": "https://chronicpainaustralia.org.au/",
@@ -313,14 +297,6 @@
    ],
    "verified": true,
    "checked_against": "https://chronicpainaustralia.org.au/resources"
-  },
-  "cja-org__b80b9fe1": {
-   "url": "https://cja.org/",
-   "url_as_listed": "https://cja.org/",
-   "conditions": [],
-   "tags": [],
-   "verified": true,
-   "checked_against": "https://cja.org/"
   },
   "creakyjoints-org-au__6b9a21e1": {
    "url": "https://creakyjoints.org.au/",
@@ -872,25 +848,10 @@
     }
    ],
    "verified": true,
-   "checked_against": "https://www.aont.org.au"
-  },
-  "aont-org-au__b87d9b5a": {
-   "url": "https://www.aont.org.au/",
-   "url_as_listed": "https://www.aont.org.au/",
-   "conditions": [
-    "Osteoporosis"
-   ],
-   "tags": [
-    {
-     "condition": "Osteoporosis",
-     "strength": "primary",
-     "found_in": "page title",
-     "quote": "Arthritis & Osteoporosis Northern Territory (AONT)",
-     "body_mentions": 4
-    }
-   ],
-   "verified": true,
-   "checked_against": "https://www.aont.org.au/"
+   "checked_against": "https://www.aont.org.au",
+   "merged_ids": [
+    "aont-org-au__b87d9b5a"
+   ]
   },
   "arthritis-org-au__87274e6d": {
    "url": "https://www.arthritis.org.au/",
@@ -957,14 +918,6 @@
    "tags": [],
    "verified": true,
    "checked_against": "https://www.asvictoria.org/"
-  },
-  "benevolent-org-au__87297eee": {
-   "url": "https://www.benevolent.org.au/services-and-programs/support-for-carers",
-   "url_as_listed": "https://www.benevolent.org.au/services-and-programs/support-for-carers",
-   "conditions": [],
-   "tags": [],
-   "verified": true,
-   "checked_against": "https://www.benevolent.org.au/services-and-programs/support-for-carers"
   },
   "betterhealth-vic-gov-au__65d9adf7": {
    "url": "https://www.betterhealth.vic.gov.au/",
@@ -1067,8 +1020,8 @@
    "url_as_listed": "https://www.eatforhealth.gov.au/sites/default/files/2022-09/FINAL_ATSI_Guide_to_Healthy_Eating_A4_size_double_sided_POSTER_D15_1106141.PDF",
    "conditions": [],
    "tags": [],
-   "verified": false,
-   "checked_against": null
+   "verified": true,
+   "checked_against": "https://www.eatforhealth.gov.au/sites/default/files/2022-09/FINAL_ATSI_Guide_to_Healthy_Eating_A4_size_double_sided_POSTER_D15_1106141.PDF"
   },
   "ehlers-danlos-com__6aedff88": {
    "url": "https://www.ehlers-danlos.com/",
@@ -1167,14 +1120,6 @@
    "tags": [],
    "verified": true,
    "checked_against": "https://www.healthdirect.gov.au/"
-  },
-  "healthdirect-gov-au__f41435da": {
-   "url": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950",
-   "url_as_listed": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950",
-   "conditions": [],
-   "tags": [],
-   "verified": true,
-   "checked_against": "https://www.healthdirect.gov.au/australian-health-services/healthcare-service/virtual/1300-medicine/health-information-and-referral/7c03a6b7-1727-4458-89a8-c36721151950"
   },
   "healthdirect-gov-au__545929d2": {
    "url": "https://www.healthdirect.gov.au/pain-relief-medicines",
@@ -1534,11 +1479,11 @@
      "strength": "primary",
      "found_in": "web address",
      "quote": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx",
-     "body_mentions": 0
+     "body_mentions": 25
     }
    ],
-   "verified": false,
-   "checked_against": null
+   "verified": true,
+   "checked_against": "https://www.racgp.org.au/getattachment/65d97f67-19bb-44e4-8750-4ff6cf50f710/Osteoarthritis-management-options-in-general-pract.aspx"
   },
   "safetyandquality-gov-au__90cfa57c": {
    "url": "https://www.safetyandquality.gov.au/",

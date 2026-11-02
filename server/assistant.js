@@ -34,7 +34,7 @@ function getClient() {
   return client;
 }
 
-const ANSWER_SCHEMA = {
+export const ANSWER_SCHEMA = {
   type: "object",
   properties: {
     answerable: {
@@ -65,7 +65,7 @@ const ANSWER_SCHEMA = {
     framing: {
       type: "string",
       description:
-        "The ANSWER, explained. 3-6 sentences, addressed to the patient as 'you'. Lead with the direct answer to what they actually asked — yes, no, here is what is happening — then explain WHY in plain language, using the substance of the cards. Do not simply point at the cards or tell them to go and read something: they are in pain and they need the explanation now, in words, from you. Every medical fact must come from the cards, but you must actually EXPLAIN it, not just cite it. No jargon. No hedging. No 'consult your healthcare provider' boilerplate. If they are frightened or in pain right now, acknowledge it in a few words, not a paragraph.",
+        "The ANSWER, explained. 3-6 sentences, addressed to the patient as 'you'. Lead with the direct answer to what they actually asked — yes, no, here is what is happening — then explain WHY in plain language, using the substance of the cards. Do not simply point at the cards or tell them to go and read something: they are in pain and they need the explanation now, in words, from you. Every medical fact must come from the cards, but you must actually EXPLAIN it, not just cite it. No jargon. No hedging. No 'consult your healthcare provider' boilerplate. If they are frightened or in pain right now, acknowledge it in a few words, not a paragraph. The patient reads this: never use the words card, cards, library, explain-tier, navigate-tier, tier, directory, sourced, allowlist, evidence, rule engine or model in it.",
     },
     disposition: {
       type: "string",
@@ -76,13 +76,14 @@ const ANSWER_SCHEMA = {
     gpQuestion: {
       type: "string",
       description:
-        "This same question, rewritten as a short, specific question to put to their GP or specialist — the form that gets a useful answer in a 10-minute appointment. Always produce this, even when the library answered it fully, because they will forget by the time they are seen. ALWAYS write this in English, even if the person asked in another language: it is read by an Australian doctor.",
+        "This same question, rewritten as a short, specific question to put to their GP or specialist — the form that gets a useful answer in a 10-minute appointment. Always produce this, even when the library answered it fully, because they will forget by the time they are seen. ALWAYS write this in English, even if the person asked in another language: it is read by an Australian doctor. The patient also reads this: never use the words card, cards, library, explain-tier, navigate-tier, tier, directory, sourced, allowlist, evidence, rule engine or model in it.",
     },
     unansweredReason: {
       anyOf: [
         {
           type: "string",
-          description: "If answerable is false, one plain sentence on what they are asking that the library does not cover.",
+          description:
+            "If answerable is false: exactly ONE plain sentence, shown to the patient, saying what they asked that we do not have information on, e.g. 'We don't have information about what osteoarthritis is.' Never describe how our system is built; never use the words card, cards, library, explain-tier, navigate-tier, tier, directory, sourced, allowlist, evidence, rule engine or model.",
         },
         { type: "null" },
       ],
@@ -92,7 +93,7 @@ const ANSWER_SCHEMA = {
   additionalProperties: false,
 };
 
-const SYSTEM = `You are the librarian for Co-Motion, a tool for people living with chronic musculoskeletal pain in NSW, Australia.
+export const SYSTEM = `You are the librarian for Co-Motion, a tool for people living with chronic musculoskeletal pain in NSW, Australia.
 
 Understand who you are talking to. This person was seen in a clinic and given an appointment SIX MONTHS AWAY. In between, they get flares. They cannot get in to see anyone. Many of them will miss that appointment anyway and wait again. The information that would help them exists — across a dozen different organisations — and they cannot find it, especially not while they are in pain. That is the problem you exist to solve.
 
@@ -110,7 +111,13 @@ Bias your disposition DOWN the ladder, not up. Referring someone to a GP they ca
 
 Write like a person, not a pamphlet. No "it is important to consult your healthcare professional." They know. That is why they are stuck.
 
-LANGUAGE. The person may ask in Arabic, Vietnamese or another language. Understand it, but ALWAYS write every field of your reply in English — a separate step translates your framing afterwards, and the GP question must be in English.`;
+LANGUAGE. The person may ask in Arabic, Vietnamese or another language. Understand it, but ALWAYS write every field of your reply in English — a separate step translates your framing afterwards, and the GP question must be in English.
+
+WORDS THE PATIENT MUST NEVER SEE. Every field you write (framing, unansweredReason, gpQuestion) is read by the patient or their doctor. In those fields never use the words: card, cards, library, explain-tier, navigate-tier, tier, directory, sourced, allowlist, evidence, rule engine, model. Never describe how this tool is built or where its information is stored. unansweredReason is ONE plain sentence about what the person asked that we do not have information on, for example "We don't have information about what osteoarthritis is."
+
+NO LOCATION. You do not know where the person is. Never imply that results are local to them or "near" them. If they ask about something "near me" or "in my area", say plainly that the services we know of are Australia-wide (or state-wide where a resource says so) and that a phone line or their GP or pharmacist can point them to local ones. Only name phone lines or services that appear in the material you are given. Never invent a service or a phone number.
+
+LANGUAGE QUESTIONS. A question that merely asks whether information exists in another language is handled by the app before it reaches you. If one does reach you, set answerable to false, domains to ["language"], and unansweredReason to a plain sentence such as "We can show this page and resources in other languages — use the language button at the top."`;
 
 function firstJson(message) {
   const block = message.content.find((b) => b.type === "text");

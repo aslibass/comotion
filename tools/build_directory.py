@@ -15,7 +15,11 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import clean_directory as cd  # noqa: E402
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -79,6 +83,85 @@ def languages_for(r: dict) -> list[str]:
     return sorted(langs)
 
 
+def finalize(entries: list[dict]) -> list[dict]:
+    """Apply clean_directory rules: merge dups, titles, descriptions, links, action, order."""
+    ov = cd.load_overrides()
+    # Removed resources (not a real/relevant/live patient resource) -- reasons in the overrides file.
+    removed = [e["id"] for e in entries if ov.get(e["id"], {}).get("remove")]
+    entries = [e for e in entries if e["id"] not in removed]
+    print(f"Removed {len(removed)} resource(s) via overrides: {removed}")
+    for e in entries:
+        if ov.get(e["id"], {}).get("url"):
+            e["url"] = ov[e["id"]]["url"]
+            e["_rec"]["url"] = e["url"]
+    # 3. merge duplicates by normalised URL (union tags/audiences/languages/doc links)
+    by_url: dict[str, dict] = {}
+    merged = []
+    for e in entries:
+        k = cd.norm_url(e["url"])
+        if k in by_url:
+            t = by_url[k]
+            for d, subs in e["tags"].items():
+                cur = t["tags"].setdefault(d, [])
+                cur.extend(s for s in subs if s not in cur)
+            t["domains"] = sorted(t["tags"], key=[x for x, _ in DOMAINS].index)
+            t["audiences"] = sorted(set(t["audiences"]) | set(e["audiences"]))
+            t["languages"] = sorted(set(t["languages"]) | set(e["languages"]))
+            t["translated"] = t["translated"] or e["translated"]
+            t["conditions"] = sorted(set(t["conditions"]) | set(e["conditions"]))
+            t["doc_links"] = list(dict.fromkeys(t["doc_links"] + e["doc_links"]))[:10]
+            t["_rec"].setdefault("_merged_authors", []).extend(e["_rec"].get("authors", []))
+            merged.append((e["id"], t["id"]))
+        else:
+            by_url[k] = e
+    entries = list(by_url.values())
+    print(f"Merged {len(merged)} duplicate URL(s): {merged}")
+
+    for e in entries:
+        r = e.pop("_rec")
+        o = ov.get(e["id"], {})
+        host = cd.host_of(e["url"])
+        author = cd.clean_author((r.get("authors") or [""])[0]) or host
+        # 1. title
+        title = o.get("title") or cd.clean_page_title(r.get("extract", {}).get("title", ""), author, host) or author
+        e["title"] = title
+        # 2. description
+        if o.get("description"):
+            e["description"] = o["description"]
+        else:
+            cands = cd.description_candidates(r)
+            e["description"] = cands[0][1] if cands else ""
+            e["_desc_src"] = cands[0][0] if cands else "NONE"
+        e["_author"] = author
+        e["_r"] = r
+    # unique titles: add a path label, then the author, then a number
+    from collections import Counter
+    for _ in range(3):
+        cnt = Counter(e["title"].lower() for e in entries)
+        for e in entries:
+            if cnt[e["title"].lower()] > 1 and e["id"] not in ov:
+                lab = cd.path_label(e["url"])
+                alt = e["title"]
+                if _ == 0 and lab and lab.lower() not in e["title"].lower():
+                    alt = f"{e['title']} — {lab}"
+                elif _ == 1 and e["_author"].lower() not in e["title"].lower():
+                    alt = f"{e['_author']} — {e['title']}"
+                elif _ == 2:
+                    alt = f"{e['title']} ({cd.host_of(e['url'])})"
+                e["title"] = alt
+    # 4/5/6
+    for e in entries:
+        r = e.pop("_r")
+        e.pop("_author", None)
+        known = {}
+        e["doc_links_labelled"] = cd.label_doc_links(e["doc_links"], known, e["languages"])
+        o = ov.get(e["id"], {})
+        e["action"] = o.get("action") or cd.action_for(e)
+        e["overseas"] = o["overseas"] if "overseas" in o else cd.overseas_for(e["url"])
+    entries.sort(key=cd.sort_key)
+    return entries
+
+
 def main():
     cat = json.loads((DATA / "catalogue.json").read_text(encoding="utf-8"))
     # Condition classification (tools/classify_conditions.py). Only CONFIRMED conditions
@@ -106,21 +189,23 @@ def main():
         x = r.get("extract", {})
         entries.append({
             "id": r["id"],
-            "title": title_for(r),
+            "title": "",  # set by clean_directory rules below
             "url": r["url"],
             "domains": sorted(tags.keys(), key=order.index),
             "conditions": cond_by_id.get(r["id"], {}).get("conditions", []),
             "tags": tags,  # {domain_key: [subdomains in that domain]}
-            "description": description_for(r),
+            "description": "",
             "audiences": r.get("audiences", []),
             "languages": languages_for(r),
             "translated": any("translated" in s.lower() or "culturally adapted" in s.lower()
                               for s in r.get("subdomains", [])),
             "doc_links": x.get("doc_links", [])[:10],
+            "_rec": r,
             "page_date": x.get("page_date", ""),
             "has_content": x.get("text_chars", 0) >= 400,
         })
 
+    entries = finalize(entries)
     langLabels = [l.capitalize() for l in LANGUAGES]
 
     def lang_counts(members):
@@ -155,8 +240,13 @@ def main():
              "count": sum(1 for e in entries if label in e["conditions"])}
             for label in ("Osteoarthritis", "Osteoporosis", "Persistent Pain", "Back Pain")
         ],
-        "resources": sorted(entries, key=lambda e: e["title"].lower()),
+        "resources": entries,
     }
+    if "--review" in sys.argv:
+        for e in entries:
+            print(f"{e['id'][:34]:34}|{e['title'][:48]:48}|{e.get('_desc_src','OVR')}|{e['description']}")
+    for e in entries:
+        e.pop("_desc_src", None)
     (DATA / "directory.json").write_text(json.dumps(out, ensure_ascii=False, indent=2),
                                          encoding="utf-8")
     print(f"Wrote {DATA/'directory.json'}: {len(entries)} resources across {len(domains)} domains")
