@@ -95,6 +95,17 @@ spine, the rail and the entire emergency path. That is deliberate.
 
 ---
 
+## Checking translation after a deploy
+
+Translation needs the model, so it can only be checked with an API key and the access code.
+Switch the page to Vietnamese or Arabic, ask "Can I still have a beer?" and confirm: the
+explanation appears in that language first; the machine-translation label sits under it; "Show the
+English original" reveals the English; the urgency level and triage questions are unchanged. Then
+ask in Vietnamese ("Tôi có thể uống bia không?") and confirm the GP question in "Your log" is in
+English. Unit tests for the number guard run with `npm test`.
+
+---
+
 ## The resource pipeline (`tools/`)
 
 The directory is built from the resource repository spreadsheet by a set of **re-runnable** Python

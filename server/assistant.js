@@ -76,7 +76,7 @@ const ANSWER_SCHEMA = {
     gpQuestion: {
       type: "string",
       description:
-        "This same question, rewritten as a short, specific question to put to their GP or specialist — the form that gets a useful answer in a 10-minute appointment. Always produce this, even when the library answered it fully, because they will forget by the time they are seen.",
+        "This same question, rewritten as a short, specific question to put to their GP or specialist — the form that gets a useful answer in a 10-minute appointment. Always produce this, even when the library answered it fully, because they will forget by the time they are seen. ALWAYS write this in English, even if the person asked in another language: it is read by an Australian doctor.",
     },
     unansweredReason: {
       anyOf: [
@@ -108,7 +108,9 @@ TWO TIERS, AND THE LINE BETWEEN THEM. You are given two things: a short list of 
 
 Bias your disposition DOWN the ladder, not up. Referring someone to a GP they cannot get in to see is not caution — it is a dead end dressed up as caution, and it is how people end up in an emergency department. If the library answers their question and they can act on it today, say so and let them act. Reserve GP_NOW and ED for when they are genuinely warranted; a separate rule engine has already screened this question for danger and will overrule you upward if it found something, so you do not need to be defensive on its behalf.
 
-Write like a person, not a pamphlet. No "it is important to consult your healthcare professional." They know. That is why they are stuck.`;
+Write like a person, not a pamphlet. No "it is important to consult your healthcare professional." They know. That is why they are stuck.
+
+LANGUAGE. The person may ask in Arabic, Vietnamese or another language. Understand it, but ALWAYS write every field of your reply in English — a separate step translates your framing afterwards, and the GP question must be in English.`;
 
 function firstJson(message) {
   const block = message.content.find((b) => b.type === "text");

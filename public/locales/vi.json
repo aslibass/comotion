@@ -22,6 +22,8 @@
     "ask.error": "Đã xảy ra lỗi.",
     "ask.neterror": "Không kết nối được với máy chủ. Hãy kiểm tra kết nối và thử lại.",
 
+    "answer.mt": "Bản dịch máy từ một câu trả lời tiếng Anh. Có thể có lỗi — nếu bạn không chắc, hãy cho dược sĩ, bác sĩ hoặc thông dịch viên xem.",
+    "answer.showEnglish": "Xem bản gốc tiếng Anh",
     "home.welcome": "Hôm nay bạn đang tìm gì?",
     "home.ask": "Hoặc đặt một câu hỏi",
     "browse.heading": "Hoặc xem xung quanh",

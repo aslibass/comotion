@@ -173,6 +173,9 @@
   .ev p { margin:0; color:var(--soft); font-size:18px; }
   .tagm { display:inline-block; font-size:14px; font-weight:700; text-transform:uppercase;
           letter-spacing:.05em; color:var(--act); margin-bottom:6px; }
+  /* The machine-translation label and the English original under a translated explanation. */
+  .mt { margin:6px 0 14px; font-size:17px; color:var(--soft); }
+  .mt summary { cursor:pointer; font-weight:700; color:var(--act); padding:6px 0; }
   .quote { margin:12px 0 0; padding-inline-start:14px; border-inline-start:3px solid var(--rule);
            font-size:17px; color:var(--faint); font-style:italic; }
   .src { margin-top:12px; font-size:17px; }
@@ -861,7 +864,8 @@ $("triGo").onclick = async () => {
     const res = await fetch("/api/ask", {
       method: "POST",
       headers: { "content-type": "application/json", "x-access-code": CODE },
-      body: JSON.stringify({ question: PENDING, condition: COND, triage: TRI }),
+      // `language`: the page's chosen language, so the explanation can be translated (labelled).
+      body: JSON.stringify({ question: PENDING, condition: COND, triage: TRI, language: L.meta?.resourceLanguage || "" }),
     });
     const d = await res.json();
 
@@ -929,7 +933,17 @@ function render(d) {
   // SECTION 1 — What we found. The grounded, plain-English explanation and its cited cards.
   if (d.grounded) {
     h += `<h2 class="ansH">${esc(t("answer.found"))}</h2>`;
-    h += `<p class="answer">${esc(d.framing)}</p>` + d.evidence.map(evCard).join("");
+    if (d.framingTranslated?.text) {
+      // The reader's language first, honestly labelled; the English original one tap away
+      // so a pharmacist, GP or interpreter can check it.
+      h += `<p class="answer" lang="${esc(UILANG)}" dir="${esc(L.meta?.dir || "ltr")}">${esc(d.framingTranslated.text)}</p>
+        <p class="mt" lang="${esc(UILANG)}" dir="${esc(L.meta?.dir || "ltr")}">${esc(t("answer.mt"))}</p>
+        <details class="mt"><summary>${esc(t("answer.showEnglish"))}</summary>
+          <p class="answer" lang="en" dir="ltr">${esc(d.framing)}</p></details>`;
+    } else {
+      h += `<p class="answer">${esc(d.framing)}</p>`;
+    }
+    h += d.evidence.map(evCard).join("");
   } else if (!d.redFlagOnly) {
     const where = (d.pointers || []).length ? t("answer.noAnswer.where") : "";
     h += `<div class="card" style="margin-bottom:20px">

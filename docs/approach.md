@@ -32,6 +32,18 @@ _As of 2026-11-01_
 >   Arabic and Vietnamese remain unreviewed machine drafts for interface text only; every
 >   safety string falls back to verified English.
 >
+> - **Layer 3, "translates if requested":** built. When the page is in Arabic or Vietnamese, the
+>   plain-English explanation is translated by a separate model step (`server/translate.js`) and
+>   shown first, labelled as a machine translation, with the English original one tap away. Only
+>   the explanation is translated: the urgency level, triage questions, emergency message and the
+>   question written for the GP are never model-translated (the GP question is always English).
+>   The translation is discarded in favour of the English if any number, dose or phone number
+>   differs, if the step fails, or if the answer isn't grounded in the library. It runs after the
+>   disposition is fixed, so it cannot change where someone is sent. Typed questions in Arabic or
+>   Vietnamese are understood, but the keyword red-flag screen only reads English — the four
+>   triage questions, asked every time, are the safeguard until a translator signs those off.
+>   **Not yet tested against the live model** — see the checks to run after deploy in the README.
+>
 > **Still open:** what the answer's fourth section should be (the spec lists three headings under
 > "four sections"); whether browse topics should nest as in the spec's Layer 1 list; whether the
 > "This is about:" condition chips stay; and the category names in the Layer 2 typed-query example

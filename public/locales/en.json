@@ -53,6 +53,8 @@
     "answer.noAnswer.where": " — but here's where to look",
     "answer.whereToLook": "Where to go next",
     "answer.found": "What we found",
+    "answer.mt": "Machine translation of an English answer. It may contain mistakes — if you are unsure, show it to a pharmacist, doctor or interpreter.",
+    "answer.showEnglish": "Show the English original",
     "answer.related": "Related topics",
     "answer.trusted": "Trusted resources highlighting what you can do next",
     "action.read": "Read",

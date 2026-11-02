@@ -16,6 +16,7 @@ import {
 } from "./evidence.js";
 import { screen, triageScreen, higher, RUNGS, TRIAGE, ALWAYS_VISIBLE } from "./redflags.js";
 import { answer, isConfigured } from "./assistant.js";
+import { translateFraming } from "./translate.js";
 import { DIRECTORY, CONDITIONS_LIST, dirById, resourcesForDomain, directoryForModel } from "./directory.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -226,10 +227,18 @@ app.post("/api/ask", requireCode, async (req, res) => {
     // never lower it.
     const disposition = higher(floor, raw.disposition || "SELF_MANAGE");
 
+    // Translate, if the reader asked for another language. Only the explanation, only on a
+    // grounded answer, and only after the disposition is fixed — so translation can never
+    // change where someone is sent. Null means "show the English".
+    const framingTranslated = grounded
+      ? await translateFraming(raw.framing, String(req.body?.language || ""))
+      : null;
+
     res.json({
       question,
       grounded,
       framing: grounded ? raw.framing : null,
+      framingTranslated,
       unansweredReason: raw.unansweredReason,
       evidence: cited,
       pointers,

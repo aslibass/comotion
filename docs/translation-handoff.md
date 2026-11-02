@@ -136,6 +136,19 @@ Current state: `ar.json` and `vi.json` contain only chrome (`ui`, `conditions`, 
 | `conditions.ra` | Rheumatoid arthritis | Condition picker | | |
 | `conditions.other` | Other musculoskeletal pain | Condition picker | | |
 
+### Added 2026-11-02 — Priority B, please translate these too
+
+These label the machine-translated explanation, so they must read naturally and be unmistakable
+in meaning. They currently exist only as unreviewed machine drafts.
+
+| key | English source | Where it appears |
+|---|---|---|
+| `ui.answer.mt` | Machine translation of an English answer. It may contain mistakes — if you are unsure, show it to a pharmacist, doctor or interpreter. | Under every translated explanation |
+| `ui.answer.showEnglish` | Show the English original | Tap target that reveals the English answer |
+| `ui.home.browse` | Browse Topics | Heading above the topic tiles |
+| `ui.home.welcome` | What are you looking for today? | Top of the homepage |
+| `ui.home.ask` | Or Ask a Question | Heading above the search box |
+
 ## 4. Priority C: example prompts (translator only), 11 strings
 
 Tap-to-ask suggestions. Translate as a natural question a person would ask; no need to be literal.
